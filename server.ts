@@ -80,7 +80,8 @@ const AttemptSchema = new mongoose.Schema({
   date: { type: String, required: true },
   results: { type: Array, required: true },
   aiAdvice: { type: String, required: false },
-  hasAIError: { type: Boolean, required: true, default: false }
+  hasAIError: { type: Boolean, required: true, default: false },
+  timeToBeat: { type: Object, required: false }
 });
 const Attempt = mongoose.model("Attempt", AttemptSchema);
 
@@ -254,9 +255,51 @@ app.get("/api/certifications", (req, res) => {
   res.json(list);
 });
 
+// Helper function to sample balanced practice questions
+function selectPracticeQuestions(allQuestions: any[], lang: "en" | "pt"): any[] {
+  const hardQuestions = allQuestions.filter(q => q.points === 2);
+  const easyQuestions = allQuestions.filter(q => q.points !== 2); // default is 1
+
+  let selected: any[] = [];
+  let attempts = 0;
+  const maxAttempts = 100;
+
+  const targetHard = Math.min(2, hardQuestions.length);
+  const targetEasy = Math.min(10 - targetHard, easyQuestions.length);
+
+  while (attempts < maxAttempts) {
+    attempts++;
+    const sampledHard = [...hardQuestions].sort(() => 0.5 - Math.random()).slice(0, targetHard);
+    const sampledEasy = [...easyQuestions].sort(() => 0.5 - Math.random()).slice(0, targetEasy);
+    const sample = [...sampledHard, ...sampledEasy];
+
+    const uniqueTopics = new Set(sample.map(q => {
+      const topicObj = q.syllabus_topic;
+      return typeof topicObj === "object" ? topicObj[lang] : topicObj;
+    }));
+
+    const allUniqueTopics = new Set(allQuestions.map(q => {
+      const topicObj = q.syllabus_topic;
+      return typeof topicObj === "object" ? topicObj[lang] : topicObj;
+    }));
+
+    const requiredTopics = Math.min(3, allUniqueTopics.size);
+
+    if (uniqueTopics.size >= requiredTopics || sample.length < 3) {
+      selected = sample;
+      break;
+    }
+    selected = sample;
+  }
+
+  // Shuffle selected questions so hard and easy are mixed
+  return selected.sort(() => 0.5 - Math.random());
+}
+
 // Fetch questions for specific certification (Anti-cheat: Correct Answers omitted)
 app.get("/api/questions/:certificationId", (req, res) => {
   const { certificationId } = req.params;
+  const mode = req.query.mode as string;
   const lang = (req.headers["x-app-language"] as string === "en") ? "en" : "pt";
   const filePath = getCertFilePath(certificationId);
   const cert = readJSONFile<any>(filePath, null);
@@ -265,7 +308,16 @@ app.get("/api/questions/:certificationId", (req, res) => {
     res.status(404).json({ error: lang === "en" ? "Certification not found" : "Certificação não encontrada" });
     return;
   }
-  const cleanQuestions = cert.questions.map((q: any) => {
+
+  let questionsToUse = cert.questions;
+  let timeLimitMins = cert.time_limit_mins;
+
+  if (mode === "training") {
+    questionsToUse = selectPracticeQuestions(cert.questions, lang);
+    timeLimitMins = 11; // 10 questions practice mode: 11 mins budget
+  }
+
+  const cleanQuestions = questionsToUse.map((q: any) => {
     return {
       id: q.id,
       points: q.points || 1,
@@ -284,7 +336,7 @@ app.get("/api/questions/:certificationId", (req, res) => {
   res.json({
     id: certificationId,
     name: typeof certNameObj === "object" ? certNameObj[lang] : certNameObj,
-    timeLimitMins: cert.time_limit_mins,
+    timeLimitMins: timeLimitMins,
     passScorePercentage: cert.pass_score_percentage,
     questions: cleanQuestions
   });
@@ -399,6 +451,37 @@ app.post("/api/test/submit", authenticateToken, async (req, res) => {
 
   const certName = typeof cert.certification_name === "object" ? cert.certification_name[lang] : cert.certification_name;
 
+  // Time-to-Beat calculation for "training" mode (Practice Mode)
+  let timeToBeat = null;
+  if (mode === "training") {
+    try {
+      const prevAttempts = await Attempt.find({ userId, mode: "training", certificationId });
+      if (prevAttempts.length > 0) {
+        const avgTime = prevAttempts.reduce((sum, a) => sum + a.timeSpentSeconds, 0) / prevAttempts.length;
+        const bestTime = Math.min(...prevAttempts.map(a => a.timeSpentSeconds));
+        
+        if (timeSpentSeconds < avgTime) {
+          const improvement = Math.round(((avgTime - timeSpentSeconds) / avgTime) * 100);
+          timeToBeat = {
+            isFasterThanAverage: true,
+            improvementPercentage: improvement,
+            averageTimeSeconds: Math.round(avgTime),
+            isNewRecord: timeSpentSeconds < bestTime
+          };
+        } else {
+          timeToBeat = {
+            isFasterThanAverage: false,
+            improvementPercentage: 0,
+            averageTimeSeconds: Math.round(avgTime),
+            isNewRecord: false
+          };
+        }
+      }
+    } catch (err) {
+      console.error("Error calculating Time-to-Beat:", err);
+    }
+  }
+
   let aiAdvice = lang === "en" 
     ? "Prepare to see your personalized technical report compiled by the AI Mentor." 
     : "Prepare-se para ver seu aconselhamento personalizado por Inteligência Artificial.";
@@ -410,6 +493,7 @@ app.post("/api/test/submit", authenticateToken, async (req, res) => {
       throw new Error("DEEPSEEK_API_KEY is not defined. Please add your key in the AI Studio Settings secrets panel.");
     }
     let prompt = "";
+    const isPractice = mode === "training";
     
     if (lang === "en") {
       prompt = `You are an expert mentor for ISTQB certifications (${certName}).
@@ -433,6 +517,8 @@ Please generate a detailed, constructive, and motivating performance analysis in
 3. **Technical Key Insights & Guidance**: Give technical guidance and clear conceptual explanations to clear up the confusion on the questions they missed. Help them understand the deep engineering/QA trade-offs (e.g. Page Object Model advantages, boundary equivalence, GenAI hallucination mitigation) without just listing a raw answer key.
 4. **Action Study Plan**: A realistic study plan and test-taking tips for their next attempt.
 
+${isPractice ? "CRITICAL REMINDER: Since this is a quick 10-question Practice Mode (Treino Rápido) session, please make your advisor analysis extremely compact and direct. Limit the entire markdown report to 200-300 words maximum." : ""}
+
 Please respond in a clean, professional, and well-structured Markdown format. Be direct details-wise but deep conceptually.`;
     } else {
       prompt = `Você é um mentor especialista em certificações ISTQB (${certName}).
@@ -455,6 +541,8 @@ Por favor, gere uma análise detalhada e motivadora em português estruturada da
 2. **Diagnóstico dos Tópicos Críticos**: Identifique os tópicos de syllabus (ex: 1.1, 4.2) que mais precisam de atenção (com base nos erros).
 3. **Recomendações e Dicas Técnicas**: Dê dicas e explicações focadas para clarear os conceitos técnicos que o aluno errou, ajudando-o a compreender a lógica profunda SEM simplesmente entregar uma lista de gabarito seco. Ajude-o a raciocinar sobre os termos específicos (ex: metamorphic testing, POM, robustez vs explainability).
 4. **Plano de Ação para as Próximas Tentativas**: Um plano de estudo simples e focado no tempo de prova.
+
+${isPractice ? "LEMBRETE CRÍTICO: Como esta é uma sessão rápida de Practice Mode (Treino Rápido) de 10 questões, por favor gere uma análise extremamente compacta e direta. Limite o relatório inteiro em formato markdown a no máximo 200 a 300 palavras." : ""}
 
 Responda em formato Markdown de leitura limpa. Evite rodeios desnecessários, mas seja profundo nos conceitos de engenharia de software e testes envolvidos.`;
     }
@@ -535,7 +623,8 @@ ${errorsList.length > 0
       date: new Date().toISOString(),
       results: resultsDetail,
       aiAdvice,
-      hasAIError
+      hasAIError,
+      timeToBeat
     });
   } catch (err) {
     console.error("Failed to save attempt to DB", err);
@@ -548,7 +637,8 @@ ${errorsList.length > 0
     totalQuestions: totalPoints,
     verdict: passVerdictStr,
     aiAdvice,
-    results: resultsDetail 
+    results: resultsDetail,
+    timeToBeat
   });
 });
 
@@ -579,9 +669,51 @@ app.get("/api/user/history", authenticateToken, async (req, res) => {
       totalQuestions: a.totalQuestions
     }));
 
+    // Calculate study streak
+    let streak = 0;
+    const uniqueDays = Array.from(new Set(userAttempts.map(a => {
+      if (!a.date) return "";
+      return a.date.split("T")[0]; // YYYY-MM-DD
+    }))).filter(Boolean).sort((a, b) => b.localeCompare(a)); // Newest first
+
+    const todayStr = new Date().toISOString().split("T")[0];
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = yesterday.toISOString().split("T")[0];
+
+    if (uniqueDays.length > 0) {
+      const latestDay = uniqueDays[0];
+      if (latestDay === todayStr || latestDay === yesterdayStr) {
+        streak = 1;
+        let currentRef = new Date(latestDay);
+        // Loop back to verify consecutive days
+        for (let i = 1; i < uniqueDays.length; i++) {
+          currentRef.setDate(currentRef.getDate() - 1);
+          const targetStr = currentRef.toISOString().split("T")[0];
+          if (uniqueDays.includes(targetStr)) {
+            streak++;
+          } else {
+            break;
+          }
+        }
+      }
+    }
+
+    // Calculate training metrics (Practice Mode)
+    const trainingAttempts = userAttempts.filter(a => a.mode === "training");
+    const bestTime = trainingAttempts.length > 0 
+      ? Math.min(...trainingAttempts.map(a => a.timeSpentSeconds))
+      : null;
+    const avgTime = trainingAttempts.length > 0
+      ? Math.round(trainingAttempts.reduce((sum, a) => sum + a.timeSpentSeconds, 0) / trainingAttempts.length)
+      : null;
+
     res.json({
       chartProgression,
-      listHistory
+      listHistory,
+      dailyStreak: streak,
+      practiceBestTime: bestTime,
+      practiceAvgTime: avgTime
     });
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch history" });

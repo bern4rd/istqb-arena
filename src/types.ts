@@ -51,6 +51,13 @@ export interface QuestionResult {
   justification: string;
 }
 
+export interface TimeToBeatResult {
+  isFasterThanAverage: boolean;
+  improvementPercentage: number;
+  averageTimeSeconds: number;
+  isNewRecord: boolean;
+}
+
 export interface AttemptDetail {
   id: string;
   userId: string;
@@ -67,6 +74,7 @@ export interface AttemptDetail {
   results: QuestionResult[];
   aiAdvice: string;
   hasAIError: boolean;
+  timeToBeat?: TimeToBeatResult;
 }
 
 export interface ChartProgressionPoint {

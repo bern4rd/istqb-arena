@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Award, Calendar, Clock, FileText, Check, X, ArrowLeft, Printer, AlertCircle, BookOpen, UserCheck, Sparkles, Download } from "lucide-react";
 import { AttemptDetail } from "../types";
 import { translations } from "../utils/translations";
@@ -746,6 +746,43 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
           </div>
 
         </div>
+
+        {/* Gamification Conquistas (Practice Mode / Time-to-Beat) */}
+        {attempt.mode === "training" && attempt.timeToBeat && (
+          <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 dark:from-slate-900 dark:to-amber-955/20 rounded-xl border border-amber-200/50 dark:border-amber-900/30 p-6 flex flex-col sm:flex-row items-center gap-4 shadow-3xs print-card transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-700 dark:text-amber-450 flex items-center justify-center text-2xl shrink-0">
+              ⚡
+            </div>
+            <div className="space-y-1 text-center sm:text-left flex-1">
+              <h3 className="font-display font-bold text-sm text-amber-900 dark:text-amber-400 tracking-tight leading-none">
+                {language === "en" ? "Daily Practice Performance" : "Rendimento do Treino Rápido"}
+              </h3>
+              <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                {attempt.timeToBeat.isFasterThanAverage ? (
+                  <span>
+                    {language === "en" 
+                      ? `Congrats! You completed this 10-question practice block ` 
+                      : `Parabéns! Você completou este bloco de 10 questões `}
+                    <strong className="text-amber-600 dark:text-amber-400">{attempt.timeToBeat.improvementPercentage}% mais rápido</strong>
+                    {language === "en" ? " than your historical average!" : " mais rápido do que sua média histórica!"}
+                  </span>
+                ) : (
+                  <span>
+                    {language === "en"
+                      ? `Practice session completed with consistent speed compared to your average of `
+                      : `Treino concluído com velocidade estável em relação à sua média de `}
+                    <strong>{Math.round(attempt.timeToBeat.averageTimeSeconds / 60)} min e {attempt.timeToBeat.averageTimeSeconds % 60}s</strong>.
+                  </span>
+                )}
+              </p>
+              {attempt.timeToBeat.isNewRecord && (
+                <p className="text-[10px] text-amber-600 dark:text-amber-400 font-bold uppercase tracking-wider font-mono">
+                  🎉 {language === "en" ? "NEW SPEED RECORD!" : "NOVO RECORDE DE VELOCIDADE!"}
+                </p>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* AI Mentor Advice Section */}
         <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-3xs p-6 sm:p-8 space-y-4 relative overflow-hidden print-card transition-colors duration-250">

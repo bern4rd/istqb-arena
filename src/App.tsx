@@ -121,6 +121,11 @@ export default function App() {
           onLogout={handleLogout}
           onSelectCertification={handleSelectCertification}
           onViewAttempt={handleViewAttemptResult}
+          onStartPracticeDirectly={(cert) => {
+            setSelectedCert(cert);
+            setActiveSimulationMode("training");
+            setCurrentView("simulating");
+          }}
         />
       )}
 

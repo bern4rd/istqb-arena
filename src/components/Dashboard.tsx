@@ -12,6 +12,7 @@ interface DashboardProps {
   onLogout: () => void;
   onSelectCertification: (cert: CertificationOverview) => void;
   onViewAttempt: (attemptId: string) => void;
+  onStartPracticeDirectly?: (cert: CertificationOverview) => void;
 }
 
 export default function Dashboard({ 
@@ -21,7 +22,8 @@ export default function Dashboard({
   onLanguageChange,
   onLogout, 
   onSelectCertification, 
-  onViewAttempt 
+  onViewAttempt,
+  onStartPracticeDirectly
 }: DashboardProps) {
   const [certifications, setCertifications] = useState<CertificationOverview[]>([]);
   const [chartData, setChartData] = useState<ChartProgressionPoint[]>([]);
@@ -36,11 +38,23 @@ export default function Dashboard({
     return false;
   });
 
+  // Daily Practice states
+  const [dailyStreak, setDailyStreak] = useState<number>(0);
+  const [practiceBestTime, setPracticeBestTime] = useState<number | null>(null);
+  const [practiceAvgTime, setPracticeAvgTime] = useState<number | null>(null);
+  const [showPracticeModal, setShowPracticeModal] = useState<boolean>(false);
+
   useEffect(() => {
     localStorage.setItem("istqb_sidebar_collapsed", isSidebarCollapsed.toString());
   }, [isSidebarCollapsed]);
 
   const t = translations[language];
+
+  const formatTime = (secs: number) => {
+    const min = Math.floor(secs / 60);
+    const sec = secs % 60;
+    return `${min.toString().padStart(2, "0")}:${sec.toString().padStart(2, "0")}`;
+  };
 
   const loadData = async () => {
     try {
@@ -62,6 +76,9 @@ export default function Dashboard({
       setCertifications(certs);
       setChartData(history.chartProgression || []);
       setAttempts(history.listHistory || []);
+      setDailyStreak(history.dailyStreak || 0);
+      setPracticeBestTime(history.practiceBestTime || null);
+      setPracticeAvgTime(history.practiceAvgTime || null);
       setLoading(false);
     } catch (err: any) {
       setError(err.message);
@@ -445,6 +462,60 @@ export default function Dashboard({
           >
             <div className="space-y-6 flex-1 flex flex-col justify-between">
               
+              {/* Daily Practice Banner */}
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-slate-900 dark:to-indigo-950/80 rounded-2xl p-6 text-white shadow-lg border border-blue-500/20 dark:border-indigo-500/10 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+                {/* Decorator background shape */}
+                <div className="absolute right-0 top-0 w-64 h-64 bg-white/5 dark:bg-indigo-500/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
+                
+                <div className="space-y-3 relative z-10 flex-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="py-1 px-2.5 rounded-full bg-white/10 dark:bg-indigo-500/20 text-xs font-bold tracking-wider flex items-center gap-1.5 backdrop-blur-md">
+                      <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
+                      {language === "en" ? "Daily Practice Active" : "Treino Diário Ativo"}
+                    </span>
+                    {dailyStreak > 0 && (
+                      <span className="py-1 px-2.5 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold flex items-center gap-1">
+                        🔥 {dailyStreak} {language === "en" ? `${dailyStreak === 1 ? 'day' : 'days'} streak!` : `${dailyStreak === 1 ? 'dia' : 'dias'} de streak!`}
+                      </span>
+                    )}
+                  </div>
+                  
+                  <div>
+                    <h2 className="font-display font-extrabold text-lg md:text-xl tracking-tight text-white leading-tight">
+                      {language === "en" ? "Daily Practice (10 min)" : "Prática Diária de Testes (10 min)"}
+                    </h2>
+                    <p className="text-xs text-blue-100 dark:text-slate-355 max-w-xl mt-1 leading-relaxed">
+                      {language === "en" 
+                        ? "Keep your memory sharp! A high-density pedagogical practice with 10 questions and immediate explanations based on the syllabus."
+                        : "Mantenha sua memória afiada com um bloco balanceado de 10 questões, feedback imediato e explicações teóricas integradas ao syllabus."
+                      }
+                    </p>
+                  </div>
+
+                  {/* Speed Stats: Time-to-Beat */}
+                  {(practiceBestTime || practiceAvgTime) && (
+                    <div className="flex items-center gap-4 text-[10px] text-blue-100 dark:text-slate-400 font-mono pt-1">
+                      {practiceBestTime && (
+                        <span>🏆 {language === "en" ? "Best Time" : "Melhor Tempo"}: <strong>{formatTime(practiceBestTime)}</strong></span>
+                      )}
+                      {practiceAvgTime && (
+                        <span>⚡ {language === "en" ? "Average Time" : "Tempo Médio"}: <strong>{formatTime(practiceAvgTime)}</strong></span>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                <div className="shrink-0 relative z-10 w-full md:w-auto">
+                  <button
+                    onClick={() => setShowPracticeModal(true)}
+                    className="w-full md:w-auto py-3 px-6 bg-white hover:bg-slate-50 text-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 dark:text-white rounded-xl text-xs font-extrabold shadow-md hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer border border-transparent"
+                  >
+                    <Play className="w-4 h-4 fill-current shrink-0" />
+                    <span>{language === "en" ? "Start Daily Practice" : "Iniciar Prática Diária"}</span>
+                  </button>
+                </div>
+              </div>
+
               {/* Three Column KPI metrics grid of the theme */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
@@ -758,6 +829,84 @@ export default function Dashboard({
           </section>
 
         </div>
+
+        {/* Daily Practice Certification Selector Modal */}
+        {showPracticeModal && (
+          <div className="fixed inset-0 bg-slate-900/60 dark:bg-slate-950/80 backdrop-blur-3xs flex items-center justify-center p-4 z-50 overflow-y-auto">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl max-w-md w-full border border-slate-200 dark:border-slate-800 overflow-hidden p-6 space-y-5 transform scale-100 transition-all font-sans">
+              
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-450 flex items-center justify-center">
+                    <Sparkles className="w-4.5 h-4.5 text-blue-600 dark:text-blue-400" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-bold text-sm text-slate-900 dark:text-slate-100 tracking-tight leading-none">
+                      {language === "en" ? "Select Syllabus" : "Selecione o Syllabus"}
+                    </h3>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1 font-mono">{language === "en" ? "DAILY PRACTICE SESSION" : "PRÁTICA DIÁRIA DE 10 QUESTÕES"}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setShowPracticeModal(false)}
+                  className="text-xs font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
+                >
+                  {language === "en" ? "Cancel" : "Cancelar"}
+                </button>
+              </div>
+
+              <div className="space-y-3">
+                <p className="text-xs text-slate-700 dark:text-slate-350 leading-relaxed">
+                  {language === "en" 
+                    ? "Choose which ISTQB certification you want to practice. The engine will sample 10 balanced questions with instant explanations."
+                    : "Selecione a certificação ISTQB para treinar. O sistema irá compilar 10 questões equilibradas com justificativas imediatas."
+                  }
+                </p>
+
+                {/* List of certifications to select from */}
+                <div className="space-y-2 max-h-56 overflow-y-auto pr-1">
+                  {certifications.map((cert) => (
+                    <div
+                      key={cert.id}
+                      onClick={() => {
+                        setShowPracticeModal(false);
+                        if (onStartPracticeDirectly) {
+                          onStartPracticeDirectly(cert);
+                        } else {
+                          onSelectCertification(cert);
+                        }
+                      }}
+                      className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 dark:hover:border-blue-500 bg-slate-50 hover:bg-blue-50/10 dark:bg-slate-900/50 hover:scale-[1.01] transition-all cursor-pointer flex items-center justify-between gap-4 group"
+                    >
+                      <div className="min-w-0 flex-1 space-y-1">
+                        <span className="py-0.5 px-1.5 rounded bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 font-mono text-[8px] font-bold uppercase tracking-wider">
+                          ISTQB {cert.id}
+                        </span>
+                        <h4 className="font-bold text-xs text-slate-900 dark:text-slate-100 truncate group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                          {cert.name}
+                        </h4>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-blue-500 transition-colors shrink-0" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {dailyStreak > 0 && (
+                <div className="p-3 bg-amber-50 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-900/30 rounded-xl text-[10px] text-amber-800 dark:text-amber-355 flex items-center gap-2">
+                  <span>🔥</span>
+                  <span className="font-medium">
+                    {language === "en"
+                      ? `You are on a ${dailyStreak}-day study streak! Keep it up!`
+                      : `Você está em um ritmo incrível de ${dailyStreak} dias seguidos de estudo! Não pare!`
+                    }
+                  </span>
+                </div>
+              )}
+
+            </div>
+          </div>
+        )}
       </main>
 
     </div>

@@ -45,7 +45,7 @@ export default function TestArena({ certificationId, mode, language, token, onFi
   useEffect(() => {
     async function loadQuestions() {
       try {
-        const response = await fetch(`/api/questions/${certificationId}`, {
+        const response = await fetch(`/api/questions/${certificationId}?mode=${mode}`, {
           headers: { 
             "Authorization": `Bearer ${token}`,
             "X-App-Language": language
@@ -71,7 +71,7 @@ export default function TestArena({ certificationId, mode, language, token, onFi
       }
     }
     loadQuestions();
-  }, [certificationId, token, language]);
+  }, [certificationId, token, language, mode]);
 
   // Main countdown timer and total time counter
   useEffect(() => {

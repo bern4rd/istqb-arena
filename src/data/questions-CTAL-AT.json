@@ -114,1222 +114,2122 @@
     {
       "id": "CTAL-AT-Q03",
       "points": 1,
-      "syllabus_topic": "FA-1.1.1",
-      "context": "The Agile Manifesto has 4 statements of values. Match the agile value on the left (1-4) with its traditional counterpart on the right (i-iv).\n1) Customer collaboration over\n2) Responding to change over\n3) Individuals and interactions over\n4) Working software over\n\ni) Processes and tools\nii) Following a plan\niii) Contract negotiation\niv) Comprehensive documentation",
-      "question_text": "Select ONE option.",
+      "syllabus_topic": {
+        "en": "FA-1.1.1",
+        "pt": "FA-1.1.1"
+      },
+      "context": {
+        "en": "The Agile Manifesto has 4 statements of values. Match the agile value on the left (1-4) with its traditional counterpart on the right (i-iv).\n1) Customer collaboration over\n2) Responding to change over\n3) Individuals and interactions over\n4) Working software over\n\ni) Processes and tools\nii) Following a plan\niii) Contract negotiation\niv) Comprehensive documentation",
+        "pt": "O Manifesto Ágil possui 4 declarações de valores. Associe o valor ágil à esquerda (1-4) com sua contraparte tradicional à direita (i-iv).\n1) Colaboração com o cliente mais que\n2) Responder a mudanças mais que\n3) Indivíduos e interações mais que\n4) Software em funcionamento mais que\n\ni) Processos e ferramentas\nii) Seguir um plano\niii) Negociação de contratos\niv) Documentação abrangente"
+      },
+      "question_text": {
+        "en": "Select ONE option.",
+        "pt": "Selecione UMA opção."
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "1-iii, 2-iv, 3-ii, 4-i"
+          "text": {
+            "en": "1-iii, 2-iv, 3-ii, 4-i",
+            "pt": "1-iii, 2-iv, 3-ii, 4-i"
+          }
         },
         {
           "id": "b",
-          "text": "1-iii, 2-ii, 3-i, 4-iv"
+          "text": {
+            "en": "1-iii, 2-ii, 3-i, 4-iv",
+            "pt": "1-iii, 2-ii, 3-i, 4-iv"
+          }
         },
         {
           "id": "c",
-          "text": "1-iv, 2-ii, 3-i, 4-iii"
+          "text": {
+            "en": "1-iv, 2-ii, 3-i, 4-iii",
+            "pt": "1-iv, 2-ii, 3-i, 4-iii"
+          }
         },
         {
           "id": "d",
-          "text": "1-ii, 2-iii, 3-iv, 4-i"
+          "text": {
+            "en": "1-ii, 2-iii, 3-iv, 4-i",
+            "pt": "1-ii, 2-iii, 3-iv, 4-i"
+          }
         }
       ],
       "correct_answers": [
         "b"
       ],
-      "justification": "B. Correct-The Manifesto consists of 4 key values: Individuals and Interactions over processes and tools; Working software over comprehensive documentation; Customer collaboration over contract negotiation; Responding to change over following a plan."
+      "justification": {
+        "en": "B. Correct-The Manifesto consists of 4 key values: Individuals and Interactions over processes and tools; Working software over comprehensive documentation; Customer collaboration over contract negotiation; Responding to change over following a plan.",
+        "pt": "B. Correto - O Manifesto consiste em 4 valores-chave: Indivíduos e interações mais que processos e ferramentas; Software em funcionamento mais que documentação abrangente; Colaboração com o cliente mais que negociação de contratos; Responder a mudanças mais que seguir um plano."
+      }
     },
     {
       "id": "CTAL-AT-Q04",
       "points": 1,
-      "syllabus_topic": "FA-1.1.1",
+      "syllabus_topic": {
+        "en": "FA-1.1.1",
+        "pt": "FA-1.1.1"
+      },
       "context": null,
-      "question_text": "Which of the following statements best reflects one of the values of the Agile Manifesto?",
+      "question_text": {
+        "en": "Which of the following statements best reflects one of the values of the Agile Manifesto?",
+        "pt": "Qual das seguintes afirmações reflete melhor um dos valores do Manifesto Ágil?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "Working software allows the customer to provide rapid feedback to the developer."
+          "text": {
+            "en": "Working software allows the customer to provide rapid feedback to the developer.",
+            "pt": "Software em funcionamento permite que o cliente forneça feedback rápido ao desenvolvedor."
+          }
         },
         {
           "id": "b",
-          "text": "Developers should use unit testing tools to support the testing process."
+          "text": {
+            "en": "Developers should use unit testing tools to support the testing process.",
+            "pt": "Os desenvolvedores devem usar ferramentas de teste unitário para apoiar o processo de teste."
+          }
         },
         {
           "id": "c",
-          "text": "Business representatives should provide a backlog of user stories and their estimates to the team."
+          "text": {
+            "en": "Business representatives should provide a backlog of user stories and their estimates to the team.",
+            "pt": "Os representantes de negócios devem fornecer um backlog de histórias de usuário e suas estimativas para a equipe."
+          }
         },
         {
           "id": "d",
-          "text": "Adopting plans to change adds no real value to an agile project."
+          "text": {
+            "en": "Adopting plans to change adds no real value to an agile project.",
+            "pt": "Adotar planos para mudança não agrega valor real a um projeto ágil."
+          }
         }
       ],
       "correct_answers": [
         "a"
       ],
-      "justification": "A. Correct - From a customer perspective, working software is much more useful and valuable than overly detailed documentation, and it provides an opportunity to provide the development team rapid feedback."
+      "justification": {
+        "en": "A. Correct - From a customer perspective, working software is much more useful and valuable than overly detailed documentation, and it provides an opportunity to provide the development team rapid feedback.",
+        "pt": "A. Correto - Do ponto de vista do cliente, software em funcionamento é muito mais útil e valioso do que documentação excessivamente detalhada, e oferece uma oportunidade de fornecer feedback rápido à equipe de desenvolvimento."
+      }
     },
     {
       "id": "CTAL-AT-Q05",
       "points": 1,
-      "syllabus_topic": "FA-1.1.2",
+      "syllabus_topic": {
+        "en": "FA-1.1.2",
+        "pt": "FA-1.1.2"
+      },
       "context": null,
-      "question_text": "Which TWO activities below best represent responsibilities that are consistent with agile development's Whole Team approach?",
+      "question_text": {
+        "en": "Which TWO activities below best represent responsibilities that are consistent with agile development's Whole Team approach?",
+        "pt": "Quais DUAS atividades abaixo representam melhor as responsabilidades que são consistentes com a abordagem de Equipe Completa (Whole Team) do desenvolvimento ágil?"
+      },
       "question_type": "multiple_choice",
       "options": [
         {
           "id": "a",
-          "text": "Testers are responsible for developing unit tests which they pass on to the developers for testing"
+          "text": {
+            "en": "Testers are responsible for developing unit tests which they pass on to the developers for testing",
+            "pt": "Os testadores são responsáveis por desenvolver testes de unidade que eles repassam aos desenvolvedores para teste"
+          }
         },
         {
           "id": "b",
-          "text": "Business representatives are expected to select the tools the team will use during the project"
+          "text": {
+            "en": "Business representatives are expected to select the tools the team will use during the project",
+            "pt": "Espera-se que os representantes de negócios selecionem as ferramentas que a equipe usará durante o projeto"
+          }
         },
         {
           "id": "c",
-          "text": "Testers are expected to work with customer representatives to create acceptance tests"
+          "text": {
+            "en": "Testers are expected to work with customer representatives to create acceptance tests",
+            "pt": "Espera-se que os testadores trabalhem com os representantes do cliente para criar testes de aceitação"
+          }
         },
         {
           "id": "d",
-          "text": "The whole team, not just testers, has responsibility for the quality of the product"
+          "text": {
+            "en": "The whole team, not just testers, has responsibility for the quality of the product",
+            "pt": "Toda a equipe, não apenas os testadores, tem responsabilidade pela qualidade do produto"
+          }
         },
         {
           "id": "e",
-          "text": "Developers are expected to test non-functional requirements (performance, usability, security, etc.)"
+          "text": {
+            "en": "Developers are expected to test non-functional requirements (performance, usability, security, etc.)",
+            "pt": "Espera-se que os desenvolvedores testem requisitos não funcionais (desempenho, usabilidade, segurança, etc.)"
+          }
         }
       ],
       "correct_answers": [
         "c",
         "d"
       ],
-      "justification": "C. Correct - Testers support & collaborate with business representatives to help them create suitable acceptance tests. D. Correct - In agile projects, quality is the responsibility of the whole team."
+      "justification": {
+        "en": "C. Correct - Testers support & collaborate with business representatives to help them create suitable acceptance tests. D. Correct - In agile projects, quality is the responsibility of the whole team.",
+        "pt": "C. Correto - Os testadores apoiam e colaboram com os representantes de negócios para ajudá-los a criar testes de aceitação adequados. D. Correto - Em projetos ágeis, a qualidade é responsabilidade de toda a equipe."
+      }
     },
     {
       "id": "CTAL-AT-Q06",
       "points": 1,
-      "syllabus_topic": "FA-1.1.2",
+      "syllabus_topic": {
+        "en": "FA-1.1.2",
+        "pt": "FA-1.1.2"
+      },
       "context": null,
-      "question_text": "Which of the following is an advantage of having the whole team responsible for quality?",
+      "question_text": {
+        "en": "Which of the following is an advantage of having the whole team responsible for quality?",
+        "pt": "Qual das seguintes opções é uma vantagem de ter toda a equipe responsável pela qualidade?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "Companies no longer need to recruit and train software testing specialists."
+          "text": {
+            "en": "Companies no longer need to recruit and train software testing specialists.",
+            "pt": "As empresas não precisam mais recrutar e treinar especialistas em teste de software."
+          }
         },
         {
           "id": "b",
-          "text": "Test automation tasks are now the responsibility of the development team instead of the test team."
+          "text": {
+            "en": "Test automation tasks are now the responsibility of the development team instead of the test team.",
+            "pt": "As tarefas de automação de teste agora são de responsabilidade da equipe de desenvolvimento, em vez da equipe de teste."
+          }
         },
         {
           "id": "c",
-          "text": "Role barriers are eliminated and team members contribute to project success based on their unique skills and perspectives."
+          "text": {
+            "en": "Role barriers are eliminated and team members contribute to project success based on their unique skills and perspectives.",
+            "pt": "As barreiras de papéis são eliminadas e os membros da equipe contribuem para o sucesso do projeto com base em suas habilidades e perspectivas únicas."
+          }
         },
         {
           "id": "d",
-          "text": "Project costs are lower because the need for a specialized test team is eliminated."
+          "text": {
+            "en": "Project costs are lower because the need for a specialized test team is eliminated.",
+            "pt": "Os custos do projeto são menores porque a necessidade de uma equipe de teste especializada é eliminada."
+          }
         }
       ],
       "correct_answers": [
         "c"
       ],
-      "justification": "C. Correct - Enables a variety of skillsets to be leveraged as needed for the project."
+      "justification": {
+        "en": "C. Correct - Enables a variety of skillsets to be leveraged as needed for the project.",
+        "pt": "C. Correto - Permite que uma variedade de conjuntos de habilidades seja aproveitada conforme necessário para o projeto."
+      }
     },
     {
       "id": "CTAL-AT-Q07",
       "points": 1,
-      "syllabus_topic": "FA-1.1.3",
-      "context": "Which TWO of the following statements are true?\n1) Early feedback gives the developers more time to develop new system features because they spend less time reworking features expected in a given iteration.\n2) Early feedback enables agile teams to deliver features with the highest business value first, because the customer maintains focus on features with the highest system value.\n3) Early feedback reduces costs because it decreases the amount of time needed for system testing.\n4) Early feedback makes it more likely that the system built is what the customer wanted because they are given the opportunity to make changes throughout the iteration.",
-      "question_text": "Select ONE option.",
+      "syllabus_topic": {
+        "en": "FA-1.1.3",
+        "pt": "FA-1.1.3"
+      },
+      "context": {
+        "en": "Which TWO of the following statements are true?\n1) Early feedback gives the developers more time to develop new system features because they spend less time reworking features expected in a given iteration.\n2) Early feedback enables agile teams to deliver features with the highest business value first, because the customer maintains focus on features with the highest system value.\n3) Early feedback reduces costs because it decreases the amount of time needed for system testing.\n4) Early feedback makes it more likely that the system built is what the customer wanted because they are given the opportunity to make changes throughout the iteration.",
+        "pt": "Quais DUAS das seguintes afirmações são verdadeiras?\n1) O feedback precoce dá aos desenvolvedores mais tempo para desenvolver novas funcionalidades do sistema, pois eles gastam menos tempo retrabalhando funcionalidades esperadas em uma determinada iteração.\n2) O feedback precoce permite que as equipes ágeis entreguem primeiro as funcionalidades com maior valor de negócio, porque o cliente mantém o foco nas funcionalidades com maior valor para o sistema.\n3) O feedback precoce reduz custos porque diminui a quantidade de tempo necessária para os testes de sistema.\n4) O feedback precoce torna mais provável que o sistema construído seja o que o cliente desejava, pois ele tem a oportunidade de fazer alterações ao longo da iteração."
+      },
+      "question_text": {
+        "en": "Select ONE option.",
+        "pt": "Selecione UMA opção."
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "1 and 4"
+          "text": {
+            "en": "1 and 4",
+            "pt": "1 e 4"
+          }
         },
         {
           "id": "b",
-          "text": "2 and 3"
+          "text": {
+            "en": "2 and 3",
+            "pt": "2 e 3"
+          }
         },
         {
           "id": "c",
-          "text": "2 and 4"
+          "text": {
+            "en": "2 and 4",
+            "pt": "2 e 4"
+          }
         },
         {
           "id": "d",
-          "text": "1 and 3"
+          "text": {
+            "en": "1 and 3",
+            "pt": "1 e 3"
+          }
         }
       ],
       "correct_answers": [
         "c"
       ],
-      "justification": "2) Correct-Frequent customer feedback maintains a focus on the features with the highest business value. 4) Correct-Customers indicate if requirements are missed or misinterpreted, and modify functionality if they desire."
+      "justification": {
+        "en": "2) Correct-Frequent customer feedback maintains a focus on the features with the highest business value. 4) Correct-Customers indicate if requirements are missed or misinterpreted, and modify functionality if they desire.",
+        "pt": "2) Correto - O feedback frequente do cliente mantém o foco nas funcionalidades com maior valor de negócio. 4) Correto - Os clientes indicam se os requisitos foram omitidos ou mal interpretados e modificam a funcionalidade se desejarem."
+      }
     },
     {
       "id": "CTAL-AT-Q08",
       "points": 1,
-      "syllabus_topic": "FA-1.1.3",
+      "syllabus_topic": {
+        "en": "FA-1.1.3",
+        "pt": "FA-1.1.3"
+      },
       "context": null,
-      "question_text": "Which of the following is a benefit of the agile process promoting early and frequent feedback?",
+      "question_text": {
+        "en": "Which of the following is a benefit of the agile process promoting early and frequent feedback?",
+        "pt": "Qual das seguintes opções é um benefício do processo ágil que promove feedback precoce e frequente?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "The total number of defects found during the project is much higher than on traditional software development projects such as waterfall."
+          "text": {
+            "en": "The total number of defects found during the project is much higher than on traditional software development projects such as waterfall.",
+            "pt": "O número total de defeitos encontrados durante o projeto é muito maior do que em projetos tradicionais de desenvolvimento de software, como o cascata."
+          }
         },
         {
           "id": "b",
-          "text": "There is less rework because customers see the product regularly."
+          "text": {
+            "en": "There is less rework because customers see the product regularly.",
+            "pt": "Há menos retrabalho porque os clientes veem o produto regularmente."
+          }
         },
         {
           "id": "c",
-          "text": "It is easy to determine the developer who introduces the most defects when integrating code."
+          "text": {
+            "en": "It is easy to determine the developer who introduces the most defects when integrating code.",
+            "pt": "É fácil determinar o desenvolvedor que introduz mais defeitos ao integrar código."
+          }
         },
         {
           "id": "d",
-          "text": "There is enough time to complete all features scheduled for the given iteration."
+          "text": {
+            "en": "There is enough time to complete all features scheduled for the given iteration.",
+            "pt": "Há tempo suficiente para concluir todas as funcionalidades programadas para a iteração em questão."
+          }
         }
       ],
       "correct_answers": [
         "b"
       ],
-      "justification": "B. Correct-Clarifying customer feature requests, early and regularly throughout development, making it more likely that key features will be available for customer use earlier and the product, will better reflect what the customer wants."
+      "justification": {
+        "en": "B. Correct-Clarifying customer feature requests, early and regularly throughout development, making it more likely that key features will be available for customer use earlier and the product, will better reflect what the customer wants.",
+        "pt": "B. Correta - Esclarecer as solicitações de funcionalidades do cliente, de forma precoce e regular ao longo do desenvolvimento, torna mais provável que as funcionalidades principais estejam disponíveis para uso do cliente mais cedo e que o produto reflita melhor o que o cliente deseja."
+      }
     },
     {
       "id": "CTAL-AT-Q09",
       "points": 1,
-      "syllabus_topic": "FA-1.2.1",
-      "context": "Match the following agile software development approaches on the top with their corresponding descriptions on the bottom.\n1) Extreme Programming\n2) Scrum\n3) Kanban\n\ni. Embraces 5 values to guide development: Communication, Simplicity, Feedback, Courage, and Respect\nii. Divides the project into short iterations called sprints.\niii. Optimizes the 'flow' of work in a value-added chain.",
-      "question_text": "Select ONE option.",
+      "syllabus_topic": {
+        "en": "FA-1.2.1",
+        "pt": "FA-1.2.1"
+      },
+      "context": {
+        "en": "Match the following agile software development approaches on the top with their corresponding descriptions on the bottom.\n1) Extreme Programming\n2) Scrum\n3) Kanban\n\ni. Embraces 5 values to guide development: Communication, Simplicity, Feedback, Courage, and Respect\nii. Divides the project into short iterations called sprints.\niii. Optimizes the 'flow' of work in a value-added chain.",
+        "pt": "Associe as seguintes abordagens de desenvolvimento ágil de software no topo com suas descrições correspondentes na parte inferior.\n1) Extreme Programming\n2) Scrum\n3) Kanban\n\ni. Adota 5 valores para orientar o desenvolvimento: Comunicação, Simplicidade, Feedback, Coragem e Respeito\nii. Divide o projeto em iterações curtas chamadas sprints.\niii. Otimiza o 'fluxo' de trabalho em uma cadeia de valor agregado."
+      },
+      "question_text": {
+        "en": "Select ONE option.",
+        "pt": "Selecione UMA opção."
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "1-i, 2-iii, 3-ii"
+          "text": {
+            "en": "1-i, 2-iii, 3-ii",
+            "pt": "1-i, 2-iii, 3-ii"
+          }
         },
         {
           "id": "b",
-          "text": "1-i, 2-ii, 3-iii"
+          "text": {
+            "en": "1-i, 2-ii, 3-iii",
+            "pt": "1-i, 2-ii, 3-iii"
+          }
         },
         {
           "id": "c",
-          "text": "1-i, 2-ii, 3-iii"
+          "text": {
+            "en": "1-i, 2-ii, 3-iii",
+            "pt": "1-i, 2-ii, 3-iii"
+          }
         },
         {
           "id": "d",
-          "text": "1-iii, 2-ii, 3-i"
+          "text": {
+            "en": "1-iii, 2-ii, 3-i",
+            "pt": "1-iii, 2-ii, 3-i"
+          }
         }
       ],
       "correct_answers": [
         "b"
       ],
-      "justification": "B. Correct-Extreme Programming embraces 5 values to guide development: Communication, Simplicity, Feedback, Courage, and Respect. Scrum divides the project into short iterations called sprints. Kanban has no iterations or sprints; it is used to optimize continuous flow of tasks and minimize throughput time of each task."
+      "justification": {
+        "en": "B. Correct-Extreme Programming embraces 5 values to guide development: Communication, Simplicity, Feedback, Courage, and Respect. Scrum divides the project into short iterations called sprints. Kanban has no iterations or sprints; it is used to optimize continuous flow of tasks and minimize throughput time of each task.",
+        "pt": "B. Correto - Extreme Programming adota 5 valores para orientar o desenvolvimento: Comunicação, Simplicidade, Feedback, Coragem e Respeito. Scrum divide o projeto em iterações curtas chamadas sprints. Kanban não possui iterações ou sprints; é usado para otimizar o fluxo contínuo de tarefas e minimizar o tempo de processamento de cada tarefa."
+      }
     },
     {
       "id": "CTAL-AT-Q10",
       "points": 1,
-      "syllabus_topic": "FA-1.2.2",
-      "context": "During an iteration planning meeting, the team is sharing their thoughts about a user story. The product owner advises that the customer should have one screen to enter information. The developer explains that there are technical limitations for the feature, due to the amount of information needed to be captured on the screen. Another developer says that there are risks about performance as the information will be stored in an external offsite database.",
-      "question_text": "Which of the following would best represent a tester's contribution to this discussion?",
+      "syllabus_topic": {
+        "en": "FA-1.2.2",
+        "pt": "FA-1.2.2"
+      },
+      "context": {
+        "en": "During an iteration planning meeting, the team is sharing their thoughts about a user story. The product owner advises that the customer should have one screen to enter information. The developer explains that there are technical limitations for the feature, due to the amount of information needed to be captured on the screen. Another developer says that there are risks about performance as the information will be stored in an external offsite database.",
+        "pt": "Durante uma reunião de planejamento de iteração, a equipe está compartilhando suas opiniões sobre uma história de usuário. O product owner sugere que o cliente deve ter uma única tela para inserir informações. O desenvolvedor explica que existem limitações técnicas para a funcionalidade, devido à quantidade de informações que precisam ser capturadas na tela. Outro desenvolvedor menciona que há riscos de desempenho, pois as informações serão armazenadas em um banco de dados externo fora do local."
+      },
+      "question_text": {
+        "en": "Which of the following would best represent a tester's contribution to this discussion?",
+        "pt": "Qual das seguintes opções representa melhor a contribuição de um testador para essa discussão?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "The tester advises that the screen for the user story needs to be a single page to reduce test automation effort."
+          "text": {
+            "en": "The tester advises that the screen for the user story needs to be a single page to reduce test automation effort.",
+            "pt": "O testador sugere que a tela da história de usuário precisa ser uma única página para reduzir o esforço de automação de testes."
+          }
         },
         {
           "id": "b",
-          "text": "The tester advises that usability is more important than performance."
+          "text": {
+            "en": "The tester advises that usability is more important than performance.",
+            "pt": "O testador sugere que a usabilidade é mais importante que o desempenho."
+          }
         },
         {
           "id": "c",
-          "text": "The tester advises that performance acceptance criteria should standard maximum of 1 second for data storage."
+          "text": {
+            "en": "The tester advises that performance acceptance criteria should standard maximum of 1 second for data storage.",
+            "pt": "O testador sugere que os critérios de aceitação de desempenho devem ter um padrão máximo de 1 segundo para armazenamento de dados."
+          }
         },
         {
           "id": "d",
-          "text": "The tester advises that the user story needs acceptance criteria to be testable."
+          "text": {
+            "en": "The tester advises that the user story needs acceptance criteria to be testable.",
+            "pt": "O testador sugere que a história de usuário precisa de critérios de aceitação para ser testável."
+          }
         }
       ],
       "correct_answers": [
         "d"
       ],
-      "justification": "D. Correct- The tester contributes by ensuring that the team creates acceptance criteria for the user story."
+      "justification": {
+        "en": "D. Correct- The tester contributes by ensuring that the team creates acceptance criteria for the user story.",
+        "pt": "D. Correto - O testador contribui garantindo que a equipe crie critérios de aceitação para a história de usuário."
+      }
     },
     {
       "id": "CTAL-AT-Q11",
       "points": 1,
-      "syllabus_topic": "FA-1.2.3",
+      "syllabus_topic": {
+        "en": "FA-1.2.3",
+        "pt": "FA-1.2.3"
+      },
       "context": null,
-      "question_text": "Which of the following BEST describes a tester participating in a retrospective meeting?",
+      "question_text": {
+        "en": "Which of the following BEST describes a tester participating in a retrospective meeting?",
+        "pt": "Qual das seguintes opções MELHOR descreve a participação de um testador em uma reunião de retrospectiva?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "As a tester participating in a retrospective meeting, I should bring in topics that are related to testing only. All other topics will be covered by different participants."
+          "text": {
+            "en": "As a tester participating in a retrospective meeting, I should bring in topics that are related to testing only. All other topics will be covered by different participants.",
+            "pt": "Como testador participando de uma reunião de retrospectiva, devo trazer apenas tópicos relacionados a testes. Todos os outros tópicos serão abordados por outros participantes."
+          }
         },
         {
           "id": "b",
-          "text": "As a tester, I participate in a retrospective meeting as an observer, ensuring that the meeting follows the retrospective rules and agile values."
+          "text": {
+            "en": "As a tester, I participate in a retrospective meeting as an observer, ensuring that the meeting follows the retrospective rules and agile values.",
+            "pt": "Como testador, participo de uma reunião de retrospectiva como observador, garantindo que a reunião siga as regras da retrospectiva e os valores ágeis."
+          }
         },
         {
           "id": "c",
-          "text": "As a tester participating in a retrospective meeting, I should provide feedback and input on all activities conducted by the team during the sprint."
+          "text": {
+            "en": "As a tester participating in a retrospective meeting, I should provide feedback and input on all activities conducted by the team during the sprint.",
+            "pt": "Como testador participando de uma reunião de retrospectiva, devo fornecer feedback e contribuições sobre todas as atividades realizadas pela equipe durante a sprint."
+          }
         },
         {
           "id": "d",
-          "text": "As a tester, I should only attend and participate in a retrospective meeting if I have any feedback and input related to activities conducted by the team during the sprint."
+          "text": {
+            "en": "As a tester, I should only attend and participate in a retrospective meeting if I have any feedback and input related to activities conducted by the team during the sprint.",
+            "pt": "Como testador, devo comparecer e participar de uma reunião de retrospectiva apenas se tiver algum feedback e contribuição relacionados às atividades realizadas pela equipe durante a sprint."
+          }
         }
       ],
       "correct_answers": [
         "c"
       ],
-      "justification": "C. Correct All team members, both testers and non-testers, can provide input on both testing and non-testing activities."
+      "justification": {
+        "en": "C. Correct All team members, both testers and non-testers, can provide input on both testing and non-testing activities.",
+        "pt": "C. Correta Todos os membros da equipe, tanto testadores quanto não testadores, podem fornecer contribuições sobre atividades de teste e não teste."
+      }
     },
     {
       "id": "CTAL-AT-Q12",
       "points": 1,
-      "syllabus_topic": "FA-1.2.3",
+      "syllabus_topic": {
+        "en": "FA-1.2.3",
+        "pt": "FA-1.2.3"
+      },
       "context": null,
-      "question_text": "Which of the following items should NOT be raised during a retrospective meeting?",
+      "question_text": {
+        "en": "Which of the following items should NOT be raised during a retrospective meeting?",
+        "pt": "Qual dos seguintes itens NÃO deve ser levantado durante uma reunião de retrospectiva?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "There should be more emphasis on unit testing in the future, to improve overall quality."
+          "text": {
+            "en": "There should be more emphasis on unit testing in the future, to improve overall quality.",
+            "pt": "Deve haver mais ênfase em testes unitários no futuro, para melhorar a qualidade geral."
+          }
         },
         {
           "id": "b",
-          "text": "The build process is manual and takes too long. Research and implementation of an automated build framework should be done."
+          "text": {
+            "en": "The build process is manual and takes too long. Research and implementation of an automated build framework should be done.",
+            "pt": "O processo de build é manual e leva muito tempo. Pesquisa e implementação de um framework de build automatizado devem ser realizadas."
+          }
         },
         {
           "id": "c",
-          "text": "Tester XYZ is struggling to find defects. Test design training is required for this resource."
+          "text": {
+            "en": "Tester XYZ is struggling to find defects. Test design training is required for this resource.",
+            "pt": "O testador XYZ está com dificuldades para encontrar defeitos. Treinamento em design de testes é necessário para esse recurso."
+          }
         },
         {
           "id": "d",
-          "text": "Automated regression test suites are taking too long to run. A review of the tests, to eliminate redundant or unnecessary tests, is required."
+          "text": {
+            "en": "Automated regression test suites are taking too long to run. A review of the tests, to eliminate redundant or unnecessary tests, is required.",
+            "pt": "As suítes de teste de regressão automatizadas estão demorando muito para executar. Uma revisão dos testes, para eliminar testes redundantes ou desnecessários, é necessária."
+          }
         }
       ],
       "correct_answers": [
         "c"
       ],
-      "justification": "C. Correct-The retrospective meeting is not meant to single out individuals, but to focus on improvements of the process, and the team as a whole."
+      "justification": {
+        "en": "C. Correct-The retrospective meeting is not meant to single out individuals, but to focus on improvements of the process, and the team as a whole.",
+        "pt": "C. Correto-A reunião de retrospectiva não tem como objetivo apontar indivíduos, mas sim focar em melhorias do processo e da equipe como um todo."
+      }
     },
     {
       "id": "CTAL-AT-Q13",
       "points": 1,
-      "syllabus_topic": "FA-1.2.4",
+      "syllabus_topic": {
+        "en": "FA-1.2.4",
+        "pt": "FA-1.2.4"
+      },
       "context": null,
-      "question_text": "Which of the following is NOT a principle of continuous integration?",
+      "question_text": {
+        "en": "Which of the following is NOT a principle of continuous integration?",
+        "pt": "Qual das seguintes opções NÃO é um princípio da integração contínua?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "Continuous integration helps to build changed software regularly, including testing and deploying, in an automated way."
+          "text": {
+            "en": "Continuous integration helps to build changed software regularly, including testing and deploying, in an automated way.",
+            "pt": "A integração contínua ajuda a construir software alterado regularmente, incluindo teste e implantação, de forma automatizada."
+          }
         },
         {
           "id": "b",
-          "text": "Continuous integration allows new builds to be available frequently to testers and stakeholders."
+          "text": {
+            "en": "Continuous integration allows new builds to be available frequently to testers and stakeholders.",
+            "pt": "A integração contínua permite que novas versões estejam disponíveis com frequência para testadores e partes interessadas."
+          }
         },
         {
           "id": "c",
-          "text": "Continuous integration helps to identify new integration defects early and makes the analysis of these defects easier."
+          "text": {
+            "en": "Continuous integration helps to identify new integration defects early and makes the analysis of these defects easier.",
+            "pt": "A integração contínua ajuda a identificar novos defeitos de integração precocemente e facilita a análise desses defeitos."
+          }
         },
         {
           "id": "d",
-          "text": "Continuous integration ensures that testing of builds is done manually, as this generates more reliable results than automated scripts."
+          "text": {
+            "en": "Continuous integration ensures that testing of builds is done manually, as this generates more reliable results than automated scripts.",
+            "pt": "A integração contínua garante que o teste das versões seja feito manualmente, pois isso gera resultados mais confiáveis do que scripts automatizados."
+          }
         }
       ],
       "correct_answers": [
         "d"
       ],
-      "justification": "D. Correct-Testing should be automated at the unit and integration level to allow for quick feedback on the quality of the build."
+      "justification": {
+        "en": "D. Correct-Testing should be automated at the unit and integration level to allow for quick feedback on the quality of the build.",
+        "pt": "D. Correto - O teste deve ser automatizado nos níveis de unidade e integração para permitir um feedback rápido sobre a qualidade da versão."
+      }
     },
     {
       "id": "CTAL-AT-Q14",
       "points": 1,
-      "syllabus_topic": "FA-1.2.5",
+      "syllabus_topic": {
+        "en": "FA-1.2.5",
+        "pt": "FA-1.2.5"
+      },
       "context": null,
-      "question_text": "Which of the following activities would a tester do during release planning?",
+      "question_text": {
+        "en": "Which of the following activities would a tester do during release planning?",
+        "pt": "Qual das seguintes atividades um testador realizaria durante o planejamento da release?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "Produce a list of acceptance tests for user stories"
+          "text": {
+            "en": "Produce a list of acceptance tests for user stories",
+            "pt": "Produzir uma lista de testes de aceitação para as histórias de usuário"
+          }
         },
         {
           "id": "b",
-          "text": "Help break down user stories into smaller and more detailed tasks."
+          "text": {
+            "en": "Help break down user stories into smaller and more detailed tasks.",
+            "pt": "Ajudar a decompor as histórias de usuário em tarefas menores e mais detalhadas."
+          }
         },
         {
           "id": "c",
-          "text": "Estimate testing tasks generated by new features planned for this iteration."
+          "text": {
+            "en": "Estimate testing tasks generated by new features planned for this iteration.",
+            "pt": "Estimar as tarefas de teste geradas pelos novos recursos planejados para esta iteração."
+          }
         },
         {
           "id": "d",
-          "text": "Support the clarification of the user stories and ensure that they are testable"
+          "text": {
+            "en": "Support the clarification of the user stories and ensure that they are testable",
+            "pt": "Apoiar o esclarecimento das histórias de usuário e garantir que elas sejam testáveis"
+          }
         }
       ],
       "correct_answers": [
         "d"
       ],
-      "justification": "D. Correct-This is expected during release planning."
+      "justification": {
+        "en": "D. Correct-This is expected during release planning.",
+        "pt": "D. Correto – Isso é esperado durante o planejamento da release."
+      }
     },
     {
       "id": "CTAL-AT-Q15",
       "points": 1,
-      "syllabus_topic": "Agile Extension-Term",
+      "syllabus_topic": {
+        "en": "Agile Extension-Term",
+        "pt": "Extensão Ágil - Termo"
+      },
       "context": null,
-      "question_text": "What is the most appropriate explanation of a 'user story'?",
+      "question_text": {
+        "en": "What is the most appropriate explanation of a 'user story'?",
+        "pt": "Qual é a explicação mais adequada para uma 'história de usuário'?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "An artifact that the tester must review and sign off before testing can begin."
+          "text": {
+            "en": "An artifact that the tester must review and sign off before testing can begin.",
+            "pt": "Um artefato que o testador deve revisar e aprovar antes que os testes possam começar."
+          }
         },
         {
           "id": "b",
-          "text": "An artifact used to detail only the functional requirements of the system."
+          "text": {
+            "en": "An artifact used to detail only the functional requirements of the system.",
+            "pt": "Um artefato usado para detalhar apenas os requisitos funcionais do sistema."
+          }
         },
         {
           "id": "c",
-          "text": "An artifact documented by business representatives to help developers and testers understand the system requirements."
+          "text": {
+            "en": "An artifact documented by business representatives to help developers and testers understand the system requirements.",
+            "pt": "Um artefato documentado por representantes de negócios para ajudar desenvolvedores e testadores a entender os requisitos do sistema."
+          }
         },
         {
           "id": "d",
-          "text": "An artifact written collaboratively by developers, testers, and business representatives to capture requirements."
+          "text": {
+            "en": "An artifact written collaboratively by developers, testers, and business representatives to capture requirements.",
+            "pt": "Um artefato escrito de forma colaborativa por desenvolvedores, testadores e representantes de negócios para capturar requisitos."
+          }
         }
       ],
       "correct_answers": [
         "d"
       ],
-      "justification": "D. Correct In an Agile environment, user stories are written to capture requirements from the perspectives of developers, testers, and business representatives. The collaborative authorship of the user story can use techniques such as brainstorming and mind mapping."
+      "justification": {
+        "en": "D. Correct In an Agile environment, user stories are written to capture requirements from the perspectives of developers, testers, and business representatives. The collaborative authorship of the user story can use techniques such as brainstorming and mind mapping.",
+        "pt": "D. Correto Em um ambiente Ágil, as histórias de usuário são escritas para capturar requisitos sob as perspectivas de desenvolvedores, testadores e representantes de negócios. A autoria colaborativa da história de usuário pode utilizar técnicas como brainstorming e mapeamento mental."
+      }
     },
     {
       "id": "CTAL-AT-Q16",
       "points": 1,
-      "syllabus_topic": "FA-2.1.1",
+      "syllabus_topic": {
+        "en": "FA-2.1.1",
+        "pt": "FA-2.1.1"
+      },
       "context": null,
-      "question_text": "Which of the following test activities is typically done during agile projects, but is not as common on traditional projects?",
+      "question_text": {
+        "en": "Which of the following test activities is typically done during agile projects, but is not as common on traditional projects?",
+        "pt": "Qual das seguintes atividades de teste é tipicamente realizada durante projetos ágeis, mas não é tão comum em projetos tradicionais?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "Testers write detailed test plans so all team members can understand what will be tested during each iteration."
+          "text": {
+            "en": "Testers write detailed test plans so all team members can understand what will be tested during each iteration.",
+            "pt": "Os testadores escrevem planos de teste detalhados para que todos os membros da equipe possam entender o que será testado durante cada iteração."
+          }
         },
         {
           "id": "b",
-          "text": "Testers are heavily involved in the creation of automated test cases which are then used to verify the implementation of the requirements."
+          "text": {
+            "en": "Testers are heavily involved in the creation of automated test cases which are then used to verify the implementation of the requirements.",
+            "pt": "Os testadores estão fortemente envolvidos na criação de casos de teste automatizados, que são então usados para verificar a implementação dos requisitos."
+          }
         },
         {
           "id": "c",
-          "text": "Testers perform exploratory testing in order to find important defects quickly."
+          "text": {
+            "en": "Testers perform exploratory testing in order to find important defects quickly.",
+            "pt": "Os testadores realizam teste exploratório para encontrar defeitos importantes rapidamente."
+          }
         },
         {
           "id": "d",
-          "text": "Testers collaborate with developers to better understand what needs to be tested."
+          "text": {
+            "en": "Testers collaborate with developers to better understand what needs to be tested.",
+            "pt": "Os testadores colaboram com os desenvolvedores para entender melhor o que precisa ser testado."
+          }
         }
       ],
       "correct_answers": [
         "b"
       ],
-      "justification": "B. Correct-Test automation at all levels occurs in many agile teams. As the developers focus on automating tests on unit level testers should focus on automating tests on integration, system, and acceptance level. In traditional projects it is not as common to have the same focus on automation."
+      "justification": {
+        "en": "B. Correct-Test automation at all levels occurs in many agile teams. As the developers focus on automating tests on unit level testers should focus on automating tests on integration, system, and acceptance level. In traditional projects it is not as common to have the same focus on automation.",
+        "pt": "B. Correta - A automação de testes em todos os níveis ocorre em muitas equipes ágeis. Enquanto os desenvolvedores focam em automatizar testes no nível de unidade, os testadores devem focar em automatizar testes nos níveis de integração, sistema e aceitação. Em projetos tradicionais, não é tão comum ter o mesmo foco em automação."
+      }
     },
     {
       "id": "CTAL-AT-Q17",
       "points": 1,
-      "syllabus_topic": "FA-2.1.2",
-      "context": "Consider the following activities:\ni. Strict enforcement of system test level entry and exit criteria.\nii. Collaboration between tester, developer, and business stakeholders to define acceptance criteria.\niii. Functional verification testing of user stories developed in the previous iteration.",
-      "question_text": "Which of the following combination of these activities should occur in an agile project?",
+      "syllabus_topic": {
+        "en": "FA-2.1.2",
+        "pt": "FA-2.1.2"
+      },
+      "context": {
+        "en": "Consider the following activities:\ni. Strict enforcement of system test level entry and exit criteria.\nii. Collaboration between tester, developer, and business stakeholders to define acceptance criteria.\niii. Functional verification testing of user stories developed in the previous iteration.",
+        "pt": "Considere as seguintes atividades:\ni. Aplicação rigorosa dos critérios de entrada e saída do nível de teste de sistema.\nii. Colaboração entre testador, desenvolvedor e partes interessadas do negócio para definir critérios de aceitação.\niii. Teste de verificação funcional das histórias de usuário desenvolvidas na iteração anterior."
+      },
+      "question_text": {
+        "en": "Which of the following combination of these activities should occur in an agile project?",
+        "pt": "Qual das seguintes combinações dessas atividades deve ocorrer em um projeto ágil?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "ii only"
+          "text": {
+            "en": "ii only",
+            "pt": "apenas ii"
+          }
         },
         {
           "id": "b",
-          "text": "i and ii"
+          "text": {
+            "en": "i and ii",
+            "pt": "i e ii"
+          }
         },
         {
           "id": "c",
-          "text": "ii and iii"
+          "text": {
+            "en": "ii and iii",
+            "pt": "ii e iii"
+          }
         },
         {
           "id": "d",
-          "text": "iii only"
+          "text": {
+            "en": "iii only",
+            "pt": "apenas iii"
+          }
         }
       ],
       "correct_answers": [
         "a"
       ],
-      "justification": "A. Correct-These three perspectives (tester, developer and business representative) are important to define when a feature is done."
+      "justification": {
+        "en": "A. Correct-These three perspectives (tester, developer and business representative) are important to define when a feature is done.",
+        "pt": "A. Correto - Essas três perspectivas (testador, desenvolvedor e representante do negócio) são importantes para definir quando uma funcionalidade está pronta."
+      }
     },
     {
       "id": "CTAL-AT-Q18",
       "points": 1,
-      "syllabus_topic": "FA-2.1.3",
+      "syllabus_topic": {
+        "en": "FA-2.1.3",
+        "pt": "FA-2.1.3"
+      },
       "context": null,
-      "question_text": "Which TWO of the following statements are true on agile projects? Select TWO options.",
+      "question_text": {
+        "en": "Which TWO of the following statements are true on agile projects? Select TWO options.",
+        "pt": "Quais DUAS das seguintes afirmações são verdadeiras em projetos ágeis? Selecione DUAS opções."
+      },
       "question_type": "multiple_choice",
       "options": [
         {
           "id": "a",
-          "text": "Testers should work closely with developers while retaining an objective outlook."
+          "text": {
+            "en": "Testers should work closely with developers while retaining an objective outlook.",
+            "pt": "Os testadores devem trabalhar em estreita colaboração com os desenvolvedores, mantendo uma perspectiva objetiva."
+          }
         },
         {
           "id": "b",
-          "text": "Test managers do not exist in organizations doing agile development."
+          "text": {
+            "en": "Test managers do not exist in organizations doing agile development.",
+            "pt": "Gerentes de teste não existem em organizações que praticam desenvolvimento ágil."
+          }
         },
         {
           "id": "c",
-          "text": "There is no difference between what testers and developers do on agile projects."
+          "text": {
+            "en": "There is no difference between what testers and developers do on agile projects.",
+            "pt": "Não há diferença entre o que testadores e desenvolvedores fazem em projetos ágeis."
+          }
         },
         {
           "id": "d",
-          "text": "Developers should rely on testers to create the automated regression tests."
+          "text": {
+            "en": "Developers should rely on testers to create the automated regression tests.",
+            "pt": "Os desenvolvedores devem depender dos testadores para criar os testes de regressão automatizados."
+          }
         },
         {
           "id": "e",
-          "text": "A selection of users may perform beta testing on the product after the completion of a series of iterations."
+          "text": {
+            "en": "A selection of users may perform beta testing on the product after the completion of a series of iterations.",
+            "pt": "Uma seleção de usuários pode realizar testes beta no produto após a conclusão de uma série de iterações."
+          }
         }
       ],
       "correct_answers": [
         "a",
         "e"
       ],
-      "justification": "A. Correct - This is one of the hallmarks of agile projects. E. Correct - Agile teams can employ various forms of acceptance testing."
+      "justification": {
+        "en": "A. Correct - This is one of the hallmarks of agile projects. E. Correct - Agile teams can employ various forms of acceptance testing.",
+        "pt": "A. Correto - Esta é uma das marcas registradas dos projetos ágeis. E. Correto - Equipes ágeis podem empregar várias formas de teste de aceitação."
+      }
     },
     {
       "id": "CTAL-AT-Q19",
       "points": 1,
-      "syllabus_topic": "FA-2.1.3",
+      "syllabus_topic": {
+        "en": "FA-2.1.3",
+        "pt": "FA-2.1.3"
+      },
       "context": null,
-      "question_text": "Which of the following statements about independent testing on agile projects is FALSE?",
+      "question_text": {
+        "en": "Which of the following statements about independent testing on agile projects is FALSE?",
+        "pt": "Qual das seguintes afirmações sobre teste independente em projetos ágeis é FALSA?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "There can be a risk of losing test independence for organizations introducing agile."
+          "text": {
+            "en": "There can be a risk of losing test independence for organizations introducing agile.",
+            "pt": "Pode haver um risco de perda de independência de teste para organizações que estão introduzindo o ágil."
+          }
         },
         {
           "id": "b",
-          "text": "Independent testers will find more defects than developers regardless of test level."
+          "text": {
+            "en": "Independent testers will find more defects than developers regardless of test level.",
+            "pt": "Testadores independentes encontrarão mais defeitos do que os desenvolvedores, independentemente do nível de teste."
+          }
         },
         {
           "id": "c",
-          "text": "Independent testing can be introduced at the end of a sprint."
+          "text": {
+            "en": "Independent testing can be introduced at the end of a sprint.",
+            "pt": "O teste independente pode ser introduzido no final de uma sprint."
+          }
         },
         {
           "id": "d",
-          "text": "The independent test team can be part of another team."
+          "text": {
+            "en": "The independent test team can be part of another team.",
+            "pt": "A equipe de teste independente pode fazer parte de outra equipe."
+          }
         }
       ],
       "correct_answers": [
         "b"
       ],
-      "justification": "B. Correct - This is a false statement. Independent testers CAN find more defects than developers, but this is dependent on the level of testing being performed and also the expertise of the independent tester."
+      "justification": {
+        "en": "B. Correct - This is a false statement. Independent testers CAN find more defects than developers, but this is dependent on the level of testing being performed and also the expertise of the independent tester.",
+        "pt": "B. Correto - Esta é uma afirmação falsa. Testadores independentes PODEM encontrar mais defeitos do que os desenvolvedores, mas isso depende do nível de teste que está sendo executado e também da experiência do testador independente."
+      }
     },
     {
       "id": "CTAL-AT-Q20",
       "points": 1,
-      "syllabus_topic": "FA-2.2.1",
+      "syllabus_topic": {
+        "en": "FA-2.2.1",
+        "pt": "FA-2.2.1"
+      },
       "context": null,
-      "question_text": "In an agile project, which of the following would best denote product quality at the end of iteration 6 of a new system release consisting of 8 iterations?",
+      "question_text": {
+        "en": "In an agile project, which of the following would best denote product quality at the end of iteration 6 of a new system release consisting of 8 iterations?",
+        "pt": "Em um projeto ágil, qual das seguintes opções melhor denotaria a qualidade do produto ao final da iteração 6 de uma nova versão do sistema composta por 8 iterações?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "No severity 1 or 2 defects were detected during system testing of iteration 6, which allowed the teams to move into iteration 7."
+          "text": {
+            "en": "No severity 1 or 2 defects were detected during system testing of iteration 6, which allowed the teams to move into iteration 7.",
+            "pt": "Nenhum defeito de severidade 1 ou 2 foi detectado durante o teste de sistema da iteração 6, o que permitiu que as equipes avançassem para a iteração 7."
+          }
         },
         {
           "id": "b",
-          "text": "The results of a customer beta test on the iteration 6 software release indicate that the system works correctly and that it has improved productivity."
+          "text": {
+            "en": "The results of a customer beta test on the iteration 6 software release indicate that the system works correctly and that it has improved productivity.",
+            "pt": "Os resultados de um teste beta do cliente na versão de software da iteração 6 indicam que o sistema funciona corretamente e que melhorou a produtividade."
+          }
         },
         {
           "id": "c",
-          "text": "The agile team has been successfully tracking to estimates, with limited variance showing on the burndown charts for all iterations to date."
+          "text": {
+            "en": "The agile team has been successfully tracking to estimates, with limited variance showing on the burndown charts for all iterations to date.",
+            "pt": "A equipe ágil tem acompanhado com sucesso as estimativas, com variação limitada mostrada nos gráficos de burndown para todas as iterações até o momento."
+          }
         },
         {
           "id": "d",
-          "text": "All story cards in scope for each iteration, up to the current iteration, have been marked as \"Done\", but with some technical debt being incurred."
+          "text": {
+            "en": "All story cards in scope for each iteration, up to the current iteration, have been marked as \"Done\", but with some technical debt being incurred.",
+            "pt": "Todos os cartões de história no escopo de cada iteração, até a iteração atual, foram marcados como \"Concluídos\", mas com alguma dívida técnica sendo incorrida."
+          }
         }
       ],
       "correct_answers": [
         "b"
       ],
-      "justification": "B. Correct - Positive customer feedback and working software are key indicators to product quality."
+      "justification": {
+        "en": "B. Correct - Positive customer feedback and working software are key indicators to product quality.",
+        "pt": "B. Correto - Feedback positivo do cliente e software funcionando são indicadores-chave da qualidade do produto."
+      }
     },
     {
       "id": "CTAL-AT-Q21",
       "points": 1,
-      "syllabus_topic": "FA-2.2.1",
+      "syllabus_topic": {
+        "en": "FA-2.2.1",
+        "pt": "FA-2.2.1"
+      },
       "context": null,
-      "question_text": "Which of the following is best at showing the team's progress against estimates?",
+      "question_text": {
+        "en": "Which of the following is best at showing the team's progress against estimates?",
+        "pt": "Qual das seguintes opções é a melhor para mostrar o progresso da equipe em relação às estimativas?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "Burndown charts"
+          "text": {
+            "en": "Burndown charts",
+            "pt": "Gráficos de burndown"
+          }
         },
         {
           "id": "b",
-          "text": "Automation logs"
+          "text": {
+            "en": "Automation logs",
+            "pt": "Logs de automação"
+          }
         },
         {
           "id": "c",
-          "text": "The agile task board showing user story and task progress"
+          "text": {
+            "en": "The agile task board showing user story and task progress",
+            "pt": "O quadro de tarefas ágil mostrando o progresso das histórias de usuário e das tarefas"
+          }
         },
         {
           "id": "d",
-          "text": "Defect tracking tools"
+          "text": {
+            "en": "Defect tracking tools",
+            "pt": "Ferramentas de rastreamento de defeitos"
+          }
         }
       ],
       "correct_answers": [
         "a"
       ],
-      "justification": "A. Correct - Burndown charts show the planned progress and release date together with the actual progress of the user stories."
+      "justification": {
+        "en": "A. Correct - Burndown charts show the planned progress and release date together with the actual progress of the user stories.",
+        "pt": "A. Correto - Os gráficos de burndown mostram o progresso planejado e a data de lançamento juntamente com o progresso real das histórias de usuário."
+      }
     },
     {
       "id": "CTAL-AT-Q22",
       "points": 1,
-      "syllabus_topic": "FA-2.2.2",
+      "syllabus_topic": {
+        "en": "FA-2.2.2",
+        "pt": "FA-2.2.2"
+      },
       "context": null,
-      "question_text": "The business advises during iteration 5 planning that they require changes to the system delivered in iteration 3. Of the following activities, which would need to be done first to minimize the introduction of regression risk when this feature is changed?",
+      "question_text": {
+        "en": "The business advises during iteration 5 planning that they require changes to the system delivered in iteration 3. Of the following activities, which would need to be done first to minimize the introduction of regression risk when this feature is changed?",
+        "pt": "O negócio informa durante o planejamento da iteração 5 que são necessárias alterações no sistema entregue na iteração 3. Das seguintes atividades, qual precisaria ser realizada primeiro para minimizar a introdução de risco de regressão quando essa funcionalidade for alterada?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "Review and update all manual and automated tests impacted by this change to meet the new acceptance criteria."
+          "text": {
+            "en": "Review and update all manual and automated tests impacted by this change to meet the new acceptance criteria.",
+            "pt": "Revisar e atualizar todos os testes manuais e automatizados impactados por essa alteração para atender aos novos critérios de aceitação."
+          }
         },
         {
           "id": "b",
-          "text": "Write new manual and automated tests for the feature and add them to the regression test suite."
+          "text": {
+            "en": "Write new manual and automated tests for the feature and add them to the regression test suite.",
+            "pt": "Escrever novos testes manuais e automatizados para a funcionalidade e adicioná-los à suíte de testes de regressão."
+          }
         },
         {
           "id": "c",
-          "text": "Automate all test cases from the previous iteration and add them to the automated regression test suite."
+          "text": {
+            "en": "Automate all test cases from the previous iteration and add them to the automated regression test suite.",
+            "pt": "Automatizar todos os casos de teste da iteração anterior e adicioná-los à suíte de testes de regressão automatizados."
+          }
         },
         {
           "id": "d",
-          "text": "Increase the amount of test automation around the system to include more detailed test conditions."
+          "text": {
+            "en": "Increase the amount of test automation around the system to include more detailed test conditions.",
+            "pt": "Aumentar a quantidade de automação de testes ao redor do sistema para incluir condições de teste mais detalhadas."
+          }
         }
       ],
       "correct_answers": [
         "a"
       ],
-      "justification": "A. Correct - As this feature has previously been delivered, a review of all test assets is required, which should result in the updating of test cases to meet new acceptance criteria, to ensure false negatives (i.e. invalid failing tests) do not occur. This is the initial task to be performed before a decision about any other changes can be made."
+      "justification": {
+        "en": "A. Correct - As this feature has previously been delivered, a review of all test assets is required, which should result in the updating of test cases to meet new acceptance criteria, to ensure false negatives (i.e. invalid failing tests) do not occur. This is the initial task to be performed before a decision about any other changes can be made.",
+        "pt": "A. Correto - Como essa funcionalidade já foi entregue anteriormente, é necessária uma revisão de todos os ativos de teste, o que deve resultar na atualização dos casos de teste para atender aos novos critérios de aceitação, a fim de garantir que falsos negativos (ou seja, testes que falham inválidos) não ocorram. Esta é a tarefa inicial a ser realizada antes que uma decisão sobre quaisquer outras alterações possa ser tomada."
+      }
     },
     {
       "id": "CTAL-AT-Q23",
       "points": 1,
-      "syllabus_topic": "FA-2.2.2",
-      "context": "Which TWO of the following are reasons why automation is essential within agile projects?\ni. So that teams maintain or increase their velocity\nii. To prevent the test team from becoming bored with manual, repetitive tasks\niii. To retest all test cases from previous iterations\niv. To eliminate regression in the product due to high code churn\nv. To ensure that code changes do not break the software build",
-      "question_text": "Select ONE option.",
+      "syllabus_topic": {
+        "en": "FA-2.2.2",
+        "pt": "FA-2.2.2"
+      },
+      "context": {
+        "en": "Which TWO of the following are reasons why automation is essential within agile projects?\ni. So that teams maintain or increase their velocity\nii. To prevent the test team from becoming bored with manual, repetitive tasks\niii. To retest all test cases from previous iterations\niv. To eliminate regression in the product due to high code churn\nv. To ensure that code changes do not break the software build",
+        "pt": "Quais DUAS das seguintes são razões pelas quais a automação é essencial em projetos ágeis?\ni. Para que as equipes mantenham ou aumentem sua velocidade\nii. Para evitar que a equipe de teste fique entediada com tarefas manuais e repetitivas\niii. Para retestar todos os casos de teste de iterações anteriores\niv. Para eliminar regressão no produto devido à alta rotatividade de código\nv. Para garantir que as alterações de código não quebrem a construção do software"
+      },
+      "question_text": {
+        "en": "Select ONE option.",
+        "pt": "Selecione UMA opção."
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "i and iv"
+          "text": {
+            "en": "i and iv",
+            "pt": "i e iv"
+          }
         },
         {
           "id": "b",
-          "text": "i and v"
+          "text": {
+            "en": "i and v",
+            "pt": "i e v"
+          }
         },
         {
           "id": "c",
-          "text": "iii and iv"
+          "text": {
+            "en": "iii and iv",
+            "pt": "iii e iv"
+          }
         },
         {
           "id": "d",
-          "text": "ii and v"
+          "text": {
+            "en": "ii and v",
+            "pt": "ii e v"
+          }
         }
       ],
       "correct_answers": [
         "b"
       ],
-      "justification": "B. Correct - i. This is true because agile expects and manages change and each iteration will require more and more regression testing. If automation was not used, then the team's velocity would be reduced. v. This is true. Automation tools are linked to continuous integration tools that will execute and will highlight instantaneously if the new code breaks the build."
+      "justification": {
+        "en": "B. Correct - i. This is true because agile expects and manages change and each iteration will require more and more regression testing. If automation was not used, then the team's velocity would be reduced. v. This is true. Automation tools are linked to continuous integration tools that will execute and will highlight instantaneously if the new code breaks the build.",
+        "pt": "B. Correto - i. Isso é verdadeiro porque o ágil espera e gerencia mudanças, e cada iteração exigirá cada vez mais testes de regressão. Se a automação não fosse usada, a velocidade da equipe seria reduzida. v. Isso é verdadeiro. Ferramentas de automação estão vinculadas a ferramentas de integração contínua que serão executadas e destacarão instantaneamente se o novo código quebrar a construção."
+      }
     },
     {
       "id": "CTAL-AT-Q24",
       "points": 1,
-      "syllabus_topic": "FA-2.3.1",
-      "context": "In agile projects there is more need for testers to understand and develop test automation scripts than in traditional projects. Of the following, which are the TWO reasons why this is a necessary skill on agile projects?\n\ni. Requirements change daily and have to be regression tested. This rapid change requires automated tests because manual testing is too slow.\nii. The tests should generate feedback on product quality as early as possible. So all acceptance tests should be executed in each iteration, ideally as modifications are made. In practice that can only be realized by automated tests.\niii. Test-First and Continuous Integration Practice require that the regression test suite is executed whenever changed code is checked-in. In practice that can only be realized by automated tests.\niv. Iterations or sprints are of fixed length. The team has to guarantee that all tests can be completely executed at the last day of each iteration/sprint. In practice, that can only be realized by automated tests.\nv. Agile projects rely on unit testing rather than on systems testing. Since unit tests cannot be executed manually, all tests have to be automated tests.",
-      "question_text": "Select ONE option.",
+      "syllabus_topic": {
+        "en": "FA-2.3.1",
+        "pt": "FA-2.3.1"
+      },
+      "context": {
+        "en": "In agile projects there is more need for testers to understand and develop test automation scripts than in traditional projects. Of the following, which are the TWO reasons why this is a necessary skill on agile projects?\n\ni. Requirements change daily and have to be regression tested. This rapid change requires automated tests because manual testing is too slow.\nii. The tests should generate feedback on product quality as early as possible. So all acceptance tests should be executed in each iteration, ideally as modifications are made. In practice that can only be realized by automated tests.\niii. Test-First and Continuous Integration Practice require that the regression test suite is executed whenever changed code is checked-in. In practice that can only be realized by automated tests.\niv. Iterations or sprints are of fixed length. The team has to guarantee that all tests can be completely executed at the last day of each iteration/sprint. In practice, that can only be realized by automated tests.\nv. Agile projects rely on unit testing rather than on systems testing. Since unit tests cannot be executed manually, all tests have to be automated tests.",
+        "pt": "Em projetos ágeis, há uma necessidade maior de os testadores entenderem e desenvolverem scripts de automação de testes do que em projetos tradicionais. Das opções a seguir, quais são as DUAS razões pelas quais essa é uma habilidade necessária em projetos ágeis?\n\ni. Os requisitos mudam diariamente e precisam ser testados por regressão. Essa mudança rápida exige testes automatizados, pois os testes manuais são muito lentos.\nii. Os testes devem gerar feedback sobre a qualidade do produto o mais cedo possível. Portanto, todos os testes de aceitação devem ser executados em cada iteração, idealmente à medida que as modificações são feitas. Na prática, isso só pode ser realizado por testes automatizados.\niii. A prática de Test-First e Integração Contínua exige que a suíte de testes de regressão seja executada sempre que o código alterado for submetido. Na prática, isso só pode ser realizado por testes automatizados.\niv. As iterações ou sprints têm duração fixa. A equipe deve garantir que todos os testes possam ser completamente executados no último dia de cada iteração/sprint. Na prática, isso só pode ser realizado por testes automatizados.\nv. Projetos ágeis dependem mais de testes unitários do que de testes de sistema. Como os testes unitários não podem ser executados manualmente, todos os testes precisam ser automatizados."
+      },
+      "question_text": {
+        "en": "Select ONE option.",
+        "pt": "Selecione UMA opção."
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "i & iii"
+          "text": {
+            "en": "i & iii",
+            "pt": "i e iii"
+          }
         },
         {
           "id": "b",
-          "text": "ii & v"
+          "text": {
+            "en": "ii & v",
+            "pt": "ii e v"
+          }
         },
         {
           "id": "c",
-          "text": "iv & v"
+          "text": {
+            "en": "iv & v",
+            "pt": "iv e v"
+          }
         },
         {
           "id": "d",
-          "text": "ii and iii"
+          "text": {
+            "en": "ii and iii",
+            "pt": "ii e iii"
+          }
         }
       ],
       "correct_answers": [
         "d"
       ],
-      "justification": "D. Correct - ii. This is true, the earlier the agile team gets feedback on quality, the better. iii. Test first and continuous integration require tests to be automated and to provide feedback on build, as part of automated build process."
+      "justification": {
+        "en": "D. Correct - ii. This is true, the earlier the agile team gets feedback on quality, the better. iii. Test first and continuous integration require tests to be automated and to provide feedback on build, as part of automated build process.",
+        "pt": "D. Correto - ii. Isso é verdadeiro, quanto mais cedo a equipe ágil obtiver feedback sobre a qualidade, melhor. iii. Test-First e Integração Contínua exigem que os testes sejam automatizados e forneçam feedback sobre a build, como parte do processo de build automatizado."
+      }
     },
     {
       "id": "CTAL-AT-Q25",
       "points": 1,
-      "syllabus_topic": "FA-2.3.2",
-      "context": "Which tasks are typically expected of a tester on an agile project?\n\ni. decide on user acceptance\nii. design, create and execute appropriate tests\niii. schedule defect reports for analysis\niv. automate and maintain tests\nv. improve program logic by pair programming",
-      "question_text": "Select ONE option.",
+      "syllabus_topic": {
+        "en": "FA-2.3.2",
+        "pt": "FA-2.3.2"
+      },
+      "context": {
+        "en": "Which tasks are typically expected of a tester on an agile project?\n\ni. decide on user acceptance\nii. design, create and execute appropriate tests\niii. schedule defect reports for analysis\niv. automate and maintain tests\nv. improve program logic by pair programming",
+        "pt": "Quais tarefas são tipicamente esperadas de um testador em um projeto ágil?\n\ni. decidir sobre a aceitação do usuário\nii. projetar, criar e executar testes apropriados\niii. agendar relatórios de defeitos para análise\niv. automatizar e manter testes\nv. melhorar a lógica do programa por meio de programação em par"
+      },
+      "question_text": {
+        "en": "Select ONE option.",
+        "pt": "Selecione UMA opção."
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "i & iii"
+          "text": {
+            "en": "i & iii",
+            "pt": "i e iii"
+          }
         },
         {
           "id": "b",
-          "text": "ii & iii"
+          "text": {
+            "en": "ii & iii",
+            "pt": "ii e iii"
+          }
         },
         {
           "id": "c",
-          "text": "ii & iv"
+          "text": {
+            "en": "ii & iv",
+            "pt": "ii e iv"
+          }
         },
         {
           "id": "d",
-          "text": "ii & v"
+          "text": {
+            "en": "ii & v",
+            "pt": "ii e v"
+          }
         }
       ],
       "correct_answers": [
         "c"
       ],
-      "justification": "C. Correct - ii. This activity is expected of the agile tester. iv. True - This activity is typical for an agile tester."
+      "justification": {
+        "en": "C. Correct - ii. This activity is expected of the agile tester. iv. True - This activity is typical for an agile tester.",
+        "pt": "C. Correto - ii. Esta atividade é esperada do testador ágil. iv. Verdadeiro - Esta atividade é típica para um testador ágil."
+      }
     },
     {
       "id": "CTAL-AT-Q26",
       "points": 1,
-      "syllabus_topic": "FA-2.3.2",
+      "syllabus_topic": {
+        "en": "FA-2.3.2",
+        "pt": "FA-2.3.2"
+      },
       "context": null,
-      "question_text": "Which of the following is NOT a typical task performed by the tester within an agile team?",
+      "question_text": {
+        "en": "Which of the following is NOT a typical task performed by the tester within an agile team?",
+        "pt": "Qual das seguintes NÃO é uma tarefa típica realizada pelo testador dentro de uma equipe ágil?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "To automate tests and maintain them"
+          "text": {
+            "en": "To automate tests and maintain them",
+            "pt": "Automatizar testes e mantê-los"
+          }
         },
         {
           "id": "b",
-          "text": "To mentor and coach other team members"
+          "text": {
+            "en": "To mentor and coach other team members",
+            "pt": "Mentorar e treinar outros membros da equipe"
+          }
         },
         {
           "id": "c",
-          "text": "To produce and update burndown charts"
+          "text": {
+            "en": "To produce and update burndown charts",
+            "pt": "Produzir e atualizar gráficos de burndown"
+          }
         },
         {
           "id": "d",
-          "text": "To participate in code analyzing activities"
+          "text": {
+            "en": "To participate in code analyzing activities",
+            "pt": "Participar de atividades de análise de código"
+          }
         }
       ],
       "correct_answers": [
         "c"
       ],
-      "justification": "C. Correct - This is false. It is the Scrum Master's role (or what the equivalent role is called in other agile methodologies) to produce and update the burndown chart from the information supplied by the rest of the team."
+      "justification": {
+        "en": "C. Correct - This is false. It is the Scrum Master's role (or what the equivalent role is called in other agile methodologies) to produce and update the burndown chart from the information supplied by the rest of the team.",
+        "pt": "C. Correto - Esta afirmação é falsa. É papel do Scrum Master (ou do que a função equivalente é chamada em outras metodologias ágeis) produzir e atualizar o gráfico de burndown a partir das informações fornecidas pelo restante da equipe."
+      }
     },
     {
       "id": "CTAL-AT-Q27",
       "points": 1,
-      "syllabus_topic": "Agile Extension-Term",
+      "syllabus_topic": {
+        "en": "Agile Extension-Term",
+        "pt": "Extensão Ágil - Termo"
+      },
       "context": null,
-      "question_text": "The term \"burndown\" refers to which of the following?",
+      "question_text": {
+        "en": "The term \"burndown\" refers to which of the following?",
+        "pt": "O termo \"burndown\" refere-se a qual das seguintes opções?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "A chart showing which team members are working the most, and are likely to be under stress"
+          "text": {
+            "en": "A chart showing which team members are working the most, and are likely to be under stress",
+            "pt": "Um gráfico que mostra quais membros da equipe estão trabalhando mais e provavelmente sob estresse"
+          }
         },
         {
           "id": "b",
-          "text": "A chart showing the progress of each user story, and when they are likely to be completed"
+          "text": {
+            "en": "A chart showing the progress of each user story, and when they are likely to be completed",
+            "pt": "Um gráfico que mostra o progresso de cada história de usuário e quando provavelmente serão concluídas"
+          }
         },
         {
           "id": "c",
-          "text": "A chart showing the amount of work left to be done, versus the time allocated for the iteration"
+          "text": {
+            "en": "A chart showing the amount of work left to be done, versus the time allocated for the iteration",
+            "pt": "Um gráfico que mostra a quantidade de trabalho restante a ser feito em relação ao tempo alocado para a iteração"
+          }
         },
         {
           "id": "d",
-          "text": "A chart showing defects that have been fixed, and when the remaining defects are likely to be fixed"
+          "text": {
+            "en": "A chart showing defects that have been fixed, and when the remaining defects are likely to be fixed",
+            "pt": "Um gráfico que mostra defeitos que foram corrigidos e quando os defeitos restantes provavelmente serão corrigidos"
+          }
         }
       ],
       "correct_answers": [
         "c"
       ],
-      "justification": "C. Correct - The burndown chart shows progress of the user stories that are complete (done), and an estimate of the remaining time to complete the rest of the user stories in the sprint."
+      "justification": {
+        "en": "C. Correct - The burndown chart shows progress of the user stories that are complete (done), and an estimate of the remaining time to complete the rest of the user stories in the sprint.",
+        "pt": "C. Correto - O gráfico de burndown mostra o progresso das histórias de usuário que estão completas (prontas) e uma estimativa do tempo restante para concluir as demais histórias de usuário na sprint."
+      }
     },
     {
       "id": "CTAL-AT-Q28",
       "points": 1,
-      "syllabus_topic": "FA-3.1.1",
+      "syllabus_topic": {
+        "en": "FA-3.1.1",
+        "pt": "FA-3.1.1"
+      },
       "context": null,
-      "question_text": "Which of the following statements about Test Driven Development (TDD) is FALSE?",
+      "question_text": {
+        "en": "Which of the following statements about Test Driven Development (TDD) is FALSE?",
+        "pt": "Qual das seguintes afirmações sobre Desenvolvimento Orientado a Testes (TDD) é FALSA?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "TDD is a \"test first\" approach to develop reusable automated tests."
+          "text": {
+            "en": "TDD is a \"test first\" approach to develop reusable automated tests.",
+            "pt": "TDD é uma abordagem \"teste primeiro\" para desenvolver testes automatizados reutilizáveis."
+          }
         },
         {
           "id": "b",
-          "text": "The TDD cycle is continuously used until the software product is released."
+          "text": {
+            "en": "The TDD cycle is continuously used until the software product is released.",
+            "pt": "O ciclo TDD é continuamente utilizado até que o produto de software seja lançado."
+          }
         },
         {
           "id": "c",
-          "text": "TDD helps to document the code for future maintenance efforts."
+          "text": {
+            "en": "TDD helps to document the code for future maintenance efforts.",
+            "pt": "TDD ajuda a documentar o código para futuros esforços de manutenção."
+          }
         },
         {
           "id": "d",
-          "text": "The result of TDD are test classes used by the developer to develop test cases"
+          "text": {
+            "en": "The result of TDD are test classes used by the developer to develop test cases",
+            "pt": "O resultado do TDD são classes de teste usadas pelo desenvolvedor para desenvolver casos de teste"
+          }
         }
       ],
       "correct_answers": [
         "d"
       ],
-      "justification": "D. Correct - This is true of BDD - not TDD."
+      "justification": {
+        "en": "D. Correct - This is true of BDD - not TDD.",
+        "pt": "D. Correto - Isso é verdadeiro para BDD, não para TDD."
+      }
     },
     {
       "id": "CTAL-AT-Q29",
       "points": 1,
-      "syllabus_topic": "FA-3.1.2",
+      "syllabus_topic": {
+        "en": "FA-3.1.2",
+        "pt": "FA-3.1.2"
+      },
       "context": null,
-      "question_text": "What does the term 'Test Pyramid' refer to and illustrate situations for?",
+      "question_text": {
+        "en": "What does the term 'Test Pyramid' refer to and illustrate situations for?",
+        "pt": "O que o termo 'Pirâmide de Testes' se refere e para que situações ele ilustra?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "The team's testing workload increases from sprint to sprint"
+          "text": {
+            "en": "The team's testing workload increases from sprint to sprint",
+            "pt": "A carga de trabalho de teste da equipe aumenta de sprint para sprint"
+          }
         },
         {
           "id": "b",
-          "text": "The backlog size, and thus the number of tests, decreases"
+          "text": {
+            "en": "The backlog size, and thus the number of tests, decreases",
+            "pt": "O tamanho do backlog e, consequentemente, o número de testes, diminui"
+          }
         },
         {
           "id": "c",
-          "text": "The number of automated unit tests is higher than the number of automated tests for higher test levels."
+          "text": {
+            "en": "The number of automated unit tests is higher than the number of automated tests for higher test levels.",
+            "pt": "O número de testes unitários automatizados é maior do que o número de testes automatizados para níveis de teste mais altos."
+          }
         },
         {
           "id": "d",
-          "text": "The number of automated tests in place increases from sprint to sprint"
+          "text": {
+            "en": "The number of automated tests in place increases from sprint to sprint",
+            "pt": "O número de testes automatizados em vigor aumenta de sprint para sprint"
+          }
         }
       ],
       "correct_answers": [
         "c"
       ],
-      "justification": "C. Correct - The test pyramid emphasizes having more tests at the lower levels and a decreasing number of tests at the higher levels."
+      "justification": {
+        "en": "C. Correct - The test pyramid emphasizes having more tests at the lower levels and a decreasing number of tests at the higher levels.",
+        "pt": "C. Correto - A pirâmide de testes enfatiza ter mais testes nos níveis inferiores e um número decrescente de testes nos níveis superiores."
+      }
     },
     {
       "id": "CTAL-AT-Q30",
       "points": 1,
-      "syllabus_topic": "FA-3.1.3",
+      "syllabus_topic": {
+        "en": "FA-3.1.3",
+        "pt": "FA-3.1.3"
+      },
       "context": null,
-      "question_text": "Which of the following demonstrates effective use of the testing quadrants?",
+      "question_text": {
+        "en": "Which of the following demonstrates effective use of the testing quadrants?",
+        "pt": "Qual das seguintes opções demonstra o uso eficaz dos quadrantes de teste?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "When communicating test ideas, the tester can refer to the matching test quadrant, so that the rest of the team will better understand the purpose of the test."
+          "text": {
+            "en": "When communicating test ideas, the tester can refer to the matching test quadrant, so that the rest of the team will better understand the purpose of the test.",
+            "pt": "Ao comunicar ideias de teste, o testador pode se referir ao quadrante de teste correspondente, para que o restante da equipe entenda melhor o propósito do teste."
+          }
         },
         {
           "id": "b",
-          "text": "The tester can use the types of tests described in the testing quadrants as a coverage metric, the more tests covered from each quadrant, the higher the test coverage."
+          "text": {
+            "en": "The tester can use the types of tests described in the testing quadrants as a coverage metric, the more tests covered from each quadrant, the higher the test coverage.",
+            "pt": "O testador pode usar os tipos de teste descritos nos quadrantes de teste como uma métrica de cobertura; quanto mais testes cobertos de cada quadrante, maior a cobertura de teste."
+          }
         },
         {
           "id": "c",
-          "text": "The team should pick a number of tests expected from each quadrant, and the tester should design and execute those tests to ensure all levels and types of tests have been executed."
+          "text": {
+            "en": "The team should pick a number of tests expected from each quadrant, and the tester should design and execute those tests to ensure all levels and types of tests have been executed.",
+            "pt": "A equipe deve selecionar um número de testes esperados de cada quadrante, e o testador deve projetar e executar esses testes para garantir que todos os níveis e tipos de teste tenham sido executados."
+          }
         },
         {
           "id": "d",
-          "text": "The tester can use the testing quadrants during risk analysis; with the lower level quadrants representing lower risk to customer."
+          "text": {
+            "en": "The tester can use the testing quadrants during risk analysis; with the lower level quadrants representing lower risk to customer.",
+            "pt": "O testador pode usar os quadrantes de teste durante a análise de risco; com os quadrantes de nível inferior representando menor risco para o cliente."
+          }
         }
       ],
       "correct_answers": [
         "a"
       ],
-      "justification": "A. Correct - The testing quadrants can be used as an aid to describe the types of tests to all stakeholders."
+      "justification": {
+        "en": "A. Correct - The testing quadrants can be used as an aid to describe the types of tests to all stakeholders.",
+        "pt": "A. Correto - Os quadrantes de teste podem ser usados como um auxílio para descrever os tipos de teste para todas as partes interessadas."
+      }
     },
     {
       "id": "CTAL-AT-Q31",
       "points": 1,
-      "syllabus_topic": "FA-3.1.3",
-      "context": "Given the following user stories:\n\"As a bank teller, I can easily navigate through the system menu and links, and find the information I am looking for\"\n\"For all users, the system must display all queries in less than 2 seconds, 90% of the time\"\n\nAnd the associated test cases:\nTC1: Login as bank teller. Enter customer ID. Verify that the customer transaction history is easy to find, and that navigating through the menus is intuitive.\nTC2: Login as bank teller: Enter customer Name. Verify that the customer accounts are easy to find and that navigating through the menus is intuitive.\nTC3: Simulate expected traffic on system and validate the time for customer transaction history to display is less than 2 seconds.",
-      "question_text": "Which TWO test quadrants would the above test cases be part of?",
+      "syllabus_topic": {
+        "en": "FA-3.1.3",
+        "pt": "FA-3.1.3"
+      },
+      "context": {
+        "en": "Given the following user stories:\n\"As a bank teller, I can easily navigate through the system menu and links, and find the information I am looking for\"\n\"For all users, the system must display all queries in less than 2 seconds, 90% of the time\"\n\nAnd the associated test cases:\nTC1: Login as bank teller. Enter customer ID. Verify that the customer transaction history is easy to find, and that navigating through the menus is intuitive.\nTC2: Login as bank teller: Enter customer Name. Verify that the customer accounts are easy to find and that navigating through the menus is intuitive.\nTC3: Simulate expected traffic on system and validate the time for customer transaction history to display is less than 2 seconds.",
+        "pt": "Dadas as seguintes histórias de usuário:\n\"Como caixa bancário, posso navegar facilmente pelo menu e links do sistema e encontrar as informações que procuro\"\n\"Para todos os usuários, o sistema deve exibir todas as consultas em menos de 2 segundos, 90% do tempo\"\n\nE os casos de teste associados:\nTC1: Fazer login como caixa bancário. Inserir o ID do cliente. Verificar se o histórico de transações do cliente é fácil de encontrar e se a navegação pelos menus é intuitiva.\nTC2: Fazer login como caixa bancário: Inserir o nome do cliente. Verificar se as contas do cliente são fáceis de encontrar e se a navegação pelos menus é intuitiva.\nTC3: Simular o tráfego esperado no sistema e validar se o tempo para exibir o histórico de transações do cliente é inferior a 2 segundos."
+      },
+      "question_text": {
+        "en": "Which TWO test quadrants would the above test cases be part of?",
+        "pt": "A quais DOIS quadrantes de teste os casos de teste acima pertenceriam?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "Q1 unit level, technology facing & Q2 system level, business facing"
+          "text": {
+            "en": "Q1 unit level, technology facing & Q2 system level, business facing",
+            "pt": "Q1 nível de unidade, voltado para tecnologia e Q2 nível de sistema, voltado para negócios"
+          }
         },
         {
           "id": "b",
-          "text": "Q2 system level, business facing & Q3 system or user acceptance level, business facing"
+          "text": {
+            "en": "Q2 system level, business facing & Q3 system or user acceptance level, business facing",
+            "pt": "Q2 nível de sistema, voltado para negócios e Q3 nível de sistema ou aceitação do usuário, voltado para negócios"
+          }
         },
         {
           "id": "c",
-          "text": "Q3 system or user acceptance level, business facing & Q4 system or operation acceptance level, technology facing"
+          "text": {
+            "en": "Q3 system or user acceptance level, business facing & Q4 system or operation acceptance level, technology facing",
+            "pt": "Q3 nível de sistema ou aceitação do usuário, voltado para negócios e Q4 nível de sistema ou aceitação operacional, voltado para tecnologia"
+          }
         },
         {
           "id": "d",
-          "text": "Q2 system level, business facing & Q4 system or operation acceptance level, technology facing"
+          "text": {
+            "en": "Q2 system level, business facing & Q4 system or operation acceptance level, technology facing",
+            "pt": "Q2 nível de sistema, voltado para negócios e Q4 nível de sistema ou aceitação operacional, voltado para tecnologia"
+          }
         }
       ],
       "correct_answers": [
         "c"
       ],
-      "justification": "C. Correct - Q3-Correct - Usability testing is part of the 3rd quadrant. Q4-Correct - Performance testing is part of the 4th quadrant."
+      "justification": {
+        "en": "C. Correct - Q3-Correct - Usability testing is part of the 3rd quadrant. Q4-Correct - Performance testing is part of the 4th quadrant.",
+        "pt": "C. Correto - Q3-Correto - O teste de usabilidade faz parte do 3º quadrante. Q4-Correto - O teste de desempenho faz parte do 4º quadrante."
+      }
     },
     {
       "id": "CTAL-AT-Q32",
       "points": 1,
-      "syllabus_topic": "FA-3.1.4",
-      "context": "At the beginning of the 5th iteration of a project, a new requirement was introduced to support a new type of browser. The tester realizes that the existing test automation framework and scripts will not support the new type of browser.",
-      "question_text": "What is the best course of action for the tester on this team to take?",
+      "syllabus_topic": {
+        "en": "FA-3.1.4",
+        "pt": "FA-3.1.4"
+      },
+      "context": {
+        "en": "At the beginning of the 5th iteration of a project, a new requirement was introduced to support a new type of browser. The tester realizes that the existing test automation framework and scripts will not support the new type of browser.",
+        "pt": "No início da 5ª iteração de um projeto, um novo requisito foi introduzido para suportar um novo tipo de navegador. O testador percebe que o framework de automação de testes e os scripts existentes não suportarão o novo tipo de navegador."
+      },
+      "question_text": {
+        "en": "What is the best course of action for the tester on this team to take?",
+        "pt": "Qual é a melhor ação a ser tomada pelo testador nesta equipe?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "The tester should notify the team that they are planning on working extra hours throughout the next 2 sprints in order to update the existing test automation framework and scripts to support the new type of browser so as not to disturb the existing sprint plan."
+          "text": {
+            "en": "The tester should notify the team that they are planning on working extra hours throughout the next 2 sprints in order to update the existing test automation framework and scripts to support the new type of browser so as not to disturb the existing sprint plan.",
+            "pt": "O testador deve notificar a equipe de que planeja trabalhar horas extras durante as próximas 2 sprints para atualizar o framework de automação de testes e os scripts existentes para suportar o novo tipo de navegador, de modo a não perturbar o plano de sprint existente."
+          }
         },
         {
           "id": "b",
-          "text": "The tester will notify the team of the issue. A risk analysis is done, and the team decides that regression testing must be performed on the new type of browser in addition to the other supported browsers. The tester will update the sprint plan by adding tasks to modify the framework and scripts to support the new type of browser."
+          "text": {
+            "en": "The tester will notify the team of the issue. A risk analysis is done, and the team decides that regression testing must be performed on the new type of browser in addition to the other supported browsers. The tester will update the sprint plan by adding tasks to modify the framework and scripts to support the new type of browser.",
+            "pt": "O testador notificará a equipe sobre o problema. Uma análise de risco é realizada, e a equipe decide que os testes de regressão devem ser executados no novo tipo de navegador, além dos outros navegadores suportados. O testador atualizará o plano da sprint adicionando tarefas para modificar o framework e os scripts para suportar o novo tipo de navegador."
+          }
         },
         {
           "id": "c",
-          "text": "The tester does some research and concludes that the risk is low that any new defects would be introduced in the new type of browser that have not already been found in other supported browsers. The tester continues with the existing sprint plan and makes no changes to test automation framework or scripts."
+          "text": {
+            "en": "The tester does some research and concludes that the risk is low that any new defects would be introduced in the new type of browser that have not already been found in other supported browsers. The tester continues with the existing sprint plan and makes no changes to test automation framework or scripts.",
+            "pt": "O testador faz algumas pesquisas e conclui que o risco é baixo de que novos defeitos sejam introduzidos no novo tipo de navegador que já não tenham sido encontrados em outros navegadores suportados. O testador continua com o plano de sprint existente e não faz alterações no framework de automação de testes ou nos scripts."
+          }
         },
         {
           "id": "d",
-          "text": "The tester will stop what they are doing, design specific tests for compatibility testing of the new type of browser, and communicate with the team that any other testing work for the sprint will have to be pushed to the next iteration."
+          "text": {
+            "en": "The tester will stop what they are doing, design specific tests for compatibility testing of the new type of browser, and communicate with the team that any other testing work for the sprint will have to be pushed to the next iteration.",
+            "pt": "O testador interromperá o que está fazendo, projetará testes específicos para testes de compatibilidade do novo tipo de navegador e comunicará à equipe que qualquer outro trabalho de teste para a sprint terá que ser adiado para a próxima iteração."
+          }
         }
       ],
       "correct_answers": [
         "b"
       ],
-      "justification": "B. Correct - The decision to modify the test automation framework and scripts should be done collaboratively with the whole team. The tester is then responsible to make changes to the iteration plan as required."
+      "justification": {
+        "en": "B. Correct - The decision to modify the test automation framework and scripts should be done collaboratively with the whole team. The tester is then responsible to make changes to the iteration plan as required.",
+        "pt": "B. Correto - A decisão de modificar o framework de automação de testes e os scripts deve ser feita de forma colaborativa com toda a equipe. O testador é então responsável por fazer alterações no plano da iteração conforme necessário."
+      }
     },
     {
       "id": "CTAL-AT-Q33",
       "points": 1,
-      "syllabus_topic": "FA-3.2.1",
-      "context": "Given the following results from a product risk analysis that occurred at the beginning of an iteration:\nUser story 1 (Performance): likelihood: high, impact: high\nUser story 2 (Security): likelihood: high, impact: high\nUser story 3 (Functional): likelihood: medium, impact: high\nUser story 4 (Functional): likelihood: high, impact: medium\nUser story 5 (Compatibility): likelihood: low, impact: low\nUser story 6 (Recoverability): likelihood: low, impact: low",
-      "question_text": "Which TWO of the following describes best what the team should do with this information? Select TWO options.",
+      "syllabus_topic": {
+        "en": "FA-3.2.1",
+        "pt": "FA-3.2.1"
+      },
+      "context": {
+        "en": "Given the following results from a product risk analysis that occurred at the beginning of an iteration:\nUser story 1 (Performance): likelihood: high, impact: high\nUser story 2 (Security): likelihood: high, impact: high\nUser story 3 (Functional): likelihood: medium, impact: high\nUser story 4 (Functional): likelihood: high, impact: medium\nUser story 5 (Compatibility): likelihood: low, impact: low\nUser story 6 (Recoverability): likelihood: low, impact: low",
+        "pt": "Dados os seguintes resultados de uma análise de risco de produto realizada no início de uma iteração:\nHistória de usuário 1 (Desempenho): probabilidade: alta, impacto: alto\nHistória de usuário 2 (Segurança): probabilidade: alta, impacto: alto\nHistória de usuário 3 (Funcional): probabilidade: média, impacto: alto\nHistória de usuário 4 (Funcional): probabilidade: alta, impacto: médio\nHistória de usuário 5 (Compatibilidade): probabilidade: baixa, impacto: baixo\nHistória de usuário 6 (Recuperabilidade): probabilidade: baixa, impacto: baixo"
+      },
+      "question_text": {
+        "en": "Which TWO of the following describes best what the team should do with this information? Select TWO options.",
+        "pt": "Quais DUAS das seguintes opções descrevem melhor o que a equipe deve fazer com essas informações? Selecione DUAS opções."
+      },
       "question_type": "multiple_choice",
       "options": [
         {
           "id": "a",
-          "text": "Move onto planning poker session to estimate effort for user stories, and determine what can be done in the current iteration, and what needs to be added to backlog."
+          "text": {
+            "en": "Move onto planning poker session to estimate effort for user stories, and determine what can be done in the current iteration, and what needs to be added to backlog.",
+            "pt": "Passar para uma sessão de planning poker para estimar o esforço das histórias de usuário e determinar o que pode ser feito na iteração atual e o que precisa ser adicionado ao backlog."
+          }
         },
         {
           "id": "b",
-          "text": "Remove user stories 5 and 6 from the current iteration and move to a later iteration."
+          "text": {
+            "en": "Remove user stories 5 and 6 from the current iteration and move to a later iteration.",
+            "pt": "Remover as histórias de usuário 5 e 6 da iteração atual e movê-las para uma iteração posterior."
+          }
         },
         {
           "id": "c",
-          "text": "Because of the number of high likelihood, high impact risks slotted for this iteration, the team has no choice but to extend the timeframe of the iteration by 2 weeks."
+          "text": {
+            "en": "Because of the number of high likelihood, high impact risks slotted for this iteration, the team has no choice but to extend the timeframe of the iteration by 2 weeks.",
+            "pt": "Devido ao número de riscos de alta probabilidade e alto impacto agendados para esta iteração, a equipe não tem outra opção senão estender o prazo da iteração em 2 semanas."
+          }
         },
         {
           "id": "d",
-          "text": "The team should collaborate on effective ways to mitigate the high likelihood, high impact risks."
+          "text": {
+            "en": "The team should collaborate on effective ways to mitigate the high likelihood, high impact risks.",
+            "pt": "A equipe deve colaborar em formas eficazes de mitigar os riscos de alta probabilidade e alto impacto."
+          }
         },
         {
           "id": "e",
-          "text": "The team should plan to complete all items in the current sprint, but save the lower risk items for the end of the sprint, and only test these items if there is time."
+          "text": {
+            "en": "The team should plan to complete all items in the current sprint, but save the lower risk items for the end of the sprint, and only test these items if there is time.",
+            "pt": "A equipe deve planejar concluir todos os itens na sprint atual, mas guardar os itens de menor risco para o final da sprint e testá-los apenas se houver tempo."
+          }
         }
       ],
       "correct_answers": [
         "a",
         "d"
       ],
-      "justification": "A. Correct - The information from the risk analysis is used during poker planning sessions to determine priorities of items to be completed in the iteration. D. Correct - Risk mitigation can be done before test execution occurs to reduce the level of risk."
+      "justification": {
+        "en": "A. Correct - The information from the risk analysis is used during poker planning sessions to determine priorities of items to be completed in the iteration. D. Correct - Risk mitigation can be done before test execution occurs to reduce the level of risk.",
+        "pt": "A. Correto - As informações da análise de risco são usadas durante as sessões de planning poker para determinar as prioridades dos itens a serem concluídos na iteração. D. Correto - A mitigação de riscos pode ser realizada antes da execução dos testes para reduzir o nível de risco."
+      }
     },
     {
       "id": "CTAL-AT-Q34",
       "points": 1,
-      "syllabus_topic": "FA-3.2.2",
-      "context": "Given the following user story: \"As the president, any data I upload should not be viewable by any other user of the system\"\nDuring the first poker planning session, the following story points were given based on risk, effort, complexity, and proper extent of testing:\nCustomers: 5\nDevelopers: 5\nTesters: 20",
-      "question_text": "What is the best outcome following this planning session?",
+      "syllabus_topic": {
+        "en": "FA-3.2.2",
+        "pt": "FA-3.2.2"
+      },
+      "context": {
+        "en": "Given the following user story: \"As the president, any data I upload should not be viewable by any other user of the system\"\nDuring the first poker planning session, the following story points were given based on risk, effort, complexity, and proper extent of testing:\nCustomers: 5\nDevelopers: 5\nTesters: 20",
+        "pt": "Dada a seguinte história de usuário: \"Como presidente, qualquer dado que eu enviar não deve ser visível para nenhum outro usuário do sistema\"\nDurante a primeira sessão de planning poker, os seguintes story points foram atribuídos com base em risco, esforço, complexidade e extensão adequada de teste:\nClientes: 5\nDesenvolvedores: 5\nTestadores: 20"
+      },
+      "question_text": {
+        "en": "What is the best outcome following this planning session?",
+        "pt": "Qual é o melhor resultado após esta sessão de planejamento?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "Because the customer's and developer's size estimates match, the team can be confident that this estimate is good and should move onto the next user story."
+          "text": {
+            "en": "Because the customer's and developer's size estimates match, the team can be confident that this estimate is good and should move onto the next user story.",
+            "pt": "Como as estimativas de tamanho do cliente e do desenvolvedor coincidem, a equipe pode ter confiança de que essa estimativa é boa e deve passar para a próxima história de usuário."
+          }
         },
         {
           "id": "b",
-          "text": "The team should hold a conversation to understand why the testers felt this user story was significantly more work. Another round of the planning poker session should occur following that discussion."
+          "text": {
+            "en": "The team should hold a conversation to understand why the testers felt this user story was significantly more work. Another round of the planning poker session should occur following that discussion.",
+            "pt": "A equipe deve realizar uma conversa para entender por que os testadores consideraram que esta história de usuário exigia significativamente mais trabalho. Outra rodada da sessão de planning poker deve ocorrer após essa discussão."
+          }
         },
         {
           "id": "c",
-          "text": "Because the customer owns the system in the end, the customers' estimates should be taken as correct when there is a conflict."
+          "text": {
+            "en": "Because the customer owns the system in the end, the customers' estimates should be taken as correct when there is a conflict.",
+            "pt": "Como o cliente é o proprietário do sistema no final, as estimativas dos clientes devem ser consideradas corretas quando houver um conflito."
+          }
         },
         {
           "id": "d",
-          "text": "The poker planning sessions should continue until all estimated story points are an exact match between customers, developers, and testers."
+          "text": {
+            "en": "The poker planning sessions should continue until all estimated story points are an exact match between customers, developers, and testers.",
+            "pt": "As sessões de planning poker devem continuar até que todos os story points estimados sejam uma correspondência exata entre clientes, desenvolvedores e testadores."
+          }
         }
       ],
       "correct_answers": [
         "b"
       ],
-      "justification": "B. Correct - Planning poker sessions should continue for the user story, until the entire team is satisfied with the estimated effort."
+      "justification": {
+        "en": "B. Correct - Planning poker sessions should continue for the user story, until the entire team is satisfied with the estimated effort.",
+        "pt": "B. Correto - As sessões de planning poker devem continuar para a história de usuário, até que toda a equipe esteja satisfeita com o esforço estimado."
+      }
     },
     {
       "id": "CTAL-AT-Q35",
       "points": 1,
-      "syllabus_topic": "FA-3.3.1",
-      "context": "An agile team is assigned to a project to update an existing medical device to newer technologies. Since the last release of the existing medical device, a new version of the medical device standard has been released. User access to the device is changing and will be documented in user stories. Based on this information, and in addition to the user stories, which of the following would best provide relevant information to support your testing activities?\n\ni. Updated version of standards document for medical system.\nii. Existing defects or typical defect areas in existing system.\niii. Obsolete user access test cases and results for existing application.\niv. Performance metrics for existing application.\nv. Defects logged during other similar conversion projects for medical devices.",
-      "question_text": "Select ONE option.",
+      "syllabus_topic": {
+        "en": "FA-3.3.1",
+        "pt": "FA-3.3.1"
+      },
+      "context": {
+        "en": "An agile team is assigned to a project to update an existing medical device to newer technologies. Since the last release of the existing medical device, a new version of the medical device standard has been released. User access to the device is changing and will be documented in user stories. Based on this information, and in addition to the user stories, which of the following would best provide relevant information to support your testing activities?\n\ni. Updated version of standards document for medical system.\nii. Existing defects or typical defect areas in existing system.\niii. Obsolete user access test cases and results for existing application.\niv. Performance metrics for existing application.\nv. Defects logged during other similar conversion projects for medical devices.",
+        "pt": "Uma equipe ágil é designada para um projeto de atualização de um dispositivo médico existente para tecnologias mais recentes. Desde o último lançamento do dispositivo médico existente, uma nova versão da norma para dispositivos médicos foi publicada. O acesso do usuário ao dispositivo está mudando e será documentado em histórias de usuário. Com base nessas informações, e além das histórias de usuário, qual das seguintes opções forneceria melhor as informações relevantes para apoiar suas atividades de teste?\n\ni. Versão atualizada do documento de normas para o sistema médico.\nii. Defeitos existentes ou áreas típicas de defeitos no sistema existente.\niii. Casos de teste e resultados de acesso de usuário obsoletos para a aplicação existente.\niv. Métricas de desempenho para a aplicação existente.\nv. Defeitos registrados durante outros projetos de conversão semelhantes para dispositivos médicos."
+      },
+      "question_text": {
+        "en": "Select ONE option.",
+        "pt": "Selecione UMA opção."
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "i, ii, iii, iv"
+          "text": {
+            "en": "i, ii, iii, iv",
+            "pt": "i, ii, iii, iv"
+          }
         },
         {
           "id": "b",
-          "text": "ii, iv, v"
+          "text": {
+            "en": "ii, iv, v",
+            "pt": "ii, iv, v"
+          }
         },
         {
           "id": "c",
-          "text": "i, ii, v"
+          "text": {
+            "en": "i, ii, v",
+            "pt": "i, ii, v"
+          }
         },
         {
           "id": "d",
-          "text": "All of the above"
+          "text": {
+            "en": "All of the above",
+            "pt": "Todas as anteriores"
+          }
         }
       ],
       "correct_answers": [
         "c"
       ],
-      "justification": "C. Correct - i. This is helpful since we know there is a new version of the standard; existing test cases will need to be modified or new ones will need to be added. ii. This is helpful during the risk analysis phase. v. This is helpful during the risk analysis phase."
+      "justification": {
+        "en": "C. Correct - i. This is helpful since we know there is a new version of the standard; existing test cases will need to be modified or new ones will need to be added. ii. This is helpful during the risk analysis phase. v. This is helpful during the risk analysis phase.",
+        "pt": "C. Correto - i. Isso é útil, pois sabemos que há uma nova versão da norma; os casos de teste existentes precisarão ser modificados ou novos precisarão ser adicionados. ii. Isso é útil durante a fase de análise de riscos. v. Isso é útil durante a fase de análise de riscos."
+      }
     },
     {
       "id": "CTAL-AT-Q36",
       "points": 1,
-      "syllabus_topic": "FA-3.3.2",
+      "syllabus_topic": {
+        "en": "FA-3.3.2",
+        "pt": "FA-3.3.2"
+      },
       "context": null,
-      "question_text": "Which alternative is the BEST description of when to stop testing (release criteria) in an agile project?",
+      "question_text": {
+        "en": "Which alternative is the BEST description of when to stop testing (release criteria) in an agile project?",
+        "pt": "Qual alternativa é a MELHOR descrição de quando parar os testes (critérios de liberação) em um projeto ágil?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "All test cases have been executed."
+          "text": {
+            "en": "All test cases have been executed.",
+            "pt": "Todos os casos de teste foram executados."
+          }
         },
         {
           "id": "b",
-          "text": "The probability of remaining faults has been reduced to a level that can be accepted by the customer"
+          "text": {
+            "en": "The probability of remaining faults has been reduced to a level that can be accepted by the customer",
+            "pt": "A probabilidade de falhas remanescentes foi reduzida a um nível que pode ser aceito pelo cliente"
+          }
         },
         {
           "id": "c",
-          "text": "The achieved test coverage is considered enough. The coverage limit is justified by the complexity of the included functionality, its implementation, and the risks involved."
+          "text": {
+            "en": "The achieved test coverage is considered enough. The coverage limit is justified by the complexity of the included functionality, its implementation, and the risks involved.",
+            "pt": "A cobertura de teste alcançada é considerada suficiente. O limite de cobertura é justificado pela complexidade da funcionalidade incluída, sua implementação e os riscos envolvidos."
+          }
         },
         {
           "id": "d",
-          "text": "The iteration/sprint is finished"
+          "text": {
+            "en": "The iteration/sprint is finished",
+            "pt": "A iteração/sprint está concluída"
+          }
         }
       ],
       "correct_answers": [
         "c"
       ],
-      "justification": "C. Correct - The obtained test coverage with supporting information makes it the best choice, even if more information would be needed. This includes information about found defects, their severity of occurrence, and taxonomy. This information gives a more complete basis for a release decision."
+      "justification": {
+        "en": "C. Correct - The obtained test coverage with supporting information makes it the best choice, even if more information would be needed. This includes information about found defects, their severity of occurrence, and taxonomy. This information gives a more complete basis for a release decision.",
+        "pt": "C. Correto - A cobertura de teste obtida com informações de suporte torna esta a melhor escolha, mesmo que mais informações fossem necessárias. Isso inclui informações sobre defeitos encontrados, sua severidade de ocorrência e taxonomia. Essas informações fornecem uma base mais completa para uma decisão de liberação."
+      }
     },
     {
       "id": "CTAL-AT-Q37",
       "points": 1,
-      "syllabus_topic": "FA-3.3.2",
+      "syllabus_topic": {
+        "en": "FA-3.3.2",
+        "pt": "FA-3.3.2"
+      },
       "context": null,
-      "question_text": "Which TWO of the following are examples of testable acceptance criteria for test related activities? Select TWO options.",
+      "question_text": {
+        "en": "Which TWO of the following are examples of testable acceptance criteria for test related activities? Select TWO options.",
+        "pt": "Quais DUAS das alternativas a seguir são exemplos de critérios de aceitação testáveis para atividades relacionadas a teste? Selecione DUAS opções."
+      },
       "question_type": "multiple_choice",
       "options": [
         {
           "id": "a",
-          "text": "Structure based testing: White box testing in addition to black box testing is used."
+          "text": {
+            "en": "Structure based testing: White box testing in addition to black box testing is used.",
+            "pt": "Teste baseado em estrutura: Teste de caixa branca em adição ao teste de caixa preta é utilizado."
+          }
         },
         {
           "id": "b",
-          "text": "System testing: At least 80% of functional regression tests are automated."
+          "text": {
+            "en": "System testing: At least 80% of functional regression tests are automated.",
+            "pt": "Teste de sistema: Pelo menos 80% dos testes de regressão funcionais são automatizados."
+          }
         },
         {
           "id": "c",
-          "text": "Security testing: A threat risk analysis scan is completed with no faults identified."
+          "text": {
+            "en": "Security testing: A threat risk analysis scan is completed with no faults identified.",
+            "pt": "Teste de segurança: Uma varredura de análise de risco de ameaça é concluída sem falhas identificadas."
+          }
         },
         {
           "id": "d",
-          "text": "Performance testing: The application is responding in a reasonable amount of time with 5000 users."
+          "text": {
+            "en": "Performance testing: The application is responding in a reasonable amount of time with 5000 users.",
+            "pt": "Teste de desempenho: A aplicação está respondendo em um tempo razoável com 5000 usuários."
+          }
         },
         {
           "id": "e",
-          "text": "Compatibility testing: The application is working on all major browsers."
+          "text": {
+            "en": "Compatibility testing: The application is working on all major browsers.",
+            "pt": "Teste de compatibilidade: A aplicação está funcionando em todos os principais navegadores."
+          }
         }
       ],
       "correct_answers": [
         "b",
         "c"
       ],
-      "justification": "B. Correct- this is testable. C. Correct - this is testable."
+      "justification": {
+        "en": "B. Correct- this is testable. C. Correct - this is testable.",
+        "pt": "B. Correto - isso é testável. C. Correto - isso é testável."
+      }
     },
     {
       "id": "CTAL-AT-Q38",
       "points": 1,
-      "syllabus_topic": "FA-3.3.3",
-      "context": "Given the following User Story: \"As a bank teller, I would like to be able to view all of my customer's bank transactions on the screen, so I can answer his/her questions\".\n\nWhich of the following can be considered as relevant acceptance test cases?\ni. Login as a bank teller, get the customer's account balance for all open accounts.\nii. Login as a bank teller, enter a customer account ID, get his transactions history on the screen\niii. Login as a bank teller, request customer account ID by using name abbreviations, and get his transaction history on the screen\niv. Login as a bank teller, enter a customer IBAN (international bank account number), get his transaction history on the screen\nv. Login as a Bank Teller, enter a customer Account ID, get the Transactions history in less than 3 seconds on screen.",
-      "question_text": "Select ONE option.",
+      "syllabus_topic": {
+        "en": "FA-3.3.3",
+        "pt": "FA-3.3.3"
+      },
+      "context": {
+        "en": "Given the following User Story: \"As a bank teller, I would like to be able to view all of my customer's bank transactions on the screen, so I can answer his/her questions\".\n\nWhich of the following can be considered as relevant acceptance test cases?\ni. Login as a bank teller, get the customer's account balance for all open accounts.\nii. Login as a bank teller, enter a customer account ID, get his transactions history on the screen\niii. Login as a bank teller, request customer account ID by using name abbreviations, and get his transaction history on the screen\niv. Login as a bank teller, enter a customer IBAN (international bank account number), get his transaction history on the screen\nv. Login as a Bank Teller, enter a customer Account ID, get the Transactions history in less than 3 seconds on screen.",
+        "pt": "Dada a seguinte História de Usuário: \"Como caixa bancário, gostaria de poder visualizar todas as transações bancárias do meu cliente na tela, para poder responder às suas perguntas\".\n\nQual das seguintes opções pode ser considerada como casos de teste de aceitação relevantes?\ni. Fazer login como caixa bancário, obter o saldo da conta do cliente para todas as contas abertas.\nii. Fazer login como caixa bancário, inserir um ID de conta do cliente, obter o histórico de transações na tela.\niii. Fazer login como caixa bancário, solicitar o ID da conta do cliente usando abreviações de nome e obter o histórico de transações na tela.\niv. Fazer login como caixa bancário, inserir um IBAN (Número de Conta Bancária Internacional) do cliente, obter o histórico de transações na tela.\nv. Fazer login como caixa bancário, inserir um ID de conta do cliente, obter o histórico de transações em menos de 3 segundos na tela."
+      },
+      "question_text": {
+        "en": "Select ONE option.",
+        "pt": "Selecione UMA opção."
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "i, ii, iv"
+          "text": {
+            "en": "i, ii, iv",
+            "pt": "i, ii, iv"
+          }
         },
         {
           "id": "b",
-          "text": "i, iii, iv"
+          "text": {
+            "en": "i, iii, iv",
+            "pt": "i, iii, iv"
+          }
         },
         {
           "id": "c",
-          "text": "ii, iv, v"
+          "text": {
+            "en": "ii, iv, v",
+            "pt": "ii, iv, v"
+          }
         },
         {
           "id": "d",
-          "text": "ii, iii, iv"
+          "text": {
+            "en": "ii, iii, iv",
+            "pt": "ii, iii, iv"
+          }
         }
       ],
       "correct_answers": [
         "d"
       ],
-      "justification": "D. Correct- ii. Correct - This test is specific to a bank teller role and results in viewing customer's bank transactions. iii. Correct - This test is specific to a bank teller role and results in viewing customer's bank transactions. iv. Correct - This test is specific to a bank teller role and results in viewing customer's bank transactions."
+      "justification": {
+        "en": "D. Correct- ii. Correct - This test is specific to a bank teller role and results in viewing customer's bank transactions. iii. Correct - This test is specific to a bank teller role and results in viewing customer's bank transactions. iv. Correct - This test is specific to a bank teller role and results in viewing customer's bank transactions.",
+        "pt": "D. Correto - ii. Correto - Este teste é específico para a função de caixa bancário e resulta na visualização das transações bancárias do cliente. iii. Correto - Este teste é específico para a função de caixa bancário e resulta na visualização das transações bancárias do cliente. iv. Correto - Este teste é específico para a função de caixa bancário e resulta na visualização das transações bancárias do cliente."
+      }
     },
     {
       "id": "CTAL-AT-Q39",
       "points": 1,
-      "syllabus_topic": "FA-3.3.4",
-      "context": "Given the following user story: \"An online application charges customers to ship purchased items, based on the following criteria:\nStandard shipping costs for under 6 items\nShipping is $5 for 6-10 items.\nShipping is free for more than 10 items.\"",
-      "question_text": "Which of the following is the best black box test design technique for the user story?",
+      "syllabus_topic": {
+        "en": "FA-3.3.4",
+        "pt": "FA-3.3.4"
+      },
+      "context": {
+        "en": "Given the following user story: \"An online application charges customers to ship purchased items, based on the following criteria:\nStandard shipping costs for under 6 items\nShipping is $5 for 6-10 items.\nShipping is free for more than 10 items.\"",
+        "pt": "Dada a seguinte história de usuário: \"Um aplicativo online cobra dos clientes pelo frete dos itens comprados, com base nos seguintes critérios:\nFrete padrão para menos de 6 itens\nFrete é $5 para 6-10 itens.\nFrete é grátis para mais de 10 itens.\""
+      },
+      "question_text": {
+        "en": "Which of the following is the best black box test design technique for the user story?",
+        "pt": "Qual das seguintes é a melhor técnica de projeto de teste de caixa preta para a história de usuário?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "State Transition testing: Test the following states - browsing, logged in, selecting, purchasing, confirming, and exiting."
+          "text": {
+            "en": "State Transition testing: Test the following states - browsing, logged in, selecting, purchasing, confirming, and exiting.",
+            "pt": "Teste de transição de estado: Testar os seguintes estados - navegando, logado, selecionando, comprando, confirmando e saindo."
+          }
         },
         {
           "id": "b",
-          "text": "Decision tables: Test the following conditions - User logged in; At least 1 item in cart; Purchase confirmed; Funding approved; with the resulting action of Ship Item."
+          "text": {
+            "en": "Decision tables: Test the following conditions - User logged in; At least 1 item in cart; Purchase confirmed; Funding approved; with the resulting action of Ship Item.",
+            "pt": "Tabelas de decisão: Testar as seguintes condições - Usuário logado; Pelo menos 1 item no carrinho; Compra confirmada; Financiamento aprovado; com a ação resultante de Enviar Item."
+          }
         },
         {
           "id": "c",
-          "text": "Boundary Value Analysis: Test the following inputs -0,5,6,10,11,max"
+          "text": {
+            "en": "Boundary Value Analysis: Test the following inputs -0,5,6,10,11,max",
+            "pt": "Análise de valor limite: Testar as seguintes entradas -0,5,6,10,11,máx"
+          }
         },
         {
           "id": "d",
-          "text": "Use Case Testing: Actor=customer; Prerequisites customer logs in, selects and purchases items; Postconditions= items are shipped."
+          "text": {
+            "en": "Use Case Testing: Actor=customer; Prerequisites customer logs in, selects and purchases items; Postconditions= items are shipped.",
+            "pt": "Teste de caso de uso: Ator=cliente; Pré-condições cliente faz login, seleciona e compra itens; Pós-condições= itens são enviados."
+          }
         }
       ],
       "correct_answers": [
         "c"
       ],
-      "justification": "C. Correct - BVA is the best option when testing shipping costs."
+      "justification": {
+        "en": "C. Correct - BVA is the best option when testing shipping costs.",
+        "pt": "C. Correto - A análise de valor limite é a melhor opção ao testar custos de frete."
+      }
     },
     {
       "id": "CTAL-AT-Q40",
       "points": 1,
-      "syllabus_topic": "FA-3.3.5",
-      "context": "Your manager would like to introduce exploratory testing to your agile team. He has received the following suggestions on how to proceed from previous colleagues:\n\ni. User stories are assigned to testers who are completely new to the user story. There is allotted 120 minutes allocated to complete exploratory testing on the user story. Testers do not need to document tests, or test results, but do need to log defects if any are encountered.\nii. User stories are assigned to testers who have already completed risk based testing on the same areas. There is allotted 120 minutes allocated to complete exploratory testing for this user story. The team expects at the end of the 120 minutes to have a list of test ideas, including data and actors, results and issues encountered, and list of defects to be logged in the defect management tool.\niii. A user story is assigned to business representative. The business representative is told to use the system like the customer would on a day-to-day basis. If issues are encountered, the business representative is told to inform the tester, so that they can prioritize and log the defect.\niv. A user story is assigned to a tester for exploratory testing. Tester is told to learn the functionality of the user story, to make sure the functionality is correct and to include negative testing. There is no set deadline for this exploratory testing to be complete; it depends on what is found by the tester. Documentation is not necessary, but defects need to be logged in defect tracking tool.\n\nYour manager presents you with his conclusions about how best to introduce exploratory testing to an agile team.",
-      "question_text": "Which one of your manager's conclusions is correct?",
+      "syllabus_topic": {
+        "en": "FA-3.3.5",
+        "pt": "FA-3.3.5"
+      },
+      "context": {
+        "en": "Your manager would like to introduce exploratory testing to your agile team. He has received the following suggestions on how to proceed from previous colleagues:\n\ni. User stories are assigned to testers who are completely new to the user story. There is allotted 120 minutes allocated to complete exploratory testing on the user story. Testers do not need to document tests, or test results, but do need to log defects if any are encountered.\nii. User stories are assigned to testers who have already completed risk based testing on the same areas. There is allotted 120 minutes allocated to complete exploratory testing for this user story. The team expects at the end of the 120 minutes to have a list of test ideas, including data and actors, results and issues encountered, and list of defects to be logged in the defect management tool.\niii. A user story is assigned to business representative. The business representative is told to use the system like the customer would on a day-to-day basis. If issues are encountered, the business representative is told to inform the tester, so that they can prioritize and log the defect.\niv. A user story is assigned to a tester for exploratory testing. Tester is told to learn the functionality of the user story, to make sure the functionality is correct and to include negative testing. There is no set deadline for this exploratory testing to be complete; it depends on what is found by the tester. Documentation is not necessary, but defects need to be logged in defect tracking tool.\n\nYour manager presents you with his conclusions about how best to introduce exploratory testing to an agile team.",
+        "pt": "Seu gerente gostaria de introduzir o teste exploratório em sua equipe ágil. Ele recebeu as seguintes sugestões de como proceder de colegas anteriores:\n\ni. As histórias de usuário são atribuídas a testadores que são completamente novos na história de usuário. São alocados 120 minutos para concluir o teste exploratório na história de usuário. Os testadores não precisam documentar os testes ou os resultados dos testes, mas precisam registrar defeitos, se algum for encontrado.\nii. As histórias de usuário são atribuídas a testadores que já concluíram o teste baseado em risco nas mesmas áreas. São alocados 120 minutos para concluir o teste exploratório para esta história de usuário. A equipe espera que, ao final dos 120 minutos, haja uma lista de ideias de teste, incluindo dados e atores, resultados e problemas encontrados, e uma lista de defeitos a serem registrados na ferramenta de gerenciamento de defeitos.\niii. Uma história de usuário é atribuída a um representante de negócios. O representante de negócios é instruído a usar o sistema como o cliente faria no dia a dia. Se problemas forem encontrados, o representante de negócios é instruído a informar o testador, para que este possa priorizar e registrar o defeito.\niv. Uma história de usuário é atribuída a um testador para teste exploratório. O testador é instruído a aprender a funcionalidade da história de usuário, garantir que a funcionalidade esteja correta e incluir testes negativos. Não há prazo definido para a conclusão deste teste exploratório; depende do que for encontrado pelo testador. A documentação não é necessária, mas os defeitos precisam ser registrados na ferramenta de rastreamento de defeitos.\n\nSeu gerente apresenta a você suas conclusões sobre a melhor forma de introduzir o teste exploratório em uma equipe ágil."
+      },
+      "question_text": {
+        "en": "Which one of your manager's conclusions is correct?",
+        "pt": "Qual das conclusões do seu gerente está correta?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "Scenario i IS NOT the best way because: In exploratory testing, test design and test execution happen at the same time but are guided by a documented test charter that includes actors, test conditions, test data, etc. Test results are also documented and will guide the next test."
+          "text": {
+            "en": "Scenario i IS NOT the best way because: In exploratory testing, test design and test execution happen at the same time but are guided by a documented test charter that includes actors, test conditions, test data, etc. Test results are also documented and will guide the next test.",
+            "pt": "O cenário i NÃO é a melhor maneira porque: No teste exploratório, o design de teste e a execução de teste ocorrem ao mesmo tempo, mas são guiados por uma carta de teste documentada que inclui atores, condições de teste, dados de teste, etc. Os resultados dos testes também são documentados e guiarão o próximo teste."
+          }
         },
         {
           "id": "b",
-          "text": "Scenario ii IS the best way because: In this case, the testers have knowledge of the user story already, which will help them come up with test conditions and ideas. The team is using time-boxed exploratory test sessions. The team is expected to document test conditions, data, and user information, and to log results of the test. Issues are logged in a defect tracking tool just like any other test technique."
+          "text": {
+            "en": "Scenario ii IS the best way because: In this case, the testers have knowledge of the user story already, which will help them come up with test conditions and ideas. The team is using time-boxed exploratory test sessions. The team is expected to document test conditions, data, and user information, and to log results of the test. Issues are logged in a defect tracking tool just like any other test technique.",
+            "pt": "O cenário ii É a melhor maneira porque: Neste caso, os testadores já têm conhecimento da história de usuário, o que os ajudará a criar condições e ideias de teste. A equipe está usando sessões de teste exploratório com tempo limitado. Espera-se que a equipe documente condições de teste, dados e informações do usuário, e registre os resultados do teste. Os problemas são registrados em uma ferramenta de rastreamento de defeitos, como em qualquer outra técnica de teste."
+          }
         },
         {
           "id": "c",
-          "text": "Scenario iii IS NOT the best way because: This could be describing system acceptance testing, but not exploratory testing."
+          "text": {
+            "en": "Scenario iii IS NOT the best way because: This could be describing system acceptance testing, but not exploratory testing.",
+            "pt": "O cenário iii NÃO é a melhor maneira porque: Isso poderia descrever o teste de aceitação de sistema, mas não o teste exploratório."
+          }
         },
         {
           "id": "d",
-          "text": "Scenario iv IS NOT the best way because: Documentation is necessary for exploratory testing, and testers must log test ideas and results of testing. The results of testing are used to guide future exploratory testing."
+          "text": {
+            "en": "Scenario iv IS NOT the best way because: Documentation is necessary for exploratory testing, and testers must log test ideas and results of testing. The results of testing are used to guide future exploratory testing.",
+            "pt": "O cenário iv NÃO é a melhor maneira porque: A documentação é necessária para o teste exploratório, e os testadores devem registrar ideias de teste e resultados dos testes. Os resultados dos testes são usados para guiar futuros testes exploratórios."
+          }
         }
       ],
       "correct_answers": [
         "b"
       ],
-      "justification": "B. Correct - Exploratory testing is known as an experienced based approach to testing, which will be as effective as the tester running the tests. The benefit of this approach is that the tests that will be designed and executed will influence the next set of tests that are designed and executed."
+      "justification": {
+        "en": "B. Correct - Exploratory testing is known as an experienced based approach to testing, which will be as effective as the tester running the tests. The benefit of this approach is that the tests that will be designed and executed will influence the next set of tests that are designed and executed.",
+        "pt": "B. Correto - O teste exploratório é conhecido como uma abordagem baseada em experiência para teste, que será tão eficaz quanto o testador que executa os testes. O benefício dessa abordagem é que os testes que serão projetados e executados influenciarão o próximo conjunto de testes que serão projetados e executados."
+      }
     },
     {
       "id": "CTAL-AT-Q41",
       "points": 1,
-      "syllabus_topic": "FA-3.4.1",
+      "syllabus_topic": {
+        "en": "FA-3.4.1",
+        "pt": "FA-3.4.1"
+      },
       "context": null,
-      "question_text": "Which of the following is one of the purposes of an Application Lifecycle Management (ALM) tool on an agile project?",
+      "question_text": {
+        "en": "Which of the following is one of the purposes of an Application Lifecycle Management (ALM) tool on an agile project?",
+        "pt": "Qual das seguintes opções é um dos propósitos de uma ferramenta de Gerenciamento do Ciclo de Vida de Aplicações (ALM) em um projeto ágil?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "An ALM tool allows teams to build up a knowledge base on tools and techniques for development and testing activities"
+          "text": {
+            "en": "An ALM tool allows teams to build up a knowledge base on tools and techniques for development and testing activities",
+            "pt": "Uma ferramenta ALM permite que as equipes construam uma base de conhecimento sobre ferramentas e técnicas para atividades de desenvolvimento e teste"
+          }
         },
         {
           "id": "b",
-          "text": "An ALM tool provides quick response about the build quality and details about code changes"
+          "text": {
+            "en": "An ALM tool provides quick response about the build quality and details about code changes",
+            "pt": "Uma ferramenta ALM fornece resposta rápida sobre a qualidade da build e detalhes sobre alterações de código"
+          }
         },
         {
           "id": "c",
-          "text": "An ALM tool provides visibility into the current state of the application, especially with distributed teams"
+          "text": {
+            "en": "An ALM tool provides visibility into the current state of the application, especially with distributed teams",
+            "pt": "Uma ferramenta ALM fornece visibilidade sobre o estado atual da aplicação, especialmente com equipes distribuídas"
+          }
         },
         {
           "id": "d",
-          "text": "An ALM tool generates and loads large volumes and combinations of data to use for testing"
+          "text": {
+            "en": "An ALM tool generates and loads large volumes and combinations of data to use for testing",
+            "pt": "Uma ferramenta ALM gera e carrega grandes volumes e combinações de dados para uso em teste"
+          }
         }
       ],
       "correct_answers": [
         "c"
       ],
-      "justification": "C. Correct - This is one of many purposes of an ALM tool, but using the tool allows more collaboration with distributed teams than physical task boards."
+      "justification": {
+        "en": "C. Correct - This is one of many purposes of an ALM tool, but using the tool allows more collaboration with distributed teams than physical task boards.",
+        "pt": "C. Correto - Este é um dos muitos propósitos de uma ferramenta ALM, mas o uso da ferramenta permite mais colaboração com equipes distribuídas do que quadros de tarefas físicos."
+      }
     },
     {
       "id": "CTAL-AT-Q42",
       "points": 1,
-      "syllabus_topic": "Agile Extension-Term",
+      "syllabus_topic": {
+        "en": "Agile Extension-Term",
+        "pt": "Extensão Ágil - Termo"
+      },
       "context": null,
-      "question_text": "Which of the following statements is FALSE with respect to exploratory testing?",
+      "question_text": {
+        "en": "Which of the following statements is FALSE with respect to exploratory testing?",
+        "pt": "Qual das seguintes afirmações é FALSA em relação ao teste exploratório?"
+      },
       "question_type": "single_choice",
       "options": [
         {
           "id": "a",
-          "text": "Exploratory testing encompasses concurrent learning, test design, and execution."
+          "text": {
+            "en": "Exploratory testing encompasses concurrent learning, test design, and execution.",
+            "pt": "O teste exploratório abrange aprendizado, projeto de teste e execução de forma simultânea."
+          }
         },
         {
           "id": "b",
-          "text": "Exploratory testing eliminates the need for testers to prepare test ideas prior to test execution."
+          "text": {
+            "en": "Exploratory testing eliminates the need for testers to prepare test ideas prior to test execution.",
+            "pt": "O teste exploratório elimina a necessidade de os testadores prepararem ideias de teste antes da execução do teste."
+          }
         },
         {
           "id": "c",
-          "text": "Best results are achieved when exploratory testing is combined with other test strategies."
+          "text": {
+            "en": "Best results are achieved when exploratory testing is combined with other test strategies.",
+            "pt": "Os melhores resultados são alcançados quando o teste exploratório é combinado com outras estratégias de teste."
+          }
         },
         {
           "id": "d",
-          "text": "Exploratory testers need to have a solid understanding of the system under test."
+          "text": {
+            "en": "Exploratory testers need to have a solid understanding of the system under test.",
+            "pt": "Os testadores exploratórios precisam ter um sólido entendimento do sistema sob teste."
+          }
         }
       ],
       "correct_answers": [
         "b"
       ],
-      "justification": "B. Correct - Test charters are created prior to execution which include test objectives and test ideas."
+      "justification": {
+        "en": "B. Correct - Test charters are created prior to execution which include test objectives and test ideas.",
+        "pt": "B. Correto - Cartas de teste são criadas antes da execução, as quais incluem objetivos de teste e ideias de teste."
+      }
     }
   ]
 }

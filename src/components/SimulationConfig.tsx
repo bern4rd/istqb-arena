@@ -70,20 +70,20 @@ export default function SimulationConfig({ certification, language, onCancel, on
                 )}
               </div>
               <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xs mb-1.5">
-                {language === "en" ? "Learn As You Go" : "Aprenda na Hora"}
+                {language === "en" ? "Practice Mode (10 min)" : "Modo Treino Diário (10 min)"}
               </h4>
               <ul className="text-[11px] text-slate-600 dark:text-slate-400 space-y-1.5 leading-relaxed">
                 <li className="flex items-start gap-1.5">
                   <span className="text-emerald-500 font-bold">✔</span>
-                  <span>{language === "en" ? "Instant correct/incorrect feedback on every single question submitted." : "Feedback imediato de acerto ou erro após enviar cada questão."}</span>
+                  <span>{language === "en" ? "10 balanced questions (2 complex, 8 fundamental) across 3+ topics." : "10 questões balanceadas (2 complexas, 8 fundamentais) de no mínimo 3 tópicos."}</span>
                 </li>
                 <li className="flex items-start gap-1.5">
                   <span className="text-emerald-500 font-bold">✔</span>
-                  <span>{language === "en" ? "Review technical Syllabus definitions while you practice." : "Opção de rever as nuances do Syllabus no momento em que responde."}</span>
+                  <span>{language === "en" ? "11-minute sprint timer with instant correct/incorrect feedback." : "Cronômetro regressivo de 11 minutos com feedback imediato de acertos e erros."}</span>
                 </li>
                 <li className="flex items-start gap-1.5">
                   <span className="text-emerald-500 font-bold">✔</span>
-                  <span>{language === "en" ? "Direct access to technical explanations." : "Acesso instantâneo à justificativa técnica."}</span>
+                  <span>{language === "en" ? "Review syllabus details and AI advice instantly." : "Acesso imediato às justificativas do syllabus e conselhos rápidos do Mentor IA."}</span>
                 </li>
               </ul>
             </div>

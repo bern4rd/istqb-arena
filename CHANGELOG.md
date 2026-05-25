@@ -4,6 +4,22 @@ Todas as mudanças notáveis deste projeto serão documentadas neste arquivo.
 
 O formato baseia-se em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e este projeto adota o [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.3.0] - 2026-05-25
+
+### Adicionado
+- **Métricas de Gamificação no Dashboard:** Banner premium horizontal para o "Treino Diário" com contador de Streak diário 🔥 (sequência consecutiva de dias de estudo) e estatísticas de tempo.
+- **Modal de Acesso Rápido ao Treino Diário:** Seletor visual rápido de certificação com suporte a inicialização instantânea em 1 clique a partir do Dashboard.
+- **Time-to-Beat no Relatório final:** Card exclusivo no relatório de desempenho (`ReportViewer.tsx`) indicando conquistas de velocidade do usuário, comparando o tempo de conclusão com a sua média histórica e sinalizando novos recordes 🏆.
+- **Saneamento Multilíngue Completo do Banco de Dados:** Processamento de saneamento automatizado que traduziu e estruturou **188 questões** legadas em inglês para o formato multilíngue completo `{ en, pt }` em todas as certificações, tornando a base de dados do ISTQB Arena 100% bilingue de forma consistente.
+
+### Modificado
+- **Refatoração do Practice Mode - Learn As You Go (`server.ts` & `TestArena.tsx`):** O modo treino (`training`) foi totalmente refatorado para operar como uma sessão rápida e concisa de **10 questões** (com amostragem balanceada de 2 difíceis e 8 fundamentais e cobrindo ao menos 3 tópicos únicos do syllabus) e um tempo limite encurtado de **11 minutos**, mantendo os feedbacks e explicações imediatas do syllabus.
+- **Otimização do Relatório IA:** Prompt de IA do Mentor ajustado no modo treino para produzir um relatório de desempenho altamente focado, direto e conciso, limitado a 200-300 palavras.
+- **Robustez de Amostragem:** Correção no algoritmo de seleção para adaptar-se dinamicamente quando a certificação não tiver questões de 2 pontos (como no CTFL), preenchendo as vagas com questões de 1 ponto e garantindo sempre o bloco fixo de 10 questões.
+
+### Corrigido
+- **Erros de Compilação do TypeScript:** Corrigidos problemas de tipagem com referência implícita do Vite no `main.tsx` e importação explícita de `React` em `ReportViewer.tsx`, zerando todos os erros de compilação da plataforma.
+
 ## [1.2.0] - 2026-05-25
 
 ### Adicionado
