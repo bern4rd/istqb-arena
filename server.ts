@@ -381,7 +381,7 @@ app.post("/api/test/validate", (req, res) => {
 app.post("/api/test/submit", authenticateToken, async (req, res) => {
   const userId = (req as any).user.id;
   const userEmail = (req as any).user.email;
-  const { certificationId, mode, answers, timeSpentSeconds } = req.body;
+  const { certificationId, mode, answers, timeSpentSeconds, questionIds } = req.body;
   const lang = (req.headers["x-app-language"] as string === "en") ? "en" : "pt";
 
   if (!certificationId || !mode || !answers) {
@@ -396,7 +396,18 @@ app.post("/api/test/submit", authenticateToken, async (req, res) => {
     return;
   }
 
-  const questions = cert.questions;
+  let questions = cert.questions;
+  if (mode === "training") {
+    const idsToFilter = Array.isArray(questionIds) && questionIds.length > 0
+      ? questionIds
+      : Object.keys(answers);
+    
+    if (idsToFilter.length > 0) {
+      questions = cert.questions.filter((q: any) => idsToFilter.includes(q.id));
+    } else {
+      questions = cert.questions.slice(0, 10);
+    }
+  }
   let totalPoints = 0;
   let scorePoints = 0;
   const resultsDetail: any[] = [];

@@ -4,6 +4,11 @@ Todas as mudanças notáveis deste projeto serão documentadas neste arquivo.
 
 O formato baseia-se em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e este projeto adota o [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.3.1] - 2026-05-25
+
+### Corrigido
+- **Cálculo de Acurácia no Practice Mode**: Implementação de tratamento resiliente na rota `/api/test/submit` para limitar a avaliação de gabarito e o cálculo da pontuação final a apenas as 10 questões sorteadas e realizadas no modo treino (Fast Test). Adicionado mecanismo de fallback automático que deduz as questões a partir das chaves do objeto de respostas caso o front-end envie o payload sem a lista explícita de identificadores, prevenindo notas distorcidas calculadas incorretamente sobre a totalidade de questões da certificação (como 44 ou 70 questões).
+
 ## [1.3.0] - 2026-05-25
 
 ### Adicionado

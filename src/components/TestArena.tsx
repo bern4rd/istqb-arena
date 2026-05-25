@@ -197,7 +197,8 @@ export default function TestArena({ certificationId, mode, language, token, onFi
           certificationId: certDetail?.id,
           mode,
           answers: selectedOptions,
-          timeSpentSeconds: elapsedSeconds
+          timeSpentSeconds: elapsedSeconds,
+          questionIds: certDetail?.questions.map(q => q.id)
         })
       });
 
