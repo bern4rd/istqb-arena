@@ -101,52 +101,87 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4 sm:px-6 lg:px-8 py-12 relative overflow-hidden font-sans">
+    <div className="h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-950 px-4 sm:px-6 lg:px-8 py-2 md:py-1 relative overflow-hidden font-sans transition-colors duration-250">
       {/* Background visual accents */}
       <div className="absolute top-0 left-0 w-full h-[5px] bg-blue-600" />
-      <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-blue-600/5 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-slate-900/5 blur-3xl pointer-events-none" />
+      <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-blue-600/5 dark:bg-blue-600/10 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-slate-900/5 dark:bg-slate-900/10 blur-3xl pointer-events-none" />
 
-      <div className="max-w-md w-full space-y-6 bg-white p-8 rounded-xl shadow-sm border border-slate-200 transition-all duration-300 relative z-10">
+      <div className="max-w-md md:max-w-lg lg:max-w-xl w-full space-y-2 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 transition-all duration-300 relative z-10 max-h-screen overflow-y-auto md:overflow-visible">
         
         {/* Languages Switch Header Row */}
-        <div className="flex justify-end items-center gap-1.5 no-print">
-          <Languages className="w-3.5 h-3.5 text-slate-400" />
-          <select
-            value={language}
-            onChange={(e) => onLanguageChange(e.target.value as "pt" | "en")}
-            className="text-[11px] font-semibold text-slate-600 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-md py-1 px-2.5 outline-none cursor-pointer"
-          >
-            <option value="pt">🇧🇷 Português</option>
-            <option value="en">🇺🇸 English</option>
-          </select>
-        </div>
+          {/* Language selector – flags */}
+          <div className="flex justify-end items-center gap-1.5 no-print">
+            {/* PT – Brazil */}
+            <button
+              onClick={() => onLanguageChange("pt")}
+              title="Português (Brasil)"
+              className={`w-7 h-5 rounded overflow-hidden border-2 transition-all cursor-pointer hover:scale-110 ${
+                language === "pt"
+                  ? "border-blue-500 shadow-[0_0_6px_rgba(59,130,246,0.6)]"
+                  : "border-slate-300 dark:border-slate-700 opacity-50 hover:opacity-80"
+              }`}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 42" className="w-full h-full">
+                <rect width="60" height="42" fill="#009c3b"/>
+                <polygon points="30,3 57,21 30,39 3,21" fill="#FFDF00"/>
+                <circle cx="30" cy="21" r="10.5" fill="#002776"/>
+                <path d="M20,23 Q30,17 40,23" stroke="#fff" strokeWidth="1.8" fill="none"/>
+                <circle cx="25" cy="19" r="0.9" fill="white"/>
+                <circle cx="30" cy="17" r="0.9" fill="white"/>
+                <circle cx="35" cy="19" r="0.9" fill="white"/>
+                <circle cx="27" cy="23" r="0.9" fill="white"/>
+                <circle cx="33" cy="23" r="0.9" fill="white"/>
+              </svg>
+            </button>
+            {/* EN – UK */}
+            <button
+              onClick={() => onLanguageChange("en")}
+              title="English (UK)"
+              className={`w-7 h-5 rounded overflow-hidden border-2 transition-all cursor-pointer hover:scale-110 ${
+                language === "en"
+                  ? "border-blue-500 shadow-[0_0_6px_rgba(59,130,246,0.6)]"
+                  : "border-slate-300 dark:border-slate-700 opacity-50 hover:opacity-80"
+              }`}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" className="w-full h-full">
+                <clipPath id="mstc"><polygon points="0,0 30,15 0,30"/><polygon points="60,0 30,15 60,30"/></clipPath>
+                <rect width="60" height="30" fill="#012169"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="4" clipPath="url(#mstc)"/>
+                <path d="M30,0 V30 M0,15 H60" stroke="#fff" strokeWidth="10"/>
+                <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" strokeWidth="6"/>
+              </svg>
+            </button>
+          </div>
 
         {/* Header Visual */}
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded bg-blue-600 text-white shadow-sm mb-4">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded bg-blue-600 text-white shadow-sm mb-2">
             <span className="text-xl font-bold italic font-display">A</span>
           </div>
-          <h2 className="font-display text-2xl font-bold text-slate-800 tracking-tight">
-            ISTQB<span className="text-blue-600">Arena</span>
+          <h2 className="font-display text-2xl font-bold text-slate-800 dark:text-slate-100 tracking-tight">
+            ISTQB<span className="text-blue-600 dark:text-blue-400">Arena</span>
           </h2>
-          <p className="mt-1.5 text-xs text-slate-500 max-w-xs mx-auto">
+          <p className="mt-1 text-xs text-slate-600 dark:text-slate-400 max-w-xs mx-auto">
             {language === "en" 
               ? "Internal Training Hub & Official Simulations Suite"
               : "Internal Training Hub e Suíte de Simulações Oficiais"}
           </p>
-          <p className="mt-2 text-[11px] text-slate-400">
+          <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
             {t.welcomeSubtitle}
           </p>
         </div>
 
         {/* Tab selection */}
         {!isGoogleSsoMode && (
-          <div className="grid grid-cols-2 gap-1 p-1 bg-slate-50 rounded-lg border border-slate-100">
+          <div className="grid grid-cols-2 gap-1 p-1 bg-slate-50 dark:bg-slate-800/40 rounded-lg border border-slate-200 dark:border-slate-800">
             <button
               onClick={() => setIsLogin(true)}
               className={`py-1.5 text-xs font-bold rounded-md transition-all cursor-pointer ${
-                isLogin ? "bg-white text-blue-600 shadow-2xs" : "text-slate-500 hover:text-slate-800"
+                isLogin 
+                  ? "bg-white text-blue-600 dark:bg-slate-800 dark:text-blue-400 shadow-2xs" 
+                  : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
               }`}
             >
               {t.loginTab}
@@ -154,7 +189,9 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
             <button
               onClick={() => setIsLogin(false)}
               className={`py-1.5 text-xs font-bold rounded-md transition-all cursor-pointer ${
-                !isLogin ? "bg-white text-blue-600 shadow-2xs" : "text-slate-500 hover:text-slate-800"
+                !isLogin 
+                  ? "bg-white text-blue-600 dark:bg-slate-800 dark:text-blue-400 shadow-2xs" 
+                  : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
               }`}
             >
               {t.registerTab}
@@ -178,13 +215,13 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
 
         {!isGoogleSsoMode ? (
           /* Email / Password Form */
-          <form className="space-y-4" onSubmit={handleEmailAuth}>
+          <form className="space-y-2" onSubmit={handleEmailAuth}>
             <div>
-              <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-450 mb-1" htmlFor="email">
+              <label className="block text-[9px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1" htmlFor="email">
                 {language === "en" ? "CREDENTIAL EMAIL" : "EMISSÃO DE CREDENCIAL (EMAIL)"}
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 dark:text-slate-400">
                   <Mail className="h-4 w-4" />
                 </div>
                 <input
@@ -195,17 +232,17 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="analista.qa@corp.com"
-                  className="block w-full pl-10 pr-3 py-2.5 border border-slate-200 rounded-lg text-xs bg-slate-50 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600 transition-colors"
+                  className="block w-full pl-10 pr-3 py-2 border border-slate-300 dark:border-slate-700 rounded-lg text-xs bg-slate-50 dark:bg-slate-800/50 text-slate-800 dark:text-slate-100 focus:bg-white dark:focus:bg-slate-800 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600 transition-colors"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-450 mb-1" htmlFor="password">
+              <label className="block text-[9px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1" htmlFor="password">
                 {language === "en" ? "CORPORATE PASSWORD" : "SENHA CORPORATIVA"}
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 dark:text-slate-400">
                   <Lock className="h-4 w-4" />
                 </div>
                 <input
@@ -216,7 +253,7 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="block w-full pl-10 pr-3 py-2.5 border border-slate-200 rounded-lg text-xs bg-slate-50 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600 transition-colors"
+                  className="block w-full pl-10 pr-3 py-2 border border-slate-300 dark:border-slate-700 rounded-lg text-xs bg-slate-50 dark:bg-slate-800/50 text-slate-800 dark:text-slate-100 focus:bg-white dark:focus:bg-slate-800 focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600 transition-colors"
                 />
               </div>
             </div>
@@ -224,7 +261,7 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+              className="w-full py-2.5 px-4 bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg text-xs font-bold shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
               {loading ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
@@ -244,7 +281,7 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
         ) : (
           /* Real Google SSO */
           <div className="flex flex-col items-center space-y-4">
-             <div className="bg-blue-50/50 border border-blue-100 p-3 rounded-lg text-xs text-blue-800 leading-relaxed mb-2 text-center w-full">
+             <div className="bg-blue-50/50 dark:bg-blue-950/20 border border-blue-100 dark:border-blue-900/40 p-3 rounded-lg text-xs text-blue-800 dark:text-blue-400 leading-relaxed mb-2 text-center w-full">
               {language === "en"
                 ? "Authenticate securely via Google Corporate SSO."
                 : "Autentique-se com segurança via Google SSO Corporativo."}
@@ -268,10 +305,10 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
         <div className="flex flex-col gap-3 text-center text-xs">
           {!isGoogleSsoMode ? (
             <>
-              <div className="flex items-center my-1 text-slate-300">
-                <hr className="w-full border-slate-100" />
-                <span className="px-2 text-slate-400 uppercase text-[10px] tracking-wider font-mono">{language === "en" ? "or" : "ou"}</span>
-                <hr className="w-full border-slate-100" />
+              <div className="flex items-center my-1 text-slate-400 dark:text-slate-500">
+                <hr className="w-full border-slate-200 dark:border-slate-800" />
+                <span className="px-2 text-slate-500 dark:text-slate-400 uppercase text-[10px] tracking-wider font-mono">{language === "en" ? "or" : "ou"}</span>
+                <hr className="w-full border-slate-200 dark:border-slate-800" />
               </div>
               <button
                 type="button"
@@ -279,11 +316,16 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
                   setIsGoogleSsoMode(true);
                   setError("");
                 }}
-                className="py-2 px-4 bg-white hover:bg-slate-50 border border-slate-250 rounded-lg text-xs text-slate-700 font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-3xs"
+                className="py-1.5 px-3 bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-250 dark:border-slate-700 rounded-lg text-xs text-slate-700 dark:text-slate-200 font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-3xs"
               >
-                <svg className="w-4 h-4 text-red-500 mr-1" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12.24 10.285V13.4h6.86c-.277 1.56-1.602 4.585-6.86 4.585-4.54 0-8.24-3.765-8.24-8.4s3.7-8.4 8.24-8.4c2.58 0 4.307 1.095 5.298 2.045l2.465-2.37C18.435 1.21 15.62 0 12.24 0 5.58 0 0 5.37 0 12s5.58 12 12.24 12c6.96 0 11.57-4.89 11.57-11.79 0-.795-.085-1.4-.195-1.925H12.24z"/>
-                </svg>
+                <svg className="w-4 h-4 mr-1" viewBox="0 0 533.5 544.3">
+  <path fill="#4285F4" d="M533.5 278.4c0-18.4-1.6-36.1-4.6-53.2H272v100.8h146.9c-6.4 34.6-25.5 63.9-54.4 83.4v68.8h87.6c51.4-47.3 80.4-117 80.4-199.8z"/>
+  <path fill="#34A853" d="M272 544.3c73.2 0 134.7-24.2 179.6-65.9l-87.6-68.8c-24.3 16.3-55.3 25.9-92 25.9-70.7 0-130.5-47.7-152-111.9h-89.5v70.3c44.9 88.4 136.5 150.4 241.5 150.4z"/>
+  <path fill="#FBBC05" d="M120 324.6c-10.4-30.9-10.4-64.4 0-95.3v-70.3h-89.5c-37.2 73.8-37.2 160.8 0 234.6L120 324.6z"/>
+  <path fill="#EA4335" d="M272 107.2c39.8 0 75.7 13.7 104 40.7l78-78c-48.6-45.2-111.3-71.9-182-71.9-105 0-196.6 62-241.5 150.4l89.5 70.3c21.5-64.2 81.3-111.9 152-111.9z"/>
+</svg>
+
+
                 {language === "en" ? "Sign in using Google SSO" : "Fazer login com SSO Google"}
               </button>
             </>
@@ -294,37 +336,14 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
                 setIsGoogleSsoMode(false);
                 setError("");
               }}
-              className="text-blue-600 hover:underline font-semibold cursor-pointer"
+              className="text-blue-600 dark:text-blue-400 hover:underline font-semibold cursor-pointer"
             >
               {language === "en" ? "Back to Email & Password Login" : "Voltar ao Login por Email e Senha"}
             </button>
           )}
         </div>
 
-        {/* Demo Quick Accounts Segment */}
-        <div className="border-t border-slate-200 pt-5">
-          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider text-center mb-3">
-            {language === "en" ? "DEMO ACCOUNTS (ONE-CLICK)" : "Contas Rápidas de Demonstração"}
-          </p>
-          <div className="grid grid-cols-2 gap-2">
-            <button
-              type="button"
-              onClick={() => handleQuickDemoLogin("qa.junior@testarena.com")}
-              className="text-left p-2.5 rounded-lg border border-slate-200 hover:border-blue-500 bg-slate-50 hover:bg-white transition-all text-xs text-slate-700 cursor-pointer"
-            >
-              <div className="font-semibold text-blue-600 text-xs">Analista Junior</div>
-              <div className="text-[10px] text-slate-500 overflow-hidden text-ellipsis whitespace-nowrap">qa.junior@testarena.com</div>
-            </button>
-            <button
-              type="button"
-              onClick={() => handleQuickDemoLogin("mentor.tests@testarena.com")}
-              className="text-left p-2.5 rounded-lg border border-slate-200 hover:border-blue-500 bg-slate-50 hover:bg-white transition-all text-xs text-slate-700 cursor-pointer"
-            >
-              <div className="font-semibold text-blue-600 text-xs text-ellipsis">QA Lead / Mentor</div>
-              <div className="text-[10px] text-slate-500 overflow-hidden text-ellipsis whitespace-nowrap">mentor.tests@testarena.com</div>
-            </button>
-          </div>
-        </div>
+
 
       </div>
     </div>
