@@ -1,0 +1,6 @@
+{
+  "name": "ISTQB Arena",
+  "description": "Hub de Treinamento e Simulação ISTQB para Analistas de Quality Assurance. Pratique em Modo Treino ou Simulado Oficial, acompanhe sua progressão e ganhe dicas automáticas de revisão geradas por IA.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

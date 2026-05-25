@@ -1,0 +1,779 @@
+{
+  "CTFL": {
+    "certification_name": {
+      "en": "ISTQB Certified Tester Foundation Level (CTFL)",
+      "pt": "ISTQB Certified Tester Foundation Level (CTFL) - Nível Fundamental"
+    },
+    "time_limit_mins": 60,
+    "pass_score_percentage": 65,
+    "questions": [
+      {
+        "id": "CTFL-Q01",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "1.1.1 (What is Testing?)",
+          "pt": "1.1.1 (O que é Teste?)"
+        },
+        "context": null,
+        "question_text": {
+          "en": "Which of the following is a key objective of testing?",
+          "pt": "Qual das seguintes opções é um objetivo principal do teste?"
+        },
+        "question_type": "single_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "To show that there are no remaining defects in the software under test.",
+              "pt": "Mostrar que não restam defeitos no software sob teste."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "To minimize the defect density and find as many failures as possible so that defects can be fixed.",
+              "pt": "Minimizar a densidade de defeitos e encontrar o maior número possível de falhas para que os defeitos possam ser corrigidos."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "To prove that the software works exactly as the developers intended in all circumstances.",
+              "pt": "Provar que o software funciona exatamente como os desenvolvedores planejaram em todas as circunstâncias."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "To completely eliminate the risk of any failures occurring during final production use.",
+              "pt": "Eliminar completamente o risco de ocorrência de quaisquer falhas durante o uso em produção final."
+            }
+          }
+        ],
+        "correct_answers": ["b"],
+        "justification": {
+          "en": "One of the primary objectives of testing is to find defects, reduce risk, and provide confidence about the quality of the software. It is a fundamental testing principle that testing shows the presence of defects, not their absence (making options 'a' and 'd' incorrect). Programmers' intentions are sometimes flawed, so testing is not simply 'proving' their intent (option 'c').",
+          "pt": "Um dos objetivos primários do teste é encontrar defeitos, reduzir riscos e fornecer confiança sobre a qualidade do software. É um princípio fundamental do teste que o teste mostra a presença de defeitos, não a sua ausência (tornando as opções 'a' e 'd' incorretas). As intenções dos programadores às vezes são falhas, portanto o teste não é simplesmente 'provar' a intenção deles (opção 'c')."
+        }
+      },
+      {
+        "id": "CTFL-Q02",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "2.1.1 (Test Levels)",
+          "pt": "2.1.1 (Níveis de Teste)"
+        },
+        "context": {
+          "en": "A financial system must validate a new rule where interest calculation depends on age groups. Integrations between the scoring system and bank account registers must be verified.",
+          "pt": "Um sistema financeiro deve validar uma nova regra na qual o cálculo dos juros depende dos grupos de idade. As integrações entre o sistema de pontuação e os registros de contas bancárias devem ser verificadas."
+        },
+        "question_text": {
+          "en": "Based on the ISTQB syllabus, which test level is MOST appropriate for validating interactions between different software modules or systems?",
+          "pt": "Com base no syllabus ISTQB, qual nível de teste é MAIS apropriado para validar interações entre diferentes módulos ou sistemas de software?"
+        },
+        "question_type": "single_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Component Testing (Unit Testing)",
+              "pt": "Teste de Componente (Teste Unitário)"
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Integration Testing",
+              "pt": "Teste de Integração"
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "System Testing",
+              "pt": "Teste de Sistema"
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Acceptance Testing",
+              "pt": "Teste de Aceite"
+            }
+          }
+        ],
+        "correct_answers": ["b"],
+        "justification": {
+          "en": "Integration Testing focuses on interactions between components or systems. Component testing validates individual pieces in isolation. System testing validates the system as a whole. Acceptance testing focuses on usability, business fit, and operational readiness.",
+          "pt": "O Teste de Integração foca nas interações entre componentes ou sistemas. O teste de componente valida partes individuais em isolamento. O teste de sistema valida o sistema como um todo. O teste de aceite foca na usabilidade, adequação ao negócio e prontidão operacional."
+        }
+      },
+      {
+        "id": "CTFL-Q03",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "4.2.1 (Equivalence Partitioning)",
+          "pt": "4.2.1 (Particionamento de Equivalência)"
+        },
+        "context": {
+          "en": "A text input field accepts only positive integers from 10 to 150 (inclusive). Values outside this range should trigger an error message.",
+          "pt": "Um campo de entrada de texto aceita apenas números inteiros positivos de 10 a 150 (inclusive). Valores fora dessa faixa devem acionar uma mensagem de erro."
+        },
+        "question_text": {
+          "en": "Which of the following sets of input values represents the minimum set of inputs to cover all valid and invalid equivalence partitions?",
+          "pt": "Qual dos seguintes conjuntos de valores de entrada representa o conjunto mínimo de entradas para cobrir todas as partições de equivalência válidas e inválidas?"
+        },
+        "question_type": "single_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "10, 80, 150",
+              "pt": "10, 80, 150"
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "5, 50, 200",
+              "pt": "5, 50, 200"
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "9, 10, 150, 151",
+              "pt": "9, 10, 150, 151"
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "9, 80, 200",
+              "pt": "9, 80, 200"
+            }
+          }
+        ],
+        "correct_answers": ["b"],
+        "justification": {
+          "en": "There are three partitions here: 1. Invalid partition (< 10), 2. Valid partition (10 to 150), 3. Invalid partition (> 150). A set that tests all partitions must include one value from each: e.g. 5 (invalid too low), 50 (valid), and 200 (invalid too high). Option 'b' provides exactly one value from each of these three partitions.",
+          "pt": "Existem três partições aqui: 1. Partição inválida (< 10), 2. Partição válida (10 a 150), 3. Partição inválida (> 150). Um conjunto que testa todas as partições deve incluir um valor de cada: por exemplo, 5 (inválido muito baixo), 50 (válido) e 200 (inválido muito alto). A opção 'b' fornece exatamente um valor de cada uma dessas três partições."
+        }
+      },
+      {
+        "id": "CTFL-Q04",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "5.2.1 (Test Planning and Estimation)",
+          "pt": "5.2.1 (Planejamento e Estimativa de Teste)"
+        },
+        "context": null,
+        "question_text": {
+          "en": "Which of the following activities are typical parts of Test Planning? (Select TWO)",
+          "pt": "Quais das seguintes atividades são partes típicas do Planejamento de Testes? (Selecione DUAS)"
+        },
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Determining the scope, objectives, and risks of testing.",
+              "pt": "Determinar o escopo, objetivos e riscos do teste."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Writing custom automated test execution scripts in the codebase.",
+              "pt": "Escrever scripts de execução de teste automatizados customizados no código."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Defining the overall testing approach (test strategy).",
+              "pt": "Definir a abordagem geral de teste (estratégia de teste)."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Executing manual regression tests and entering defects in Jira.",
+              "pt": "Executar testes de regressão manuais e registrar defeitos no Jira."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Measuring and analyzing results against the exit criteria.",
+              "pt": "Medir e analisar resultados em relação aos critérios de saída."
+            }
+          }
+        ],
+        "correct_answers": ["a", "c"],
+        "justification": {
+          "en": "Test planning involves defining the scope, objectives, risks, test approach/strategy, and resources required. Implementing test scripts (b), executing tests (d), and measuring exit criteria (e) are part of other test process activities (e.g. test implementation, execution, and completion).",
+          "pt": "O planejamento do teste envolve a definição do escopo, objetivos, riscos, abordagem/estratégia de teste e recursos necessários. Implementar scripts de teste (b), executar testes (d) e medir critérios de saída (e) fazem parte de outras atividades do processo de teste (por exemplo, implementação, execução e conclusão do teste)."
+        }
+      }
+    ]
+  },
+  "CT-AI": {
+    "certification_name": {
+      "en": "ISTQB Certified Tester AI Testing (CT-AI)",
+      "pt": "ISTQB Certified Tester Teste de Inteligência Artificial (CT-AI)"
+    },
+    "time_limit_mins": 60,
+    "pass_score_percentage": 65,
+    "questions": [
+      {
+        "id": "CT-AI-Q01",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "1.1 (Conventional vs AI-Based)",
+          "pt": "1.1 (Sistemas Convencionais vs Baseados em IA)"
+        },
+        "context": null,
+        "question_text": {
+          "en": "Which of the following statements BEST highlights the difference between conventional and AI-based systems?",
+          "pt": "Qual das seguintes afirmações MELHOR destaca a diferença entre sistemas convencionais e sistemas baseados em IA?"
+        },
+        "question_type": "single_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "AI-based systems tend to learn from patterns in data and can adapt to new scenarios, while conventional systems follow predefined rules programmed by human developers.",
+              "pt": "Sistemas baseados em IA tendem a aprender com padrões nos dados e podem se adaptar a novos cenários, enquanto os sistemas convencionais seguem regras predefinidas programadas por desenvolvedores."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "AI-based systems tend to be faster than conventional systems because they entirely bypass traditional processor hardware architectures.",
+              "pt": "Sistemas baseados em IA tendem a ser mais rápidos que sistemas convencionais porque contornam totalmente as arquiteturas tradicionais de hardware de processadores."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "AI-based systems are deterministic and will produce exactly identical outputs for a given input, whereas conventional systems are always non-deterministic.",
+              "pt": "Sistemas baseados em IA são determinísticos e produzirão saídas exatamente idênticas para uma determinada entrada, enquanto os sistemas convencionais são sempre não determinísticos."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "AI-based systems do not require testing because they can self-correct their errors in real time during production operations.",
+              "pt": "Sistemas baseados em IA não requerem testes porque podem autocorrigir seus erros em tempo real durante as operações de produção."
+            }
+          }
+        ],
+        "correct_answers": ["a"],
+        "justification": {
+          "en": "Conventional systems run on explicit logic and predefined rule blocks programmed directly. AI-based systems rely on machine learning algorithms that identify patterns in historical training data and can interpolate/generalize when shown foreign datasets. They are inherently non-deterministic and have probabilistic characteristics, making strict black-box validation challenging.",
+          "pt": "Sistemas convencionais rodam em lógica explícita e blocos de regras predefinidas programadas diretamente. Sistemas baseados em IA dependem de algoritmos de aprendizado de máquina que identificam padrões em dados históricos de treinamento e podem interpolar/generalizar ao receber novos conjuntos de dados. Eles são inerentemente não determinísticos e possuem características probabilísticas, tornando a validação estrita de caixa-preta um desafio."
+        }
+      },
+      {
+        "id": "CT-AI-Q02",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "1.2 (Syllabus Classifications)",
+          "pt": "1.2 (Classificações do Syllabus)"
+        },
+        "context": {
+          "en": "Consider the current technological landscape of machine learning and target capabilities.",
+          "pt": "Considere o cenário tecnológico atual do aprendizado de máquina e as capacidades pretendidas."
+        },
+        "question_text": {
+          "en": "Which TWO of the following statements BEST distinguish between narrow AI, general AI, and super AI?",
+          "pt": "Quais DUAS das seguintes afirmações MELHOR distinguem entre IA estreita (narrow), IA geral (AGI) e super IA?"
+        },
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "General AI performs specific tasks efficiently under strict context limitations, such as spam filtering or medical image classification.",
+              "pt": "A IA Geral realiza tarefas específicas de forma eficiente sob limitações estritas de contexto, como filtragem de spam ou classificação de imagens médicas."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Narrow AI represents the current state-of-the-art of deployed technologies, which are highly competent at single, specialized tasks.",
+              "pt": "A IA estreita representa o estado da arte atual das tecnologias implantadas, que são altamente competentes em tarefas únicas e especializadas."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "General AI can understand, learn, and perform any intellectual task that a human being can do, which is still a theoretical benchmark.",
+              "pt": "A IA Geral pode compreender, aprender e realizar qualquer tarefa intelectual que um ser humano possa fazer, o que ainda é uma meta teórica."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Super AI is the first level of AI developed in the 1960s based entirely on heuristic expert systems or boolean logic grids.",
+              "pt": "A Super IA é o primeiro nível de IA desenvolvido na década de 1960 com base inteiramente em sistemas especialistas heurísticos ou grades de lógica booleana."
+            }
+          },
+          {
+            "id": "e",
+            "text": {
+              "en": "Narrow AI is superior to super AI because it includes human-like general awareness and cross-domain reasoning.",
+              "pt": "A IA estreita é superior à super IA porque inclui consciência geral de tipo humana e raciocínio de domínio cruzado."
+            }
+          }
+        ],
+        "correct_answers": ["b", "c"],
+        "justification": {
+          "en": "Narrow AI is specialized for specific domains (like translation, image parsing) and is what exists today (Option b). General AI (AGI) mirrors human cognition and adaptability across arbitrary fields, which remains a theoretical aspiration (Option c). Super AI exceeds human intelligence globally.",
+          "pt": "A IA Estreita é especializada para domínios específicos (como tradução, análise de imagens) e é o que existe hoje (Opção b). A IA Geral (AGI) espelha a cognição humana e a adaptabilidade em campos arbitrários, o que continua sendo uma aspiração teórica (Opção c). A Super IA excede a inteligência humana globalmente."
+        }
+      },
+      {
+        "id": "CT-AI-Q03",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "3.2 (Quality Attributes of AI)",
+          "pt": "3.2 (Atributos de Qualidade de IA)"
+        },
+        "context": {
+          "en": "An autonomous vehicle system calculates braking pressure based on continuous sensor inputs. The team notices that small, invisible noises in camera pixels cause the system to misclassify speed signs.",
+          "pt": "Um sistema de veículo autônomo calcula a pressão de frenagem com base em entradas contínuas de sensores. A equipe percebe que ruídos pequenos e invisíveis nos pixels da câmera fazem o sistema classificar incorretamente os limites de velocidade."
+        },
+        "question_text": {
+          "en": "Which quality attribute is MOST directly associated with an AI system's ability to maintain correct operations despite unexpected perturbations or noisy input data?",
+          "pt": "Qual atributo de qualidade está MAIS diretamente associado à capacidade de um sistema de IA de manter operações corretas apesar de perturbações inesperadas ou ruídos nos dados de entrada?"
+        },
+        "question_type": "single_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Explainability",
+              "pt": "Explicabilidade"
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Robustness / Adversarial Resilience",
+              "pt": "Robustez / Resiliência Adversária"
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Bias and Fairness",
+              "pt": "Viés e Justiça"
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Performance Efficiency",
+              "pt": "Eficiência de Desempenho"
+            }
+          }
+        ],
+        "correct_answers": ["b"],
+        "justification": {
+          "en": "Robustness (specifically related to adversarial attacks or input perturbation) refers to the capability of the AI system to maintain performance levels under noisy or slightly altered input conditions, preventing catastrophic misclassifications.",
+          "pt": "A robustez (especificamente relacionada a ataques adversários ou perturbação de entrada) refere-se à capacidade de o sistema de IA manter níveis de desempenho sob condições de entrada com ruído ou ligeiramente alteradas, evitando classificações incorretas catastróficas."
+        }
+      },
+      {
+        "id": "CT-AI-Q04",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "4.2 (Metamorphic Testing)",
+          "pt": "4.2 (Teste Metamórfico)"
+        },
+        "context": {
+          "en": "You are testing an AI machine learning system that translates documents from English to Portuguese. Standard test cases are hard to write because you do not have pre-translated outputs for millions of text combinations.",
+          "pt": "Você está testando um sistema de aprendizado de máquina de IA que traduz documentos de inglês para português. Casos de teste padrão são difíceis de escrever porque você não tem as traduções prontas de gabarito para milhões de combinações de texto."
+        },
+        "question_text": {
+          "en": "Which technique can be used where we define a relationship between changes in the input which should result in a predictable change (or no change) in the output, bypasses the lack of an oracle?",
+          "pt": "Qual técnica pode ser usada onde definimos uma relação entre mudanças na entrada que deve resultar em uma mudança previsível (ou nenhuma mudança) na saída, contornando a falta de um oráculo?"
+        },
+        "question_type": "single_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Metamorphic Testing",
+              "pt": "Teste Metamórfico"
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Boundary Value Analysis",
+              "pt": "Análise de Valor Limite"
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Model-Based Testing",
+              "pt": "Teste Baseado em Modelo"
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Decision Table Testing",
+              "pt": "Teste de Tabela de Decisão"
+            }
+          }
+        ],
+        "correct_answers": ["a"],
+        "justification": {
+          "en": "Metamorphic testing identifies metamorphic relations between inputs and outputs. For example, in translation, translating A and then translating B shouldn't conflict, or in searching, adding more filters should yield a subset of original outputs. This mitigates the Oracle problem.",
+          "pt": "O teste metamórfico identifica relações metamórficas entre entradas e saídas. Por exemplo, em tradução, traduzir A e depois traduzir B não deve gerar contradição, ou em buscas, adicionar mais filtros deve produzir um subconjunto das saídas originais. Isso mitiga o problema do Oráculo."
+        }
+      }
+    ]
+  },
+  "CTAL-AT": {
+    "certification_name": {
+      "en": "ISTQB Advanced Level Agile Technical Tester (CTAL-AT)",
+      "pt": "ISTQB Advanced Level Agile Technical Tester (CTAL-AT) - Técnico Ágil"
+    },
+    "time_limit_mins": 90,
+    "pass_score_percentage": 65,
+    "questions": [
+      {
+        "id": "CTAL-AT-Q01",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "1.2 (Agile Task Planning)",
+          "pt": "1.2 (Planejamento de Tarefas Ágeis)"
+        },
+        "context": {
+          "en": "An agile team is planning a sprint backlog. The technical tester needs to contribute to sizing stories that have high technical complexity and integration risks.",
+          "pt": "Uma equipe ágil está planejando o backlog da sprint. O testador técnico precisa contribuir para dimensionar os tamanhos das histórias de alta complexidade técnica e riscos de integração."
+        },
+        "question_text": {
+          "en": "In an Agile project, what is the technical tester's dynamic role during planning sessions?",
+          "pt": "Em um projeto ágil, qual é o papel dinâmico do testador técnico durante as sessões de planejamento?"
+        },
+        "question_type": "single_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "They must remain passive and only estimate stories after developers write the code.",
+              "pt": "Eles devem permanecer passivos e apenas estimar as histórias depois que os desenvolvedores escreverem o código."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "They provide technical insights on testability, test infrastructure, automation costs, and potential regression risks for backlog items.",
+              "pt": "Eles fornecem insights técnicos sobre testabilidade, infraestrutura de teste, custos de automação e potenciais riscos de regressão para os itens do backlog."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "They take sole responsibility for writing user stories and planning the product release roadmap on behalf of the Product Owner.",
+              "pt": "Eles assumem a responsabilidade exclusiva de escrever histórias de usuários e planejar o roadmap de lançamento do produto em nome do Product Owner."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "They enforce fixed gates where no development is allowed to proceed if automated tests are not 105% stable.",
+              "pt": "Eles impõem gates fixos onde nenhum desenvolvimento pode prosseguir se os testes automatizados não estiverem 100% estáveis."
+            }
+          }
+        ],
+        "correct_answers": ["b"],
+        "justification": {
+          "en": "Agile technical testers collaborate from the start, introducing estimates for testing tasks, pointing out dependency or testability issues, and explaining regression impacts of complex features.",
+          "pt": "Os testadores técnicos ágeis colaboram desde o início, inserindo estimativas para tarefas de teste, apontando problemas de dependência ou testabilidade e explicando os impactos de regressão de recursos complexos."
+        }
+      },
+      {
+        "id": "CTAL-AT-Q02",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "2.2.2 (Refactoring and Test Driven Development)",
+          "pt": "2.2.2 (Refatoração e Desenvolvimento Orientado por Testes - TDD)"
+        },
+        "context": null,
+        "question_text": {
+          "en": "Which of the following describes the correct order of the TDD (Test-Driven Development) cycle?",
+          "pt": "Qual das seguintes opções descreve a ordem correta do ciclo TDD (Test-Driven Development)?"
+        },
+        "question_type": "single_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Write code -> Verify -> Write test -> Refactor",
+              "pt": "Escrever código -> Verificar -> Escrever teste -> Refatorar"
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Write a failing test -> Write minimal code to pass the test -> Refactor both the code and test",
+              "pt": "Escrever um teste que falha -> Escrever o código mínimo para passar no teste -> Refatorar o código e o teste"
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Design system architecture -> Write unit tests -> Execute system test -> Finish",
+              "pt": "Projetar a arquitetura do sistema -> Escrever testes unitários -> Executar teste de sistema -> Concluir"
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Create mocking frameworks -> Write integration scripts -> Run performance profile",
+              "pt": "Criar estruturas de simulação (mocking) -> Escrever scripts de integração -> Executar perfil de desempenho"
+            }
+          }
+        ],
+        "correct_answers": ["b"],
+        "justification": {
+          "en": "TDD follows the 'Red-Green-Refactor' process: Write a failing unit test first (Red), code just enough to make it pass (Green), then clean up/improve the structure of the codebase (Refactor).",
+          "pt": "O TDD segue o processo 'Red-Green-Refactor': Escrever um teste unitário que falhe primeiro (Red), codificar apenas o suficiente para fazê-lo passar (Green) e, em seguida, limpar/melhorar a estrutura da base de código (Refactor)."
+        }
+      }
+    ]
+  },
+  "CTAL-TAE": {
+    "certification_name": {
+      "en": "ISTQB Advanced Level Test Automation Engineer (CTAL-TAE)",
+      "pt": "ISTQB Advanced Level Test Automation Engineer (CTAL-TAE) - Engenheiro de Automação de Testes"
+    },
+    "time_limit_mins": 90,
+    "pass_score_percentage": 65,
+    "questions": [
+      {
+        "id": "CTAL-TAE-Q01",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "1.1 (Test Automation Architecture)",
+          "pt": "1.1 (Arquitetura de Automação de Testes)"
+        },
+        "context": {
+          "en": "The test team is designing a test automation architecture. They want to ensure that tests do not break whenever the SUT (System Under Test) UI elements are moved or renamed in new releases.",
+          "pt": "A equipe de teste está projetando uma arquitetura de automação de testes. Eles querem garantir que os testes não quebrem sempre que os elementos da interface do usuário do SUT (System Under Test) forem movidos ou renomeados em novos lançamentos."
+        },
+        "question_text": {
+          "en": "Which design pattern is MOST effective at decoupling the test script logic from the underlying user interface object definitions?",
+          "pt": "Qual padrão de design é MAIS eficaz para desacoplar a lógica do script de teste das definições subjacentes de objetos da interface do usuário?"
+        },
+        "question_type": "single_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Page Object Model (POM)",
+              "pt": "Page Object Model (POM) / Modelo de Objeto de Página"
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Linear Scripting",
+              "pt": "Scripting Linear"
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Data-Driven Scripting",
+              "pt": "Scripting Orientado a Dados (Data-Driven)"
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Record & Playback Mechanism",
+              "pt": "Mecanismo de Gravação e Reprodução (Record & Playback)"
+            }
+          }
+        ],
+        "correct_answers": ["a"],
+        "justification": {
+          "en": "The Page Object Model (POM) abstracts page layout details into modular, reusable class objects. If a field or button changes ID or container location, you only edit it inside the corresponding Page Object class, instead of rewriting dozens of independent test scenarios.",
+          "pt": "O Page Object Model (POM) abstrai detalhes do layout da página em objetos de classe modulares e reutilizáveis. Se um campo ou botão sofrer alteração de ID ou localização de container, você apenas o edita na classe correspondente do Page Object, em vez de reescrever dezenas de cenários de teste independentes."
+        }
+      },
+      {
+        "id": "CTAL-TAE-Q02",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "3.1 (Test Automation Metrics)",
+          "pt": "3.1 (Métricas de Automação de Teste)"
+        },
+        "context": null,
+        "question_text": {
+          "en": "Which metric is critical for measuring the direct financial return on investment of a newly deployed automated test suite?",
+          "pt": "Qual métrica é crítica para medir o retorno financeiro direto sobre o investimento (ROI) de uma suite de teste automatizada recém-implantada?"
+        },
+        "question_type": "single_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Number of automated cases written per tester per day.",
+              "pt": "Número de casos automatizados escritos por testador por dia."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Cost savings from defect detection in early stages vs. manual regression efforts over time.",
+              "pt": "Economias de custo decorrentes da detecção de defeitos nos estágios iniciais contra esforços de regressão manual ao longo do tempo."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "The raw percentage of code paths hit during unit test runs in the CI pipeline.",
+              "pt": "A porcentagem bruta de caminhos de código percorridos durante as execuções do teste de unidade no pipeline CI."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "The speed boost achieved by switching from Intel to M3 macs on developers laptops.",
+              "pt": "O aumento de velocidade obtido pela troca de Macs Intel para Macs M3 nos laptops dos desenvolvedores."
+            }
+          }
+        ],
+        "correct_answers": ["b"],
+        "justification": {
+          "en": "Test Automation ROI is measured by comparing the costs of manually executing tests and late defect fixing against the cost of build automation, execution, maintenance, and early defect prevention.",
+          "pt": "O ROI da Automação de Teste é medido comparando os custos de executar testes manualmente e correções de defeitos tardias com os custos de automação de compilação, execução, manutenção e prevenção precoce de defeitos."
+        }
+      }
+    ]
+  },
+  "CT-GenAI": {
+    "certification_name": {
+      "en": "ISTQB Certified Tester GenAI Testing (CT-GenAI)",
+      "pt": "ISTQB Certified Tester Engenharia e Teste em GenAI (CT-GenAI)"
+    },
+    "time_limit_mins": 60,
+    "pass_score_percentage": 65,
+    "questions": [
+      {
+        "id": "CT-GenAI-Q01",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "1.2 (Large Language Model Failures)",
+          "pt": "1.2 (Falhas de Modelos de Linguagem de Grande Porte - LLMs)"
+        },
+        "context": {
+          "en": "During test case generation for a banking app, an analyst notices SUT rules are hallucinated.",
+          "pt": "Durante a geração de casos de teste para um aplicativo bancário, um analista percebe que o LLM inventa regras de segurança e equações financeiras falsas, mas que parecem convincentes."
+        },
+        "question_text": {
+          "en": "What is the technical term for this phenomenon, and how should a QA professional mitigate it?",
+          "pt": "Qual é o termo técnico para este fenômeno e como um profissional de QA deve mitigá-lo?"
+        },
+        "question_type": "single_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Data poisoning; mitigated by rewriting the database in PostgreSQL instead of MongoDB.",
+              "pt": "Envenenamento de dados (data poisoning); mitigado reescrevendo o banco de dados em PostgreSQL em vez de MongoDB."
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Hallucination; mitigated by using ground truth datasets, system prompt constraints, and human-in-the-loop validation of generated test assets.",
+              "pt": "Alucinação (hallucination); mitigada pelo uso de conjuntos de dados de verdade terrestre (ground truth), restrições de prompts do sistema e validação com participação humana direta dos ativos de teste gerados."
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Model drift; mitigated by scheduling retraining intervals every 24 hours in the cloud infrastructure.",
+              "pt": "Desvio do modelo (model drift); mitigado pelo agendamento de intervalos de retreinamento a cada 24 horas na infraestrutura de nuvem."
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Overfitting; mitigated by deleting half the prompt text so the model has to guess more.",
+              "pt": "Sobreajuste (overfitting); mitigado apagando metade do texto do prompt para que o modelo precise adivinhar mais."
+            }
+          }
+        ],
+        "correct_answers": ["b"],
+        "justification": {
+          "en": "Hallucination occurs when an LLM generates fluent but factually incorrect or unsupported claims. It is mitigated by injecting ground truth context (e.g. RAG), applying strict negative constraints in prompt instructions, and having expert human QA reviews.",
+          "pt": "A alucinação ocorre quando um LLM gera alegações fluentes, mas faticamente incorretas ou não suportadas por dados. É mitigada injetando o contexto confiável real de verdade (por exemplo, RAG), aplicando restrições negativas estritas nas instruções do prompt e realizando revisões de especialistas humanos de QA."
+        }
+      },
+      {
+        "id": "CT-GenAI-Q02",
+        "points": 1,
+        "syllabus_topic": {
+          "en": "2.2 (Prompt Engineering for Testing)",
+          "pt": "2.2 (Engenharia de Prompt para Testes)"
+        },
+        "context": {
+          "en": "A senior QA wants to extract structured test scenarios from a software requirement document using an LLM.",
+          "pt": "Um QA sênior deseja extrair cenários de teste estruturados de um documento de requisitos de software usando um LLM."
+        },
+        "question_text": {
+          "en": "Which prompt engineering technique involves giving the model one or more examples of target INPUTS and expected OUTPUTS to guide its output structure?",
+          "pt": "Qual técnica de engenharia de prompts envolve fornecer ao modelo um ou mais exemplos de ENTRADAS pretendidas e SAÍDAS esperadas para guiar seu formato de resposta?"
+        },
+        "question_type": "single_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": {
+              "en": "Zero-shot Prompting",
+              "pt": "Prompting de Zero-shot (sem exemplos)"
+            }
+          },
+          {
+            "id": "b",
+            "text": {
+              "en": "Few-shot Prompting",
+              "pt": "Prompting de Poucos Disparos (Few-shot Prompting)"
+            }
+          },
+          {
+            "id": "c",
+            "text": {
+              "en": "Chain-of-Thought Prompting",
+              "pt": "Prompting de Cadeia de Pensamento (Chain-of-Thought)"
+            }
+          },
+          {
+            "id": "d",
+            "text": {
+              "en": "Negative Prompting",
+              "pt": "Prompting Negativo"
+            }
+          }
+        ],
+        "correct_answers": ["b"],
+        "justification": {
+          "en": "Few-shot prompting provides the model with concrete input/output examplars inside the prompt message so it understands the target output syntax, schema, or linguistic formatting without fine-tuning.",
+          "pt": "O Prompting de poucos disparos (few-shot prompting) fornece ao modelo exemplos concretos de entrada/saída dentro do corpo do prompt para que ele compreenda a sintaxe, esquema ou formatação linguística desejada sem necessidade de ajuste fino."
+        }
+      }
+    ]
+  }
+}
