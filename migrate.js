@@ -1,8 +1,15 @@
 import fs from "fs";
 import path from "path";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-const MONGO_URI = "mongodb+srv://felipe:Ld8jVNRHdPNoeq@cluster0.adpgryc.mongodb.net/istqb_arena?retryWrites=true&w=majority&appName=Cluster0";
+dotenv.config();
+
+const MONGO_URI = process.env.MONGODB_URI;
+if (!MONGO_URI) {
+  console.error("Erro: variável de ambiente MONGODB_URI não definida. Configure o arquivo .env antes de executar.");
+  process.exit(1);
+}
 
 const UserSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },
