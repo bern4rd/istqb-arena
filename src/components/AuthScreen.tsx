@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ShieldCheck, Mail, Lock, Sparkles, Loader2, LogIn, UserPlus, Languages } from "lucide-react";
 import { translations } from "../utils/translations";
-
+import { GoogleLogin, CredentialResponse } from '@react-oauth/google';
 interface AuthScreenProps {
   language: "pt" | "en";
   onLanguageChange: (lang: "pt" | "en") => void;
@@ -62,13 +62,7 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
     }
   };
 
-  const handleGoogleSso = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!googleEmail) {
-      setError(language === "en" ? "Please enter your Google email address." : "Por favor, informe seu email do Google.");
-      return;
-    }
-
+  const handleGoogleSsoSuccess = async (credentialResponse: CredentialResponse) => {
     setLoading(true);
     setError("");
 
@@ -79,7 +73,7 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
           "Content-Type": "application/json",
           "X-App-Language": language
         },
-        body: JSON.stringify({ email: googleEmail }),
+        body: JSON.stringify({ credential: credentialResponse.credential }),
       });
 
       const data = await response.json();
@@ -93,6 +87,10 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleGoogleSsoError = () => {
+    setError(language === "en" ? "Google SSO Failed." : "Falha ao autenticar com o Google.");
   };
 
   const handleQuickDemoLogin = (demoEmail: string) => {
@@ -244,49 +242,26 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
             </button>
           </form>
         ) : (
-          /* Google SSO Form */
-          <form className="space-y-4" onSubmit={handleGoogleSso}>
-            <div className="bg-blue-50/50 border border-blue-100 p-3 rounded-lg text-xs text-blue-800 leading-relaxed">
+          /* Real Google SSO */
+          <div className="flex flex-col items-center space-y-4">
+             <div className="bg-blue-50/50 border border-blue-100 p-3 rounded-lg text-xs text-blue-800 leading-relaxed mb-2 text-center w-full">
               {language === "en"
-                ? "Simulate single sign-on authentication via Google Corporate SSO. Input your test account email address to generate high-security credentials automatically."
-                : "Simule a autenticação via Google SSO informando o email da sua conta de testes. O sistema gerará as credenciais seguras de login automaticamente."}
+                ? "Authenticate securely via Google Corporate SSO."
+                : "Autentique-se com segurança via Google SSO Corporativo."}
             </div>
-
-            <div>
-              <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-450 mb-1" htmlFor="google-email">
-                {language === "en" ? "Google Account (Corporate Gmail)" : "Conta do Google (Gmail)"}
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-blue-600">
-                  <Sparkles className="h-4 w-4" />
-                </div>
-                <input
-                  id="google-email"
-                  type="email"
-                  required
-                  value={googleEmail}
-                  onChange={(e) => setGoogleEmail(e.target.value)}
-                  placeholder="analista.qa@gmail.com"
-                  className="block w-full pl-10 pr-3 py-2.5 border border-slate-200 rounded-lg text-xs bg-slate-50 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600 transition-colors"
-                />
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-bold shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-            >
-              {loading ? (
-                <Loader2 className="w-4 h-4 animate-spin" />
-              ) : (
-                <>
-                  <Sparkles className="w-4 h-4 text-amber-400" />
-                  {language === "en" ? "Confirm Google SSO Login" : "Confirmar Google SSO"}
-                </>
-              )}
-            </button>
-          </form>
+            {loading ? (
+              <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
+            ) : (
+              <GoogleLogin
+                onSuccess={handleGoogleSsoSuccess}
+                onError={handleGoogleSsoError}
+                useOneTap
+                theme="outline"
+                size="large"
+                shape="rectangular"
+              />
+            )}
+          </div>
         )}
 
         {/* Auth Mode Toggles */}

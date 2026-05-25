@@ -4,7 +4,8 @@ import fs from "fs";
 import crypto from "crypto";
 import dotenv from "dotenv";
 import { createServer as createViteServer } from "vite";
-import { GoogleGenAI, Type } from "@google/genai";
+import mongoose from "mongoose";
+import { OAuth2Client } from "google-auth-library";
 
 dotenv.config();
 
@@ -19,11 +20,9 @@ if (!fs.existsSync(DATA_DIR)) {
   fs.mkdirSync(DATA_DIR, { recursive: true });
 }
 
-const USERS_FILE = path.join(DATA_DIR, "users.json");
-const ATTEMPTS_FILE = path.join(DATA_DIR, "attempts.json");
+// Keep questions local since they are static metadata
 const QUESTIONS_FILE = path.join(DATA_DIR, "questions.json");
 
-// Local helper to read/write JSON databases
 function readJSONFile<T>(filePath: string, defaultValue: T): T {
   try {
     if (!fs.existsSync(filePath)) {
@@ -38,49 +37,58 @@ function readJSONFile<T>(filePath: string, defaultValue: T): T {
   }
 }
 
-function writeJSONFile<T>(filePath: string, data: T): void {
-  try {
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-  } catch (error) {
-    console.error(`Error writing file ${filePath}:`, error);
-  }
-}
+// ----------------------------------------------------------------------------
+// MongoDB & Mongoose Setup
+// ----------------------------------------------------------------------------
+const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/istqb_arena";
 
-// User representation
-interface User {
-  id: string;
-  email: string;
-  passwordHash: string;
-  isGoogleUser?: boolean;
-}
+mongoose.connect(MONGO_URI)
+  .then(() => console.log("[ISTQB Arena Server] Connected to MongoDB"))
+  .catch(err => console.error("[ISTQB Arena Server] MongoDB connection error:", err));
 
-// Lazy Gemini API initialization to prevent startup crash if key is missing
-let aiClient: GoogleGenAI | null = null;
-function getAI(): GoogleGenAI {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey || apiKey === "MY_GEMINI_API_KEY" || apiKey.trim() === "") {
-    throw new Error("GEMINI_API_KEY is not defined. Please add your key in the AI Studio Settings secrets panel.");
-  }
-  if (!aiClient) {
-    aiClient = new GoogleGenAI({
-      apiKey,
-      httpOptions: {
-        headers: {
-          'User-Agent': 'aistudio-build',
-        }
-      }
-    });
-  }
-  return aiClient;
-}
+const UserSchema = new mongoose.Schema({
+  id: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true },
+  passwordHash: { type: String, required: true },
+  isGoogleUser: { type: Boolean, default: false }
+});
+const User = mongoose.model("User", UserSchema);
 
-// Simple crypt password hash
+const AttemptSchema = new mongoose.Schema({
+  id: { type: String, required: true, unique: true },
+  userId: { type: String, required: true },
+  userEmail: { type: String, required: true },
+  certificationId: { type: String, required: true },
+  certificationName: { type: String, required: true },
+  mode: { type: String, required: true },
+  scorePercentage: { type: Number, required: true },
+  correctCount: { type: Number, required: true },
+  totalQuestions: { type: Number, required: true },
+  timeSpentSeconds: { type: Number, required: true },
+  verdict: { type: String, required: true },
+  date: { type: String, required: true },
+  results: { type: Array, required: true },
+  aiAdvice: { type: String, required: false },
+  hasAIError: { type: Boolean, required: true, default: false }
+});
+const Attempt = mongoose.model("Attempt", AttemptSchema);
+
+// ----------------------------------------------------------------------------
+// Auth Helpers
+// ----------------------------------------------------------------------------
+
+const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+
 function hashPassword(password: string): string {
   return crypto.createHash("sha256").update(password + "ISTQB_SECURE_SALT_KEY").digest("hex");
 }
 
-// Simple bearer token validation middleware
-function authenticateToken(req: express.Request, res: express.Response, next: express.NextFunction) {
+function generateSessionToken(userId: string): string {
+  const signature = crypto.createHash("sha256").update(userId + "SESSION_SIGN").digest("hex").substring(0, 16);
+  return Buffer.from(`${userId}:${signature}`).toString("base64");
+}
+
+async function authenticateToken(req: express.Request, res: express.Response, next: express.NextFunction) {
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
 
@@ -89,11 +97,6 @@ function authenticateToken(req: express.Request, res: express.Response, next: ex
     return;
   }
 
-  const users = readJSONFile<User[]>(USERS_FILE, []);
-  // In our simplified MVP token generator, the token can be MD5/SHA representation of user ID or email
-  // Let's match tokens: for this MVP, we can keep static active sessions or derive user directly using secure hashes.
-  // Let's find the user whose hashed ID matches or simply find user ID in the token string itself.
-  // To keep it simple, secure, and state-less, we generate a token in the form: base64(userId:hash(userId+salt))
   try {
     const decoded = Buffer.from(token, "base64").toString("utf-8");
     const [userId, signature] = decoded.split(":");
@@ -104,13 +107,12 @@ function authenticateToken(req: express.Request, res: express.Response, next: ex
       return;
     }
 
-    const user = users.find(u => u.id === userId);
+    const user = await User.findOne({ id: userId });
     if (!user) {
       res.status(403).json({ error: "User not found" });
       return;
     }
 
-    // Attach user to request
     (req as any).user = { id: user.id, email: user.email };
     next();
   } catch (err) {
@@ -118,17 +120,12 @@ function authenticateToken(req: express.Request, res: express.Response, next: ex
   }
 }
 
-function generateSessionToken(userId: string): string {
-  const signature = crypto.createHash("sha256").update(userId + "SESSION_SIGN").digest("hex").substring(0, 16);
-  return Buffer.from(`${userId}:${signature}`).toString("base64");
-}
-
 /* ==========================================
    API ROUTES
    ========================================== */
 
 // Auth Register
-app.post("/api/auth/register", (req, res) => {
+app.post("/api/auth/register", async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password || typeof email !== "string" || typeof password !== "string") {
     res.status(400).json({ error: "Email e senha são obrigatórios" });
@@ -136,31 +133,33 @@ app.post("/api/auth/register", (req, res) => {
   }
 
   const cleanedEmail = email.trim().toLowerCase();
-  const users = readJSONFile<User[]>(USERS_FILE, []);
 
-  if (users.some(u => u.email === cleanedEmail)) {
-    res.status(400).json({ error: "Este email já está cadastrado" });
-    return;
+  try {
+    const existingUser = await User.findOne({ email: cleanedEmail });
+    if (existingUser) {
+      res.status(400).json({ error: "Este email já está cadastrado" });
+      return;
+    }
+
+    const userId = crypto.randomUUID();
+    const passwordHash = hashPassword(password);
+
+    await User.create({
+      id: userId,
+      email: cleanedEmail,
+      passwordHash,
+      isGoogleUser: false
+    });
+
+    const token = generateSessionToken(userId);
+    res.json({ token, user: { email: cleanedEmail } });
+  } catch (err) {
+    res.status(500).json({ error: "Erro interno do servidor" });
   }
-
-  const userId = crypto.randomUUID();
-  const passwordHash = hashPassword(password);
-
-  const newUser: User = {
-    id: userId,
-    email: cleanedEmail,
-    passwordHash
-  };
-
-  users.push(newUser);
-  writeJSONFile(USERS_FILE, users);
-
-  const token = generateSessionToken(userId);
-  res.json({ token, user: { email: cleanedEmail } });
 });
 
 // Auth Login
-app.post("/api/auth/login", (req, res) => {
+app.post("/api/auth/login", async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
     res.status(400).json({ error: "Email e senha são obrigatórios" });
@@ -168,45 +167,61 @@ app.post("/api/auth/login", (req, res) => {
   }
 
   const cleanedEmail = email.trim().toLowerCase();
-  const users = readJSONFile<User[]>(USERS_FILE, []);
-  const user = users.find(u => u.email === cleanedEmail && !u.isGoogleUser);
 
-  if (!user || user.passwordHash !== hashPassword(password)) {
-    res.status(400).json({ error: "Email ou senha incorretos" });
-    return;
+  try {
+    const user = await User.findOne({ email: cleanedEmail, isGoogleUser: { $ne: true } });
+
+    if (!user || user.passwordHash !== hashPassword(password)) {
+      res.status(400).json({ error: "Email ou senha incorretos" });
+      return;
+    }
+
+    const token = generateSessionToken(user.id);
+    res.json({ token, user: { email: user.email } });
+  } catch (err) {
+    res.status(500).json({ error: "Erro interno do servidor" });
   }
-
-  const token = generateSessionToken(user.id);
-  res.json({ token, user: { email: user.email } });
 });
 
-// Google SSO Simulation (or real token creation)
-app.post("/api/auth/google-sso", (req, res) => {
-  const { email } = req.body;
-  if (!email) {
-    res.status(400).json({ error: "Email do Google é obrigatório" });
+// Real Google SSO
+app.post("/api/auth/google-sso", async (req, res) => {
+  const { credential } = req.body; // Token from @react-oauth/google
+  if (!credential) {
+    res.status(400).json({ error: "Credencial do Google é obrigatória" });
     return;
   }
 
-  const cleanedEmail = email.trim().toLowerCase();
-  const users = readJSONFile<User[]>(USERS_FILE, []);
-  let user = users.find(u => u.email === cleanedEmail);
+  try {
+    const ticket = await googleClient.verifyIdToken({
+      idToken: credential,
+      audience: process.env.GOOGLE_CLIENT_ID,
+    });
+    const payload = ticket.getPayload();
+    if (!payload || !payload.email) {
+      res.status(400).json({ error: "Token inválido" });
+      return;
+    }
 
-  if (!user) {
-    // Auto-register google user
-    const userId = crypto.randomUUID();
-    user = {
-      id: userId,
-      email: cleanedEmail,
-      passwordHash: "GOOGLE_SSO_NOPASSWORD",
-      isGoogleUser: true
-    };
-    users.push(user);
-    writeJSONFile(USERS_FILE, users);
+    const cleanedEmail = payload.email.trim().toLowerCase();
+    let user = await User.findOne({ email: cleanedEmail });
+
+    if (!user) {
+      // Auto-register google user
+      const userId = crypto.randomUUID();
+      user = await User.create({
+        id: userId,
+        email: cleanedEmail,
+        passwordHash: "GOOGLE_SSO_NOPASSWORD",
+        isGoogleUser: true
+      });
+    }
+
+    const token = generateSessionToken(user.id);
+    res.json({ token, user: { email: user.email } });
+  } catch (err) {
+    console.error("Google SSO Verification Error:", err);
+    res.status(401).json({ error: "Falha na verificação com o Google" });
   }
-
-  const token = generateSessionToken(user.id);
-  res.json({ token, user: { email: user.email } });
 });
 
 // Get Certifications and metadata
@@ -238,7 +253,6 @@ app.get("/api/questions/:certificationId", (req, res) => {
   }
 
   const cert = data[certificationId];
-  // Strip correct answer and justification
   const cleanQuestions = cert.questions.map((q: any) => {
     return {
       id: q.id,
@@ -287,15 +301,14 @@ app.post("/api/test/validate", (req, res) => {
     return;
   }
 
-  // Answer is an array of option ids, e.g. ["a"] or ["b", "c"]
   const correctAnswers = question.correct_answers;
   const isCorrect = Array.isArray(selectedOption) && 
                     selectedOption.length === correctAnswers.length &&
-                    selectedOption.every(val => correctAnswers.includes(val));
+                    selectedOption.every((val: string) => correctAnswers.includes(val));
 
   res.json({
     correct: isCorrect,
-    correctAnswers: correctAnswers, // Return this only during validation in practice mode
+    correctAnswers: correctAnswers, 
     justification: typeof question.justification === "object" ? question.justification[lang] : question.justification
   });
 });
@@ -374,17 +387,18 @@ app.post("/api/test/submit", authenticateToken, async (req, res) => {
 
   const certName = typeof cert.certification_name === "object" ? cert.certification_name[lang] : cert.certification_name;
 
-  // Trigger Gemini API to analyze errors
   let aiAdvice = lang === "en" 
     ? "Prepare to see your personalized technical report compiled by the AI Mentor." 
     : "Prepare-se para ver seu aconselhamento personalizado por Inteligência Artificial.";
   let hasAIError = false;
 
   try {
-    const aiInstance = getAI();
+    const apiKey = process.env.DEEPSEEK_API_KEY;
+    if (!apiKey || apiKey === "MY_DEEPSEEK_API_KEY" || apiKey.trim() === "") {
+      throw new Error("DEEPSEEK_API_KEY is not defined. Please add your key in the AI Studio Settings secrets panel.");
+    }
     let prompt = "";
     
-    // Construct rich prompt in matching language
     if (lang === "en") {
       prompt = `You are an expert mentor for ISTQB certifications (${certName}).
 The user completed a mock exam in "${mode}" mode and scored ${percentScore}% (${scorePoints} out of ${totalPoints} possible points). The minimum passing score is ${passLimit}%.
@@ -433,13 +447,30 @@ Por favor, gere uma análise detalhada e motivadora em português estruturada da
 Responda em formato Markdown de leitura limpa. Evite rodeios desnecessários, mas seja profundo nos conceitos de engenharia de software e testes envolvidos.`;
     }
 
-    const response = await aiInstance.models.generateContent({
-      model: "gemini-3.5-flash",
-      contents: prompt,
+    const response = await fetch("https://api.deepseek.com/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        model: "deepseek-chat",
+        messages: [
+          { role: "system", content: "You are a helpful assistant." },
+          { role: "user", content: prompt }
+        ],
+        temperature: 0.7
+      })
     });
 
-    if (response && response.text) {
-      aiAdvice = response.text;
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`DeepSeek API error: ${response.status} ${errorText}`);
+    }
+
+    const data = await response.json();
+    if (data && data.choices && data.choices.length > 0 && data.choices[0].message) {
+      aiAdvice = data.choices[0].message.content;
     } else {
       aiAdvice = lang === "en" 
         ? "AI generated an empty response. Please review the syllabus topics carefully." 
@@ -459,7 +490,7 @@ ${errorsList.length > 0
   : "Perfect! You had no errors on this attempt."
 }
 
-*Configure your GEMINI_API_KEY in the Secrets panel of Google AI Studio Settings to unlock beautiful AI-generated feedback reports.*`;
+*Configure your DEEPSEEK_API_KEY in the Secrets panel of Google AI Studio Settings to unlock beautiful AI-generated feedback reports.*`;
     } else {
       aiAdvice = `### Nota de Orientação (IA Indisponível)
 Não foi possível contatar o mentor IA devido ao seguinte motivo: \`${error.message || error}\`.
@@ -471,33 +502,32 @@ ${errorsList.length > 0
   : "Excelente! Você gabaritou esta tentativa e não possui tópicos de erro para estudar!"
 }
 
-*Configure sua chave GEMINI_API_KEY no painel de Secrets da plataforma para habilitar relatórios completos gerados por IA.*`;
+*Configure sua chave DEEPSEEK_API_KEY no painel de Secrets da plataforma para habilitar relatórios completos gerados por IA.*`;
     }
   }
 
-  // Create attempt entry
   const attemptId = crypto.randomUUID();
-  const newAttempt = {
-    id: attemptId,
-    userId,
-    userEmail,
-    certificationId,
-    certificationName: certName,
-    mode,
-    scorePercentage: percentScore,
-    correctCount: scorePoints,
-    totalQuestions: totalPoints,
-    timeSpentSeconds,
-    verdict: passVerdictStr,
-    date: new Date().toISOString(),
-    results: resultsDetail,
-    aiAdvice,
-    hasAIError
-  };
-
-  const attempts = readJSONFile<any[]>(ATTEMPTS_FILE, []);
-  attempts.push(newAttempt);
-  writeJSONFile(ATTEMPTS_FILE, attempts);
+  try {
+    await Attempt.create({
+      id: attemptId,
+      userId,
+      userEmail,
+      certificationId,
+      certificationName: certName,
+      mode,
+      scorePercentage: percentScore,
+      correctCount: scorePoints,
+      totalQuestions: totalPoints,
+      timeSpentSeconds,
+      verdict: passVerdictStr,
+      date: new Date().toISOString(),
+      results: resultsDetail,
+      aiAdvice,
+      hasAIError
+    });
+  } catch (err) {
+    console.error("Failed to save attempt to DB", err);
+  }
 
   res.json({
     attemptId,
@@ -506,59 +536,59 @@ ${errorsList.length > 0
     totalQuestions: totalPoints,
     verdict: passVerdictStr,
     aiAdvice,
-    results: resultsDetail // includes justifications and choices so frontend can display corrections!
+    results: resultsDetail 
   });
 });
 
 // Get user history
-app.get("/api/user/history", authenticateToken, (req, res) => {
+app.get("/api/user/history", authenticateToken, async (req, res) => {
   const userId = (req as any).user.id;
-  const attempts = readJSONFile<any[]>(ATTEMPTS_FILE, []);
-  
-  // Filter by userId & sort by date ascending for line graph progression, but descending for list view
-  const userAttempts = attempts.filter(a => a.userId === userId);
-  
-  // Return attempts sorted by date ascending for charts, and a sorted copy by date descending for list
-  const chartProgression = [...userAttempts].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).map(a => ({
-    date: a.date,
-    certificationId: a.certificationId,
-    mode: a.mode,
-    score: a.scorePercentage,
-    timeSpentMins: Math.round(a.timeSpentSeconds / 60)
-  }));
+  try {
+    const userAttempts = await Attempt.find({ userId }).sort({ date: 1 });
+    
+    const chartProgression = userAttempts.map(a => ({
+      date: a.date,
+      certificationId: a.certificationId,
+      mode: a.mode,
+      score: a.scorePercentage,
+      timeSpentMins: Math.round(a.timeSpentSeconds / 60)
+    }));
 
-  const listHistory = [...userAttempts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map(a => ({
-    id: a.id,
-    certificationId: a.certificationId,
-    certificationName: a.certificationName,
-    mode: a.mode,
-    scorePercentage: a.scorePercentage,
-    verdict: a.verdict,
-    date: a.date,
-    timeSpentSeconds: a.timeSpentSeconds,
-    correctCount: a.correctCount,
-    totalQuestions: a.totalQuestions
-  }));
+    const listHistory = [...userAttempts].reverse().map(a => ({
+      id: a.id,
+      certificationId: a.certificationId,
+      certificationName: a.certificationName,
+      mode: a.mode,
+      scorePercentage: a.scorePercentage,
+      verdict: a.verdict,
+      date: a.date,
+      timeSpentSeconds: a.timeSpentSeconds,
+      correctCount: a.correctCount,
+      totalQuestions: a.totalQuestions
+    }));
 
-  res.json({
-    chartProgression,
-    listHistory
-  });
+    res.json({
+      chartProgression,
+      listHistory
+    });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch history" });
+  }
 });
 
-// Get single attempt detail (for final screen, mentor sharing, and PDF export)
-app.get("/api/attempts/:attemptId", authenticateToken, (req, res) => {
+// Get single attempt detail
+app.get("/api/attempts/:attemptId", authenticateToken, async (req, res) => {
   const { attemptId } = req.params;
-  const attempts = readJSONFile<any[]>(ATTEMPTS_FILE, []);
-  const attempt = attempts.find(a => a.id === attemptId);
-
-  if (!attempt) {
-    res.status(404).json({ error: "Tentativa não encontrada" });
-    return;
+  try {
+    const attempt = await Attempt.findOne({ id: attemptId });
+    if (!attempt) {
+      res.status(404).json({ error: "Tentativa não encontrada" });
+      return;
+    }
+    res.json(attempt);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch attempt" });
   }
-
-  // Allow users to view their own, or anyone's if shared (it's an internal platform with mentorship, so general view is great!)
-  res.json(attempt);
 });
 
 // Bootserver setup with Vite

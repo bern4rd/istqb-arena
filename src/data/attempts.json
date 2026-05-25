@@ -1,0 +1,503 @@
+[
+  {
+    "id": "c90d7b1f-06ba-415e-9d8e-57b8ce5425eb",
+    "userId": "64fedd83-8f6c-4171-954b-47f3b8615294",
+    "userEmail": "felipebernar.pe@gmail.com",
+    "certificationId": "CT-AI",
+    "certificationName": "ISTQB Certified Tester Teste de Inteligência Artificial (CT-AI)",
+    "mode": "training",
+    "scorePercentage": 16,
+    "correctCount": 7,
+    "totalQuestions": 44,
+    "timeSpentSeconds": 133,
+    "verdict": "Não Passaria",
+    "date": "2026-05-25T02:12:49.989Z",
+    "results": [
+      {
+        "id": "CT-AI-Q01",
+        "syllabus_topic": "AI-1.1.1 (Sistemas Convencionais vs. Sistemas de IA)",
+        "isCorrect": true,
+        "userSelected": [
+          "a"
+        ],
+        "correctAnswers": [
+          "a"
+        ],
+        "justification": "a) Está correta. Isso diferencia corretamente os sistemas baseados em IA dos sistemas convencionais. Sistemas baseados em IA/AM (Aprendizado de Máquina) aprendem padrões nos dados, e muitos podem se adaptar por meio do autoaprendizado, enquanto os sistemas convencionais usam lógica predefinida e produzem saídas previsíveis. Nota: isso não se aplica a sistemas especialistas baseados em regras. b) Incorreta. Embora os sistemas baseados em IA às vezes possam processar dados mais rapidamente, isso nem sempre é o caso, e sua vantagem está mais na adaptabilidade e no tratamento da complexidade do que na velocidade. c) Incorreta. Isso inverte as características dos dois tipos de sistemas. Sistemas baseados em IA são probabilísticos e menos explicáveis, enquanto os sistemas convencionais são determinísticos e mais diretos de interpretar. d) Incorreta. Os sistemas convencionais são mais adequados para tarefas críticas onde a capacidade de explicar os resultados é importante; os sistemas baseados em IA normalmente têm transparência e explicabilidade fracas e, portanto, são mais apropriados para uso em áreas não regulamentadas. Além disso, os sistemas baseados em IA costumam ser mais apropriados para problemas mais complexos."
+      },
+      {
+        "id": "CT-AI-Q02",
+        "syllabus_topic": "AI-1.1.2 (IA Estreita, Geral e Super IA)",
+        "isCorrect": false,
+        "userSelected": [
+          "b"
+        ],
+        "correctAnswers": [
+          "c",
+          "e"
+        ],
+        "justification": "c) Está correta. Isso diferencia com precisão os três tipos de IA, destacando a natureza específica de tarefas da IA estreita, a versatilidade semelhante à humana da IA geral e a natureza hipotética e as capacidades superiores da super IA. e) Está correta. Toda a IA hoje é IA estreita. Não está claro quando a IA geral será alcançada. Uma vez que tenhamos a IA geral, dada a disponibilidade de conhecimento na internet, é quase certo que a super IA será alcançada. a) Incorreta. A IA estreita não é autoaprendizável em todos os casos; ela é específica para tarefas. A IA geral não se limita a problemas especializados, e a super IA não se limita a tarefas predefinidas. b) Incorreta. A IA estreita não opera independentemente de entrada humana, a IA geral não é exclusiva da robótica e a super IA não apenas aprimora a tomada de decisões humanas, mas hipoteticamente supera completamente a inteligência humana. d) Incorreta. Embora a IA estreita seja identificada corretamente como específica para tarefas, a IA geral, se alcançada, teria muitas aplicações no mundo real. Além disso, não está clara a relação que a super IA teria com os modelos de IA generativa."
+      },
+      {
+        "id": "CT-AI-Q03",
+        "syllabus_topic": "AI-1.1.3 (Relação entre IA, AM e AP)",
+        "isCorrect": false,
+        "userSelected": [
+          "c"
+        ],
+        "correctAnswers": [
+          "a"
+        ],
+        "justification": "a) Está correta. IA é o termo mais amplo. Refere-se ao conceito geral de criação de máquinas que podem realizar tarefas que normalmente exigem inteligência humana. Isso inclui uma ampla gama de abordagens e técnicas, não apenas o aprendizado de máquina. O Aprendizado de Máquina (AM) é um subconjunto da IA. É uma abordagem específica para alcançar a IA, onde as máquinas recebem a capacidade de aprender a partir de dados sem serem explicitamente programadas. Em vez de escrever regras específicas para cada situação, os algoritmos de AM aprendem padrões e fazem previsões com base nos dados. O Aprendizado Profundo (AP) é um subconjunto do AM. É um tipo especializado de AM que utiliza redes neurais artificiais com múltiplas camadas (daí o termo 'profundo'). b) Incorreta. A IA e o AM já existiam como conceitos e campos de estudo muito antes do aprendizado profundo se tornar proeminente. O aprendizado profundo é um avanço relativamente recente dentro dos campos mais amplos de aprendizado de máquina e IA. c) Incorreta. AP e AM não são intercambiáveis. AP é um tipo específico de AM. Além disso, a IA não representa uma 'abordagem separada' - AM e AP são abordagens para implementar a IA. d) Incorreta. Embora seja verdade que a IA englobe o AM e o AP, 'trabalhar em paralelo' não é uma forma válida de descrever o relacionamento deles. AP é um tipo de AM, não uma metodologia paralela no mesmo nível que possa rodar em paralelo."
+      },
+      {
+        "id": "CT-AI-Q04",
+        "syllabus_topic": "AI-1.1.4 (IA Generativa)",
+        "isCorrect": false,
+        "userSelected": [
+          "d"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "b) Está correta. Isso descreve com precisão a IA generativa, destacando sua capacidade de criar novos conteúdos com base em padrões aprendidos nos dados de treinamento. a) Incorreta. Descreve análise e compreensão, que não são as capacidades definidoras da IA Generativa, e não foca no aspecto de geração da IA generativa. c) Incorreta. A IA generativa foca em criar novos conteúdos em vez de melhorar conteúdos existentes como um precursor para tarefas de IA mais tradicionais, como tarefas de classificação e previsão. d) Incorreta. A IA generativa não está limitada a textos e imagens; ela tem aplicações na área da saúde, descoberta de medicamentos, simulação de dados e outros campos."
+      },
+      {
+        "id": "CT-AI-Q05",
+        "syllabus_topic": "AI-1.1.5 (Opções de Hardware para Aprendizado de Máquina)",
+        "isCorrect": false,
+        "userSelected": [
+          "c"
+        ],
+        "correctAnswers": [
+          "a"
+        ],
+        "justification": "a) Está correta. Essa comparação destaca com precisão as vantagens das GPUs sobre as CPUs para tarefas de aprendizado de máquina, devido às suas capacidades de processamento paralelo, enquanto as CPUs se destacam na computação de uso geral. b) Incorreta. Embora as CPUs tenham velocidades de clock mais rápidas, elas são menos eficientes do que as GPUs para tarefas de AM porque carecem das capacidades de processamento paralelo massivo necessárias para tarefas de manipulação de dados, como multiplicação de matrizes. c) Incorreta. Hardware específico para IA, como os ASICs, é mais adequado para computação de borda do que para o treinamento de modelos de AM, o que normalmente é feito na nuvem. d) Incorreta. Os processadores neuromórficos são projetados para imitar a estrutura cerebral e não dependem da arquitetura de von Neumann; portanto, essa afirmação está incorreta."
+      },
+      {
+        "id": "CT-AI-Q06",
+        "syllabus_topic": "AI-1.1.6 (Opções de Hospedagem de Sistemas de IA)",
+        "isCorrect": false,
+        "userSelected": [
+          "a"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "i. Esta não é uma abordagem híbrida, pois fala apenas sobre o desenvolvimento na nuvem. ii. Esta é híbrida, pois temos desenvolvimento local para preparação de dados e treinamento na nuvem. iii. Esta é híbrida, pois há desenvolvimento local em laptops e hospedagem em nuvens públicas. iv. Esta não é híbrida, pois tudo está em servidores locais. v. Esta não é híbrida, pois tudo está em nuvens privadas. Portanto, a opção correta é b) ii e iii."
+      },
+      {
+        "id": "CT-AI-Q07",
+        "syllabus_topic": "AI-2.1.1 (Características de Qualidade ISO/IEC 25059)",
+        "isCorrect": false,
+        "userSelected": [
+          "a"
+        ],
+        "correctAnswers": [
+          "c"
+        ],
+        "justification": "A. Avalia a eficácia da intervenção humana... corresponde à capacidade de intervenção (4). B. Preocupa-se com a rapidez com que um usuário pode anular... é um indicador direto da controlabilidade pelo usuário (2). C. A pontuação F1 sob condições adversas testa o quão bem o modelo funciona sob cenários desafiadores... é uma medida de robustez de IA (1). D. A velocidade com que um sistema adapta suas recomendações... é adaptabilidade funcional (3). Sendo assim, a combinação correta é: 1C-2B-3D-4A, o que torna a alternativa c) a correta."
+      },
+      {
+        "id": "CT-AI-Q08",
+        "syllabus_topic": "AI-2.1.2 (Desafios em Sistemas de IA Relacionados à Segurança)",
+        "isCorrect": false,
+        "userSelected": [
+          "d"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "b) Está correta. Essa imprevisibilidade é um desafio central de segurança ao implantar a IA em sistemas relacionados à segurança, pois complica a verificação, validação e garantia contínua da operação segura. a) Incorreta. O problema real é o oposto: os requisitos são geralmente vagos demais e frequentemente fornecidos apenas implicitamente pelos dados, levando a uma rastreabilidade ruim. c) Incorreta. O problema é que os sistemas de autoaprendizado não param de se adaptar após a implantação e, portanto, se afastam de seu comportamento testado original. d) Incorreta. Os padrões de segurança maduros atualmente carecem de disposições para a IA, e alguns restringem explicitamente seu uso."
+      },
+      {
+        "id": "CT-AI-Q09",
+        "syllabus_topic": "AI-2.2.1 (Critérios de Aceitação para Características de Qualidade de IA)",
+        "isCorrect": false,
+        "userSelected": [
+          "d"
+        ],
+        "correctAnswers": [
+          "c"
+        ],
+        "justification": "c) Está correta. É a opção MENOS provável porque se concentra em algumas das subcaracterísticas de usabilidade, como aprendibilidade e operabilidade, que são características genéricas de qualidade aplicáveis à maioria dos sistemas, e não estão diretamente associadas às características específicas de IA na ISO 25059 (ou seja, controlabilidade pelo usuário e transparência, que são subcaracterísticas de usabilidade para sistemas baseados em IA). a) Incorreta. Relaciona-se com a capacidade de intervenção (intervenability). b) Incorreta. Relaciona-se com a corretitude funcional. d) Incorreta. Relaciona-se com a transparência."
+      },
+      {
+        "id": "CT-AI-Q10",
+        "syllabus_topic": "AI-3.1.1 (Formas de Aprendizado de Máquina)",
+        "isCorrect": false,
+        "userSelected": [
+          "a"
+        ],
+        "correctAnswers": [
+          "c"
+        ],
+        "justification": "A. O valor gasto pode ser considerado a função de recompensa para este sistema, com o sistema mudando seu comportamento para aumentar o valor gasto. Portanto, este é um exemplo de Aprendizado por Reforço (2). B. O aplicativo utiliza texto no que pode ser considerado um idioma de origem e uma tradução correspondente 'correta' dessa origem, empregando uma forma de aprendizado supervisionado... Portanto, este é um exemplo de Classificação (3). C. A regressão é usada neste cenário para prever um resultado contínuo... Portanto, este é um exemplo de Regressão (4). D. Ao analisar as interações dos usuários e interesses declarados... agrupa usuários em comunidades ou 'clusters'... Portanto, este é um exemplo de Agrupamento (1). Portanto, a combinação 1D-2A-3B-4C está correta, tornando a opção c) a alternativa correta."
+      },
+      {
+        "id": "CT-AI-Q11",
+        "syllabus_topic": "AI-3.1.2 (Atividades do Fluxo de Trabalho de AM)",
+        "isCorrect": false,
+        "userSelected": [
+          "b"
+        ],
+        "correctAnswers": [
+          "d"
+        ],
+        "justification": "O desempenho do modelo é testado usando dados de validação: Isso faz parte da atividade 'Avaliar o Modelo' (D).\nA origem dos dados de teste usados para testar o modelo é identificada: Isso faz parte da atividade 'Preparar e Testar Dados' (B).\nDados de teste são usados para determinar se os critérios de desempenho acordados foram atendidos: Isso faz parte da atividade 'Testar o Modelo' (C).\nO modelo é testado na plataforma de destino: Isso faz parte da atividade 'Implantar o Modelo' (A).\nPortanto, a opção correta é: 1D-2B-3C-4A, o que torna a alternativa d) a correta."
+      },
+      {
+        "id": "CT-AI-Q12",
+        "syllabus_topic": "AI-3.1.4 (Uso de Modelos Pré-treinados)",
+        "isCorrect": false,
+        "userSelected": [
+          "c"
+        ],
+        "correctAnswers": [
+          "d"
+        ],
+        "justification": "d) Está correta. O RAG baseia-se na curadoria e indexação de dados externos relevantes antes do uso, mas não requer a modificação da arquitetura ou dos parâmetros do próprio modelo pré-treinado; em vez disso, ele aumenta os inputs do modelo com as informações recuperadas em tempo de execução. As opções a), b) e c) trazem descrições incorretas sobre RAG e ajuste fino."
+      },
+      {
+        "id": "CT-AI-Q13",
+        "syllabus_topic": "AI-3.2.1 (Preparação de Dados para Aprendizado de Máquina)",
+        "isCorrect": false,
+        "userSelected": [
+          "d"
+        ],
+        "correctAnswers": [
+          "c"
+        ],
+        "justification": "c) Está correta. Isso identifica corretamente duas técnicas comuns de pré-processamento de dados: aumento de dados (criar versões modificadas para expandir o conjunto) e amostragem (selecionar subconjuntos para reduzir a quantidade de dados)."
+      },
+      {
+        "id": "CT-AI-Q14",
+        "syllabus_topic": "AI-3.2.3 (Papéis dos Conjuntos de Dados no AM)",
+        "isCorrect": false,
+        "userSelected": [
+          "c"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "b) Está correta. O conjunto de dados de treinamento é usado para ajustar ou criar o modelo, o conjunto de validação é usado para ajustar os hiperparâmetros do modelo e evitar o sobreajuste (overfitting), e o conjunto de teste é reservado para avaliar o desempenho do modelo em dados nunca vistos. Descreve com precisão as funções distintas e sequenciais de cada conjunto de dados no fluxo de trabalho de AM."
+      },
+      {
+        "id": "CT-AI-Q15",
+        "syllabus_topic": "AI-3.3.1 (Cálculo de Matriz de Confusão)",
+        "isCorrect": false,
+        "userSelected": [
+          "a"
+        ],
+        "correctAnswers": [
+          "c"
+        ],
+        "justification": "c) Está correta. A fórmula para Precisão = VP/(VP+FP)*100 = 78/(78+22) = 78/100*100."
+      },
+      {
+        "id": "CT-AI-Q16",
+        "syllabus_topic": "AI-3.4.1 (Loop de Treinamento de Aprendizado Profundo)",
+        "isCorrect": false,
+        "userSelected": [
+          "c"
+        ],
+        "correctAnswers": [
+          "a"
+        ],
+        "justification": "a) Está correta. Esta é a próxima etapa no loop de treinamento de AM. A perda é enviada de volta pela rede (backpropagation) para ajustar os valores dos pesos e vieses."
+      },
+      {
+        "id": "CT-AI-Q17",
+        "syllabus_topic": "AI-4.1.1 (Sistemas de IA Bloqueados vs. Adaptativos)",
+        "isCorrect": true,
+        "userSelected": [
+          "a"
+        ],
+        "correctAnswers": [
+          "a"
+        ],
+        "justification": "a) Está correta. Um filtro de spam que identifica spam com base em regras predefinidas (ii) e um sistema baseado em regras para diagnóstico médico (v) são formas de sistemas de IA bloqueados (locked), que geram resultados de teste previsíveis e não mudarão até que o modelo baseado em regras seja reconstruído."
+      },
+      {
+        "id": "CT-AI-Q18",
+        "syllabus_topic": "AI-4.1.2 (Abordagem Estatística para Testes de IA)",
+        "isCorrect": true,
+        "userSelected": [
+          "b"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "b) Está correta. Sistemas baseados em IA são não determinísticos e requerem conjuntos de dados de teste extensos e representativos para alcançar significância estatística, especialmente ao avaliar a corretude funcional de forma estatística."
+      },
+      {
+        "id": "CT-AI-Q19",
+        "syllabus_topic": "AI-4.1.3 (Soluções Limitadas para o Problema do Oráculo)",
+        "isCorrect": false,
+        "userSelected": [
+          "c"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "b) Está correta. A definição de uma 'semente' (seed) está vinculada a uma execução de teste específica e não resolve a natureza probabilística fundamental do modelo quando ele opera em um ambiente do mundo real."
+      },
+      {
+        "id": "CT-AI-Q20",
+        "syllabus_topic": "AI-4.2.1 (Testando Modelos de IA Generativa)",
+        "isCorrect": false,
+        "userSelected": [
+          "a"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "b) Está correta. Devido à variabilidade e complexidade nas saídas de GenAI, o teste se concentra na coerência, conformidade com regras e plausibilidade, em vez de corresponder a saídas esperadas fixas. Diversas entradas, prompts opcionais e parâmetros influenciam os resultados do teste."
+      },
+      {
+        "id": "CT-AI-Q21",
+        "syllabus_topic": "AI-4.2.2 (Red Teaming em IA Generativa)",
+        "isCorrect": false,
+        "userSelected": [
+          "b"
+        ],
+        "correctAnswers": [
+          "d"
+        ],
+        "justification": "d) Está correta. O red teaming deve ser conduzido antes da implantação, não depois, e múltiplos tipos de vulnerabilidades (segurança e viés) devem ser testados em conjunto."
+      },
+      {
+        "id": "CT-AI-Q22",
+        "syllabus_topic": "AI-4.3.1 (Níveis de Teste e Qualidade de Dados no AM)",
+        "isCorrect": false,
+        "userSelected": [
+          "d"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "b) Está correta. O teste de dados de entrada foca na qualidade dos dados e na representatividade dos dados. Parece que as áreas no Reino Unido com altitude superior a 1.250 metros não estavam adequadamente representadas nos dados de treinamento."
+      },
+      {
+        "id": "CT-AI-Q23",
+        "syllabus_topic": "AI-4.3.2 (Teste Baseado em Riscos em Sistemas de AM)",
+        "isCorrect": false,
+        "userSelected": [
+          "b"
+        ],
+        "correctAnswers": [
+          "a"
+        ],
+        "justification": "a) Está correta. Segurança e usabilidade são características de qualidade genéricas e podem ser aplicadas a qualquer sistema. O viés de dados e o desempenho do modelo de AM são riscos potenciais específicos dos sistemas de AM."
+      },
+      {
+        "id": "CT-AI-Q24",
+        "syllabus_topic": "AI-5.1.1 (Teste de Proveniência de Dados)",
+        "isCorrect": false,
+        "userSelected": [
+          "c"
+        ],
+        "correctAnswers": [
+          "a"
+        ],
+        "justification": "a) Está correta. O cenário descreve a necessidade de verificar a origem dos dados e determinar que eles não foram adulterados. Isso se mapeia para o teste de proveniência de dados."
+      },
+      {
+        "id": "CT-AI-Q25",
+        "syllabus_topic": "AI-5.1.2 (Detecção Precoce de Viés no AM)",
+        "isCorrect": false,
+        "userSelected": [
+          "d"
+        ],
+        "correctAnswers": [
+          "c"
+        ],
+        "justification": "c) Está correta. Essa abordagem pode ajudar a destacar onde o viés pode ser introduzido, mas ela depende de verificações de processo em vez de evidências reais extraídas diretamente dos dados."
+      },
+      {
+        "id": "CT-AI-Q26",
+        "syllabus_topic": "AI-5.1.3 (Pipelines de Dados de Treinamento vs. Operacionais)",
+        "isCorrect": false,
+        "userSelected": [
+          "a"
+        ],
+        "correctAnswers": [
+          "d"
+        ],
+        "justification": "d) Está correta. A finalidade do pipeline dita a estratégia de teste. Pipelines de treinamento priorizam a geração de dados de alta qualidade, enquanto pipelines operacionais em produção se concentram em aspectos não funcionais, como eficiência de desempenho, escalabilidade e robustez de IA."
+      },
+      {
+        "id": "CT-AI-Q27",
+        "syllabus_topic": "AI-5.1.4 (Conjuntos de Dados de Referência em Testes de Representatividade)",
+        "isCorrect": false,
+        "userSelected": [
+          "d"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "b) Está correta. A finalidade principal do conjunto de dados de referência é fornecer uma linha de base estatística, permitindo que os profissionais comparem objetivamente as distribuições, correlações de atributos e cobertura dos dados de treinamento com o que é esperado nos ambientes operacionais do mundo real."
+      },
+      {
+        "id": "CT-AI-Q28",
+        "syllabus_topic": "AI-5.1.5 (Teste de Restrições em Conjuntos de Dados)",
+        "isCorrect": true,
+        "userSelected": [
+          "c"
+        ],
+        "correctAnswers": [
+          "c"
+        ],
+        "justification": "c) Está correta. Esse cenário requer a validação de uma relação matemática entre dois atributos (monthly_payment e loan_amount). A restrição de correlação por comparação (correlate constraint) é projetada especificamente para verificar se os valores de um atributo se correlacionam com os valores de outro atributo de acordo com uma regra definida - neste caso, que monthly_payment é igual a loan_amount/324."
+      },
+      {
+        "id": "CT-AI-Q29",
+        "syllabus_topic": "AI-5.1.6 (Múltiplas Anotações em Testes de Rotulagem)",
+        "isCorrect": false,
+        "userSelected": [
+          "a"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "b) Está correta. A anotação múltipla envolve pontos de dados sendo rotulados de forma independente por múltiplos anotadores. A comparação desses rótulos leva à descoberta de divergências entre os anotadores, destacando possíveis defeitos."
+      },
+      {
+        "id": "CT-AI-Q30",
+        "syllabus_topic": "AI-6.1.1 (Técnicas de Teste e Riscos do Modelo)",
+        "isCorrect": false,
+        "userSelected": [
+          "a"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "A. O modelo de AM pode ter um desempenho diferente para diferentes grupos demográficos. Isso é melhor combinado com o Teste de Viés (2).\nB. Entradas ligeiramente modificadas... combinam corretamente com o Teste Adversário (3).\nC. As previsões feitas pelo modelo de AM podem ser imprecisas... Teste de Desempenho Funcional de AM (1).\nD. A precisão do modelo de AM pode ter diminuído significativamente... Teste de Desempenho Funcional de AM (4).\nAssim, o emparelhamento correto é: 1C - 2A - 3B - 4D, tornando a opção b) a alternativa correta."
+      },
+      {
+        "id": "CT-AI-Q31",
+        "syllabus_topic": "AI-6.1.2 (Documentação de Modelos de AM)",
+        "isCorrect": true,
+        "userSelected": [
+          "a"
+        ],
+        "correctAnswers": [
+          "a"
+        ],
+        "justification": "a) Está correta. Isso faz parte do requisito não funcional/documentação."
+      },
+      {
+        "id": "CT-AI-Q32",
+        "syllabus_topic": "AI-6.1.3 (Precisão do Modelo de AM e Intervalo de Confiança)",
+        "isCorrect": true,
+        "userSelected": [
+          "a"
+        ],
+        "correctAnswers": [
+          "a"
+        ],
+        "justification": "a) Está correta. Quando mais testes são executados com a mesma precisão medida (83%), a margem de erro normalmente diminui se o nível de confiança permanecer o mesmo. Isso ocorre porque um tamanho de amostra maior reduz a margem de erro e/ou aumenta nossa confiança estatística no valor medido."
+      },
+      {
+        "id": "CT-AI-Q33",
+        "syllabus_topic": "AI-6.1.4 (Teste Adversário em AM)",
+        "isCorrect": false,
+        "userSelected": [
+          "a"
+        ],
+        "correctAnswers": [
+          "c"
+        ],
+        "justification": "c) Está correta. No teste adversário, os exemplos adversários são frequentemente criados para identificar vulnerabilidades perturbando entradas que antes funcionavam perfeitamente."
+      },
+      {
+        "id": "CT-AI-Q34",
+        "syllabus_topic": "AI-6.1.5 (Teste Metamórfico)",
+        "isCorrect": false,
+        "userSelected": [
+          "d"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "b) Está correta. Não há sobreposição entre as saídas de T1 e T2, e nenhuma câmera está faltando. T1 e T2 combinados devem conter todos os celulares com câmeras do caso de teste de origem, mas sem sobreposição entre os dois."
+      },
+      {
+        "id": "CT-AI-Q35",
+        "syllabus_topic": "AI-6.1.7 (Teste de Desvio Estático vs. Dinâmico)",
+        "isCorrect": false,
+        "userSelected": [
+          "d"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "b) Está correta. Como a verdade real (ground truth) não está disponível, o teste de desvio estático, que não a exige, é a única opção viável."
+      },
+      {
+        "id": "CT-AI-Q36",
+        "syllabus_topic": "AI-6.1.8 (Sobreajuste em Testes de Modelos)",
+        "isCorrect": false,
+        "userSelected": [
+          "d"
+        ],
+        "correctAnswers": [
+          "c"
+        ],
+        "justification": "c) Está correta. O mau desempenho nos dados de teste e o bom desempenho nos dados de validação sugerem sobreajuste (overfitting)."
+      },
+      {
+        "id": "CT-AI-Q37",
+        "syllabus_topic": "AI-6.1.9 (Teste A/B em Sistemas de Aprendizado de Máquina)",
+        "isCorrect": false,
+        "userSelected": [
+          "b"
+        ],
+        "correctAnswers": [
+          "c"
+        ],
+        "justification": "c) Está correta. Conforme declarado no syllabus, 'Sempre que o sistema é atualizado, o teste A/B é usado para testar se a variante atualizada tem um desempenho tão bom quanto ou melhor do que a variante anterior'."
+      },
+      {
+        "id": "CT-AI-Q38",
+        "syllabus_topic": "AI-6.1.10 (Pseudo-Oráculos em Testes Comparativos)",
+        "isCorrect": false,
+        "userSelected": [
+          "c"
+        ],
+        "correctAnswers": [
+          "d"
+        ],
+        "justification": "d) Está correta. Usar um framework de desenvolvimento de AM diferente significa usar bibliotecas diferentes, algoritmos subjacentes potencialmente diferentes ou implementações de algoritmos e um ambiente de desenvolvimento de AM diferente. Essa opção maximiza a independência do pseudo-oráculo em relação ao SUT."
+      },
+      {
+        "id": "CT-AI-Q39",
+        "syllabus_topic": "AI-7.1.1 (Mitigando Riscos com Testes de Desempenho)",
+        "isCorrect": false,
+        "userSelected": [
+          "c",
+          "d"
+        ],
+        "correctAnswers": [
+          "b",
+          "d"
+        ],
+        "justification": "b) Está correta. Isso descreve um defeito potencial da biblioteca usada. O teste de desempenho funcional de AM pode avaliar o comportamento do modelo e expor anomalias decorrentes do uso de uma nova biblioteca. d) Está correta. Isso descreve o risco de má interpretação dos resultados dos testes devido à natureza estocástica do processo de aprendizado. O teste de desempenho funcional de AM, usando múltiplas execuções e análise estatística, é a mitigação para isso."
+      },
+      {
+        "id": "CT-AI-Q40",
+        "syllabus_topic": "AI-7.1.2 (Teste Sombra vs. Teste Canário)",
+        "isCorrect": false,
+        "userSelected": [
+          "d"
+        ],
+        "correctAnswers": [
+          "b"
+        ],
+        "justification": "b) Está correta: O teste sombra (shadow testing) fornece uma maneira livre de riscos de observar como um novo modelo de AM se comporta com dados de produção em tempo real, enquanto o teste canário (canary testing) expõe deliberadamente um pequeno subconjunto de usuários ao novo modelo para observar seu desempenho e impacto no mundo real."
+      }
+    ],
+    "aiAdvice": "# Análise Detalhada – Simulação CT-AI (16%)\n\n## 1. Análise de Desempenho e Veredito\n\nOlá! Vamos direto ao ponto: **16% (7/44) está muito abaixo dos 65% necessários.** Você não passaria nesta simulação, e o tempo de apenas 2 minutos e 13 segundos sugere que você respondeu muito rápido, sem a devida reflexão. Isso não é um problema de capacidade – é um sinal claro de que você precisa desacelerar e estudar os fundamentos com mais calma.\n\n**Mensagem motivadora:** Este resultado é um diagnóstico, não uma sentença. Cada erro é uma oportunidade de aprendizado. Você identificou áreas específicas para focar. Com um plano estruturado, é totalmente possível reverter esse quadro. Vamos transformar esses 16% em 65%+.\n\n---\n\n## 2. Diagnóstico dos Tópicos Críticos\n\nCom base nos erros, os tópicos que mais precisam de atenção são:\n\n| Tópico do Syllabus | Problema Identificado |\n|-------------------|-----------------------|\n| **AI-1.1.1 a AI-1.1.6** (Fundamentos de IA, AM, AP, Hardware, Hospedagem) | **Conceitos básicos confusos**: Você errou questões sobre IA estreita vs geral vs super IA, relação IA/AM/AP, IA generativa, hardware e hospedagem. Isso indica que você precisa revisar a **base teórica** do syllabus. |\n| **AI-3.1.1 a AI-3.2.1** (Formas de AM, Fluxo de Trabalho, Preparação de Dados) | **Erros em mapeamento de exemplos para conceitos**: Você trocou aprendizado supervisionado, não supervisionado, por reforço, e confundiu as etapas do fluxo de trabalho. |\n| **AI-4.1.3 e AI-4.2.1/4.2.2** (Problema do Oráculo, Teste de GenAI, Red Teaming) | **Testes específicos de IA**: Você não entendeu a solução limitada da semente (seed) para o problema do oráculo, nem a abordagem correta para testar GenAI e red teaming. |\n| **AI-5.1.1 a AI-5.1.6** (Qualidade de Dados, Viés, Proveniência, Anotações) | **Testes de dados**: Erros em proveniência, detecção precoce de viés, pipelines de dados e múltiplas anotações. |\n| **AI-6.1.1 a AI-6.1.10** (Técnicas de Teste: adversário, metamórfico, desvio, sobreajuste, A/B, pseudo-oráculo) | **Técnicas específicas de teste de modelo**: Você errou sobre teste adversário (achou que era caixa preta), teste metamórfico (não entendeu a lógica de partição), teste de desvio (confundiu estático vs dinâmico), e pseudo-oráculo. |\n| **AI-7.1.1 e AI-7.1.2** (Teste de Desempenho, Teste Sombra vs Canário) | **Estratégias de implantação**: Você não entendeu a diferença entre shadow testing e canary testing, nem os riscos mitigados pelo teste de desempenho funcional. |\n\n---\n\n## 3. Recomendações e Dicas Técnicas\n\nVou focar nos conceitos que você errou, explicando a **lógica por trás** das respostas corretas.\n\n### 3.1. IA, AM, AP e IA Generativa (Tópicos 1.1.1 a 1.1.6)\n\n**Erro comum:** Você misturou as definições. Lembre-se da hierarquia:\n\n- **IA** (Inteligência Artificial) é o guarda-chuva maior: qualquer técnica que faça máquinas imitarem inteligência humana.\n- **AM** (Aprendizado de Máquina) é um **subconjunto** da IA: máquinas aprendem a partir de dados, sem programação explícita.\n- **AP** (Aprendizado Profundo) é um **subconjunto do AM**: usa redes neurais com muitas camadas.\n\n**Dica prática:** Desenhe um diagrama de Venn: IA grande, AM dentro, AP dentro do AM. Isso resolve a questão 2.\n\n**IA Generativa** (questão 3): Não é só análise – ela **cria** novos conteúdos (texto, imagem, áudio, até descoberta de medicamentos). A opção [d] estava errada porque limitava a IA generativa a texto e imagem, mas ela vai muito além.\n\n**Hardware (questão 4):** GPUs são melhores para AM por paralelismo massivo (multiplicação de matrizes). CPUs são melhores para computação geral. ASICs (como TPUs) são especializados, mas não são só para treinamento – também são usados em inferência. Processadores neuromórficos não seguem von Neumann.\n\n### 3.2. Formas de AM e Fluxo de Trabalho (Tópicos 3.1.1, 3.1.2)\n\n**Erro:** Você confundiu os tipos de aprendizado.\n\n- **Aprendizado Supervisionado:** Dados rotulados (ex: classificação, regressão). Exemplo: prever preço de casa.\n- **Aprendizado Não Supervisionado:** Dados não rotulados (ex: agrupamento). Exemplo: segmentar clientes por comportamento.\n- **Aprendizado por Reforço:** Agente aprende por recompensas/punições. Exemplo: jogo de xadrez, robô aprendendo a andar.\n\n**Dica:** Para cada exemplo, pergunte: \"Os dados têm rótulos?\" Se sim → supervisionado. Se não → não supervisionado. Se há recompensa → reforço.\n\n**Fluxo de trabalho de AM (questão 10):** A sequência correta é:\n1. **Preparar e testar dados** (identificar fonte dos dados de teste)\n2. **Avaliar o modelo** (usar dados de validação)\n3. **Testar o modelo** (usar dados de teste para verificar critérios)\n4. **Implantar o modelo** (testar na plataforma de destino)\n\n### 3.3. Problema do Oráculo e Teste de GenAI (Tópicos 4.1.3, 4.2.1, 4.2.2)\n\n**Problema do Oráculo (questão 16):** Sistemas de IA são probabilísticos – a mesma entrada pode gerar saídas diferentes. Definir uma **semente (seed)** resolve a **reprodutibilidade** para um teste específico, mas não muda a natureza probabilística do modelo em produção. É uma solução **limitada** porque o comportamento em produção continuará imprevisível.\n\n**Teste de GenAI (questão 17):** Não se testa GenAI com saídas esperadas fixas (como em software tradicional). A abordagem correta é **avaliar a aderência a regras, coerência e plausibilidade**, manipulando entradas e parâmetros.\n\n**Red Teaming (questão 18):** Deve ser feito **antes da implantação**, cobrindo **múltiplos tipos de vulnerabilidade** (segurança E viés) simultaneamente. A opção [b] estava errada porque focava apenas em viés e ignorava segurança.\n\n### 3.4. Testes de Dados (Tópicos 5.1.1 a 5.1.6)\n\n**Proveniência de dados (questão 21):** Verificar a **origem** e se os dados foram adulterados. Isso é teste de proveniência, não de atributos.\n\n**Detecção precoce de viés (questão 22):** A melhor abordagem é **revisar o fluxo de trabalho e os processos de preparação de dados** para identificar onde o viés pode ser introduzido. Testes estatísticos diretos (como análise de impacto díspar) são mais adequados para fases posteriores.\n\n**Pipelines de dados (questão 23):** \n- **Pipeline de treinamento:** Foco em **qualidade dos dados** (se são manipulados corretamente).\n- **Pipeline operacional:** Foco em **desempenho, escalabilidade e confiabilidade sob carga**.\n\n**Múltiplas anotações (questão 25):** Servem para **comparar anotações independentes** e detectar divergências (possíveis defeitos). Não é para automatizar verificação.\n\n### 3.5. Técnicas de Teste de Modelo (Tópicos 6.1.1 a 6.1.10)\n\n**Teste adversário (questão 27):** É uma forma de **teste de caixa branca** (você conhece o modelo) que gera **entradas minimamente perturbadas** para induzir classificação incorreta. A opção [a] estava errada porque dizia \"caixa preta\" – na verdade, você usa o conhecimento do modelo para criar os exemplos.\n\n**Teste metamórfico (questão 28):** A lógica é: se você tem uma relação metamórfica (ex: \"se a câmera é melhor, a classificação deve ser melhor ou igual\"), você cria casos de teste de acompanhamento que **não se sobrepõem** e cobrem todos os elementos. A opção [b] estava correta porque T1 e T2 não tinham sobreposição e juntos cobriam todos os celulares.\n\n**Teste de desvio (questão 29):** \n- **Estático:** Não precisa de ground truth (verdade real). Analisa distribuições de dados.\n- **Dinâmico:** Precisa de ground truth. Compara previsões com resultados reais.\n\nSe a ground truth não está disponível, use **teste de desvio estático**.\n\n**Sobreajuste (questão 30):** Quando o modelo tem **bom desempenho nos dados de validação, mas mau nos dados de teste**. Isso é overfitting. A opção [d] (baixos critérios de aceitação) não explica a discrepância.\n\n**Teste A/B (questão 31):** Compara duas versões de um sistema (atual vs nova) em produção, com usuários reais, para ver qual tem melhor desempenho. Não é sobre componentes internos.\n\n**Pseudo-oráculo (questão 32):** Para teste comparativo (back-to-back), você precisa de uma implementação **independente** do modelo testado. Usar um **framework de desenvolvimento diferente** maximiza a independência. A opção [c] (RAG) ainda depende do mesmo modelo.\n\n### 3.6. Teste Sombra vs Canário (Tópico 7.1.2)\n\n**Erro comum:** Você inverteu os conceitos.\n\n- **Teste Sombra (Shadow):** O novo modelo recebe tráfego real **mas não afeta os usuários** – as respostas não são usadas. É um teste **offline** com dados reais.\n- **Teste Canário (Canary):** O novo modelo é exposto a **um pequeno subconjunto de usuários reais**, que recebem as respostas do novo modelo. É um teste **online** com impacto controlado.\n\nA opção [b] estava correta: sombra espelha sem impacto, canário fornece respostas.\n\n---\n\n## 4. Plano de Ação para as Próximas Tentativas\n\n### Fase 1: Revisão Teórica (3-4 dias)\n\n| Dia | Tópico | Atividade |\n|-----|--------|-----------|\n| Dia 1 | **Capítulo 1** (Fundamentos de IA, AM, AP, Hardware, Hospedagem) | Leia o syllabus oficial. Faça flashcards com as definições. Desenhe diagramas de hierarquia. |\n| Dia 2 | **Capítulo 3** (Formas de AM, Fluxo de Trabalho, Preparação de Dados) | Estude os exemplos do syllabus. Crie um mapa mental com as etapas do fluxo de trabalho. |\n| Dia 3 | **Capítulo 4 e 5** (Teste de GenAI, Red Teaming, Qualidade de Dados) | Foco em problema do oráculo, proveniência, viés e anotações. |\n| Dia 4 | **Capítulo 6 e 7** (Técnicas de Teste, Implantação) | Estude cada técnica (adversário, metamórfico, desvio, A/B, pseudo-oráculo, sombra vs canário). |\n\n### Fase 2: Prática com Simulações (2 dias)\n\n- Refazer a mesma simulação em modo **training**, mas **sem pressa**. Leia cada questão com calma.\n- Para cada questão, antes de responder, **explique em voz alta** por que as outras opções estão erradas.\n- Anote os tópicos que ainda errou e revise-os.\n\n### Fase 3: Estratégia de Prova\n\n- **Tempo:** Você gastou 2 minutos em 44 questões. Isso é muito rápido. A prova tem 60 minutos para 40 questões (na real). **Gaste pelo menos 1 minuto por questão** – leia com calma, elimine opções erradas.\n- **Técnica de eliminação:** Para cada questão, identifique **pelo menos 2 opções claramente erradas** antes de escolher. Isso aumenta a chance de acerto.\n- **Não chute sem pensar:** Se não souber, elimine o que puder e faça uma escolha informada.\n\n### Checklist de Estudo\n\n- [ ] Revisar **Capítulo 1** (definições de IA, AM, AP, IA generativa, hardware)\n- [ ] Revisar **Capítulo 3** (formas de AM, fluxo de trabalho, preparação de dados)\n- [ ] Revisar **Capítulo 4** (problema do oráculo, teste de GenAI, red teaming)\n- [ ] Revisar **Capítulo 5** (proveniência, viés, pipelines, anotações)\n- [ ] Revisar **Capítulo 6** (teste adversário, metamórfico, desvio, sobreajuste, A/B, pseudo-oráculo)\n- [ ] Revisar **Capítulo 7** (teste de desempenho, sombra vs canário)\n- [ ] Praticar **pelo menos 2 simulações completas** com tempo controlado (60 min para 40 questões)\n\n---\n\n**Lembre-se:** Você tem potencial para passar. O erro foi de estratégia (pressa) e de base teórica. Com estudo focado e prática consciente, você chega lá. Vamos juntos!",
+    "hasAIError": false
+  }
+]
