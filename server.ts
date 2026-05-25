@@ -21,7 +21,18 @@ if (!fs.existsSync(DATA_DIR)) {
 }
 
 // Keep questions local since they are static metadata
-const QUESTIONS_FILE = path.join(DATA_DIR, "questions.json");
+// Loaded from per-certification files
+const CERT_FILES: Record<string, string> = {
+  "CTFL": path.join(DATA_DIR, "questions-CTFL.json"),
+  "CT-AI": path.join(DATA_DIR, "questions-CT-AI.json"),
+  "CTAL-AT": path.join(DATA_DIR, "questions-CTAL-AT.json"),
+  "CTAL-TAE": path.join(DATA_DIR, "questions-CTAL-TAE.json"),
+  "CT-GenAI": path.join(DATA_DIR, "questions-CT-GenAI.json"),
+};
+
+function getCertFilePath(certId: string): string {
+  return CERT_FILES[certId] || path.join(DATA_DIR, `questions-${certId}.json`);
+}
 
 function readJSONFile<T>(filePath: string, defaultValue: T): T {
   try {
@@ -227,17 +238,19 @@ app.post("/api/auth/google-sso", async (req, res) => {
 // Get Certifications and metadata
 app.get("/api/certifications", (req, res) => {
   const lang = (req.headers["x-app-language"] as string === "en") ? "en" : "pt";
-  const data = readJSONFile<any>(QUESTIONS_FILE, {});
-  const list = Object.keys(data).map(key => {
-    const certNameObj = data[key].certification_name;
-    return {
-      id: key,
+  const list: any[] = [];
+  for (const [certId, filePath] of Object.entries(CERT_FILES)) {
+    const certData = readJSONFile<any>(filePath, null);
+    if (!certData) continue;
+    const certNameObj = certData.certification_name;
+    list.push({
+      id: certId,
       name: typeof certNameObj === "object" ? certNameObj[lang] : certNameObj,
-      timeLimitMins: data[key].time_limit_mins,
-      passScorePercentage: data[key].pass_score_percentage,
-      questionCount: data[key].questions.length
-    };
-  });
+      timeLimitMins: certData.time_limit_mins,
+      passScorePercentage: certData.pass_score_percentage,
+      questionCount: certData.questions.length
+    });
+  }
   res.json(list);
 });
 
@@ -245,14 +258,13 @@ app.get("/api/certifications", (req, res) => {
 app.get("/api/questions/:certificationId", (req, res) => {
   const { certificationId } = req.params;
   const lang = (req.headers["x-app-language"] as string === "en") ? "en" : "pt";
-  const data = readJSONFile<any>(QUESTIONS_FILE, {});
+  const filePath = getCertFilePath(certificationId);
+  const cert = readJSONFile<any>(filePath, null);
   
-  if (!data[certificationId]) {
+  if (!cert) {
     res.status(404).json({ error: lang === "en" ? "Certification not found" : "Certificação não encontrada" });
     return;
   }
-
-  const cert = data[certificationId];
   const cleanQuestions = cert.questions.map((q: any) => {
     return {
       id: q.id,
@@ -288,8 +300,8 @@ app.post("/api/test/validate", (req, res) => {
     return;
   }
 
-  const data = readJSONFile<any>(QUESTIONS_FILE, {});
-  const cert = data[certificationId];
+  const filePath = getCertFilePath(certificationId);
+  const cert = readJSONFile<any>(filePath, null);
   if (!cert) {
     res.status(404).json({ error: lang === "en" ? "Certification not found" : "Certificação não encontrada" });
     return;
@@ -325,8 +337,8 @@ app.post("/api/test/submit", authenticateToken, async (req, res) => {
     return;
   }
 
-  const data = readJSONFile<any>(QUESTIONS_FILE, {});
-  const cert = data[certificationId];
+  const filePath = getCertFilePath(certificationId);
+  const cert = readJSONFile<any>(filePath, null);
   if (!cert) {
     res.status(404).json({ error: lang === "en" ? "Certification not registered" : "Certificação não cadastrada" });
     return;

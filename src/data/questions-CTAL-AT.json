@@ -1,0 +1,1335 @@
+{
+  "certification_name": {
+    "en": "ISTQB Advanced Level Agile Technical Tester (CTAL-AT)",
+    "pt": "ISTQB Advanced Level Agile Technical Tester (CTAL-AT) - Técnico Ágil"
+  },
+  "time_limit_mins": 90,
+  "pass_score_percentage": 65,
+  "questions": [
+    {
+      "id": "CTAL-AT-Q01",
+      "points": 1,
+      "syllabus_topic": {
+        "en": "1.2 (Agile Task Planning)",
+        "pt": "1.2 (Planejamento de Tarefas Ágeis)"
+      },
+      "context": {
+        "en": "An agile team is planning a sprint backlog. The technical tester needs to contribute to sizing stories that have high technical complexity and integration risks.",
+        "pt": "Uma equipe ágil está planejando o backlog da sprint. O testador técnico precisa contribuir para dimensionar os tamanhos das histórias de alta complexidade técnica e riscos de integração."
+      },
+      "question_text": {
+        "en": "In an Agile project, what is the technical tester's dynamic role during planning sessions?",
+        "pt": "Em um projeto ágil, qual é o papel dinâmico do testador técnico durante as sessões de planejamento?"
+      },
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "en": "They must remain passive and only estimate stories after developers write the code.",
+            "pt": "Eles devem permanecer passivos e apenas estimar as histórias depois que os desenvolvedores escreverem o código."
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "They provide technical insights on testability, test infrastructure, automation costs, and potential regression risks for backlog items.",
+            "pt": "Eles fornecem insights técnicos sobre testabilidade, infraestrutura de teste, custos de automação e potenciais riscos de regressão para os itens do backlog."
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "They take sole responsibility for writing user stories and planning the product release roadmap on behalf of the Product Owner.",
+            "pt": "Eles assumem a responsabilidade exclusiva de escrever histórias de usuários e planejar o roadmap de lançamento do produto em nome do Product Owner."
+          }
+        },
+        {
+          "id": "d",
+          "text": {
+            "en": "They enforce fixed gates where no development is allowed to proceed if automated tests are not 105% stable.",
+            "pt": "Eles impõem gates fixos onde nenhum desenvolvimento pode prosseguir se os testes automatizados não estiverem 100% estáveis."
+          }
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": {
+        "en": "Agile technical testers collaborate from the start, introducing estimates for testing tasks, pointing out dependency or testability issues, and explaining regression impacts of complex features.",
+        "pt": "Os testadores técnicos ágeis colaboram desde o início, inserindo estimativas para tarefas de teste, apontando problemas de dependência ou testabilidade e explicando os impactos de regressão de recursos complexos."
+      }
+    },
+    {
+      "id": "CTAL-AT-Q02",
+      "points": 1,
+      "syllabus_topic": {
+        "en": "2.2.2 (Refactoring and Test Driven Development)",
+        "pt": "2.2.2 (Refatoração e Desenvolvimento Orientado por Testes - TDD)"
+      },
+      "context": null,
+      "question_text": {
+        "en": "Which of the following describes the correct order of the TDD (Test-Driven Development) cycle?",
+        "pt": "Qual das seguintes opções descreve a ordem correta do ciclo TDD (Test-Driven Development)?"
+      },
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Write code -> Verify -> Write test -> Refactor",
+            "pt": "Escrever código -> Verificar -> Escrever teste -> Refatorar"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Write a failing test -> Write minimal code to pass the test -> Refactor both the code and test",
+            "pt": "Escrever um teste que falha -> Escrever o código mínimo para passar no teste -> Refatorar o código e o teste"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Design system architecture -> Write unit tests -> Execute system test -> Finish",
+            "pt": "Projetar a arquitetura do sistema -> Escrever testes unitários -> Executar teste de sistema -> Concluir"
+          }
+        },
+        {
+          "id": "d",
+          "text": {
+            "en": "Create mocking frameworks -> Write integration scripts -> Run performance profile",
+            "pt": "Criar estruturas de simulação (mocking) -> Escrever scripts de integração -> Executar perfil de desempenho"
+          }
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": {
+        "en": "TDD follows the 'Red-Green-Refactor' process: Write a failing unit test first (Red), code just enough to make it pass (Green), then clean up/improve the structure of the codebase (Refactor).",
+        "pt": "O TDD segue o processo 'Red-Green-Refactor': Escrever um teste unitário que falhe primeiro (Red), codificar apenas o suficiente para fazê-lo passar (Green) e, em seguida, limpar/melhorar a estrutura da base de código (Refactor)."
+      }
+    },
+    {
+      "id": "CTAL-AT-Q03",
+      "points": 1,
+      "syllabus_topic": "FA-1.1.1",
+      "context": "The Agile Manifesto has 4 statements of values. Match the agile value on the left (1-4) with its traditional counterpart on the right (i-iv).\n1) Customer collaboration over\n2) Responding to change over\n3) Individuals and interactions over\n4) Working software over\n\ni) Processes and tools\nii) Following a plan\niii) Contract negotiation\niv) Comprehensive documentation",
+      "question_text": "Select ONE option.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1-iii, 2-iv, 3-ii, 4-i"
+        },
+        {
+          "id": "b",
+          "text": "1-iii, 2-ii, 3-i, 4-iv"
+        },
+        {
+          "id": "c",
+          "text": "1-iv, 2-ii, 3-i, 4-iii"
+        },
+        {
+          "id": "d",
+          "text": "1-ii, 2-iii, 3-iv, 4-i"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "B. Correct-The Manifesto consists of 4 key values: Individuals and Interactions over processes and tools; Working software over comprehensive documentation; Customer collaboration over contract negotiation; Responding to change over following a plan."
+    },
+    {
+      "id": "CTAL-AT-Q04",
+      "points": 1,
+      "syllabus_topic": "FA-1.1.1",
+      "context": null,
+      "question_text": "Which of the following statements best reflects one of the values of the Agile Manifesto?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Working software allows the customer to provide rapid feedback to the developer."
+        },
+        {
+          "id": "b",
+          "text": "Developers should use unit testing tools to support the testing process."
+        },
+        {
+          "id": "c",
+          "text": "Business representatives should provide a backlog of user stories and their estimates to the team."
+        },
+        {
+          "id": "d",
+          "text": "Adopting plans to change adds no real value to an agile project."
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "A. Correct - From a customer perspective, working software is much more useful and valuable than overly detailed documentation, and it provides an opportunity to provide the development team rapid feedback."
+    },
+    {
+      "id": "CTAL-AT-Q05",
+      "points": 1,
+      "syllabus_topic": "FA-1.1.2",
+      "context": null,
+      "question_text": "Which TWO activities below best represent responsibilities that are consistent with agile development's Whole Team approach?",
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Testers are responsible for developing unit tests which they pass on to the developers for testing"
+        },
+        {
+          "id": "b",
+          "text": "Business representatives are expected to select the tools the team will use during the project"
+        },
+        {
+          "id": "c",
+          "text": "Testers are expected to work with customer representatives to create acceptance tests"
+        },
+        {
+          "id": "d",
+          "text": "The whole team, not just testers, has responsibility for the quality of the product"
+        },
+        {
+          "id": "e",
+          "text": "Developers are expected to test non-functional requirements (performance, usability, security, etc.)"
+        }
+      ],
+      "correct_answers": [
+        "c",
+        "d"
+      ],
+      "justification": "C. Correct - Testers support & collaborate with business representatives to help them create suitable acceptance tests. D. Correct - In agile projects, quality is the responsibility of the whole team."
+    },
+    {
+      "id": "CTAL-AT-Q06",
+      "points": 1,
+      "syllabus_topic": "FA-1.1.2",
+      "context": null,
+      "question_text": "Which of the following is an advantage of having the whole team responsible for quality?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Companies no longer need to recruit and train software testing specialists."
+        },
+        {
+          "id": "b",
+          "text": "Test automation tasks are now the responsibility of the development team instead of the test team."
+        },
+        {
+          "id": "c",
+          "text": "Role barriers are eliminated and team members contribute to project success based on their unique skills and perspectives."
+        },
+        {
+          "id": "d",
+          "text": "Project costs are lower because the need for a specialized test team is eliminated."
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "C. Correct - Enables a variety of skillsets to be leveraged as needed for the project."
+    },
+    {
+      "id": "CTAL-AT-Q07",
+      "points": 1,
+      "syllabus_topic": "FA-1.1.3",
+      "context": "Which TWO of the following statements are true?\n1) Early feedback gives the developers more time to develop new system features because they spend less time reworking features expected in a given iteration.\n2) Early feedback enables agile teams to deliver features with the highest business value first, because the customer maintains focus on features with the highest system value.\n3) Early feedback reduces costs because it decreases the amount of time needed for system testing.\n4) Early feedback makes it more likely that the system built is what the customer wanted because they are given the opportunity to make changes throughout the iteration.",
+      "question_text": "Select ONE option.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1 and 4"
+        },
+        {
+          "id": "b",
+          "text": "2 and 3"
+        },
+        {
+          "id": "c",
+          "text": "2 and 4"
+        },
+        {
+          "id": "d",
+          "text": "1 and 3"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "2) Correct-Frequent customer feedback maintains a focus on the features with the highest business value. 4) Correct-Customers indicate if requirements are missed or misinterpreted, and modify functionality if they desire."
+    },
+    {
+      "id": "CTAL-AT-Q08",
+      "points": 1,
+      "syllabus_topic": "FA-1.1.3",
+      "context": null,
+      "question_text": "Which of the following is a benefit of the agile process promoting early and frequent feedback?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "The total number of defects found during the project is much higher than on traditional software development projects such as waterfall."
+        },
+        {
+          "id": "b",
+          "text": "There is less rework because customers see the product regularly."
+        },
+        {
+          "id": "c",
+          "text": "It is easy to determine the developer who introduces the most defects when integrating code."
+        },
+        {
+          "id": "d",
+          "text": "There is enough time to complete all features scheduled for the given iteration."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "B. Correct-Clarifying customer feature requests, early and regularly throughout development, making it more likely that key features will be available for customer use earlier and the product, will better reflect what the customer wants."
+    },
+    {
+      "id": "CTAL-AT-Q09",
+      "points": 1,
+      "syllabus_topic": "FA-1.2.1",
+      "context": "Match the following agile software development approaches on the top with their corresponding descriptions on the bottom.\n1) Extreme Programming\n2) Scrum\n3) Kanban\n\ni. Embraces 5 values to guide development: Communication, Simplicity, Feedback, Courage, and Respect\nii. Divides the project into short iterations called sprints.\niii. Optimizes the 'flow' of work in a value-added chain.",
+      "question_text": "Select ONE option.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1-i, 2-iii, 3-ii"
+        },
+        {
+          "id": "b",
+          "text": "1-i, 2-ii, 3-iii"
+        },
+        {
+          "id": "c",
+          "text": "1-i, 2-ii, 3-iii"
+        },
+        {
+          "id": "d",
+          "text": "1-iii, 2-ii, 3-i"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "B. Correct-Extreme Programming embraces 5 values to guide development: Communication, Simplicity, Feedback, Courage, and Respect. Scrum divides the project into short iterations called sprints. Kanban has no iterations or sprints; it is used to optimize continuous flow of tasks and minimize throughput time of each task."
+    },
+    {
+      "id": "CTAL-AT-Q10",
+      "points": 1,
+      "syllabus_topic": "FA-1.2.2",
+      "context": "During an iteration planning meeting, the team is sharing their thoughts about a user story. The product owner advises that the customer should have one screen to enter information. The developer explains that there are technical limitations for the feature, due to the amount of information needed to be captured on the screen. Another developer says that there are risks about performance as the information will be stored in an external offsite database.",
+      "question_text": "Which of the following would best represent a tester's contribution to this discussion?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "The tester advises that the screen for the user story needs to be a single page to reduce test automation effort."
+        },
+        {
+          "id": "b",
+          "text": "The tester advises that usability is more important than performance."
+        },
+        {
+          "id": "c",
+          "text": "The tester advises that performance acceptance criteria should standard maximum of 1 second for data storage."
+        },
+        {
+          "id": "d",
+          "text": "The tester advises that the user story needs acceptance criteria to be testable."
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "D. Correct- The tester contributes by ensuring that the team creates acceptance criteria for the user story."
+    },
+    {
+      "id": "CTAL-AT-Q11",
+      "points": 1,
+      "syllabus_topic": "FA-1.2.3",
+      "context": null,
+      "question_text": "Which of the following BEST describes a tester participating in a retrospective meeting?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "As a tester participating in a retrospective meeting, I should bring in topics that are related to testing only. All other topics will be covered by different participants."
+        },
+        {
+          "id": "b",
+          "text": "As a tester, I participate in a retrospective meeting as an observer, ensuring that the meeting follows the retrospective rules and agile values."
+        },
+        {
+          "id": "c",
+          "text": "As a tester participating in a retrospective meeting, I should provide feedback and input on all activities conducted by the team during the sprint."
+        },
+        {
+          "id": "d",
+          "text": "As a tester, I should only attend and participate in a retrospective meeting if I have any feedback and input related to activities conducted by the team during the sprint."
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "C. Correct All team members, both testers and non-testers, can provide input on both testing and non-testing activities."
+    },
+    {
+      "id": "CTAL-AT-Q12",
+      "points": 1,
+      "syllabus_topic": "FA-1.2.3",
+      "context": null,
+      "question_text": "Which of the following items should NOT be raised during a retrospective meeting?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "There should be more emphasis on unit testing in the future, to improve overall quality."
+        },
+        {
+          "id": "b",
+          "text": "The build process is manual and takes too long. Research and implementation of an automated build framework should be done."
+        },
+        {
+          "id": "c",
+          "text": "Tester XYZ is struggling to find defects. Test design training is required for this resource."
+        },
+        {
+          "id": "d",
+          "text": "Automated regression test suites are taking too long to run. A review of the tests, to eliminate redundant or unnecessary tests, is required."
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "C. Correct-The retrospective meeting is not meant to single out individuals, but to focus on improvements of the process, and the team as a whole."
+    },
+    {
+      "id": "CTAL-AT-Q13",
+      "points": 1,
+      "syllabus_topic": "FA-1.2.4",
+      "context": null,
+      "question_text": "Which of the following is NOT a principle of continuous integration?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Continuous integration helps to build changed software regularly, including testing and deploying, in an automated way."
+        },
+        {
+          "id": "b",
+          "text": "Continuous integration allows new builds to be available frequently to testers and stakeholders."
+        },
+        {
+          "id": "c",
+          "text": "Continuous integration helps to identify new integration defects early and makes the analysis of these defects easier."
+        },
+        {
+          "id": "d",
+          "text": "Continuous integration ensures that testing of builds is done manually, as this generates more reliable results than automated scripts."
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "D. Correct-Testing should be automated at the unit and integration level to allow for quick feedback on the quality of the build."
+    },
+    {
+      "id": "CTAL-AT-Q14",
+      "points": 1,
+      "syllabus_topic": "FA-1.2.5",
+      "context": null,
+      "question_text": "Which of the following activities would a tester do during release planning?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Produce a list of acceptance tests for user stories"
+        },
+        {
+          "id": "b",
+          "text": "Help break down user stories into smaller and more detailed tasks."
+        },
+        {
+          "id": "c",
+          "text": "Estimate testing tasks generated by new features planned for this iteration."
+        },
+        {
+          "id": "d",
+          "text": "Support the clarification of the user stories and ensure that they are testable"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "D. Correct-This is expected during release planning."
+    },
+    {
+      "id": "CTAL-AT-Q15",
+      "points": 1,
+      "syllabus_topic": "Agile Extension-Term",
+      "context": null,
+      "question_text": "What is the most appropriate explanation of a 'user story'?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "An artifact that the tester must review and sign off before testing can begin."
+        },
+        {
+          "id": "b",
+          "text": "An artifact used to detail only the functional requirements of the system."
+        },
+        {
+          "id": "c",
+          "text": "An artifact documented by business representatives to help developers and testers understand the system requirements."
+        },
+        {
+          "id": "d",
+          "text": "An artifact written collaboratively by developers, testers, and business representatives to capture requirements."
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "D. Correct In an Agile environment, user stories are written to capture requirements from the perspectives of developers, testers, and business representatives. The collaborative authorship of the user story can use techniques such as brainstorming and mind mapping."
+    },
+    {
+      "id": "CTAL-AT-Q16",
+      "points": 1,
+      "syllabus_topic": "FA-2.1.1",
+      "context": null,
+      "question_text": "Which of the following test activities is typically done during agile projects, but is not as common on traditional projects?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Testers write detailed test plans so all team members can understand what will be tested during each iteration."
+        },
+        {
+          "id": "b",
+          "text": "Testers are heavily involved in the creation of automated test cases which are then used to verify the implementation of the requirements."
+        },
+        {
+          "id": "c",
+          "text": "Testers perform exploratory testing in order to find important defects quickly."
+        },
+        {
+          "id": "d",
+          "text": "Testers collaborate with developers to better understand what needs to be tested."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "B. Correct-Test automation at all levels occurs in many agile teams. As the developers focus on automating tests on unit level testers should focus on automating tests on integration, system, and acceptance level. In traditional projects it is not as common to have the same focus on automation."
+    },
+    {
+      "id": "CTAL-AT-Q17",
+      "points": 1,
+      "syllabus_topic": "FA-2.1.2",
+      "context": "Consider the following activities:\ni. Strict enforcement of system test level entry and exit criteria.\nii. Collaboration between tester, developer, and business stakeholders to define acceptance criteria.\niii. Functional verification testing of user stories developed in the previous iteration.",
+      "question_text": "Which of the following combination of these activities should occur in an agile project?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "ii only"
+        },
+        {
+          "id": "b",
+          "text": "i and ii"
+        },
+        {
+          "id": "c",
+          "text": "ii and iii"
+        },
+        {
+          "id": "d",
+          "text": "iii only"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "A. Correct-These three perspectives (tester, developer and business representative) are important to define when a feature is done."
+    },
+    {
+      "id": "CTAL-AT-Q18",
+      "points": 1,
+      "syllabus_topic": "FA-2.1.3",
+      "context": null,
+      "question_text": "Which TWO of the following statements are true on agile projects? Select TWO options.",
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Testers should work closely with developers while retaining an objective outlook."
+        },
+        {
+          "id": "b",
+          "text": "Test managers do not exist in organizations doing agile development."
+        },
+        {
+          "id": "c",
+          "text": "There is no difference between what testers and developers do on agile projects."
+        },
+        {
+          "id": "d",
+          "text": "Developers should rely on testers to create the automated regression tests."
+        },
+        {
+          "id": "e",
+          "text": "A selection of users may perform beta testing on the product after the completion of a series of iterations."
+        }
+      ],
+      "correct_answers": [
+        "a",
+        "e"
+      ],
+      "justification": "A. Correct - This is one of the hallmarks of agile projects. E. Correct - Agile teams can employ various forms of acceptance testing."
+    },
+    {
+      "id": "CTAL-AT-Q19",
+      "points": 1,
+      "syllabus_topic": "FA-2.1.3",
+      "context": null,
+      "question_text": "Which of the following statements about independent testing on agile projects is FALSE?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "There can be a risk of losing test independence for organizations introducing agile."
+        },
+        {
+          "id": "b",
+          "text": "Independent testers will find more defects than developers regardless of test level."
+        },
+        {
+          "id": "c",
+          "text": "Independent testing can be introduced at the end of a sprint."
+        },
+        {
+          "id": "d",
+          "text": "The independent test team can be part of another team."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "B. Correct - This is a false statement. Independent testers CAN find more defects than developers, but this is dependent on the level of testing being performed and also the expertise of the independent tester."
+    },
+    {
+      "id": "CTAL-AT-Q20",
+      "points": 1,
+      "syllabus_topic": "FA-2.2.1",
+      "context": null,
+      "question_text": "In an agile project, which of the following would best denote product quality at the end of iteration 6 of a new system release consisting of 8 iterations?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "No severity 1 or 2 defects were detected during system testing of iteration 6, which allowed the teams to move into iteration 7."
+        },
+        {
+          "id": "b",
+          "text": "The results of a customer beta test on the iteration 6 software release indicate that the system works correctly and that it has improved productivity."
+        },
+        {
+          "id": "c",
+          "text": "The agile team has been successfully tracking to estimates, with limited variance showing on the burndown charts for all iterations to date."
+        },
+        {
+          "id": "d",
+          "text": "All story cards in scope for each iteration, up to the current iteration, have been marked as \"Done\", but with some technical debt being incurred."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "B. Correct - Positive customer feedback and working software are key indicators to product quality."
+    },
+    {
+      "id": "CTAL-AT-Q21",
+      "points": 1,
+      "syllabus_topic": "FA-2.2.1",
+      "context": null,
+      "question_text": "Which of the following is best at showing the team's progress against estimates?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Burndown charts"
+        },
+        {
+          "id": "b",
+          "text": "Automation logs"
+        },
+        {
+          "id": "c",
+          "text": "The agile task board showing user story and task progress"
+        },
+        {
+          "id": "d",
+          "text": "Defect tracking tools"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "A. Correct - Burndown charts show the planned progress and release date together with the actual progress of the user stories."
+    },
+    {
+      "id": "CTAL-AT-Q22",
+      "points": 1,
+      "syllabus_topic": "FA-2.2.2",
+      "context": null,
+      "question_text": "The business advises during iteration 5 planning that they require changes to the system delivered in iteration 3. Of the following activities, which would need to be done first to minimize the introduction of regression risk when this feature is changed?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Review and update all manual and automated tests impacted by this change to meet the new acceptance criteria."
+        },
+        {
+          "id": "b",
+          "text": "Write new manual and automated tests for the feature and add them to the regression test suite."
+        },
+        {
+          "id": "c",
+          "text": "Automate all test cases from the previous iteration and add them to the automated regression test suite."
+        },
+        {
+          "id": "d",
+          "text": "Increase the amount of test automation around the system to include more detailed test conditions."
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "A. Correct - As this feature has previously been delivered, a review of all test assets is required, which should result in the updating of test cases to meet new acceptance criteria, to ensure false negatives (i.e. invalid failing tests) do not occur. This is the initial task to be performed before a decision about any other changes can be made."
+    },
+    {
+      "id": "CTAL-AT-Q23",
+      "points": 1,
+      "syllabus_topic": "FA-2.2.2",
+      "context": "Which TWO of the following are reasons why automation is essential within agile projects?\ni. So that teams maintain or increase their velocity\nii. To prevent the test team from becoming bored with manual, repetitive tasks\niii. To retest all test cases from previous iterations\niv. To eliminate regression in the product due to high code churn\nv. To ensure that code changes do not break the software build",
+      "question_text": "Select ONE option.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i and iv"
+        },
+        {
+          "id": "b",
+          "text": "i and v"
+        },
+        {
+          "id": "c",
+          "text": "iii and iv"
+        },
+        {
+          "id": "d",
+          "text": "ii and v"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "B. Correct - i. This is true because agile expects and manages change and each iteration will require more and more regression testing. If automation was not used, then the team's velocity would be reduced. v. This is true. Automation tools are linked to continuous integration tools that will execute and will highlight instantaneously if the new code breaks the build."
+    },
+    {
+      "id": "CTAL-AT-Q24",
+      "points": 1,
+      "syllabus_topic": "FA-2.3.1",
+      "context": "In agile projects there is more need for testers to understand and develop test automation scripts than in traditional projects. Of the following, which are the TWO reasons why this is a necessary skill on agile projects?\n\ni. Requirements change daily and have to be regression tested. This rapid change requires automated tests because manual testing is too slow.\nii. The tests should generate feedback on product quality as early as possible. So all acceptance tests should be executed in each iteration, ideally as modifications are made. In practice that can only be realized by automated tests.\niii. Test-First and Continuous Integration Practice require that the regression test suite is executed whenever changed code is checked-in. In practice that can only be realized by automated tests.\niv. Iterations or sprints are of fixed length. The team has to guarantee that all tests can be completely executed at the last day of each iteration/sprint. In practice, that can only be realized by automated tests.\nv. Agile projects rely on unit testing rather than on systems testing. Since unit tests cannot be executed manually, all tests have to be automated tests.",
+      "question_text": "Select ONE option.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i & iii"
+        },
+        {
+          "id": "b",
+          "text": "ii & v"
+        },
+        {
+          "id": "c",
+          "text": "iv & v"
+        },
+        {
+          "id": "d",
+          "text": "ii and iii"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "D. Correct - ii. This is true, the earlier the agile team gets feedback on quality, the better. iii. Test first and continuous integration require tests to be automated and to provide feedback on build, as part of automated build process."
+    },
+    {
+      "id": "CTAL-AT-Q25",
+      "points": 1,
+      "syllabus_topic": "FA-2.3.2",
+      "context": "Which tasks are typically expected of a tester on an agile project?\n\ni. decide on user acceptance\nii. design, create and execute appropriate tests\niii. schedule defect reports for analysis\niv. automate and maintain tests\nv. improve program logic by pair programming",
+      "question_text": "Select ONE option.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i & iii"
+        },
+        {
+          "id": "b",
+          "text": "ii & iii"
+        },
+        {
+          "id": "c",
+          "text": "ii & iv"
+        },
+        {
+          "id": "d",
+          "text": "ii & v"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "C. Correct - ii. This activity is expected of the agile tester. iv. True - This activity is typical for an agile tester."
+    },
+    {
+      "id": "CTAL-AT-Q26",
+      "points": 1,
+      "syllabus_topic": "FA-2.3.2",
+      "context": null,
+      "question_text": "Which of the following is NOT a typical task performed by the tester within an agile team?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "To automate tests and maintain them"
+        },
+        {
+          "id": "b",
+          "text": "To mentor and coach other team members"
+        },
+        {
+          "id": "c",
+          "text": "To produce and update burndown charts"
+        },
+        {
+          "id": "d",
+          "text": "To participate in code analyzing activities"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "C. Correct - This is false. It is the Scrum Master's role (or what the equivalent role is called in other agile methodologies) to produce and update the burndown chart from the information supplied by the rest of the team."
+    },
+    {
+      "id": "CTAL-AT-Q27",
+      "points": 1,
+      "syllabus_topic": "Agile Extension-Term",
+      "context": null,
+      "question_text": "The term \"burndown\" refers to which of the following?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "A chart showing which team members are working the most, and are likely to be under stress"
+        },
+        {
+          "id": "b",
+          "text": "A chart showing the progress of each user story, and when they are likely to be completed"
+        },
+        {
+          "id": "c",
+          "text": "A chart showing the amount of work left to be done, versus the time allocated for the iteration"
+        },
+        {
+          "id": "d",
+          "text": "A chart showing defects that have been fixed, and when the remaining defects are likely to be fixed"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "C. Correct - The burndown chart shows progress of the user stories that are complete (done), and an estimate of the remaining time to complete the rest of the user stories in the sprint."
+    },
+    {
+      "id": "CTAL-AT-Q28",
+      "points": 1,
+      "syllabus_topic": "FA-3.1.1",
+      "context": null,
+      "question_text": "Which of the following statements about Test Driven Development (TDD) is FALSE?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "TDD is a \"test first\" approach to develop reusable automated tests."
+        },
+        {
+          "id": "b",
+          "text": "The TDD cycle is continuously used until the software product is released."
+        },
+        {
+          "id": "c",
+          "text": "TDD helps to document the code for future maintenance efforts."
+        },
+        {
+          "id": "d",
+          "text": "The result of TDD are test classes used by the developer to develop test cases"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "D. Correct - This is true of BDD - not TDD."
+    },
+    {
+      "id": "CTAL-AT-Q29",
+      "points": 1,
+      "syllabus_topic": "FA-3.1.2",
+      "context": null,
+      "question_text": "What does the term 'Test Pyramid' refer to and illustrate situations for?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "The team's testing workload increases from sprint to sprint"
+        },
+        {
+          "id": "b",
+          "text": "The backlog size, and thus the number of tests, decreases"
+        },
+        {
+          "id": "c",
+          "text": "The number of automated unit tests is higher than the number of automated tests for higher test levels."
+        },
+        {
+          "id": "d",
+          "text": "The number of automated tests in place increases from sprint to sprint"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "C. Correct - The test pyramid emphasizes having more tests at the lower levels and a decreasing number of tests at the higher levels."
+    },
+    {
+      "id": "CTAL-AT-Q30",
+      "points": 1,
+      "syllabus_topic": "FA-3.1.3",
+      "context": null,
+      "question_text": "Which of the following demonstrates effective use of the testing quadrants?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "When communicating test ideas, the tester can refer to the matching test quadrant, so that the rest of the team will better understand the purpose of the test."
+        },
+        {
+          "id": "b",
+          "text": "The tester can use the types of tests described in the testing quadrants as a coverage metric, the more tests covered from each quadrant, the higher the test coverage."
+        },
+        {
+          "id": "c",
+          "text": "The team should pick a number of tests expected from each quadrant, and the tester should design and execute those tests to ensure all levels and types of tests have been executed."
+        },
+        {
+          "id": "d",
+          "text": "The tester can use the testing quadrants during risk analysis; with the lower level quadrants representing lower risk to customer."
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "A. Correct - The testing quadrants can be used as an aid to describe the types of tests to all stakeholders."
+    },
+    {
+      "id": "CTAL-AT-Q31",
+      "points": 1,
+      "syllabus_topic": "FA-3.1.3",
+      "context": "Given the following user stories:\n\"As a bank teller, I can easily navigate through the system menu and links, and find the information I am looking for\"\n\"For all users, the system must display all queries in less than 2 seconds, 90% of the time\"\n\nAnd the associated test cases:\nTC1: Login as bank teller. Enter customer ID. Verify that the customer transaction history is easy to find, and that navigating through the menus is intuitive.\nTC2: Login as bank teller: Enter customer Name. Verify that the customer accounts are easy to find and that navigating through the menus is intuitive.\nTC3: Simulate expected traffic on system and validate the time for customer transaction history to display is less than 2 seconds.",
+      "question_text": "Which TWO test quadrants would the above test cases be part of?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Q1 unit level, technology facing & Q2 system level, business facing"
+        },
+        {
+          "id": "b",
+          "text": "Q2 system level, business facing & Q3 system or user acceptance level, business facing"
+        },
+        {
+          "id": "c",
+          "text": "Q3 system or user acceptance level, business facing & Q4 system or operation acceptance level, technology facing"
+        },
+        {
+          "id": "d",
+          "text": "Q2 system level, business facing & Q4 system or operation acceptance level, technology facing"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "C. Correct - Q3-Correct - Usability testing is part of the 3rd quadrant. Q4-Correct - Performance testing is part of the 4th quadrant."
+    },
+    {
+      "id": "CTAL-AT-Q32",
+      "points": 1,
+      "syllabus_topic": "FA-3.1.4",
+      "context": "At the beginning of the 5th iteration of a project, a new requirement was introduced to support a new type of browser. The tester realizes that the existing test automation framework and scripts will not support the new type of browser.",
+      "question_text": "What is the best course of action for the tester on this team to take?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "The tester should notify the team that they are planning on working extra hours throughout the next 2 sprints in order to update the existing test automation framework and scripts to support the new type of browser so as not to disturb the existing sprint plan."
+        },
+        {
+          "id": "b",
+          "text": "The tester will notify the team of the issue. A risk analysis is done, and the team decides that regression testing must be performed on the new type of browser in addition to the other supported browsers. The tester will update the sprint plan by adding tasks to modify the framework and scripts to support the new type of browser."
+        },
+        {
+          "id": "c",
+          "text": "The tester does some research and concludes that the risk is low that any new defects would be introduced in the new type of browser that have not already been found in other supported browsers. The tester continues with the existing sprint plan and makes no changes to test automation framework or scripts."
+        },
+        {
+          "id": "d",
+          "text": "The tester will stop what they are doing, design specific tests for compatibility testing of the new type of browser, and communicate with the team that any other testing work for the sprint will have to be pushed to the next iteration."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "B. Correct - The decision to modify the test automation framework and scripts should be done collaboratively with the whole team. The tester is then responsible to make changes to the iteration plan as required."
+    },
+    {
+      "id": "CTAL-AT-Q33",
+      "points": 1,
+      "syllabus_topic": "FA-3.2.1",
+      "context": "Given the following results from a product risk analysis that occurred at the beginning of an iteration:\nUser story 1 (Performance): likelihood: high, impact: high\nUser story 2 (Security): likelihood: high, impact: high\nUser story 3 (Functional): likelihood: medium, impact: high\nUser story 4 (Functional): likelihood: high, impact: medium\nUser story 5 (Compatibility): likelihood: low, impact: low\nUser story 6 (Recoverability): likelihood: low, impact: low",
+      "question_text": "Which TWO of the following describes best what the team should do with this information? Select TWO options.",
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Move onto planning poker session to estimate effort for user stories, and determine what can be done in the current iteration, and what needs to be added to backlog."
+        },
+        {
+          "id": "b",
+          "text": "Remove user stories 5 and 6 from the current iteration and move to a later iteration."
+        },
+        {
+          "id": "c",
+          "text": "Because of the number of high likelihood, high impact risks slotted for this iteration, the team has no choice but to extend the timeframe of the iteration by 2 weeks."
+        },
+        {
+          "id": "d",
+          "text": "The team should collaborate on effective ways to mitigate the high likelihood, high impact risks."
+        },
+        {
+          "id": "e",
+          "text": "The team should plan to complete all items in the current sprint, but save the lower risk items for the end of the sprint, and only test these items if there is time."
+        }
+      ],
+      "correct_answers": [
+        "a",
+        "d"
+      ],
+      "justification": "A. Correct - The information from the risk analysis is used during poker planning sessions to determine priorities of items to be completed in the iteration. D. Correct - Risk mitigation can be done before test execution occurs to reduce the level of risk."
+    },
+    {
+      "id": "CTAL-AT-Q34",
+      "points": 1,
+      "syllabus_topic": "FA-3.2.2",
+      "context": "Given the following user story: \"As the president, any data I upload should not be viewable by any other user of the system\"\nDuring the first poker planning session, the following story points were given based on risk, effort, complexity, and proper extent of testing:\nCustomers: 5\nDevelopers: 5\nTesters: 20",
+      "question_text": "What is the best outcome following this planning session?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because the customer's and developer's size estimates match, the team can be confident that this estimate is good and should move onto the next user story."
+        },
+        {
+          "id": "b",
+          "text": "The team should hold a conversation to understand why the testers felt this user story was significantly more work. Another round of the planning poker session should occur following that discussion."
+        },
+        {
+          "id": "c",
+          "text": "Because the customer owns the system in the end, the customers' estimates should be taken as correct when there is a conflict."
+        },
+        {
+          "id": "d",
+          "text": "The poker planning sessions should continue until all estimated story points are an exact match between customers, developers, and testers."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "B. Correct - Planning poker sessions should continue for the user story, until the entire team is satisfied with the estimated effort."
+    },
+    {
+      "id": "CTAL-AT-Q35",
+      "points": 1,
+      "syllabus_topic": "FA-3.3.1",
+      "context": "An agile team is assigned to a project to update an existing medical device to newer technologies. Since the last release of the existing medical device, a new version of the medical device standard has been released. User access to the device is changing and will be documented in user stories. Based on this information, and in addition to the user stories, which of the following would best provide relevant information to support your testing activities?\n\ni. Updated version of standards document for medical system.\nii. Existing defects or typical defect areas in existing system.\niii. Obsolete user access test cases and results for existing application.\niv. Performance metrics for existing application.\nv. Defects logged during other similar conversion projects for medical devices.",
+      "question_text": "Select ONE option.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i, ii, iii, iv"
+        },
+        {
+          "id": "b",
+          "text": "ii, iv, v"
+        },
+        {
+          "id": "c",
+          "text": "i, ii, v"
+        },
+        {
+          "id": "d",
+          "text": "All of the above"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "C. Correct - i. This is helpful since we know there is a new version of the standard; existing test cases will need to be modified or new ones will need to be added. ii. This is helpful during the risk analysis phase. v. This is helpful during the risk analysis phase."
+    },
+    {
+      "id": "CTAL-AT-Q36",
+      "points": 1,
+      "syllabus_topic": "FA-3.3.2",
+      "context": null,
+      "question_text": "Which alternative is the BEST description of when to stop testing (release criteria) in an agile project?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "All test cases have been executed."
+        },
+        {
+          "id": "b",
+          "text": "The probability of remaining faults has been reduced to a level that can be accepted by the customer"
+        },
+        {
+          "id": "c",
+          "text": "The achieved test coverage is considered enough. The coverage limit is justified by the complexity of the included functionality, its implementation, and the risks involved."
+        },
+        {
+          "id": "d",
+          "text": "The iteration/sprint is finished"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "C. Correct - The obtained test coverage with supporting information makes it the best choice, even if more information would be needed. This includes information about found defects, their severity of occurrence, and taxonomy. This information gives a more complete basis for a release decision."
+    },
+    {
+      "id": "CTAL-AT-Q37",
+      "points": 1,
+      "syllabus_topic": "FA-3.3.2",
+      "context": null,
+      "question_text": "Which TWO of the following are examples of testable acceptance criteria for test related activities? Select TWO options.",
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Structure based testing: White box testing in addition to black box testing is used."
+        },
+        {
+          "id": "b",
+          "text": "System testing: At least 80% of functional regression tests are automated."
+        },
+        {
+          "id": "c",
+          "text": "Security testing: A threat risk analysis scan is completed with no faults identified."
+        },
+        {
+          "id": "d",
+          "text": "Performance testing: The application is responding in a reasonable amount of time with 5000 users."
+        },
+        {
+          "id": "e",
+          "text": "Compatibility testing: The application is working on all major browsers."
+        }
+      ],
+      "correct_answers": [
+        "b",
+        "c"
+      ],
+      "justification": "B. Correct- this is testable. C. Correct - this is testable."
+    },
+    {
+      "id": "CTAL-AT-Q38",
+      "points": 1,
+      "syllabus_topic": "FA-3.3.3",
+      "context": "Given the following User Story: \"As a bank teller, I would like to be able to view all of my customer's bank transactions on the screen, so I can answer his/her questions\".\n\nWhich of the following can be considered as relevant acceptance test cases?\ni. Login as a bank teller, get the customer's account balance for all open accounts.\nii. Login as a bank teller, enter a customer account ID, get his transactions history on the screen\niii. Login as a bank teller, request customer account ID by using name abbreviations, and get his transaction history on the screen\niv. Login as a bank teller, enter a customer IBAN (international bank account number), get his transaction history on the screen\nv. Login as a Bank Teller, enter a customer Account ID, get the Transactions history in less than 3 seconds on screen.",
+      "question_text": "Select ONE option.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i, ii, iv"
+        },
+        {
+          "id": "b",
+          "text": "i, iii, iv"
+        },
+        {
+          "id": "c",
+          "text": "ii, iv, v"
+        },
+        {
+          "id": "d",
+          "text": "ii, iii, iv"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "D. Correct- ii. Correct - This test is specific to a bank teller role and results in viewing customer's bank transactions. iii. Correct - This test is specific to a bank teller role and results in viewing customer's bank transactions. iv. Correct - This test is specific to a bank teller role and results in viewing customer's bank transactions."
+    },
+    {
+      "id": "CTAL-AT-Q39",
+      "points": 1,
+      "syllabus_topic": "FA-3.3.4",
+      "context": "Given the following user story: \"An online application charges customers to ship purchased items, based on the following criteria:\nStandard shipping costs for under 6 items\nShipping is $5 for 6-10 items.\nShipping is free for more than 10 items.\"",
+      "question_text": "Which of the following is the best black box test design technique for the user story?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "State Transition testing: Test the following states - browsing, logged in, selecting, purchasing, confirming, and exiting."
+        },
+        {
+          "id": "b",
+          "text": "Decision tables: Test the following conditions - User logged in; At least 1 item in cart; Purchase confirmed; Funding approved; with the resulting action of Ship Item."
+        },
+        {
+          "id": "c",
+          "text": "Boundary Value Analysis: Test the following inputs -0,5,6,10,11,max"
+        },
+        {
+          "id": "d",
+          "text": "Use Case Testing: Actor=customer; Prerequisites customer logs in, selects and purchases items; Postconditions= items are shipped."
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "C. Correct - BVA is the best option when testing shipping costs."
+    },
+    {
+      "id": "CTAL-AT-Q40",
+      "points": 1,
+      "syllabus_topic": "FA-3.3.5",
+      "context": "Your manager would like to introduce exploratory testing to your agile team. He has received the following suggestions on how to proceed from previous colleagues:\n\ni. User stories are assigned to testers who are completely new to the user story. There is allotted 120 minutes allocated to complete exploratory testing on the user story. Testers do not need to document tests, or test results, but do need to log defects if any are encountered.\nii. User stories are assigned to testers who have already completed risk based testing on the same areas. There is allotted 120 minutes allocated to complete exploratory testing for this user story. The team expects at the end of the 120 minutes to have a list of test ideas, including data and actors, results and issues encountered, and list of defects to be logged in the defect management tool.\niii. A user story is assigned to business representative. The business representative is told to use the system like the customer would on a day-to-day basis. If issues are encountered, the business representative is told to inform the tester, so that they can prioritize and log the defect.\niv. A user story is assigned to a tester for exploratory testing. Tester is told to learn the functionality of the user story, to make sure the functionality is correct and to include negative testing. There is no set deadline for this exploratory testing to be complete; it depends on what is found by the tester. Documentation is not necessary, but defects need to be logged in defect tracking tool.\n\nYour manager presents you with his conclusions about how best to introduce exploratory testing to an agile team.",
+      "question_text": "Which one of your manager's conclusions is correct?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Scenario i IS NOT the best way because: In exploratory testing, test design and test execution happen at the same time but are guided by a documented test charter that includes actors, test conditions, test data, etc. Test results are also documented and will guide the next test."
+        },
+        {
+          "id": "b",
+          "text": "Scenario ii IS the best way because: In this case, the testers have knowledge of the user story already, which will help them come up with test conditions and ideas. The team is using time-boxed exploratory test sessions. The team is expected to document test conditions, data, and user information, and to log results of the test. Issues are logged in a defect tracking tool just like any other test technique."
+        },
+        {
+          "id": "c",
+          "text": "Scenario iii IS NOT the best way because: This could be describing system acceptance testing, but not exploratory testing."
+        },
+        {
+          "id": "d",
+          "text": "Scenario iv IS NOT the best way because: Documentation is necessary for exploratory testing, and testers must log test ideas and results of testing. The results of testing are used to guide future exploratory testing."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "B. Correct - Exploratory testing is known as an experienced based approach to testing, which will be as effective as the tester running the tests. The benefit of this approach is that the tests that will be designed and executed will influence the next set of tests that are designed and executed."
+    },
+    {
+      "id": "CTAL-AT-Q41",
+      "points": 1,
+      "syllabus_topic": "FA-3.4.1",
+      "context": null,
+      "question_text": "Which of the following is one of the purposes of an Application Lifecycle Management (ALM) tool on an agile project?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "An ALM tool allows teams to build up a knowledge base on tools and techniques for development and testing activities"
+        },
+        {
+          "id": "b",
+          "text": "An ALM tool provides quick response about the build quality and details about code changes"
+        },
+        {
+          "id": "c",
+          "text": "An ALM tool provides visibility into the current state of the application, especially with distributed teams"
+        },
+        {
+          "id": "d",
+          "text": "An ALM tool generates and loads large volumes and combinations of data to use for testing"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "C. Correct - This is one of many purposes of an ALM tool, but using the tool allows more collaboration with distributed teams than physical task boards."
+    },
+    {
+      "id": "CTAL-AT-Q42",
+      "points": 1,
+      "syllabus_topic": "Agile Extension-Term",
+      "context": null,
+      "question_text": "Which of the following statements is FALSE with respect to exploratory testing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Exploratory testing encompasses concurrent learning, test design, and execution."
+        },
+        {
+          "id": "b",
+          "text": "Exploratory testing eliminates the need for testers to prepare test ideas prior to test execution."
+        },
+        {
+          "id": "c",
+          "text": "Best results are achieved when exploratory testing is combined with other test strategies."
+        },
+        {
+          "id": "d",
+          "text": "Exploratory testers need to have a solid understanding of the system under test."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "B. Correct - Test charters are created prior to execution which include test objectives and test ideas."
+    }
+  ]
+}

@@ -4,6 +4,19 @@ Todas as mudanças notáveis deste projeto serão documentadas neste arquivo.
 
 O formato baseia-se em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e este projeto adota o [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.2.0] - 2026-05-25
+
+### Adicionado
+- **Questões CTFL expandidas para 70:** Migração de arquivo monolítico `questions.json` para arquivos individuais por certificação. CTFL passou de 4 para 70 questões (Q01–Q70).
+- **Novas certificações:** Adicionados datasets completos para CT-AI (40), CT-GenAI (43), CTAL-AT (42) e CTAL-TAE (42), cada um em seu próprio arquivo `questions-{CERT}.json`.
+- **Rota `/api/certifications`:** Endpoint que retorna a lista de certificações disponíveis dinamicamente a partir dos arquivos presentes em `src/data/`.
+
+### Modificado
+- **API do servidor (`server.ts`):** Substituída constante única `QUESTIONS_FILE` por mapa `CERT_FILES` e função `getCertFilePath()`, permitindo servir questões por certificação de forma isolada.
+
+### Removido
+- **Arquivo monolítico `questions.json` removido:** Dados agora distribuídos em arquivos separados por certificação.
+
 ## [1.1.0] - 2026-05-25
 
 ### Adicionado

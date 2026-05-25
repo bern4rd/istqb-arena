@@ -1,0 +1,1310 @@
+{
+  "certification_name": {
+    "en": "ISTQB Certified Tester Generative AI (CT-GenAI)",
+    "pt": "ISTQB Certified Tester Generative AI (CT-GenAI)"
+  },
+  "time_limit_mins": 60,
+  "pass_score_percentage": 65,
+  "questions": [
+    {
+      "id": "CT-GenAI-Q01",
+      "points": 1,
+      "syllabus_topic": "GenAI-1.1.1",
+      "context": "Match each type of AI technology (1-4) with its CORRECT description (A-D):\n1. Symbolic AI\n2. Classical machine learning\n3. Deep learning\n4. Generative AI\n\nA. Uses neural networks to automatically learn features from data.\nB. Uses rule-based systems to mimic human decision-making.\nC. Uses deep learning to create new data by learning from its training data.\nD. Uses a data-driven approach that requires feature selection.",
+      "question_text": "Select ONE option.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1D, 2B, 3A, 4C"
+        },
+        {
+          "id": "b",
+          "text": "1D, 2C, 3B, 4A"
+        },
+        {
+          "id": "c",
+          "text": "1C, 2B, 3D, 4A"
+        },
+        {
+          "id": "d",
+          "text": "1B, 2D, 3A, 4C"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "Considering: Symbolic AI uses a rule-based system to mimic human decision-making, representing knowledge using symbols and logical rules (1B). Classical machine learning uses a data-driven approach that requires data preparation, feature selection and model training (2D). Deep learning uses neural networks (machine learning structures) to automatically learn features from data (3A). Generative AI uses deep learning techniques to create new data by learning and mimicking patterns from its training data (4C). Thus: d) Is correct."
+    },
+    {
+      "id": "CT-GenAI-Q02",
+      "points": 1,
+      "syllabus_topic": "GenAI-1.1.2",
+      "context": null,
+      "question_text": "Consider the realm of Large Language Models (LLMs). Which of the following options BEST explains why context window limitations affect LLM's text processing capabilities?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because context windows restrict temporal processing sequences, preventing LLMs from maintaining chronological consistency across extended text analysis."
+        },
+        {
+          "id": "b",
+          "text": "Because context windows prevent cross-referencing capabilities, limiting LLMs' ability to connect information across different document sources simultaneously."
+        },
+        {
+          "id": "c",
+          "text": "Because context windows force LLMs to discard earlier information, which may contain relevant details needed for understanding later content."
+        },
+        {
+          "id": "d",
+          "text": "Because context windows constrain parsing granularity levels, restricting LLMs from adjusting between character-level and document-level analysis approaches."
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "c) Is correct. When text exceeds the context window size, the model cannot simultaneously consider all parts of the document. As the model processes new tokens, it must effectively \"forget\" or discard tokens that fall outside its context window boundary."
+    },
+    {
+      "id": "CT-GenAI-Q03",
+      "points": 1,
+      "syllabus_topic": "GenAI-1.1.2",
+      "context": null,
+      "question_text": "Which of the following statements BEST describes tokenization in processing text for LLMs?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tokenization converts tokens into high-dimensional vectors to capture their meaning."
+        },
+        {
+          "id": "b",
+          "text": "Tokenization creates the building blocks used to understand and generate text."
+        },
+        {
+          "id": "c",
+          "text": "Tokenization generates contextually appropriate responses using neural networks."
+        },
+        {
+          "id": "d",
+          "text": "Tokenization predicts the next token in a sequence based on learned relationships."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "b) Is correct. Tokenization involves splitting text into smaller units (tokens) that represent the building blocks of natural language generation tasks and enable LLMs to understand and generate text."
+    },
+    {
+      "id": "CT-GenAI-Q04",
+      "points": 1,
+      "syllabus_topic": "GenAI-1.1.3",
+      "context": "In the context of software testing, which of the following statements (i-v) about foundation, instruction-tuned, and reasoning LLMs are CORRECT?\ni. Foundation LLMs excel at generating test cases from high-level requirements without structured input.\nii. Reasoning LLMs excel at creating test scripts that strictly follow predefined organizational templates.\niii. Instruction-tuned LLMs excel at autonomously prioritizing test execution based on real-time user feedback.\niv. Reasoning LLMs excel at synthesizing data from defect reports to detect trends and prioritize test efforts.\nv. Instruction-tuned LLMs excel at generating test cases that adhere to Gherkin language syntax.",
+      "question_text": "Select ONE option.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i, ii, and iii"
+        },
+        {
+          "id": "b",
+          "text": "ii, iii, and iv"
+        },
+        {
+          "id": "c",
+          "text": "i, ii, and v"
+        },
+        {
+          "id": "d",
+          "text": "iv, and v"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "Considering: iv. Is correct. Reasoning LLMs are explicitly designed for synthesizing multiple data sources and performing logical inference, problem-solving, and decision-making. Detecting trends and prioritizing test efforts aligns with their role in contextual analysis and the description provided. v. Is correct. Instruction-tuned LLMs are specifically trained to follow instructions, including adhering to requested formats, styles, and syntax rules. Generating test cases conforming to Gherkin language syntax, is a task well-suited to their capabilities. Thus: d) Is correct."
+    },
+    {
+      "id": "CT-GenAI-Q05",
+      "points": 1,
+      "syllabus_topic": "GenAI-1.1.4",
+      "context": null,
+      "question_text": "Which of the following statements BEST describes the relation between multimodal LLMs and vision-language models?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Multimodal LLMs are a subset of vision-language models designed to handle diverse inputs."
+        },
+        {
+          "id": "b",
+          "text": "Vision-language models are a subset of multimodal LLMs focusing on visual and textual data."
+        },
+        {
+          "id": "c",
+          "text": "Vision-language models are unrelated to multimodal LLMs and focus only on the user interface."
+        },
+        {
+          "id": "d",
+          "text": "Multimodal LLMs and vision-language models are interchangeable terms."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "b) Is correct. Vision-language models specifically integrate visual and textual data, making them a subset of multimodal LLMs."
+    },
+    {
+      "id": "CT-GenAI-Q06",
+      "points": 1,
+      "syllabus_topic": "GenAI-1.2.1",
+      "context": null,
+      "question_text": "Which TWO of the following options represent key capabilities of LLMs in test tasks?",
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Identifying ambiguities and inconsistencies in requirements."
+        },
+        {
+          "id": "b",
+          "text": "Generating complete application code for deployment."
+        },
+        {
+          "id": "c",
+          "text": "Automating the execution of all test scripts without human intervention."
+        },
+        {
+          "id": "d",
+          "text": "Performing exploratory testing on software applications."
+        },
+        {
+          "id": "e",
+          "text": "Creating diverse test data with various combinations and boundary values."
+        }
+      ],
+      "correct_answers": [
+        "a",
+        "e"
+      ],
+      "justification": "a) Is correct. LLMs can analyze and clarify requirements by identifying ambiguities and inconsistencies. e) Is correct. LLMs can generate diverse test data, including combinations and boundaries."
+    },
+    {
+      "id": "CT-GenAI-Q07",
+      "points": 1,
+      "syllabus_topic": "GenAI-1.2.2",
+      "context": null,
+      "question_text": "Which of the following statements BEST explains the difference between AI chatbots and LLM-powered testing applications in the context of software testing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "AI chatbots are more suited for specific test tasks, while LLM-powered testing applications focus on ad hoc interactions."
+        },
+        {
+          "id": "b",
+          "text": "Both AI chatbots and LLM-powered testing applications are designed to perform identical tasks without any configuration differences."
+        },
+        {
+          "id": "c",
+          "text": "LLM-powered testing applications rely on conversational prompts, while AI chatbots require integration into test tools and test processes."
+        },
+        {
+          "id": "d",
+          "text": "AI chatbots offer conversational interfaces for ad hoc test tasks, while LLM-powered testing applications provide customized solutions for specific test tasks."
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "d) Is correct. AI chatbots provide conversational interfaces for ad hoc tasks, while LLM-powered testing applications deliver customized solutions for specific needs."
+    },
+    {
+      "id": "CT-GenAI-Q08",
+      "points": 1,
+      "syllabus_topic": "GenAI-2.1.1",
+      "context": "A tester is examining a structured prompt used to obtain LLM assistance for performance test analysis. One of the components of this prompt reads: \"Test reports from performance testing tools, system monitoring logs during peak usage periods, and application performance benchmarks from previous releases\".",
+      "question_text": "In which component of the six-part prompt structure would this description MOST LIKELY appear?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Context"
+        },
+        {
+          "id": "b",
+          "text": "Input data"
+        },
+        {
+          "id": "c",
+          "text": "Constraints"
+        },
+        {
+          "id": "d",
+          "text": "Output format"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "b) Is correct. The description lists specific data sources (test reports, monitoring logs, performance benchmarks) that will be processed by the LLM to perform the analysis task. a) Is not correct. Context provides background information about the test environment or system being tested, not specific (input) data to be analyzed. c) Is not correct. Constraints outline restrictions. d) Is not correct. Output format specifies the expected structure."
+    },
+    {
+      "id": "CT-GenAI-Q09",
+      "points": 1,
+      "syllabus_topic": "GenAI-2.1.1",
+      "context": "A tester wants an LLM to analyze a requirements specification for potential defects. In the structured prompt the tester is using, one line reads: \"The potential defects must be provided in a markdown table with the following columns: ID, requirement reference, defect type, description, severity\".",
+      "question_text": "In which component of the six-part prompt structure would this line MOST LIKELY appear?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Instructions"
+        },
+        {
+          "id": "b",
+          "text": "Constraints"
+        },
+        {
+          "id": "c",
+          "text": "Output format"
+        },
+        {
+          "id": "d",
+          "text": "Context"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "c) Is correct. The given line matches the syllabus definition of output format specifications that guide how the LLM should format the output."
+    },
+    {
+      "id": "CT-GenAI-Q10",
+      "points": 1,
+      "syllabus_topic": "GenAI-2.1.2",
+      "context": null,
+      "question_text": "Which of the following BEST differentiates prompt chaining, few-shot prompting, and meta prompting techniques?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prompt chaining focuses on providing examples, few-shot prompting breaks tasks into subtasks, and meta prompting refines prompts manually."
+        },
+        {
+          "id": "b",
+          "text": "Few-shot prompting provides guidance with examples, prompt chaining breaks tasks into multiple prompts, and meta prompting allows the model to iteratively refine its own prompts."
+        },
+        {
+          "id": "c",
+          "text": "Meta prompting emphasizes breaking down tasks into steps, prompt chaining uses examples, and few-shot prompting focuses on manual optimization of prompts."
+        },
+        {
+          "id": "d",
+          "text": "Prompt chaining provides guidance without examples, few-shot provides guidance with examples, and meta prompting relies on tester-defined prompts."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "b) Is correct. Few-shot prompting provides guidance with examples, prompt chaining decomposes tasks into intermediate steps (multiple prompts), and meta prompting uses AI to refine its own prompts iteratively."
+    },
+    {
+      "id": "CT-GenAI-Q11",
+      "points": 1,
+      "syllabus_topic": "GenAI-2.1.3",
+      "context": null,
+      "question_text": "What is the primary function of a system prompt in interactions with LLMs?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "To provide a framework for the LLM behavior for the entire conversation."
+        },
+        {
+          "id": "b",
+          "text": "To provide specific questions or instructions from the user to the LLM."
+        },
+        {
+          "id": "c",
+          "text": "To adjust dynamically with each user interaction and set the conversation's context."
+        },
+        {
+          "id": "d",
+          "text": "To include visible input from the user and set rules for the conversation."
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "a) Is correct. The system prompt stays constant throughout the interaction session and establishes the fundamental framework for how the LLM should respond. b) Is not correct. This describes the function of a user prompt. c) Is not correct. The system prompt does not adjust dynamically. d) Is not correct. The system prompt is hidden and does not include visible input from the user."
+    },
+    {
+      "id": "CT-GenAI-Q12",
+      "points": 2,
+      "syllabus_topic": "GenAI-2.2.1",
+      "context": "You are tasked with applying the following test approach to a set of stable requirements for a new project: generate test conditions, prioritize them based on risk level, and identify potential coverage gaps. The requirements have already been thoroughly reviewed for defects.\n\ni. Submit the requirements to the LLM and prompt it to produce test conditions based on those requirements.\nii. Provide the test conditions to the LLM, ensuring it understands the context for prioritization, and prompt it to prioritize those test conditions accordingly.\niii. Provide the prioritized test conditions to the LLM and prompt it to analyze them to determine whether all aspects of the requirements are addressed in the test conditions.\niv. Submit the requirements to the LLM and prompt it to produce prioritized test conditions that address all aspects of the requirements.\nv. Submit the requirements to the LLM and prompt it to detect inconsistencies and ambiguities in those requirements.",
+      "question_text": "Which of the following sequences of steps (i-v) should you follow to effectively apply Generative AI to implement this test approach using a prompt chaining technique to implement this test approach?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i, ii, and iii"
+        },
+        {
+          "id": "b",
+          "text": "iv, and ii"
+        },
+        {
+          "id": "c",
+          "text": "i, iii, and v"
+        },
+        {
+          "id": "d",
+          "text": "v, and iv"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "Considering: i. Is correct because it ensures the process begins with generating test conditions from the requirements. ii. Is correct because it clarifies the need for acceptance criteria (test conditions) to improve LLM-generated outputs and follows the syllabus guidance. iii. Is correct because it directs the LLM to perform coverage analysis, addressing all aspects of the requirements. iv. Is not correct because relying on minimal input without guidance does not align with the prompt chaining technique. v. Is not correct because defect identification is not central to the test objective. Thus: a) Is correct."
+    },
+    {
+      "id": "CT-GenAI-Q13",
+      "points": 2,
+      "syllabus_topic": "GenAI-2.2.2",
+      "context": "Consider applying the few-shot structured prompting technique to generate Gherkin-style test cases (i.e., scenario-based) for the following user story and acceptance criterion:\n\nUser story: \"As a user, I want to reset my password so that I can regain access to my account if I forget it.\"\nAcceptance criterion: \"When a user submits a registered email address then they receive a password reset email.\"\n\nYou can rely on predefined examples that include user stories, acceptance criteria, and Gherkin-style test cases.",
+      "question_text": "Which one of the following prompts is BEST suited to this task?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prompt A\nRole: Act as a test analyst.\nContext: You are testing a password reset functionality.\nInstruction: Generate Gherkin-style test cases for the user story and acceptance criterion. using the following predefined examples as a guide: << predefined examples >>.\nInput Data: <<< user story >>> and <<< acceptance criterion >>>.\nConstraints: Rely on best practices to create test cases.\nOutput Format: Generate test cases with expected results."
+        },
+        {
+          "id": "b",
+          "text": "Prompt B\nRole: Act as a test analyst specializing in Gherkin-style test cases.\nContext: You are testing a password reset functionality.\nInstruction: Generate Gherkin-style test cases for the user story and acceptance criterion, using the following predefined examples as a guide: << predefined examples >>.\nInput Data: <<< user story >>> and <<< acceptance criterion >>>.\nConstraints: Use \"Given-When-Then\" syntax and ensure alignment with the acceptance criterion.\nOutput Format: Respect the given Gherkin-style test case format."
+        },
+        {
+          "id": "c",
+          "text": "Prompt C\nRole: Act as a test analyst.\nContext: You are testing a password reset functionality.\nInstruction: Generate Gherkin-style test cases for the user story and acceptance criterion. Rely on best practices to create test cases.\nInput Data: <<< user story >>> and <<< acceptance criterion >>>.\nConstraints: Use \"Given-When-Then\" syntax and ensure alignment with the acceptance criterion.\nOutput Format: Respect the given Gherkin-style test case format."
+        },
+        {
+          "id": "d",
+          "text": "Prompt D\nRole: Act as a test analyst.\nContext: You are testing a password reset functionality.\nInstruction: Generate at least two Gherkin-style test cases for the user story and acceptance criterion. Focus on edge cases.\nInput Data: <<< user story >>> and <<< acceptance criterion >>>.\nConstraints: Ensure all test cases follow \"Given-When-Then\" syntax.\nOutput Format: Respect the given Gherkin-style test case format."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "b) Is correct. Comprehensive and leverages predefined examples to guide the LLM. a) Is not correct. While it specifies using predefined examples, it does not explicitly require the use of the Given-When-Then syntax. c) Is not correct. Lacks emphasis on using predefined examples. d) Is not correct. Focuses on edge cases but neglects comprehensive coverage."
+    },
+    {
+      "id": "CT-GenAI-Q14",
+      "points": 2,
+      "syllabus_topic": "GenAI-2.2.3",
+      "context": "You are tasked with applying structured prompting to analyze regression test results. Here is an initial draft of the prompt:\n\nRole: Act as a test analyst.\nContext: Analyze raw regression test results from a recent test execution cycle.\nInstruction: Identify discrepancies in the test results.\nInput Data: Use the attached file containing raw test results.\nConstraints: Use the known anomalies list for cross-checking.\nOutput Format: Provide a list of discrepancies using a table format.",
+      "question_text": "You are asked to improve this prompt. Which of the following improvements would BEST align the prompt with structured prompt engineering best practices for comprehensive regression test report analysis?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Add a step to cluster similar issues and cross-check findings against the known anomalies list."
+        },
+        {
+          "id": "b",
+          "text": "Specify that the role is a regression test analyst specializing in actionable insights."
+        },
+        {
+          "id": "c",
+          "text": "Expand the instruction to include separating expected results and actual results, clustering issues, and highlighting discrepancies."
+        },
+        {
+          "id": "d",
+          "text": "Include references to regression testing principles such as \"Given-When-Then\" in the constraints."
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "c) Is correct. Expands instructions to include all critical structured analysis steps. Separating expected results and actual results helps to pinpoint mismatches effectively, clustering issues facilitates better prioritization and reduces redundancy."
+    },
+    {
+      "id": "CT-GenAI-Q15",
+      "points": 2,
+      "syllabus_topic": "GenAI-2.2.4",
+      "context": "You are using an LLM to assist in preparing actionable test metrics from raw data. The metrics include test progress, defect trends, and coverage. Here is an initial draft of a prompt:\n\nRole: Act as a test manager.\nContext: You are provided with raw data from test tools.\nInstruction: Generate test progress metrics, defect trend metrics, and coverage metrics from the raw data.\nInput Data: Use the attached file containing raw test results.\nConstraints: Ensure that the output is concise and understandable.\nOutput Format: Display metrics on a dashboard.",
+      "question_text": "You are asked to improve this prompt. Which of the following improvements would BEST enhance the LLM ability to produce accurate and actionable metrics?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Specify that the role is a test manager focusing on actionable insights and decision support, ensuring comprehensive analysis of test data."
+        },
+        {
+          "id": "b",
+          "text": "Add an instruction to include potential risks identified from the trends in the generated metrics, along with their impact assessment and priority levels."
+        },
+        {
+          "id": "c",
+          "text": "Expand the output format to include a plain-language summary that interprets the metrics and outlines next steps for stakeholders."
+        },
+        {
+          "id": "d",
+          "text": "Emphasize constraints that the output is also easily interpretable by stakeholders, using clear language and avoiding technical jargon throughout the response."
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "c) Is correct. Expanding the output format with a plain-language summary that interprets the metrics and outlines next steps directly supports stakeholder understanding and actionability."
+    },
+    {
+      "id": "CT-GenAI-Q16",
+      "points": 2,
+      "syllabus_topic": "GenAI-2.2.5",
+      "context": "Your goal is to create test cases for an AI-based system that suffers from the test oracle problem, preventing you from determining expected results. You can only count on a few existing test cases with known expected results. You have decided to rely on Generative AI, providing a given LLM with the following information: the existing test cases with their inputs and expected results, a clear description of the transformation rules, and guidelines for generating additional test cases.",
+      "question_text": "Which of the following prompting techniques is BEST suited to achieve your goal in this scenario?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Few-shot prompting"
+        },
+        {
+          "id": "b",
+          "text": "Prompt chaining"
+        },
+        {
+          "id": "c",
+          "text": "Meta prompting"
+        },
+        {
+          "id": "d",
+          "text": "Zero-shot prompting"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "a) Is correct. Few-shot prompting is ideal in this scenario because it allows you to provide some examples (the existing test cases with inputs and expected results) to guide the LLM."
+    },
+    {
+      "id": "CT-GenAI-Q17",
+      "points": 1,
+      "syllabus_topic": "GenAI-2.3.1",
+      "context": "You are leveraging Generative AI to assist in testing an entertainment software application. The Generative AI model generates test cases for user interaction scenarios, test scripts for API interactions, and synthetic test data to address edge cases.",
+      "question_text": "To effectively evaluate the Generative AI model's performance and to refine prompts, which combination of metrics and actions BEST ensures comprehensive assessment and improvement?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Evaluate the diversity of test cases to ensure varied input scenarios and use test execution success rate to validate the functionality of generated API test scripts."
+        },
+        {
+          "id": "b",
+          "text": "Apply accuracy and completeness metrics to validate test cases against entertainment software requirements and rely on time efficiency to compare AI-generated test scripts with manual test efforts."
+        },
+        {
+          "id": "c",
+          "text": "Focus on precision to ensure generated test data meets entertainment software compliance standards, while contextual fit and test execution success rate assesses the alignment and usability of test scripts."
+        },
+        {
+          "id": "d",
+          "text": "Prioritize relevance and contextual fit for all outputs to maintain consistency with entertainment software requirements and include diversity metrics to expand edge case coverage."
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "a) Is correct. Diversity ensures comprehensive coverage of edge cases, and test execution success rate evaluates the reliability of API test scripts."
+    },
+    {
+      "id": "CT-GenAI-Q18",
+      "points": 1,
+      "syllabus_topic": "GenAI-2.3.2",
+      "context": null,
+      "question_text": "Which of the following techniques for evaluating and iteratively refining prompts is BEST suited for determining why an LLM consistently generates test cases with wrong expected results that contradict the input requirements, thereby providing insights to optimize the prompt and prevent similar errors?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Output analysis"
+        },
+        {
+          "id": "b",
+          "text": "A/B testing of prompts"
+        },
+        {
+          "id": "c",
+          "text": "Adjusting prompt length and specificity"
+        },
+        {
+          "id": "d",
+          "text": "Integrating user feedback"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "a) Is correct. Output analysis examines LLM outputs for inaccuracies or inconsistencies. By classifying the wrong expected results that contradict the requirements, it reveals why the prompt misled the LLM and provides concrete insights for prompt refinement."
+    },
+    {
+      "id": "CT-GenAI-Q19",
+      "points": 1,
+      "syllabus_topic": "GenAI-3.1.1",
+      "context": null,
+      "question_text": "What is a hallucination in the context of LLM outputs?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "A logical error where the LLM fails to follow a multi-step reasoning process accurately."
+        },
+        {
+          "id": "b",
+          "text": "A bias in the LLM output caused by the training data favoring certain perspectives."
+        },
+        {
+          "id": "c",
+          "text": "A generation of irrelevant or factually incorrect output by the LLM for a given task."
+        },
+        {
+          "id": "d",
+          "text": "A limitation of the LLM to understand non-English perspectives in test generation tasks."
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "c) Is correct. Hallucinations occur when the LLM generates output that is factually incorrect or irrelevant to a given task."
+    },
+    {
+      "id": "CT-GenAI-Q20",
+      "points": 2,
+      "syllabus_topic": "GenAI-3.1.2",
+      "context": "You are using Generative AI to create test cases for an e-commerce (e-shop) application. The following features have been explicitly mentioned in the project briefing:\n- cart management\n- discount code application\n- order confirmation email generation",
+      "question_text": "Based on these details, which of the following AI-generated test cases MOST LIKELY represents a hallucination?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Verify that a user can add multiple items to their cart and proceed to checkout."
+        },
+        {
+          "id": "b",
+          "text": "Verify that a user cannot apply an expired discount code during checkout."
+        },
+        {
+          "id": "c",
+          "text": "Verify that a user receives a confirmation email after successfully placing an order."
+        },
+        {
+          "id": "d",
+          "text": "Verify that a user can create a wishlist to save favorite items for later."
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "d) Is correct. Wishlist management is not mentioned in the project briefing, making this the most likely hallucinated test case."
+    },
+    {
+      "id": "CT-GenAI-Q21",
+      "points": 1,
+      "syllabus_topic": "GenAI-3.1.3",
+      "context": null,
+      "question_text": "Which of the following options refers to a benefit that is MOST directly associated with using clear and structured input data formats when working with LLMs for test tasks?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Helps reduce the effort to fine-tune the LLMs for test tasks."
+        },
+        {
+          "id": "b",
+          "text": "Helps LLMs generate less ambiguous outputs for test tasks."
+        },
+        {
+          "id": "c",
+          "text": "Helps LLMs generate more context-relevant outputs for test tasks."
+        },
+        {
+          "id": "d",
+          "text": "Helps LLMs generate more creative outputs for test tasks."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "b) Is correct. When input data is presented in a clear and structured way, potential misunderstandings are minimized."
+    },
+    {
+      "id": "CT-GenAI-Q22",
+      "points": 1,
+      "syllabus_topic": "GenAI-3.1.4",
+      "context": null,
+      "question_text": "Which strategy can help reduce variability in LLM outputs by narrowing the probability distribution during inference?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Increasing the learning rate."
+        },
+        {
+          "id": "b",
+          "text": "Lowering the temperature setting."
+        },
+        {
+          "id": "c",
+          "text": "Increasing the random seed."
+        },
+        {
+          "id": "d",
+          "text": "Lowering the random seed."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "b) Is correct. Temperature is a parameter that controls the randomness of the output by acting on the probability distribution during inference."
+    },
+    {
+      "id": "CT-GenAI-Q23",
+      "points": 1,
+      "syllabus_topic": "GenAI-3.2.1",
+      "context": null,
+      "question_text": "Which of the following statements about data privacy concerns related to using Generative AI for software testing is INCORRECT?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Generative AI can unintentionally expose sensitive data through its outputs."
+        },
+        {
+          "id": "b",
+          "text": "Generative AI tools may store and process sensitive data without explicit user consent, leading to misuse."
+        },
+        {
+          "id": "c",
+          "text": "Using Generative AI tools without adhering to data protection regulations, such as General Data Protection Regulation (GDPR), can lead to legal disputes."
+        },
+        {
+          "id": "d",
+          "text": "An LLM is likely to expose real sensitive data if it hallucinates while generating synthetic test data, regardless of the data it was trained on."
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "d) Is correct. An LLM does not expose real sensitive data if it hallucinates when generating synthetic test data, as long as it was not trained on real sensitive data."
+    },
+    {
+      "id": "CT-GenAI-Q24",
+      "points": 1,
+      "syllabus_topic": "GenAI-3.2.2",
+      "context": "An attacker injects falsified test results into the training dataset of an LLM intended to recommend optimal test coverage strategies.",
+      "question_text": "What type of attack vector does this description BEST refer to?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Malicious code generation"
+        },
+        {
+          "id": "b",
+          "text": "Data exfiltration"
+        },
+        {
+          "id": "c",
+          "text": "Request manipulation"
+        },
+        {
+          "id": "d",
+          "text": "Data poisoning"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "d) Is correct. According to the syllabus in section 3.2.2, data poisoning involves manipulating training data."
+    },
+    {
+      "id": "CT-GenAI-Q25",
+      "points": 1,
+      "syllabus_topic": "GenAI-3.2.2",
+      "context": "Match each type of attack vector against an LLM (1-4) with the corresponding example (A-D):\n1. Data exfiltration\n2. Request manipulation\n3. Data poisoning\n4. Malicious code generation\n\nA. An attacker maliciously modifies the data associated with traceability links...\nB. An attacker maliciously crafts and provides deceptive prompts...\nC. An attacker maliciously provides large specially crafted prompts...\nD. An attacker maliciously submits carefully modified reference screenshots...",
+      "question_text": "Select ONE option.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1C, 2D, 3A, 4B"
+        },
+        {
+          "id": "b",
+          "text": "1B, 2D, 3A, 4C"
+        },
+        {
+          "id": "c",
+          "text": "1D, 2C, 3B, 4A"
+        },
+        {
+          "id": "d",
+          "text": "1C, 2B, 3D, 4A"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "Considering: Context Manipulation is based on sending requests designed to extract confidential training data. Request manipulation is based on introducing an image that disrupts the LLM output. Data poisoning is based on manipulating recommendations through fake evaluations used in training. Malicious code generation is based on manipulating an LLM to generate backdoors. Thus: a) Is correct."
+    },
+    {
+      "id": "CT-GenAI-Q26",
+      "points": 1,
+      "syllabus_topic": "GenAI-3.2.3",
+      "context": null,
+      "question_text": "Which of the following strategies BEST addresses data privacy risks in the context of Generative AI-powered software testing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Using multiple LLMs to evaluate and compare test results for improved accuracy."
+        },
+        {
+          "id": "b",
+          "text": "Replacing sensitive test data with an anonymized version of the same."
+        },
+        {
+          "id": "c",
+          "text": "Allowing unrestricted access to sensitive test data to improve Generative AI model training."
+        },
+        {
+          "id": "d",
+          "text": "Disabling encryption of sensitive test data to streamline data storage and transmission processes."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "b) Is correct. Anonymization is an effective strategy to mitigate data privacy risks."
+    },
+    {
+      "id": "CT-GenAI-Q27",
+      "points": 1,
+      "syllabus_topic": "GenAI-3.3.1",
+      "context": null,
+      "question_text": "Which of the following options about the impact of LLM usage on energy consumption and CO2 emission is CORRECT?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Image generation tasks consume substantially more energy than text generation tasks, but produce fewer CO2 emissions."
+        },
+        {
+          "id": "b",
+          "text": "Generative AI-powered searches consume significantly less energy than traditional web searches due to their optimized algorithms."
+        },
+        {
+          "id": "c",
+          "text": "Image generation tasks consume substantially more energy than text generation tasks due to their higher computational complexity."
+        },
+        {
+          "id": "d",
+          "text": "Text generation tasks consume very little energy, allowing them to be performed by millions of users without significant energy consumption."
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "c) Is correct. Image generation requires significantly more computational resources than text generation, making it much more energy intensive. a) Is not correct. Image generation is by far much more energy- and CO2-intensive than text generation. b) Is not correct. GenAI-powered searches consume considerably more energy than traditional web searches. d) Is not correct. The cumulative impact of text generation across millions of users is not negligible."
+    },
+    {
+      "id": "CT-GenAI-Q28",
+      "points": 1,
+      "syllabus_topic": "GenAI-3.4.1",
+      "context": null,
+      "question_text": "Which TWO of the following standards, or parts of them, are MOST relevant to the use of Generative AI in software testing?",
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "ISO/IEC 25010:2023"
+        },
+        {
+          "id": "b",
+          "text": "ISO/IEC 23053:2022"
+        },
+        {
+          "id": "c",
+          "text": "ISO/IEC/IEEE 29119-2:2021"
+        },
+        {
+          "id": "d",
+          "text": "ISO/IEC 42001:2023"
+        },
+        {
+          "id": "e",
+          "text": "ISO/IEC/IEEE 29119-3:2021"
+        }
+      ],
+      "correct_answers": [
+        "b",
+        "d"
+      ],
+      "justification": "b) Is correct. ISO/IEC 23053:2022 is a standard that provides a framework for data quality, transparency, and fault tolerance when using GenAI for testing. d) Is correct. ISO/IEC 42001:2023 is a standard that specifies requirements for managing AI-based systems within an organization, providing best practices for GenAI in software testing."
+    },
+    {
+      "id": "CT-GenAI-Q29",
+      "points": 1,
+      "syllabus_topic": "GenAI-4.1.1",
+      "context": null,
+      "question_text": "Which of the following components of an LLM-powered testing application is responsible for combining user input with structured and semantically similar data to prepare a prompt for the LLM?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Back-end"
+        },
+        {
+          "id": "b",
+          "text": "Front-end"
+        },
+        {
+          "id": "c",
+          "text": "Authentication component"
+        },
+        {
+          "id": "d",
+          "text": "Post-processing component"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "a) Is correct. The back-end is responsible for retrieving data from relational and vector databases, combining it with user input, and preparing the prompt tailored for the LLM. b) Is not correct. The front-end serves as the user interface. c) Is not correct. The authentication component ensures secure access. d) Is not correct. The post-processing component refines the output."
+    },
+    {
+      "id": "CT-GenAI-Q30",
+      "points": 1,
+      "syllabus_topic": "GenAI-4.1.2",
+      "context": "You are a tester working on a banking application that includes features such as user login, account management, and secure transactions. The system documentation, including API specifications and security requirements, is stored in a vector database, while historical test cases are stored in a relational database.",
+      "question_text": "Which of the following options represents the MOST appropriate use of the RAG framework in this scenario?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Submit a query specifying one function to be tested. The RAG framework will retrieve relevant specifications and requirements from the vector database, combine them with historical test cases, and automatically generate accurate and context-aware test cases."
+        },
+        {
+          "id": "b",
+          "text": "Submit a query specifying all functions to be tested. The RAG framework will retrieve relevant specifications and requirements from the vector database, combine them with historical test cases, and automatically generate accurate and context-aware test cases."
+        },
+        {
+          "id": "c",
+          "text": "Use the RAG framework to retrieve historical test cases from the relational database and security requirements from the vector database. Manually review the retrieved information before refining the query."
+        },
+        {
+          "id": "d",
+          "text": "Rely on the LLM internal training data to generate test cases while using the RAG framework for reference retrieval without directly integrating retrieved information."
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "a) Is correct. RAG automatically retrieves the relevant specifications and historical test-case chunks and feeds them to the LLM, which then generates accurate, context-aware test cases."
+    },
+    {
+      "id": "CT-GenAI-Q31",
+      "points": 1,
+      "syllabus_topic": "GenAI-4.1.3",
+      "context": null,
+      "question_text": "Which of the following options BEST describes the enhancements that autonomous and semi-autonomous LLM-powered agents bring to automating test processes?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "They can enhance both efficiency and quality in automating test processes through a balanced use of single-agent and multi-agent systems."
+        },
+        {
+          "id": "b",
+          "text": "They can enhance quality in automating test processes by adding complex verification checks although at the expense of efficiency."
+        },
+        {
+          "id": "c",
+          "text": "They can enhance both efficiency and quality in automating test processes by leveraging their ability to operate with varying levels of human interaction."
+        },
+        {
+          "id": "d",
+          "text": "They can enhance both efficiency and quality in automating test processes while eliminating the need for verification within these test processes."
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "c) Is correct. Autonomous agents increase efficiency by executing test tasks within the test processes with minimal human intervention and by using automated checks designed to be efficient. Semi-autonomous agents involve strategic human oversight, which ensures the quality of test results."
+    },
+    {
+      "id": "CT-GenAI-Q32",
+      "points": 1,
+      "syllabus_topic": "GenAI-4.2.1",
+      "context": null,
+      "question_text": "Which of the following statements about fine-tuning language models for specific test tasks is INCORRECT?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fine-tuning involves training a pre-trained model on task-specific data to enhance its performance and domain knowledge."
+        },
+        {
+          "id": "b",
+          "text": "Fine-tuning equips a language model with new capabilities by replacing its general knowledge with task-specific reasoning, ensuring the absence of overfitting."
+        },
+        {
+          "id": "c",
+          "text": "Fine-tuning modifies a pre-trained model parameters using a targeted dataset to adapt it for a specific domain or task."
+        },
+        {
+          "id": "d",
+          "text": "Fine-tuning requires high-quality, task-specific datasets to avoid biased or inaccurate results."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "b) Is correct. This statement is incorrect because fine-tuning does not replace the model general knowledge, and overfitting remains a potential challenge."
+    },
+    {
+      "id": "CT-GenAI-Q33",
+      "points": 1,
+      "syllabus_topic": "GenAI-4.2.2",
+      "context": null,
+      "question_text": "Which of the following BEST describes the primary focus of Large Language Model Operations (LLMOps) when deploying and managing LLMs for test tasks?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Preventing reliance on Generative AI in test processes."
+        },
+        {
+          "id": "b",
+          "text": "Managing LLMs effectively across their lifecycle, including privacy, security, and cost considerations."
+        },
+        {
+          "id": "c",
+          "text": "Limiting LLM usage to chatbot-based testing solutions to reduce complexity."
+        },
+        {
+          "id": "d",
+          "text": "Fully automating all test tasks without requiring human oversight."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "b) Is correct. LLMOps manages LLMs across their lifecycle, addressing privacy, security, and cost for testing."
+    },
+    {
+      "id": "CT-GenAI-Q34",
+      "points": 1,
+      "syllabus_topic": "GenAI-5.1.1",
+      "context": null,
+      "question_text": "Which of the following statements about shadow AI is CORRECT?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Shadow AI enforces compliance with organizational data policies and general AI regulations."
+        },
+        {
+          "id": "b",
+          "text": "Shadow AI eliminates the need for clear licensing agreements in AI tools."
+        },
+        {
+          "id": "c",
+          "text": "Shadow AI reduces the risk of intellectual property disputes."
+        },
+        {
+          "id": "d",
+          "text": "Shadow AI may lead to unauthorized accesses to sensitive information."
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "d) Is correct. Unapproved AI tools often lack robust security measures, increasing the risk of data breaches or unauthorized access. a) Is not correct. Using unapproved GenAI tools does not enforce organizational data policies. b) and c) are not correct."
+    },
+    {
+      "id": "CT-GenAI-Q35",
+      "points": 1,
+      "syllabus_topic": "GenAI-5.1.2",
+      "context": null,
+      "question_text": "What is a key aspect to consider when defining a Generative AI strategy for software testing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prepare training programs designed to ensure that team members obtain certifications specific to each LLM they use."
+        },
+        {
+          "id": "b",
+          "text": "Select LLMs that can be integrated appropriately with existing test environments and test tools."
+        },
+        {
+          "id": "c",
+          "text": "Ensure that as much input data as possible is available to increase the likelihood of obtaining effective LLM outputs."
+        },
+        {
+          "id": "d",
+          "text": "Collect standard supervised machine learning metrics to evaluate the effectiveness of LLM outputs."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "b) Is correct. Selecting LLMs that are compatible with existing test infrastructure and scalability requirements is a critical aspect of a GenAI strategy. Test tools and test environments are fundamental elements of test infrastructure."
+    },
+    {
+      "id": "CT-GenAI-Q36",
+      "points": 1,
+      "syllabus_topic": "GenAI-5.1.3",
+      "context": null,
+      "question_text": "Which of the following statements BEST describes one of the key criteria to select an appropriate LLM for specific test tasks within a test organization?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "A key selection criterion involves evaluating the LLM performance for the test tasks against the publicly available benchmarks for LLMs in code generation."
+        },
+        {
+          "id": "b",
+          "text": "A key selection criterion involves evaluating recurring costs such as those associated with the computational resources required to run the LLM."
+        },
+        {
+          "id": "c",
+          "text": "A key selection criterion involves evaluating the LLM against the publicly available community benchmarks to ensure full compatibility with them."
+        },
+        {
+          "id": "d",
+          "text": "A key selection criterion involves evaluating recurring costs such as those associated with a proof of concept aimed at demonstrating the suitability of an LLM for the test tasks."
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "b) Is correct. A key selection criterion involves evaluating recurring costs (see the syllabus in section 5.1.3), and this answer refers to a typical example of a recurring cost."
+    },
+    {
+      "id": "CT-GenAI-Q37",
+      "points": 1,
+      "syllabus_topic": "GenAI-5.1.4",
+      "context": null,
+      "question_text": "What are the key phases in the adoption of Generative AI in a test organization?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Discovery, initiation and usage definition, utilization and iteration"
+        },
+        {
+          "id": "b",
+          "text": "Awareness, usage prioritization, performance monitoring"
+        },
+        {
+          "id": "c",
+          "text": "Planning, experimentation, evaluation and refinement"
+        },
+        {
+          "id": "d",
+          "text": "Training, testing, implementation, and scaling"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "a) Is correct: explicitly mentions all these 3 key phases (Discovery, Initiation and usage definition, Utilization and iteration)."
+    },
+    {
+      "id": "CT-GenAI-Q38",
+      "points": 1,
+      "syllabus_topic": "GenAI-5.2.1",
+      "context": null,
+      "question_text": "Which of the following options BEST refers to an example of knowledge and/or skills required for testers to work effectively with LLMs in test processes?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mastering techniques specifically aimed at preventing LLMs from hallucinating and incurring reasoning errors when performing specific test tasks."
+        },
+        {
+          "id": "b",
+          "text": "Selecting and implementing suitable test automation approaches, such as keyword-driven test automation, for automating test processes."
+        },
+        {
+          "id": "c",
+          "text": "Choosing the most appropriate LLM based on criteria such as its capability to be adapted or customized to perform specific test tasks."
+        },
+        {
+          "id": "d",
+          "text": "Ensuring the validation and test data used in the development of the LLMS are of the highest quality."
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "c) Is correct. The syllabus names \"assessing LLM capabilities\" as a key competency. This naturally entails comparing candidate models and selecting the one that can be adapted or fine-tuned for particular test tasks."
+    },
+    {
+      "id": "CT-GenAI-Q39",
+      "points": 1,
+      "syllabus_topic": "GenAI-5.2.2",
+      "context": null,
+      "question_text": "What is the BEST approach for cultivating skills within test teams to specifically support the adoption of Generative AI?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rely mainly on external expert courses with hands-on practice, aiming to integrate AI into all daily test tasks at once."
+        },
+        {
+          "id": "b",
+          "text": "Encourage independent experimentation with various LLMs without following a structured process."
+        },
+        {
+          "id": "c",
+          "text": "Adopt a hands-on, gradual learning process supported by guided exercises, peer learning, and knowledge-sharing communities."
+        },
+        {
+          "id": "d",
+          "text": "Rely mainly on theoretical courses from external experts, aiming to gradually integrate AI into daily test tasks in line with actual learning."
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "c) Is correct. Focusing on developing practical skills through structured activities, peer learning, and knowledge-sharing communities is a recommended approach."
+    },
+    {
+      "id": "CT-GenAI-Q40",
+      "points": 1,
+      "syllabus_topic": "GenAI-5.2.3",
+      "context": null,
+      "question_text": "Which of the following answers BEST describes how the roles and responsibilities of testers and test managers within a test organization are impacted by the adoption of Generative AI for software testing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Testers shift their focus from manually designing test cases to guiding and verifying AI-generated testware."
+        },
+        {
+          "id": "b",
+          "text": "Test managers shift their focus from managing test projects to understanding the inner working of Generative AI technologies."
+        },
+        {
+          "id": "c",
+          "text": "Testers shift their focus from manually designing test cases to overseeing AI-based test processes."
+        },
+        {
+          "id": "d",
+          "text": "Test managers shift their focus from relying on people to relying solely on Generative AI to boost productivity in test tasks."
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "a) Is correct. Testers evolve into AI-assisted testing specialists, refining prompts and verifying AI outputs. b) Is not correct. The responsibilities of the test managers are updated to include the development of an AI-based test strategy. Thus, their focus is still on test management and not on understanding the (technically complex) inner workings of GenAI technologies. c) Is not correct. d) Is not correct."
+    },
+    {
+      "id": "CT-GenAI-QA1",
+      "points": 1,
+      "syllabus_topic": "GenAI-4.1.2",
+      "context": "Consider the following steps involved in implementing RAG:\n1. Clean and process document chunks\n2. Generate a response using retrieved chunks and the LLM\n3. Break large documents into smaller chunks\n4. Store embeddings in a vector database\n5. Retrieve relevant chunks based on semantic similarity",
+      "question_text": "Order these steps in sequence from the first to the last.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "3, 1, 4, 5, 2"
+        },
+        {
+          "id": "b",
+          "text": "1, 3, 4, 5, 2"
+        },
+        {
+          "id": "c",
+          "text": "3, 4, 1, 5, 2"
+        },
+        {
+          "id": "d",
+          "text": "4, 3, 1, 5, 2"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "The RAG process sequence is: 1) Break large documents into smaller chunks. 2) Clean and process document chunks. 3) Encode chunks into embeddings and store them in a vector database. 4) Retrieve relevant chunks based on semantic similarity. 5) Generate a response using retrieved chunks and the LLM knowledge."
+    },
+    {
+      "id": "CT-GenAI-QA2",
+      "points": 1,
+      "syllabus_topic": "GenAI-2.1.2",
+      "context": "Match each prompting technique (1-4) to an appropriate example (A-D):\n1. Prompt Chaining\n2. Few-Shot Prompting\n3. Meta Prompting\n4. Zero-Shot Prompting\n\nA. Breaking down test analysis tasks into smaller steps requiring iterative LLM interactions\nB. Generating Gherkin-style test cases from user stories using pre-defined examples\nC. Prioritizing test cases based on risk by leveraging inherent reasoning without examples\nD. Iteratively refining prompts for creating test oracles from ambiguous requirements",
+      "question_text": "Assign each prompting technique with an appropriate example.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1A, 2B, 3D, 4C"
+        },
+        {
+          "id": "b",
+          "text": "1B, 2A, 3C, 4D"
+        },
+        {
+          "id": "c",
+          "text": "1A, 2C, 3B, 4D"
+        },
+        {
+          "id": "d",
+          "text": "1D, 2B, 3A, 4C"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "Prompt Chaining directly references iterative LLM use for test analysis tasks broken down into steps (1A). Few-Shot Prompting explicitly ties to LLM-generated test cases using pre-defined examples (2B). Meta Prompting highlights LLM collaboration for prompt refinement (3D). Zero-Shot Prompting emphasizes the LLM intrinsic reasoning for prioritization without examples (4C)."
+    },
+    {
+      "id": "CT-GenAI-QA3",
+      "points": 1,
+      "syllabus_topic": "GenAI-5.1.4",
+      "context": "Consider the following activities (1-5) and key phases (A-C):\n\nActivities:\n1. Identifying and prioritizing practical use cases\n2. Training testers on Generative AI\n3. Providing testers access to LLMs\n4. Experimenting with initial use cases\n5. Managing the evolution of test processes\n\nKey phases:\nA. Discovery\nB. Initiation and Usage Definition\nC. Utilization and Iteration",
+      "question_text": "Assign each activity to a key phase.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1B, 2A, 3A, 4A, 5C"
+        },
+        {
+          "id": "b",
+          "text": "1A, 2B, 3B, 4C, 5C"
+        },
+        {
+          "id": "c",
+          "text": "1B, 2C, 3A, 4B, 5C"
+        },
+        {
+          "id": "d",
+          "text": "1A, 2A, 3C, 4B, 5B"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "Discovery (A) includes training (2), providing access (3), and experimenting (4). Initiation (B) focuses on identifying use cases (1). Utilization (C) includes monitoring and evolution (5)."
+    }
+  ]
+}

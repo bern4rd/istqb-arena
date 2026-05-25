@@ -1,0 +1,2158 @@
+{
+  "certification_name": {
+    "en": "ISTQB Certified Tester Foundation Level (CTFL)",
+    "pt": "ISTQB Certified Tester Foundation Level (CTFL) - Nível Fundamental"
+  },
+  "time_limit_mins": 60,
+  "pass_score_percentage": 65,
+  "questions": [
+    {
+      "id": "CTFL-Q01",
+      "points": 1,
+      "syllabus_topic": {
+        "en": "1.1.1 (What is Testing?)",
+        "pt": "1.1.1 (O que é Teste?)"
+      },
+      "context": null,
+      "question_text": {
+        "en": "Which of the following is a key objective of testing?",
+        "pt": "Qual das seguintes opções é um objetivo principal do teste?"
+      },
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "en": "To show that there are no remaining defects in the software under test.",
+            "pt": "Mostrar que não restam defeitos no software sob teste."
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "To minimize the defect density and find as many failures as possible so that defects can be fixed.",
+            "pt": "Minimizar a densidade de defeitos e encontrar o maior número possível de falhas para que os defeitos possam ser corrigidos."
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "To prove that the software works exactly as the developers intended in all circumstances.",
+            "pt": "Provar que o software funciona exatamente como os desenvolvedores planejaram em todas as circunstâncias."
+          }
+        },
+        {
+          "id": "d",
+          "text": {
+            "en": "To completely eliminate the risk of any failures occurring during final production use.",
+            "pt": "Eliminar completamente o risco de ocorrência de quaisquer falhas durante o uso em produção final."
+          }
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": {
+        "en": "One of the primary objectives of testing is to find defects, reduce risk, and provide confidence about the quality of the software. It is a fundamental testing principle that testing shows the presence of defects, not their absence (making options 'a' and 'd' incorrect). Programmers' intentions are sometimes flawed, so testing is not simply 'proving' their intent (option 'c').",
+        "pt": "Um dos objetivos primários do teste é encontrar defeitos, reduzir riscos e fornecer confiança sobre a qualidade do software. É um princípio fundamental do teste que o teste mostra a presença de defeitos, não a sua ausência (tornando as opções 'a' e 'd' incorretas). As intenções dos programadores às vezes são falhas, portanto o teste não é simplesmente 'provar' a intenção deles (opção 'c')."
+      }
+    },
+    {
+      "id": "CTFL-Q02",
+      "points": 1,
+      "syllabus_topic": {
+        "en": "2.1.1 (Test Levels)",
+        "pt": "2.1.1 (Níveis de Teste)"
+      },
+      "context": {
+        "en": "A financial system must validate a new rule where interest calculation depends on age groups. Integrations between the scoring system and bank account registers must be verified.",
+        "pt": "Um sistema financeiro deve validar uma nova regra na qual o cálculo dos juros depende dos grupos de idade. As integrações entre o sistema de pontuação e os registros de contas bancárias devem ser verificadas."
+      },
+      "question_text": {
+        "en": "Based on the ISTQB syllabus, which test level is MOST appropriate for validating interactions between different software modules or systems?",
+        "pt": "Com base no syllabus ISTQB, qual nível de teste é MAIS apropriado para validar interações entre diferentes módulos ou sistemas de software?"
+      },
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Component Testing (Unit Testing)",
+            "pt": "Teste de Componente (Teste Unitário)"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Integration Testing",
+            "pt": "Teste de Integração"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "System Testing",
+            "pt": "Teste de Sistema"
+          }
+        },
+        {
+          "id": "d",
+          "text": {
+            "en": "Acceptance Testing",
+            "pt": "Teste de Aceite"
+          }
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": {
+        "en": "Integration Testing focuses on interactions between components or systems. Component testing validates individual pieces in isolation. System testing validates the system as a whole. Acceptance testing focuses on usability, business fit, and operational readiness.",
+        "pt": "O Teste de Integração foca nas interações entre componentes ou sistemas. O teste de componente valida partes individuais em isolamento. O teste de sistema valida o sistema como um todo. O teste de aceite foca na usabilidade, adequação ao negócio e prontidão operacional."
+      }
+    },
+    {
+      "id": "CTFL-Q03",
+      "points": 1,
+      "syllabus_topic": {
+        "en": "4.2.1 (Equivalence Partitioning)",
+        "pt": "4.2.1 (Particionamento de Equivalência)"
+      },
+      "context": {
+        "en": "A text input field accepts only positive integers from 10 to 150 (inclusive). Values outside this range should trigger an error message.",
+        "pt": "Um campo de entrada de texto aceita apenas números inteiros positivos de 10 a 150 (inclusive). Valores fora dessa faixa devem acionar uma mensagem de erro."
+      },
+      "question_text": {
+        "en": "Which of the following sets of input values represents the minimum set of inputs to cover all valid and invalid equivalence partitions?",
+        "pt": "Qual dos seguintes conjuntos de valores de entrada representa o conjunto mínimo de entradas para cobrir todas as partições de equivalência válidas e inválidas?"
+      },
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "en": "10, 80, 150",
+            "pt": "10, 80, 150"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "5, 50, 200",
+            "pt": "5, 50, 200"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "9, 10, 150, 151",
+            "pt": "9, 10, 150, 151"
+          }
+        },
+        {
+          "id": "d",
+          "text": {
+            "en": "9, 80, 200",
+            "pt": "9, 80, 200"
+          }
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": {
+        "en": "There are three partitions here: 1. Invalid partition (< 10), 2. Valid partition (10 to 150), 3. Invalid partition (> 150). A set that tests all partitions must include one value from each: e.g. 5 (invalid too low), 50 (valid), and 200 (invalid too high). Option 'b' provides exactly one value from each of these three partitions.",
+        "pt": "Existem três partições aqui: 1. Partição inválida (< 10), 2. Partição válida (10 a 150), 3. Partição inválida (> 150). Um conjunto que testa todas as partições deve incluir um valor de cada: por exemplo, 5 (inválido muito baixo), 50 (válido) e 200 (inválido muito alto). A opção 'b' fornece exatamente um valor de cada uma dessas três partições."
+      }
+    },
+    {
+      "id": "CTFL-Q04",
+      "points": 1,
+      "syllabus_topic": {
+        "en": "5.2.1 (Test Planning and Estimation)",
+        "pt": "5.2.1 (Planejamento e Estimativa de Teste)"
+      },
+      "context": null,
+      "question_text": {
+        "en": "Which of the following activities are typical parts of Test Planning? (Select TWO)",
+        "pt": "Quais das seguintes atividades são partes típicas do Planejamento de Testes? (Selecione DUAS)"
+      },
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Determining the scope, objectives, and risks of testing.",
+            "pt": "Determinar o escopo, objetivos e riscos do teste."
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Writing custom automated test execution scripts in the codebase.",
+            "pt": "Escrever scripts de execução de teste automatizados customizados no código."
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Defining the overall testing approach (test strategy).",
+            "pt": "Definir a abordagem geral de teste (estratégia de teste)."
+          }
+        },
+        {
+          "id": "d",
+          "text": {
+            "en": "Executing manual regression tests and entering defects in Jira.",
+            "pt": "Executar testes de regressão manuais e registrar defeitos no Jira."
+          }
+        },
+        {
+          "id": "e",
+          "text": {
+            "en": "Measuring and analyzing results against the exit criteria.",
+            "pt": "Medir e analisar resultados em relação aos critérios de saída."
+          }
+        }
+      ],
+      "correct_answers": [
+        "a",
+        "c"
+      ],
+      "justification": {
+        "en": "Test planning involves defining the scope, objectives, risks, test approach/strategy, and resources required. Implementing test scripts (b), executing tests (d), and measuring exit criteria (e) are part of other test process activities (e.g. test implementation, execution, and completion).",
+        "pt": "O planejamento do teste envolve a definição do escopo, objetivos, riscos, abordagem/estratégia de teste e recursos necessários. Implementar scripts de teste (b), executar testes (d) e medir critérios de saída (e) fazem parte de outras atividades do processo de teste (por exemplo, implementação, execução e conclusão do teste)."
+      }
+    },
+    {
+      "id": "CTFL-Q05",
+      "points": 1,
+      "syllabus_topic": "FL-1.1.1",
+      "question_text": "Which of the following statements describe a valid test objective?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "To prove that there are no unfixed defects in the system under test"
+        },
+        {
+          "id": "b",
+          "text": "To prove that there will be no failures after the implementation of the system into production"
+        },
+        {
+          "id": "c",
+          "text": "To reduce the risk level of the test object and to build confidence in the quality level"
+        },
+        {
+          "id": "d",
+          "text": "To verify that there are no untested combinations of inputs"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "Testing finds defects and failures which reduces the level of risk and at the same time gives more confidence in the quality level of the test object[cite: 3861]."
+    },
+    {
+      "id": "CTFL-Q06",
+      "points": 1,
+      "syllabus_topic": "FL-1.2.1",
+      "question_text": "Which of the following options shows an example of test activities that contribute to success?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Having testers involved during various software development lifecycle (SDLC) activities will help to detect defects in work products"
+        },
+        {
+          "id": "b",
+          "text": "Testers try not to disturb the developers while coding, so that the developers write better code"
+        },
+        {
+          "id": "c",
+          "text": "Testers collaborating with end users help to improve the quality of defect reports during component integration and system testing"
+        },
+        {
+          "id": "d",
+          "text": "Certified testers will design much better test cases than non-certified testers"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "It is important that testers are involved from the beginning of the SDLC. It will increase understanding of design decisions and will detect defects early[cite: 3861]."
+    },
+    {
+      "id": "CTFL-Q07",
+      "points": 1,
+      "syllabus_topic": "FL-1.3.1",
+      "question_text": "You have been assigned as a tester to a team producing a new system incrementally. You have noticed that no changes have been made to the existing regression test cases for several iterations and no new regression defects were identified. Your manager is happy, but you are not. Which testing principle explains your skepticism?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tests wear out"
+        },
+        {
+          "id": "b",
+          "text": "Absence-of-errors fallacy"
+        },
+        {
+          "id": "c",
+          "text": "Defects cluster together"
+        },
+        {
+          "id": "d",
+          "text": "Exhaustive testing is impossible"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "This principle means that if the same tests are repeated over and over again, eventually these tests no longer find any new defects[cite: 3870]."
+    },
+    {
+      "id": "CTFL-Q08",
+      "points": 1,
+      "syllabus_topic": "FL-1.4.1",
+      "question_text": "You work in a team that develops a mobile application for food ordering. In the current iteration the team decided to implement the payment functionality. Which of the following activities is a part of test analysis?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Estimating that testing the integration with the payment service will take 8 person-days"
+        },
+        {
+          "id": "b",
+          "text": "Deciding that the team should test if it is possible to properly share payment between many users"
+        },
+        {
+          "id": "c",
+          "text": "Using boundary value analysis (BVA) to derive the test data for the test cases that check the correct payment processing for the minimum allowed amount to be paid"
+        },
+        {
+          "id": "d",
+          "text": "Analyzing the discrepancy between the actual result and expected result after executing a test case that checks the process of payment with a credit card, and reporting a defect"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "This is an example of defining test conditions which is a part of test analysis[cite: 3870]."
+    },
+    {
+      "id": "CTFL-Q09",
+      "points": 1,
+      "syllabus_topic": "FL-1.4.2",
+      "question_text": "Which of the following factors (i-v) have SIGNIFICANT influence on the test process? i. The SDLC; ii. The number of defects detected in previous projects; iii. The identified product risks; iv. New regulatory requirements forcing; v. The number of certified testers in the organization",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i, ii have significant influence; iii, iv, v have not"
+        },
+        {
+          "id": "b",
+          "text": "i, iii, iv have significant influence; ii, v have not"
+        },
+        {
+          "id": "c",
+          "text": "ii, iv, v have significant influence; i, iii have not"
+        },
+        {
+          "id": "d",
+          "text": "iii, v have significant influence; i, ii, iv have not"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "The SDLC, identified product risks, and regulatory requirements are significant factors[cite: 3870]."
+    },
+    {
+      "id": "CTFL-Q10",
+      "points": 1,
+      "syllabus_topic": "FL-1.4.5",
+      "question_text": "Which TWO of the following tasks belong MAINLY to a testing role?",
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Configure test environments"
+        },
+        {
+          "id": "b",
+          "text": "Maintain the product backlog"
+        },
+        {
+          "id": "c",
+          "text": "Design solutions to new requirements"
+        },
+        {
+          "id": "d",
+          "text": "Create the test plan"
+        },
+        {
+          "id": "e",
+          "text": "Report on achieved coverage"
+        }
+      ],
+      "correct_answers": [
+        "a",
+        "e"
+      ],
+      "justification": "Configuring test environments and reporting on achieved coverage are done by the testers[cite: 3879]."
+    },
+    {
+      "id": "CTFL-Q11",
+      "points": 1,
+      "syllabus_topic": "FL-1.5.1",
+      "question_text": "Which of the following is true regarding the relationship between testing and debugging?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Testing is the process of finding and fixing causes of failures"
+        },
+        {
+          "id": "b",
+          "text": "Testing detects failures; debugging finds, analyzes, and removes the causes of failures"
+        },
+        {
+          "id": "c",
+          "text": "Testing and debugging are the same process in an Agile lifecycle"
+        },
+        {
+          "id": "d",
+          "text": "Debugging is the process of demonstrating that the system is fit for purpose"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "Testing is the process concerned with planning, preparation and evaluation of a component or system to determine that they satisfy specified requirements and to detect defects. Debugging is the process of finding, analyzing, and removing the causes of failures in a component or system."
+    },
+    {
+      "id": "CTFL-Q12",
+      "points": 1,
+      "syllabus_topic": "FL-1.5.2",
+      "question_text": "What is the primary objective of Quality Assurance (QA) versus Testing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Testing focuses on defects, QA focuses on the product"
+        },
+        {
+          "id": "b",
+          "text": "Testing focuses on processes, QA focuses on products"
+        },
+        {
+          "id": "c",
+          "text": "Testing is a subset of QA"
+        },
+        {
+          "id": "d",
+          "text": "QA focuses on quality-related processes, Testing concentrates on demonstrating fitness for purpose and detecting defects"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "QA is focused on quality-related processes while testing concentrates on demonstrating that a component or system is fit for purpose and to detect defects."
+    },
+    {
+      "id": "CTFL-Q13",
+      "points": 1,
+      "syllabus_topic": "FL-2.1.2",
+      "question_text": "Which statement best defines the 'Absence-of-errors fallacy' principle?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Finding and fixing a large number of defects ensures the success of a system"
+        },
+        {
+          "id": "b",
+          "text": "Testing can show the presence of defects but not their absence"
+        },
+        {
+          "id": "c",
+          "text": "A system that does not fulfill the user's needs is unusable, even if it is error-free"
+        },
+        {
+          "id": "d",
+          "text": "Testing all combinations of inputs is feasible if the system is small"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "The principle states that a system that does not fulfill the user's needs is unusable, even if it is error-free; finding and fixing a large number of defects does not ensure the success of a system."
+    },
+    {
+      "id": "CTFL-Q14",
+      "points": 1,
+      "syllabus_topic": "FL-2.1.3",
+      "question_text": "Which activity is a part of test analysis?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Estimating test effort"
+        },
+        {
+          "id": "b",
+          "text": "Executing test cases"
+        },
+        {
+          "id": "c",
+          "text": "Defining test conditions"
+        },
+        {
+          "id": "d",
+          "text": "Reporting defects"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "Defining test conditions is a core activity of test analysis."
+    },
+    {
+      "id": "CTFL-Q15",
+      "points": 1,
+      "syllabus_topic": "FL-2.1.5",
+      "question_text": "Which factor has a significant influence on the test process?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "The number of certified testers"
+        },
+        {
+          "id": "b",
+          "text": "The number of defects detected in previous projects"
+        },
+        {
+          "id": "c",
+          "text": "The color of the test report"
+        },
+        {
+          "id": "d",
+          "text": "The SDLC (Software Development Life Cycle)"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "The SDLC has a significant influence on the test process."
+    },
+    {
+      "id": "CTFL-Q16",
+      "points": 1,
+      "syllabus_topic": "FL-2.1.6",
+      "question_text": "Which TWO tasks belong mainly to a testing role?",
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Configure test environments"
+        },
+        {
+          "id": "b",
+          "text": "Maintain the product backlog"
+        },
+        {
+          "id": "c",
+          "text": "Report on achieved coverage"
+        },
+        {
+          "id": "d",
+          "text": "Design solutions to new requirements"
+        }
+      ],
+      "correct_answers": [
+        "a",
+        "c"
+      ],
+      "justification": "Configuring test environments and reporting on achieved coverage are typical tester tasks."
+    },
+    {
+      "id": "CTFL-Q17",
+      "points": 1,
+      "syllabus_topic": "FL-2.2.1",
+      "question_text": "Which skill is most important for a tester?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Critical thinking"
+        },
+        {
+          "id": "b",
+          "text": "Creating product vision"
+        },
+        {
+          "id": "c",
+          "text": "Planning team work"
+        },
+        {
+          "id": "d",
+          "text": "Designing business processes"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "Critical thinking is considered one of the most important skills for a tester."
+    },
+    {
+      "id": "CTFL-Q18",
+      "points": 1,
+      "syllabus_topic": "FL-2.2.3",
+      "question_text": "How is the whole team approach present in interactions?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Business representatives decide on automation"
+        },
+        {
+          "id": "b",
+          "text": "Testers help business reps create acceptance tests"
+        },
+        {
+          "id": "c",
+          "text": "Business representatives are not part of the team"
+        },
+        {
+          "id": "d",
+          "text": "Developers create test plans"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "Testers collaborate with business representatives to create suitable acceptance tests."
+    },
+    {
+      "id": "CTFL-Q19",
+      "points": 1,
+      "syllabus_topic": "FL-3.1.2",
+      "question_text": "In which SDLC model does 'for every SDLC activity there is a corresponding test activity' hold?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sequential models"
+        },
+        {
+          "id": "b",
+          "text": "Iterative models"
+        },
+        {
+          "id": "c",
+          "text": "All of them (Sequential, Incremental, Iterative)"
+        },
+        {
+          "id": "d",
+          "text": "None"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "This rule holds for sequential, incremental, and iterative SDLC models."
+    },
+    {
+      "id": "CTFL-Q20",
+      "points": 1,
+      "syllabus_topic": "FL-3.2.1",
+      "question_text": "Which of the following is a benefit of early and frequent feedback?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "It improves the test process for future projects"
+        },
+        {
+          "id": "b",
+          "text": "It forces customers to prioritize their requirements based on agreed risks"
+        },
+        {
+          "id": "c",
+          "text": "It is the only way to measure the quality of changes"
+        },
+        {
+          "id": "d",
+          "text": "It helps avoid requirements misunderstandings"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "Early and frequent feedback allows for the early communication of potential quality problems and helps clarify requirements, avoiding misunderstandings."
+    },
+    {
+      "id": "CTFL-Q21",
+      "points": 1,
+      "syllabus_topic": "FL-3.2.4",
+      "question_text": "The reviews being used in your organization have the following attributes: There is the role of a scribe; The main purpose is to evaluate quality; The meeting is led by the author of the work product; There is individual preparation; A review report is produced. Which of the following review types is MOST likely being used?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Informal review"
+        },
+        {
+          "id": "b",
+          "text": "Walkthrough"
+        },
+        {
+          "id": "c",
+          "text": "Technical review"
+        },
+        {
+          "id": "d",
+          "text": "Inspection"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "The purpose of evaluating quality is one of the most important objectives of a walkthrough, and these attributes match the definition."
+    },
+    {
+      "id": "CTFL-Q22",
+      "points": 1,
+      "syllabus_topic": "FL-3.2.5",
+      "question_text": "Which of these statements is NOT a factor that contributes to successful reviews?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Participants should dedicate adequate time for the review"
+        },
+        {
+          "id": "b",
+          "text": "Splitting large work products into small parts"
+        },
+        {
+          "id": "c",
+          "text": "Participants should avoid behaviors that might indicate boredom or hostility"
+        },
+        {
+          "id": "d",
+          "text": "Failures found should be acknowledged, appreciated, and handled objectively"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "During reviews, testers find defects (not necessarily failures), which should be acknowledged and handled objectively. The statement D is conceptually incorrect regarding terminology."
+    },
+    {
+      "id": "CTFL-Q23",
+      "points": 1,
+      "syllabus_topic": "FL-4.1.1",
+      "question_text": "Which of the following is a characteristic of experience-based test techniques?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Test cases are created based on detailed design information"
+        },
+        {
+          "id": "b",
+          "text": "Items tested within the interface code section are used to measure coverage"
+        },
+        {
+          "id": "c",
+          "text": "The techniques heavily rely on the tester's knowledge of the software and the business domain"
+        },
+        {
+          "id": "d",
+          "text": "The test cases are used to identify deviations from the requirements"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "Experience-based techniques use the tester's knowledge, experience, and understanding of the software and domain."
+    },
+    {
+      "id": "CTFL-Q24",
+      "points": 1,
+      "syllabus_topic": "FL-4.2.1",
+      "question_text": "You are testing a simplified apartment search form. Floor: ground, first, second+. Garden: none, small, large. Rule: Only ground floor can have a garden. What is the minimal number of test cases for 100% Equivalence Partitioning coverage?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "3"
+        },
+        {
+          "id": "b",
+          "text": "4"
+        },
+        {
+          "id": "c",
+          "text": "5"
+        },
+        {
+          "id": "d",
+          "text": "6"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "Need to cover: Ground+NoGarden, Ground+SmallGarden, Ground+LargeGarden, First+NoGarden, Second+NoGarden. With the rule validation, 4 test cases cover all partitions."
+    },
+    {
+      "id": "CTFL-Q25",
+      "points": 1,
+      "syllabus_topic": "FL-4.2.2",
+      "question_text": "Boundary Value Analysis (BVA) coverage calculation for grades: 0-50 (failed), 51-60 (fair), 61-70 (satisfactory), 71-80 (good), 81-90 (very good), 91-100 (excellent). Existing TC: 91, 50, 81, 60, 70, 80. What is the 2-value BVA coverage?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "50%"
+        },
+        {
+          "id": "b",
+          "text": "60%"
+        },
+        {
+          "id": "c",
+          "text": "33.3%"
+        },
+        {
+          "id": "d",
+          "text": "100%"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "Existem 12 valores de fronteira (0, 50, 51, 60, 61, 70, 71, 80, 81, 90, 91, 100). Os casos de teste cobrem 6 deles: 6/12 = 50%."
+    },
+    {
+      "id": "CTFL-Q26",
+      "points": 1,
+      "syllabus_topic": "FL-4.2.3",
+      "question_text": "Decision table rule identification: Is there an impossible situation in the rules provided for a bicycle rental system (Membership, Deadline, 15th rental)?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "R4"
+        },
+        {
+          "id": "b",
+          "text": "R2"
+        },
+        {
+          "id": "c",
+          "text": "R6"
+        },
+        {
+          "id": "d",
+          "text": "R8"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "R8 representa uma regra onde o cliente perde o desconto por atraso, mas ainda assim recebe um brinde de membro, o que conflita com as regras de privilégio de membro."
+    },
+    {
+      "id": "CTFL-Q27",
+      "points": 1,
+      "syllabus_topic": "FL-4.2.4",
+      "question_text": "State transition diagram: Minimal number of test cases to achieve valid transitions coverage for the provided diagram (INIT -> DEBUG -> OFF; INIT -> OPERATION -> ON HOLD -> OPERATION -> DEBUG -> OFF).",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "4"
+        },
+        {
+          "id": "b",
+          "text": "2"
+        },
+        {
+          "id": "c",
+          "text": "7"
+        },
+        {
+          "id": "d",
+          "text": "3"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "São necessárias 3 passagens pelos caminhos para cobrir todas as transições válidas no diagrama apresentado."
+    },
+    {
+      "id": "CTFL-Q28",
+      "points": 1,
+      "syllabus_topic": "FL-4.3.1",
+      "question_text": "What is the consequence of achieving 100% statement coverage?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Every statement was executed, but it doesn't mean all defects were found"
+        },
+        {
+          "id": "b",
+          "text": "Any test suite with more cases also achieves 100% coverage"
+        },
+        {
+          "id": "c",
+          "text": "Every path was executed"
+        },
+        {
+          "id": "d",
+          "text": "Every combination of inputs was tested"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "A cobertura de código (statement) garante que cada linha foi executada, mas não garante a ausência de defeitos lógicos ou de caminhos não percorridos."
+    },
+    {
+      "id": "CTFL-Q29",
+      "points": 1,
+      "syllabus_topic": "FL-4.3.3",
+      "question_text": "Which of the following is NOT true for white-box testing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "The entire software implementation is considered"
+        },
+        {
+          "id": "b",
+          "text": "Coverage metrics help identify additional tests"
+        },
+        {
+          "id": "c",
+          "text": "Techniques can be used in static testing"
+        },
+        {
+          "id": "d",
+          "text": "Testing can identify gaps in requirements implementation"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "Testes caixa-branca focam na estrutura interna do código, não conseguem identificar o que falta implementar em relação aos requisitos (que é função da caixa-preta)."
+    },
+    {
+      "id": "CTFL-Q30",
+      "points": 1,
+      "syllabus_topic": "FL-4.4.1",
+      "question_text": "Description of error guessing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Using knowledge of past defects and typical developer errors"
+        },
+        {
+          "id": "b",
+          "text": "Using personal development experience"
+        },
+        {
+          "id": "c",
+          "text": "Imagining user interaction errors"
+        },
+        {
+          "id": "d",
+          "text": "Rapidly duplicating development tasks"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "Error guessing baseia-se na experiência do tester em erros passados e falhas típicas."
+    },
+    {
+      "id": "CTFL-Q31",
+      "points": 1,
+      "syllabus_topic": "FL-4.4.2",
+      "question_text": "Technique for pressing deadlines and missing requirements documentation?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Checklist-based testing"
+        },
+        {
+          "id": "b",
+          "text": "Error guessing"
+        },
+        {
+          "id": "c",
+          "text": "Exploratory testing"
+        },
+        {
+          "id": "d",
+          "text": "Branch testing"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "Exploratory testing é ideal quando a documentação é escassa e o tempo é curto."
+    },
+    {
+      "id": "CTFL-Q32",
+      "points": 1,
+      "syllabus_topic": "FL-4.5.2",
+      "question_text": "How are acceptance criteria documented?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Retrospectives"
+        },
+        {
+          "id": "b",
+          "text": "Given/When/Then format"
+        },
+        {
+          "id": "c",
+          "text": "Verbal communication"
+        },
+        {
+          "id": "d",
+          "text": "Risk register"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "O formato Given/When/Then é o padrão para documentar critérios de aceitação testáveis."
+    },
+    {
+      "id": "CTFL-Q33",
+      "points": 1,
+      "syllabus_topic": "FL-4.5.3",
+      "question_text": "ATDD test for the user story: Editor reviews content. Criteria: Log in, edit page, add markup, save changes, reassign.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Editor saves after deleting content"
+        },
+        {
+          "id": "b",
+          "text": "Content owner makes updates"
+        },
+        {
+          "id": "c",
+          "text": "Editor schedules publication"
+        },
+        {
+          "id": "d",
+          "text": "Editor reassigns to another editor"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "A capacidade de reatribuir a tarefa (reassign) está explicitamente nos critérios de aceitação."
+    },
+    {
+      "id": "CTFL-Q34",
+      "points": 1,
+      "syllabus_topic": "FL-5.1.2",
+      "question_text": "How do testers add value to iteration/release planning?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Determining user story priority"
+        },
+        {
+          "id": "b",
+          "text": "Focusing only on functional aspects"
+        },
+        {
+          "id": "c",
+          "text": "Risk identification and assessment of user stories"
+        },
+        {
+          "id": "d",
+          "text": "Guaranteeing quality through early test design"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "Testers participam ativamente na identificação e avaliação de riscos das user stories durante o planejamento."
+    },
+    {
+      "id": "CTFL-Q35",
+      "points": 1,
+      "syllabus_topic": "FL-5.1.3",
+      "question_text": "Which are exit criteria for testing?",
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Test environment readiness"
+        },
+        {
+          "id": "b",
+          "text": "Tester can log in"
+        },
+        {
+          "id": "c",
+          "text": "Estimated defect density is reached"
+        },
+        {
+          "id": "d",
+          "text": "Requirements in Gherkin"
+        },
+        {
+          "id": "e",
+          "text": "Regression tests automated"
+        }
+      ],
+      "correct_answers": [
+        "c",
+        "e"
+      ],
+      "justification": "Exit criteria refer ao encerramento, como metas de densidade de defeitos e automação de regressão."
+    },
+    {
+      "id": "CTFL-Q36",
+      "points": 1,
+      "syllabus_topic": "FL-5.1.4",
+      "question_text": "Your team uses the three-point estimation technique to estimate the test effort for a new high-risk feature. The following estimates were made: most optimistic: 2 person-hours, most likely: 11 person-hours, most pessimistic: 14 person-hours. What is the final estimate?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "9 person-hours"
+        },
+        {
+          "id": "b",
+          "text": "14 person-hours"
+        },
+        {
+          "id": "c",
+          "text": "11 person-hours"
+        },
+        {
+          "id": "d",
+          "text": "10 person-hours"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "Cálculo: (2 + 4*11 + 14) / 6 = (2 + 44 + 14) / 6 = 60 / 6 = 10 horas."
+    },
+    {
+      "id": "CTFL-Q37",
+      "points": 1,
+      "syllabus_topic": "FL-5.1.5",
+      "question_text": "Which test case should be executed third based on dependencies: TC1 (Select food, prio 3), TC2 (Select restaurant, prio 2, dep: TC1), TC3 (Get direction, prio 1, dep: TC2), TC4 (Call restaurant, prio 2, dep: TC2), TC5 (Make reservation, prio 3, dep: TC2)?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "TC 003"
+        },
+        {
+          "id": "b",
+          "text": "TC 005"
+        },
+        {
+          "id": "c",
+          "text": "TC 002"
+        },
+        {
+          "id": "d",
+          "text": "TC 001"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "Ordem de execução considerando dependências e prioridade: 1) TC001, 2) TC002, 3) TC003 (maior prioridade entre os dependentes de TC002)."
+    },
+    {
+      "id": "CTFL-Q38",
+      "points": 1,
+      "syllabus_topic": "FL-5.1.7",
+      "question_text": "Map test categories (Usability, Component, Functional, Reliability) to Agile testing quadrants (Q1: Tech/Support, Q2: Bus/Support, Q3: Bus/Critique, Q4: Tech/Critique).",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1C, 2A, 3B, 4D"
+        },
+        {
+          "id": "b",
+          "text": "1D, 2A, 3C, 4B"
+        },
+        {
+          "id": "c",
+          "text": "1C, 2B, 3D, 4A"
+        },
+        {
+          "id": "d",
+          "text": "1D, 2B, 3C, 4A"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "Usabilidade (Q3-Critique/Bus), Componente (Q1-Tech/Support), Funcional (Q2-Bus/Support), Confiabilidade (Q4-Tech/Critique)."
+    },
+    {
+      "id": "CTFL-Q39",
+      "points": 1,
+      "syllabus_topic": "FL-5.2.4",
+      "question_text": "Risk: Response time too long. Likelihood: medium, impact: high. Response: Independent test team performs performance testing + alpha/beta testing. What measure is this?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Risk acceptance"
+        },
+        {
+          "id": "b",
+          "text": "Contingency plan"
+        },
+        {
+          "id": "c",
+          "text": "Risk mitigation"
+        },
+        {
+          "id": "d",
+          "text": "Risk transfer"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "Realizar testes adicionais para reduzir o impacto ou a probabilidade de um risco é uma ação de mitigação."
+    },
+    {
+      "id": "CTFL-Q40",
+      "points": 1,
+      "syllabus_topic": "FL-5.3.3",
+      "question_text": "Which tool shows work completed vs work remaining for an iteration?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Acceptance criteria"
+        },
+        {
+          "id": "b",
+          "text": "Defect report"
+        },
+        {
+          "id": "c",
+          "text": "Test completion report"
+        },
+        {
+          "id": "d",
+          "text": "Burndown chart"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "O Burndown chart é a ferramenta visual padrão para mostrar o progresso do trabalho em relação ao tempo restante."
+    },
+    {
+      "id": "CTFL-Q41",
+      "points": 1,
+      "syllabus_topic": "FL-5.4.1",
+      "question_text": "Updating an automated test script to match new requirements is an example of:",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Traceability management"
+        },
+        {
+          "id": "b",
+          "text": "Maintenance testing"
+        },
+        {
+          "id": "c",
+          "text": "Configuration management"
+        },
+        {
+          "id": "d",
+          "text": "Requirements engineering"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "Gerir versões e atualizações de testware (scripts) faz parte da gestão de configuração."
+    },
+    {
+      "id": "CTFL-Q42",
+      "points": 1,
+      "syllabus_topic": "FL-5.5.1",
+      "question_text": "Defect report says 'Application hangs up after input X'. It says 'Rejected', but does not say why. What is missing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Expected result and actual result"
+        },
+        {
+          "id": "b",
+          "text": "References and defect status"
+        },
+        {
+          "id": "c",
+          "text": "Test environment and test item"
+        },
+        {
+          "id": "d",
+          "text": "Priority and severity"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "Para o desenvolvedor reproduzir o erro, é essencial saber em qual ambiente e qual item (versão) o problema ocorreu."
+    },
+    {
+      "id": "CTFL-Q43",
+      "points": 1,
+      "syllabus_topic": "FL-6.1.1",
+      "question_text": "Which test activity does a data preparation tool support?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Test monitoring and control"
+        },
+        {
+          "id": "b",
+          "text": "Test analysis and design"
+        },
+        {
+          "id": "c",
+          "text": "Test implementation and execution"
+        },
+        {
+          "id": "d",
+          "text": "Test completion"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "Ferramentas de preparação de dados são utilizadas para garantir que os dados necessários estejam disponíveis durante a implementação e execução dos testes."
+    },
+    {
+      "id": "CTFL-Q44",
+      "points": 1,
+      "syllabus_topic": "FL-6.2.1",
+      "question_text": "Which item is a potential risk of test automation?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Introduce unknown regressions"
+        },
+        {
+          "id": "b",
+          "text": "Sufficient efforts to maintain testware may not be allocated"
+        },
+        {
+          "id": "c",
+          "text": "Testing tools may not be sufficiently relied upon"
+        },
+        {
+          "id": "d",
+          "text": "Reduction in time for manual testing"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "A falta de alocação de esforço para manutenção é um dos maiores riscos de falha a longo prazo em automação."
+    },
+    {
+      "id": "CTFL-Q45",
+      "points": 1,
+      "syllabus_topic": "FL-1.1.2",
+      "question_text": "You were given a task to analyze and fix causes of failures in a new system to be released. Which activity are you performing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Debugging"
+        },
+        {
+          "id": "b",
+          "text": "Software testing"
+        },
+        {
+          "id": "c",
+          "text": "Requirement elicitation"
+        },
+        {
+          "id": "d",
+          "text": "Defect management"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "Debugging é o processo de encontrar, analisar e remover a causa de falhas."
+    },
+    {
+      "id": "CTFL-Q46",
+      "points": 1,
+      "syllabus_topic": "FL-1.2.2",
+      "question_text": "In many software organizations the test department is called the Quality Assurance (QA) department. Is this sentence correct or not and why?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "It is correct. Testing and QA mean exactly the same thing"
+        },
+        {
+          "id": "b",
+          "text": "It is correct. These names can be used interchangeably"
+        },
+        {
+          "id": "c",
+          "text": "It is not correct. Testing is something more; it includes all activities regarding quality."
+        },
+        {
+          "id": "d",
+          "text": "It is not correct. QA focuses on quality-related processes while testing concentrates on fitness for purpose and detecting defects"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "QA foca em processos, enquanto teste foca na verificação da conformidade e deteção de defeitos."
+    },
+    {
+      "id": "CTFL-Q47",
+      "points": 1,
+      "syllabus_topic": "FL-1.2.3",
+      "question_text": "A phone ringing distracts a programmer causing him to improperly program a boundary check. Later, a tester notices the input field accepts invalid input values. Which correctly describes an incorrectly coded upper bound?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "The root cause"
+        },
+        {
+          "id": "b",
+          "text": "A failure"
+        },
+        {
+          "id": "c",
+          "text": "An error"
+        },
+        {
+          "id": "d",
+          "text": "A defect"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "O problema no código (bound incorreto) é um defeito."
+    },
+    {
+      "id": "CTFL-Q48",
+      "points": 1,
+      "syllabus_topic": "FL-1.4.3",
+      "question_text": "Consider the testware: Test Charter #04.018 (Session time: 1h); Explore: Registration page; With: Different sets of incorrect input data; To discover: Defects related to accepting the registration process with incorrect input. Which test activity produces this?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Test planning"
+        },
+        {
+          "id": "b",
+          "text": "Test monitoring and control"
+        },
+        {
+          "id": "c",
+          "text": "Test analysis"
+        },
+        {
+          "id": "d",
+          "text": "Test design"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "Test charters são outputs da fase de Test Design."
+    },
+    {
+      "id": "CTFL-Q49",
+      "points": 1,
+      "syllabus_topic": "FL-1.4.4",
+      "question_text": "Which is the BEST example of how traceability supports testing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Performing impact analysis of a change gives info about completion of tests"
+        },
+        {
+          "id": "b",
+          "text": "Analyzing traceability between test cases and results gives info about residual risk"
+        },
+        {
+          "id": "c",
+          "text": "Performing impact analysis of a change helps selecting the right test cases for regression"
+        },
+        {
+          "id": "d",
+          "text": "Analyzing traceability between test basis and objects helps selecting test data"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "A análise de impacto de mudanças através de rastreabilidade ajuda a selecionar os casos de teste corretos para regressão."
+    },
+    {
+      "id": "CTFL-Q50",
+      "points": 1,
+      "syllabus_topic": "FL-1.5.3",
+      "question_text": "Which BEST explains a benefit of independence of testing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Allows project management to assign responsibility for quality to the test team"
+        },
+        {
+          "id": "b",
+          "text": "External teams are not swayed by delivery concerns"
+        },
+        {
+          "id": "c",
+          "text": "Testers can work separately from developers"
+        },
+        {
+          "id": "d",
+          "text": "An independent tester can question assumptions and the interpretation of specifications made by the developer"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "Testadores independentes são úteis para questionar as interpretações e premissas feitas pelos desenvolvedores."
+    },
+    {
+      "id": "CTFL-Q51",
+      "points": 1,
+      "syllabus_topic": "FL-2.1.1",
+      "question_text": "Working in a V-model team, how does this SDLC model impact test timing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dynamic testing cannot be performed early in the SDLC"
+        },
+        {
+          "id": "b",
+          "text": "Static testing cannot be performed early"
+        },
+        {
+          "id": "c",
+          "text": "Test planning cannot be performed early"
+        },
+        {
+          "id": "d",
+          "text": "Acceptance testing can be performed early"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "Em modelos sequenciais como o V-model, o código executável só aparece tarde, logo testes dinâmicos não podem ser feitos precocemente."
+    },
+    {
+      "id": "CTFL-Q52",
+      "points": 1,
+      "syllabus_topic": "FL-2.1.4",
+      "question_text": "Which are advantages of DevOps? (i. Faster release; ii. More manual testing; iii. Constant availability; iv. Reduction in regression tests; v. Inexpensive framework setup)",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i, ii, iv are advantages"
+        },
+        {
+          "id": "b",
+          "text": "iii, v are advantages"
+        },
+        {
+          "id": "c",
+          "text": "i, iii are advantages"
+        },
+        {
+          "id": "d",
+          "text": "ii, iv, v are advantages"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "Release mais rápido (i) e disponibilidade constante (iii) são vantagens centrais do DevOps."
+    },
+    {
+      "id": "CTFL-Q53",
+      "points": 1,
+      "syllabus_topic": "FL-2.2.2",
+      "question_text": "Order processing in < 10s for 95% of cases. Test cases measure time. What test type is this?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Functional"
+        },
+        {
+          "id": "b",
+          "text": "Non-functional"
+        },
+        {
+          "id": "c",
+          "text": "User Interface"
+        },
+        {
+          "id": "d",
+          "text": "Structural"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "Testes que medem performance (como velocidade de processamento) são de natureza não funcional."
+    },
+    {
+      "id": "CTFL-Q54",
+      "points": 1,
+      "syllabus_topic": "FL-2.3.1",
+      "question_text": "Data migration testing when a system is retired is which test type?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Maintenance testing"
+        },
+        {
+          "id": "b",
+          "text": "Regression testing"
+        },
+        {
+          "id": "c",
+          "text": "Component testing"
+        },
+        {
+          "id": "d",
+          "text": "Integration testing"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "Testes de migração de dados em sistemas legados/aposentados são uma forma de teste de manutenção."
+    },
+    {
+      "id": "CTFL-Q55",
+      "points": 1,
+      "syllabus_topic": "FL-3.1.1",
+      "question_text": "Which work products can be reviewed? (i. Business requirements, ii. Schedule, iii. Test budget, iv. Third-party executable code, v. User stories)",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i, iv"
+        },
+        {
+          "id": "b",
+          "text": "i, ii, iii, iv"
+        },
+        {
+          "id": "c",
+          "text": "i, ii, iii, v"
+        },
+        {
+          "id": "d",
+          "text": "iii, iv, v"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "Código executável de terceiros não pode ser revisto da mesma forma que requisitos e documentos de plano."
+    },
+    {
+      "id": "CTFL-Q56",
+      "points": 1,
+      "syllabus_topic": "FL-3.1.3",
+      "question_text": "True/False for Static vs Dynamic: i. External behaviors, ii. Coding standards, iii. Run software, iv. Identify defects early, v. Security gaps.",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i, iv, v (Static), ii, iii (Dynamic)"
+        },
+        {
+          "id": "b",
+          "text": "i, iii, iv (Static), ii, v (Dynamic)"
+        },
+        {
+          "id": "c",
+          "text": "ii, iii (Static), i, iv, v (Dynamic)"
+        },
+        {
+          "id": "d",
+          "text": "ii, iv, v (Static), i, iii, iv (Dynamic)"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "Testes estáticos focam em padrões, requisitos e segurança em documentos (ii, iv, v), enquanto testes dinâmicos executam o código (i, iii, iv)."
+    },
+    {
+      "id": "CTFL-Q57",
+      "points": 1,
+      "syllabus_topic": "FL-3.2.2",
+      "question_text": "Which statement about formal reviews is true?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reviews do not require more than one role"
+        },
+        {
+          "id": "b",
+          "text": "The review process has several activities"
+        },
+        {
+          "id": "c",
+          "text": "Documentation is not distributed before meeting"
+        },
+        {
+          "id": "d",
+          "text": "Defects found are not reported"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "Revisões formais seguem um processo estruturado composto por várias atividades definidas."
+    },
+    {
+      "id": "CTFL-Q58",
+      "points": 1,
+      "syllabus_topic": "FL-3.2.3",
+      "question_text": "What task may management take on during a formal review?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Taking overall responsibility"
+        },
+        {
+          "id": "b",
+          "text": "Deciding what is to be reviewed"
+        },
+        {
+          "id": "c",
+          "text": "Ensuring effective meeting running"
+        },
+        {
+          "id": "d",
+          "text": "Recording review info"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "Management define o que deve ser revisto (objetivos e escopo)."
+    },
+    {
+      "id": "CTFL-Q59",
+      "points": 1,
+      "syllabus_topic": "FL-4.2.2",
+      "question_text": "BVA 3-points for temperature rules (12 optimal). Inputs: 11, 12, 13, 10, 14. Minimal set?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "11, 12, 13"
+        },
+        {
+          "id": "b",
+          "text": "10, 12, 14"
+        },
+        {
+          "id": "c",
+          "text": "10, 11, 12, 13, 14"
+        },
+        {
+          "id": "d",
+          "text": "10, 11, 13, 14"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "BVA de 3 pontos para 12 requer: 11 (borda-), 12 (borda), 13 (borda+). Considerando a temperatura inteira arredondada, 10, 11, 12, 13, 14 cobrem todos os limites e adjacências."
+    },
+    {
+      "id": "CTFL-Q60",
+      "points": 1,
+      "syllabus_topic": "FL-4.3.2",
+      "question_text": "Branch coverage: if branch coverage is achieved, what is true?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "All unconditional branches achieved without tests"
+        },
+        {
+          "id": "b",
+          "text": "Unconditional branches only"
+        },
+        {
+          "id": "c",
+          "text": "100% statement coverage implies 100% branch coverage"
+        },
+        {
+          "id": "d",
+          "text": "All decision outcomes in each decision statement are exercised"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "A cobertura de ramo (branch coverage) implica que todos os resultados de decisão em cada instrução de decisão foram exercidos."
+    },
+    {
+      "id": "CTFL-Q61",
+      "points": 1,
+      "syllabus_topic": "FL-4.4.3",
+      "question_text": "Tester checks UI best practices book. Which technique is this?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Black-box"
+        },
+        {
+          "id": "b",
+          "text": "Exploratory"
+        },
+        {
+          "id": "c",
+          "text": "Checklist-based"
+        },
+        {
+          "id": "d",
+          "text": "Error guessing"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "Usar uma lista (neste caso, um livro de boas práticas) como guia é Checklist-based testing."
+    },
+    {
+      "id": "CTFL-Q62",
+      "points": 1,
+      "syllabus_topic": "FL-4.5.1",
+      "question_text": "Describe collaborative approach to user story writing?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Testers/devs create, business accepts"
+        },
+        {
+          "id": "b",
+          "text": "Created by business, devs, and testers together"
+        },
+        {
+          "id": "c",
+          "text": "Business creates, devs/testers verify"
+        },
+        {
+          "id": "d",
+          "text": "Independent/negotiable/valuable definition"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "A escrita colaborativa envolve todos os stakeholders para garantir uma visão compartilhada."
+    },
+    {
+      "id": "CTFL-Q63",
+      "points": 1,
+      "syllabus_topic": "FL-5.1.1",
+      "question_text": "Plan: 100% branch coverage for critical components. Which section of test plan?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Communication"
+        },
+        {
+          "id": "b",
+          "text": "Risk register"
+        },
+        {
+          "id": "c",
+          "text": "Context of testing"
+        },
+        {
+          "id": "d",
+          "text": "Test approach"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "A abordagem de teste (Test approach) descreve os níveis e as técnicas que serão utilizadas para atingir os objetivos."
+    },
+    {
+      "id": "CTFL-Q64",
+      "points": 1,
+      "syllabus_topic": "FL-5.1.4",
+      "question_text": "Planning poker: Estimates 13, 13, 8, 13, 8. Next step?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Owner decides"
+        },
+        {
+          "id": "b",
+          "text": "Accept 13"
+        },
+        {
+          "id": "c",
+          "text": "No action"
+        },
+        {
+          "id": "d",
+          "text": "Remove feature"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "Quando a variação é pequena e não se atinge consenso total, a regra de aceitar o valor mais votado é aplicada."
+    },
+    {
+      "id": "CTFL-Q65",
+      "points": 1,
+      "syllabus_topic": "FL-5.1.6",
+      "question_text": "NOT true about test pyramid?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "More tests at lower levels"
+        },
+        {
+          "id": "b",
+          "text": "Top of pyramid needs more formal automation"
+        },
+        {
+          "id": "c",
+          "text": "API tools for component/integration"
+        },
+        {
+          "id": "d",
+          "text": "GUI tools for system/acceptance"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "Não é verdade que o topo da pirâmide exija automação mais formal; a pirâmide sugere automação consistente em todos os níveis, com foco maior na base."
+    },
+    {
+      "id": "CTFL-Q66",
+      "points": 1,
+      "syllabus_topic": "FL-5.2.1",
+      "question_text": "Risk likelihood vs impact?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Very high likelihood"
+        },
+        {
+          "id": "b",
+          "text": "Very low likelihood"
+        },
+        {
+          "id": "c",
+          "text": "They are independent"
+        },
+        {
+          "id": "d",
+          "text": "Likelihood is unimportant"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "justification": "Impacto e probabilidade são duas dimensões distintas e independentes no cálculo do risco."
+    },
+    {
+      "id": "CTFL-Q67",
+      "points": 1,
+      "syllabus_topic": "FL-5.2.2",
+      "question_text": "Which are project risks? (i. Mgmt moves testers, ii. Safety compliance, iii. Response time, iv. Inaccurate expectations, v. Disabled user accessibility)",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i, iv"
+        },
+        {
+          "id": "b",
+          "text": "iv, v"
+        },
+        {
+          "id": "c",
+          "text": "i, iii"
+        },
+        {
+          "id": "d",
+          "text": "ii, v"
+        }
+      ],
+      "correct_answers": [
+        "a"
+      ],
+      "justification": "Riscos de projeto estão ligados à gestão e organização (ex: perda de pessoal ou expectativas erradas), enquanto riscos de produto focam no sistema."
+    },
+    {
+      "id": "CTFL-Q68",
+      "points": 1,
+      "syllabus_topic": "FL-5.2.3",
+      "question_text": "Which is an example of product risk analysis influencing scope?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Manager reports risk level daily"
+        },
+        {
+          "id": "b",
+          "text": "Team integrates open-source DB"
+        },
+        {
+          "id": "c",
+          "text": "Estimate residual risk before testing"
+        },
+        {
+          "id": "d",
+          "text": "Performance testing moved early due to high risk"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "justification": "Quando um risco de performance é identificado como alto, a análise de risco leva à priorização e antecipação dos testes de performance."
+    },
+    {
+      "id": "CTFL-Q69",
+      "points": 1,
+      "syllabus_topic": "FL-5.3.1",
+      "question_text": "Common metrics for reporting quality of test object? (Select TWO)",
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Defects found during system testing"
+        },
+        {
+          "id": "b",
+          "text": "Effort divided by cases"
+        },
+        {
+          "id": "c",
+          "text": "Number of executed procedures"
+        },
+        {
+          "id": "d",
+          "text": "Defects found / size of work product"
+        },
+        {
+          "id": "e",
+          "text": "Time to repair"
+        }
+      ],
+      "correct_answers": [
+        "a",
+        "d"
+      ],
+      "justification": "Densidade de defeitos e número total de defeitos encontrados são indicadores diretos da qualidade do produto."
+    },
+    {
+      "id": "CTFL-Q70",
+      "points": 1,
+      "syllabus_topic": "FL-5.3.2",
+      "question_text": "LEAST useful info in test progress report for business reps?",
+      "question_type": "single_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Impediments"
+        },
+        {
+          "id": "b",
+          "text": "Branch coverage"
+        },
+        {
+          "id": "c",
+          "text": "Test progress"
+        },
+        {
+          "id": "d",
+          "text": "New risks"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "justification": "Cobertura de ramificação é uma métrica técnica que não fornece contexto de negócio útil para representantes de negócios."
+    }
+  ]
+}
