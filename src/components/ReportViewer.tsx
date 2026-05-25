@@ -10,88 +10,162 @@ interface ReportViewerProps {
   onBackToDashboard: () => void;
 }
 
-// A simple, incredibly robust React Markdown converter to render LLM bolding, headers, and list elements safely
+// A simple, incredibly robust React Markdown converter to render LLM bolding, headers, tables, and list elements safely
 function SimpleMarkdown({ text }: { text: string }) {
   if (!text) return null;
 
   const lines = text.split("\n");
-  return (
-    <div className="space-y-3 text-slate-700 text-xs sm:text-sm leading-relaxed font-sans">
-      {lines.map((line, index) => {
-        let trimmed = line.trim();
-        
-        // Headers e.g. ### Title or ## Title
-        if (trimmed.startsWith("### ")) {
-          return (
-            <h4 key={index} className="font-display font-semibold text-sm sm:text-base text-slate-900 border-b border-slate-100 pb-1 pt-3">
-              {trimmed.substring(4)}
-            </h4>
-          );
-        }
-        if (trimmed.startsWith("## ")) {
-          return (
-            <h3 key={index} className="font-display font-bold text-base sm:text-lg text-slate-900 pt-4">
-              {trimmed.substring(3)}
-            </h3>
-          );
-        }
-        if (trimmed.startsWith("# ")) {
-          return (
-            <h2 key={index} className="font-display font-extrabold text-lg sm:text-xl text-blue-900 pt-5">
-              {trimmed.substring(2)}
-            </h2>
-          );
-        }
+  const processedElements: React.ReactNode[] = [];
+  
+  let inTable = false;
+  let tableHeaders: string[] = [];
+  let tableRows: string[][] = [];
 
-        // Bullets e.g. - list block or * list block
-        if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
-          const content = trimmed.substring(2);
-          return (
-            <div key={index} className="flex gap-2 pl-2">
-              <span className="text-blue-500 font-bold">•</span>
-              <span dangerouslySetInnerHTML={{ __html: parseInlineStyles(content) }} />
-            </div>
-          );
-        }
+  const flushTable = (key: number) => {
+    if (tableHeaders.length > 0 || tableRows.length > 0) {
+      processedElements.push(
+        <div key={`table-${key}`} className="my-4 overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 shadow-3xs no-print w-full bg-white dark:bg-slate-900/60">
+          <table className="w-full text-left border-collapse text-[11px] sm:text-xs">
+            <thead>
+              <tr className="bg-slate-100 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                {tableHeaders.map((h, i) => (
+                  <th key={`th-${i}`} className="p-3 font-semibold" dangerouslySetInnerHTML={{ __html: parseInlineStyles(h.trim()) }} />
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+              {tableRows.map((row, rowIndex) => (
+                <tr key={`tr-${rowIndex}`} className="hover:bg-slate-50/50 dark:hover:bg-slate-900/30 transition-colors">
+                  {row.map((cell, cellIndex) => (
+                    <td key={`td-${cellIndex}`} className="p-3 text-slate-800 dark:text-slate-200" dangerouslySetInnerHTML={{ __html: parseInlineStyles(cell.trim()) }} />
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+      tableHeaders = [];
+      tableRows = [];
+      inTable = false;
+    }
+  };
 
-        // Numeric bullets e.g. 1. text
-        const numMatch = trimmed.match(/^(\d+)\.\s(.*)/);
-        if (numMatch) {
-          const content = numMatch[2];
-          return (
-            <div key={index} className="flex gap-2 pl-2">
-              <span className="text-blue-500 font-bold font-mono">{numMatch[1]}.</span>
-              <span dangerouslySetInnerHTML={{ __html: parseInlineStyles(content) }} />
-            </div>
-          );
-        }
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const trimmed = line.trim();
 
-        if (trimmed === "---") {
-          return <hr key={index} className="my-4 border-slate-100" />;
-        }
+    // Check if the line is part of a markdown table
+    if (trimmed.startsWith("|") && trimmed.endsWith("|")) {
+      inTable = true;
+      const cells = trimmed.split("|").slice(1, -1);
+      
+      // Check if it's the separator line e.g. |---|---|
+      const isSeparator = cells.every(c => c.trim().match(/^-+$/));
+      
+      if (isSeparator) {
+        continue;
+      }
 
-        if (trimmed === "") {
-          return <div key={index} className="h-2" />;
-        }
+      if (tableHeaders.length === 0) {
+        tableHeaders = cells;
+      } else {
+        tableRows.push(cells);
+      }
+    } else {
+      if (inTable) {
+        flushTable(i);
+      }
 
-        // Default paragraph
-        return (
-          <p
-            key={index}
-            className="leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: parseInlineStyles(line) }}
-          />
+      // Headers e.g. ### Title or ## Title
+      if (trimmed.startsWith("### ")) {
+        processedElements.push(
+          <h4 key={`h4-${i}`} className="font-display font-semibold text-sm sm:text-base text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1 pt-3">
+            {trimmed.substring(4)}
+          </h4>
         );
-      })}
+        continue;
+      }
+      if (trimmed.startsWith("## ")) {
+        processedElements.push(
+          <h3 key={`h3-${i}`} className="font-display font-bold text-base sm:text-lg text-slate-900 dark:text-slate-100 pt-4">
+            {trimmed.substring(3)}
+          </h3>
+        );
+        continue;
+      }
+      if (trimmed.startsWith("# ")) {
+        processedElements.push(
+          <h2 key={`h2-${i}`} className="font-display font-extrabold text-lg sm:text-xl text-blue-900 dark:text-blue-400 pt-5">
+            {trimmed.substring(2)}
+          </h2>
+        );
+        continue;
+      }
+
+      // Bullets e.g. - list block or * list block
+      if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
+        const content = trimmed.substring(2);
+        processedElements.push(
+          <div key={`li-${i}`} className="flex gap-2 pl-2">
+            <span className="text-blue-500 font-bold">•</span>
+            <span dangerouslySetInnerHTML={{ __html: parseInlineStyles(content) }} />
+          </div>
+        );
+        continue;
+      }
+
+      // Numeric bullets e.g. 1. text
+      const numMatch = trimmed.match(/^(\d+)\.\s(.*)/);
+      if (numMatch) {
+        const content = numMatch[2];
+        processedElements.push(
+          <div key={`num-${i}`} className="flex gap-2 pl-2">
+            <span className="text-blue-500 font-bold font-mono">{numMatch[1]}.</span>
+            <span dangerouslySetInnerHTML={{ __html: parseInlineStyles(content) }} />
+          </div>
+        );
+        continue;
+      }
+
+      if (trimmed === "---") {
+        processedElements.push(<hr key={`hr-${i}`} className="my-4 border-slate-200 dark:border-slate-800" />);
+        continue;
+      }
+
+      if (trimmed === "") {
+        processedElements.push(<div key={`space-${i}`} className="h-2" />);
+        continue;
+      }
+
+      // Default paragraph
+      processedElements.push(
+        <p
+          key={`p-${i}`}
+          className="leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: parseInlineStyles(line) }}
+        />
+      );
+    }
+  }
+
+  // Handle remaining active table
+  if (inTable) {
+    flushTable(lines.length);
+  }
+
+  return (
+    <div className="space-y-3 text-slate-800 dark:text-slate-200 text-xs sm:text-sm leading-relaxed font-sans w-full">
+      {processedElements}
     </div>
   );
 }
 
 // Parsers standard bold formatting **text** into <strong> tags
 function parseInlineStyles(markup: string): string {
-  let parsed = markup.replace(/\*\*(.*?)\*\*/g, "<strong class='font-bold text-slate-955'>$1</strong>");
-  parsed = parsed.replace(/\*(.*?)\*/g, "<em class='italic text-slate-650'>$1</em>");
-  parsed = parsed.replace(/`(.*?)`/g, "<code class='font-mono text-xs px-1 bg-slate-100 border border-slate-200 text-rose-600 rounded'>$1</code>");
+  let parsed = markup.replace(/\*\*(.*?)\*\*/g, "<strong class='font-bold text-slate-900 dark:text-slate-100'>$1</strong>");
+  parsed = parsed.replace(/\*(.*?)\*/g, "<em class='italic text-slate-600 dark:text-slate-300'>$1</em>");
+  parsed = parsed.replace(/`(.*?)`/g, "<code class='font-mono text-xs px-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-rose-600 dark:text-rose-400 rounded'>$1</code>");
   return parsed;
 }
 
@@ -444,7 +518,7 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
         <p>${t.officialReportBanner} — ID: ${attempt.id}</p>
       </div>
       <div style="text-align: right;">
-        <div style="font-size: 12px; font-weight: bold; font-family: monospace;">ISTQB ARENA HUB</div>
+        <div style="font-size: 12px; font-weight: bold; font-family: monospace;">ISTQB ARENA</div>
         <div style="font-size: 10px; color: #94a3b8; font-family: monospace; text-transform: uppercase;">${t.feedbackExec}</div>
       </div>
     </div>
@@ -524,21 +598,21 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-6 text-center font-sans animate-fade-in">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col items-center justify-center p-6 text-center font-sans animate-fade-in">
         <div className="w-10 h-10 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mb-4" />
-        <h4 className="font-display font-bold text-slate-800 text-sm">{t.loading}</h4>
-        <p className="text-[11px] text-slate-500 mt-1.5 max-w-sm">Estruturando notas, calculando desvios e invocando o avaliador Gemini...</p>
+        <h4 className="font-display font-bold text-slate-800 dark:text-slate-200 text-sm">{t.loading}</h4>
+        <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 max-w-sm">Estruturando notas, calculando desvios e invocando o avaliador Gemini...</p>
       </div>
     );
   }
 
   if (error || !attempt) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6 font-sans">
-        <div className="bg-white p-8 rounded-xl max-w-md w-full border border-red-150 shadow-sm text-center">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex items-center justify-center p-6 font-sans">
+        <div className="bg-white dark:bg-slate-900 p-8 rounded-xl max-w-md w-full border border-red-200 dark:border-red-950/50 shadow-sm text-center">
           <AlertCircle className="w-10 h-10 text-rose-500 mx-auto mb-3" />
-          <h4 className="font-display font-bold text-slate-900 text-sm">Problema com Relatório</h4>
-          <p className="text-xs text-slate-600 mt-2 bg-red-50 p-2.5 rounded text-left font-mono">{error}</p>
+          <h4 className="font-display font-bold text-slate-900 dark:text-white text-sm">Problema com Relatório</h4>
+          <p className="text-xs text-slate-600 dark:text-slate-350 mt-2 bg-red-50 dark:bg-red-950/30 p-2.5 rounded text-left font-mono">{error}</p>
           <button
             type="button"
             onClick={onBackToDashboard}
@@ -564,14 +638,14 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
   const secondsTaken = attempt.timeSpentSeconds % 60;
 
   return (
-    <div className="min-h-screen bg-slate-50 pb-16 print-page font-sans">
+    <div className="min-h-screen bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 pb-16 print-page font-sans transition-colors duration-250">
       
       {/* Interactive sticky actions overlay (Hidden during print) */}
-      <div className="bg-white border-b border-slate-200 py-3.5 px-6 sticky top-0 z-40 shadow-3xs no-print">
+      <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-3.5 px-6 sticky top-0 z-40 shadow-3xs no-print transition-colors duration-250">
         <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
           <button
             onClick={onBackToDashboard}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-slate-950 cursor-pointer py-1.5 px-3 rounded-lg hover:bg-slate-50 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white cursor-pointer py-1.5 px-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             {t.backDashboard}
@@ -602,72 +676,71 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
             </p>
           </div>
           <div className="text-right">
-            <div className="text-xs font-bold font-mono">ISTQB ARENA HUB</div>
+            <div className="text-xs font-bold font-mono">ISTQB ARENA</div>
             <div className="text-[9px] text-slate-400">{t.feedbackExec}</div>
           </div>
         </div>
 
         {/* Detailed Core Performance Score Dashboard Block */}
-        <div className="bg-white rounded-xl border border-slate-200 shadow-3xs p-6 sm:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-center print-card">
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-3xs p-6 sm:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-center print-card transition-colors duration-250">
           
           {/* Badge Display Circle */}
-          <div className="flex flex-col items-center text-center space-y-3 justify-center md:border-r border-slate-200 md:pr-12">
+          <div className="flex flex-col items-center text-center space-y-3 justify-center md:border-r border-slate-200 dark:border-slate-800 md:pr-12">
             <div className={`w-28 h-28 rounded-full flex flex-col items-center justify-center border-4 ${
               isPassing 
-                ? "border-emerald-500 bg-emerald-50/10 text-emerald-750" 
-                : "border-rose-500 bg-rose-50/10 text-rose-750"
+                ? "border-emerald-500 bg-emerald-50/10 text-emerald-700 dark:text-emerald-400" 
+                : "border-rose-500 bg-rose-50/10 text-rose-700 dark:text-rose-400"
             } print-badge`}>
-              <span className="text-[10px] uppercase font-bold text-slate-400 font-mono">{t.scoreLabel}</span>
-              <span className="text-3xl font-extrabold font-display leading-none my-1">{attempt.scorePercentage}%</span>
-              <span className="text-[10px] font-mono">{attempt.correctCount} / {attempt.totalQuestions} {t.hits}</span>
+              <span className="text-[10px] uppercase font-bold text-slate-700 dark:text-slate-400 font-mono">{t.scoreLabel}</span>
+              <span className="text-3xl font-extrabold font-display leading-none my-1 text-slate-800 dark:text-slate-100">{attempt.scorePercentage}%</span>
+              <span className="text-[10px] font-mono text-slate-750 dark:text-slate-300">{attempt.correctCount} / {attempt.totalQuestions} {t.hits}</span>
             </div>
 
             <div className="space-y-0.5">
               <span className={`inline-flex py-0.5 px-3 rounded-full text-[10px] font-bold uppercase tracking-wide ${
-                isPassing ? "bg-emerald-100 text-emerald-850" : "bg-rose-100 text-rose-855"
+                isPassing ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-400" : "bg-rose-100 text-rose-800 dark:bg-rose-950/40 dark:text-rose-400"
               }`}>
                 {isPassing ? t.passedLabel : t.failedLabel}
               </span>
-              <p className="text-[9px] text-slate-400 mt-1">{t.passingScoreMeta}</p>
+              <p className="text-[9px] text-slate-700 dark:text-slate-400 mt-1">{t.passingScoreMeta}</p>
             </div>
           </div>
 
           {/* Metadata parameters checklist */}
           <div className="md:col-span-2 space-y-4">
             <div className="space-y-1 text-center md:text-left">
-              <div className="text-xs font-bold text-blue-600 uppercase tracking-widest font-mono">
+              <div className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest font-mono">
                 {t.officialReportBanner}
               </div>
-              <h2 className="font-display font-extrabold text-xl text-slate-900 tracking-tight leading-tight">
+              <h2 className="font-display font-extrabold text-xl text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
                 {attempt.certificationName}
               </h2>
             </div>
-
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1">
-              <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
-                <span className="block text-[9px] uppercase font-bold text-slate-400 font-mono">{t.tableHeaderMode}:</span>
-                <span className="text-xs font-semibold text-slate-800 uppercase tracking-wide">
+              <div className="bg-slate-50 dark:bg-slate-800/40 p-3 rounded-lg border border-slate-100 dark:border-slate-800">
+                <span className="block text-[9px] uppercase font-bold text-slate-600 dark:text-slate-400 font-mono">{t.tableHeaderMode}:</span>
+                <span className="text-xs font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wide">
                   {attempt.mode === "training" ? t.trainingMode : t.examMode}
                 </span>
               </div>
-              <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
-                <span className="block text-[9px] uppercase font-bold text-slate-400 font-mono">{t.tableHeaderDuration}:</span>
-                <span className="text-xs font-semibold text-slate-800 font-mono">
+              <div className="bg-slate-50 dark:bg-slate-800/40 p-3 rounded-lg border border-slate-100 dark:border-slate-800">
+                <span className="block text-[9px] uppercase font-bold text-slate-600 dark:text-slate-400 font-mono">{t.tableHeaderDuration}:</span>
+                <span className="text-xs font-semibold text-slate-800 dark:text-slate-200 font-mono">
                   {minutesTaken > 0 ? `${minutesTaken}m ${secondsTaken}s` : `${secondsTaken}s`}
                 </span>
               </div>
-              <div className="bg-slate-50 p-3 rounded-lg border border-slate-100 col-span-2 sm:col-span-1">
-                <span className="block text-[9px] uppercase font-bold text-slate-400 font-mono">{t.simulationFinishedOn}:</span>
-                <span className="text-xs font-semibold text-slate-800 flex items-center gap-1">
-                  <Calendar className="w-3 h-3 text-slate-400 shrink-0" /> {formattedDate}
+              <div className="bg-slate-50 dark:bg-slate-800/40 p-3 rounded-lg border border-slate-100 dark:border-slate-800 col-span-2 sm:col-span-1">
+                <span className="block text-[9px] uppercase font-bold text-slate-600 dark:text-slate-400 font-mono">{t.simulationFinishedOn}:</span>
+                <span className="text-xs font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1">
+                  <Calendar className="w-3 h-3 text-slate-500 shrink-0" /> {formattedDate}
                 </span>
               </div>
             </div>
 
-            <div className="text-xs text-slate-500 leading-relaxed pt-1 flex items-start gap-1.5">
-              <UserCheck className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+            <div className="text-xs text-slate-700 dark:text-slate-400 leading-relaxed pt-1 flex items-start gap-1.5">
+              <UserCheck className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
               <span>
-                {t.evaluationText} <strong className="text-slate-800">{attempt.userEmail}</strong>. Essencial para revisões de gaps e mentoria técnica corporativa.
+                {t.evaluationText} <strong className="text-slate-800 dark:text-slate-200">{attempt.userEmail}</strong>. Essencial para revisões de gaps e mentoria técnica corporativa.
               </span>
             </div>
           </div>
@@ -675,20 +748,20 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
         </div>
 
         {/* AI Mentor Advice Section */}
-        <div className="bg-white rounded-xl border border-slate-200 shadow-3xs p-6 sm:p-8 space-y-4 relative overflow-hidden print-card">
-          <div className="absolute right-0 top-0 bg-blue-50 text-blue-200/20 text-8xl font-black font-sans select-none pointer-events-none -mr-4 -mt-4 opacity-30">
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-3xs p-6 sm:p-8 space-y-4 relative overflow-hidden print-card transition-colors duration-250">
+          <div className="absolute right-0 top-0 bg-blue-50 dark:bg-blue-950/20 text-blue-200/20 dark:text-blue-500/10 text-8xl font-black font-sans select-none pointer-events-none -mr-4 -mt-4 opacity-30">
             AI
           </div>
           
-          <div className="flex items-center gap-2 border-b border-slate-100 pb-3 no-print">
+          <div className="flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3 no-print">
             <span className="bg-blue-600 p-1.5 rounded text-white shrink-0">
-              <Sparkles className="w-4 h-4 text-amber-300" />
+              <Sparkles className="w-4 h-4 text-amber-300 dark:text-amber-400 animate-pulse" />
             </span>
             <div>
-              <h3 className="font-display font-semibold text-xs uppercase tracking-wider text-slate-800">
+              <h3 className="font-display font-semibold text-xs uppercase tracking-wider text-slate-800 dark:text-slate-200">
                 {t.aiMentorReportHeader}
               </h3>
-              <p className="text-[10px] text-slate-400 uppercase tracking-widest font-mono">
+              <p className="text-[10px] text-slate-400 dark:text-slate-500 uppercase tracking-widest font-mono">
                 {t.aiMentorReportSub}
               </p>
             </div>
@@ -701,19 +774,18 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
           </div>
 
           {/* Render Markdown advice safely */}
-          <div className="bg-slate-50/50 p-2 sm:p-4 rounded-lg border border-slate-200/50">
+          <div className="bg-slate-50/50 dark:bg-slate-900/60 p-2 sm:p-4 rounded-lg border border-slate-200/50 dark:border-slate-800/80">
             <SimpleMarkdown text={attempt.aiAdvice} />
           </div>
         </div>
 
-        {/* Item-by-item technical corrections details */}
         <div className="space-y-4">
           <div className="flex items-center justify-between no-print">
-            <h3 className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
-              <BookOpen className="w-4.5 h-4.5 text-slate-400 shrink-0" />
+            <h3 className="text-xs font-bold text-slate-700 dark:text-slate-350 uppercase tracking-wider flex items-center gap-1.5">
+              <BookOpen className="w-4.5 h-4.5 text-slate-400 dark:text-slate-500 shrink-0" />
               {t.detailedReview}
             </h3>
-            <span className="text-[10px] text-slate-500 font-mono">
+            <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">
               {attempt.results.length} {t.correctedItems}
             </span>
           </div>
@@ -729,31 +801,31 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
               const originQ = questionsDB?.questions?.find((q: any) => q.id === result.id);
               
               return (
-                <div key={result.id} className="bg-white rounded-xl border border-slate-200 p-5 sm:p-6 space-y-4 print-card">
+                <div key={result.id} className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 space-y-4 print-card">
                   
                   {/* Item header */}
                   <div className="flex items-start justify-between gap-3 flex-wrap">
                     <div className="flex items-center gap-2">
-                      <span className="w-6 h-6 rounded bg-slate-100 flex items-center justify-center font-mono text-[11px] font-bold text-slate-700">
+                      <span className="w-6 h-6 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-mono text-[11px] font-bold text-slate-700 dark:text-slate-350">
                         {String(idx + 1).padStart(2, "0")}
                       </span>
                       <div>
-                        <span className="text-[10px] font-mono text-slate-400 uppercase">ID: </span>
-                        <code className="text-xs font-mono font-bold text-blue-700">{result.id}</code>
-                        <span className="mx-2 text-slate-200">|</span>
-                        <span className="text-[10px] font-mono text-slate-400 uppercase">{language === "pt" ? "Tópico" : "Topic"}: </span>
-                        <strong className="text-xs text-slate-705 font-mono font-bold uppercase">{result.syllabus_topic}</strong>
+                        <span className="text-[10px] font-mono text-slate-400 dark:text-slate-500 uppercase">ID: </span>
+                        <code className="text-xs font-mono font-bold text-blue-700 dark:text-blue-400">{result.id}</code>
+                        <span className="mx-2 text-slate-200 dark:text-slate-800">|</span>
+                        <span className="text-[10px] font-mono text-slate-400 dark:text-slate-500 uppercase">{language === "pt" ? "Tópico" : "Topic"}: </span>
+                        <strong className="text-xs text-slate-700 dark:text-slate-300 font-mono font-bold uppercase">{result.syllabus_topic}</strong>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-2">
                       {result.isCorrect ? (
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-850 text-[10px] font-bold uppercase tracking-wider">
-                          <Check className="w-3 h-3 text-emerald-600" /> {t.correctedLabel}
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 text-[10px] font-bold uppercase tracking-wider">
+                          <Check className="w-3 h-3 text-emerald-600 dark:text-emerald-400" /> {t.correctedLabel}
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-rose-50 text-rose-850 text-[10px] font-bold uppercase tracking-wider">
-                          <X className="w-3 h-3 text-rose-600" /> {t.incorrectedLabel}
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-rose-50 dark:bg-rose-950/30 text-rose-800 dark:text-rose-300 text-[10px] font-bold uppercase tracking-wider">
+                          <X className="w-3 h-3 text-rose-600 dark:text-rose-400" /> {t.incorrectedLabel}
                         </span>
                       )}
                     </div>
@@ -761,14 +833,14 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
 
                   {/* Context banner if presents inside response review */}
                   {originQ?.context && (
-                    <div className="bg-slate-50 p-3 rounded border border-slate-150 text-xs text-slate-650 italic leading-relaxed">
-                      <span className="font-bold text-[9px] text-slate-400 block uppercase font-mono tracking-wider mb-1">{t.scenarioComplement}</span>
+                    <div className="bg-slate-50 dark:bg-slate-900/40 p-3 rounded border border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400 italic leading-relaxed">
+                      <span className="font-bold text-[9px] text-slate-400 dark:text-slate-500 block uppercase font-mono tracking-wider mb-1">{t.scenarioComplement}</span>
                       {originQ.context}
                     </div>
                   )}
 
                   {/* Question Title */}
-                  <h4 className="font-display font-semibold text-slate-900 text-sm leading-snug">
+                  <h4 className="font-display font-semibold text-slate-900 dark:text-slate-100 text-sm leading-snug">
                     {originQ ? originQ.question_text : "Questão de Simulação ISTQB"}
                   </h4>
 
@@ -782,30 +854,30 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
                         let cardClass = "p-3 rounded border text-xs flex items-start gap-3 transition-colors ";
                         
                         if (isCorrectOpt) {
-                          cardClass += "border-emerald-300 bg-emerald-50/15 text-emerald-950 font-medium";
+                          cardClass += "border-emerald-300 dark:border-emerald-800/80 bg-emerald-50/15 dark:bg-emerald-950/20 text-emerald-955 dark:text-emerald-300 font-medium";
                         } else if (isUserChose && !isCorrectOpt) {
-                          cardClass += "border-rose-200 bg-rose-50/15 text-rose-950";
+                          cardClass += "border-rose-200 dark:border-rose-800/80 bg-rose-50/15 dark:bg-rose-950/20 text-rose-950 dark:text-rose-300";
                         } else {
-                          cardClass += "border-slate-100 bg-white text-slate-600";
+                          cardClass += "border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900/60 text-slate-600 dark:text-slate-400";
                         }
 
                         return (
                           <div key={opt.id} className={cardClass}>
                             <div className={`w-5 h-5 rounded text-[10px] font-mono font-bold flex items-center justify-center shrink-0 border ${
                               isUserChose 
-                                ? "bg-slate-900 text-white border-slate-900" 
-                                : "bg-slate-100 text-slate-500 border-slate-200"
+                                ? "bg-slate-900 text-white border-slate-900 dark:bg-slate-100 dark:text-slate-900 dark:border-slate-100" 
+                                : "bg-slate-100 text-slate-500 border-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:border-slate-700"
                             }`}>
                               {opt.id}
                             </div>
                             <span className="flex-1 leading-relaxed">{opt.text}</span>
                             {isCorrectOpt && (
-                              <span className="text-[9px] font-mono text-emerald-700 bg-emerald-50 py-0.5 px-1.5 rounded uppercase font-bold shrink-0 border border-emerald-200">
+                              <span className="text-[9px] font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 py-0.5 px-1.5 rounded uppercase font-bold shrink-0 border border-emerald-200 dark:border-emerald-800/40">
                                 {t.gabaritoText}
                               </span>
                             )}
                             {isUserChose && !isCorrectOpt && (
-                              <span className="text-[9px] font-mono text-rose-750 bg-rose-50 py-0.5 px-1.5 rounded uppercase font-bold shrink-0 border border-rose-200">
+                              <span className="text-[9px] font-mono text-rose-800 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/40 py-0.5 px-1.5 rounded uppercase font-bold shrink-0 border border-rose-200 dark:border-rose-800/40">
                                 {t.incorrectedLabel}
                               </span>
                             )}
@@ -813,18 +885,18 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
                         );
                       })
                     ) : (
-                      <div className="p-3 bg-slate-50 text-xs text-slate-500 rounded border border-slate-150">
+                      <div className="p-3 bg-slate-50 dark:bg-slate-900/40 text-xs text-slate-500 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">
                         Opções e dados de contexto ocultados do gabarito.
                       </div>
                     )}
                   </div>
 
                   {/* Official Syllabus justification explanation */}
-                  <div className="bg-slate-50 p-4 rounded-lg border border-slate-200 space-y-1">
-                    <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-slate-400 block">
+                  <div className="bg-slate-50 dark:bg-slate-900/30 p-4 rounded-lg border border-slate-200 dark:border-slate-800 space-y-1">
+                    <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-slate-400 dark:text-slate-500 block">
                       {t.syllabusExplanation}
                     </span>
-                    <p className="text-xs text-slate-600 italic leading-relaxed">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 italic leading-relaxed">
                       {result.justification}
                     </p>
                   </div>
@@ -836,7 +908,7 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
         </div>
 
         {/* Print Warning note floating */}
-        <div className="text-center text-[10px] text-slate-400 py-6 font-mono no-print">
+        <div className="text-center text-[10px] text-slate-400 dark:text-slate-500 py-6 font-mono no-print">
           {t.compiledByArena}
         </div>
 
@@ -844,20 +916,20 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
 
       {/* Export Options Modal Dialog */}
       {showExportModal && (
-        <div className="fixed inset-0 bg-slate-900/60 flex items-center justify-center p-4 z-50 animate-fade-in no-print">
-          <div className="bg-white rounded-xl shadow-xl border border-slate-200 max-w-lg w-full p-6 space-y-4">
-            <div className="flex items-center gap-2.5 text-blue-600">
+        <div className="fixed inset-0 bg-slate-900/60 dark:bg-slate-950/80 flex items-center justify-center p-4 z-50 animate-fade-in no-print">
+          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-800 max-w-lg w-full p-6 space-y-4">
+            <div className="flex items-center gap-2.5 text-blue-600 dark:text-blue-400">
               <Printer className="w-5 h-5 shrink-0" />
-              <h3 className="font-display font-bold text-slate-900 text-sm sm:text-base">
+              <h3 className="font-display font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base">
                 {t.downloadModalTitle}
               </h3>
             </div>
             
-            <p className="text-xs text-slate-600 leading-relaxed">
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               {t.downloadModalDesc}
             </p>
 
-            <div className="bg-blue-50/40 border border-blue-100 p-3 rounded-lg text-xs leading-relaxed text-blue-800">
+            <div className="bg-blue-50/40 dark:bg-blue-950/20 border border-blue-100 dark:border-blue-900/40 p-3 rounded-lg text-xs leading-relaxed text-blue-800 dark:text-blue-300">
               {t.downloadModalWarning}
             </div>
 
@@ -872,17 +944,17 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
               
               <button
                 onClick={triggerNativePrint}
-                className="py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs rounded-lg flex items-center justify-center gap-2 cursor-pointer transition-colors"
+                className="py-2.5 px-4 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs rounded-lg flex items-center justify-center gap-2 cursor-pointer transition-colors"
               >
                 <Printer className="w-4 h-4" />
                 {t.printDirectlyBtn}
               </button>
             </div>
 
-            <div className="flex justify-end pt-2 border-t border-slate-100">
+            <div className="flex justify-end pt-2 border-t border-slate-100 dark:border-slate-800">
               <button
                 onClick={() => setShowExportModal(false)}
-                className="py-1.5 px-4 bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 text-xs font-semibold rounded-lg cursor-pointer transition-colors"
+                className="py-1.5 px-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded-lg cursor-pointer transition-colors"
               >
                 {t.closeModal}
               </button>
