@@ -359,6 +359,127 @@ function selectPracticeQuestions(allQuestions: any[], lang: "en" | "pt", recentS
   return shuffleArray(selected);
 }
 
+function getChapter(topic: any): string {
+  const topicStr = typeof topic === "object" ? (topic.en || topic.pt || "") : (topic || "");
+  if (!topicStr) return "1";
+  const match = topicStr.match(/^(?:[a-zA-Z]+-)?(\d+)/);
+  return match ? match[1] : "1";
+}
+
+function selectExamQuestions(allQuestions: any[]): any[] {
+  const targetTotal = Math.min(40, allQuestions.length);
+  if (allQuestions.length <= targetTotal) {
+    return shuffleArray(allQuestions);
+  }
+
+  // 1. Group questions by chapter
+  const byChapter: Record<string, any[]> = {};
+  allQuestions.forEach(q => {
+    const chap = getChapter(q.syllabus_topic);
+    if (!byChapter[chap]) {
+      byChapter[chap] = [];
+    }
+    byChapter[chap].push(q);
+  });
+
+  const chapters = Object.keys(byChapter);
+  const totalQuestions = allQuestions.length;
+
+  // 2. Calculate initial target counts per chapter using the largest remainder method
+  const initialTargets: Array<{
+    chapter: string;
+    exact: number;
+    floorVal: number;
+    remainder: number;
+    target: number;
+  }> = [];
+  let sumTargets = 0;
+
+  chapters.forEach(chap => {
+    const count = byChapter[chap].length;
+    const exact = (count / totalQuestions) * targetTotal;
+    const floorVal = Math.floor(exact);
+    const remainder = exact - floorVal;
+    
+    initialTargets.push({
+      chapter: chap,
+      exact,
+      floorVal,
+      remainder,
+      target: floorVal
+    });
+    sumTargets += floorVal;
+  });
+
+  // Adjust targets to sum exactly to targetTotal (40) by allocating remaining slots
+  // to the chapters with the largest fractional remainders
+  let slotsLeft = targetTotal - sumTargets;
+  if (slotsLeft > 0) {
+    initialTargets.sort((a, b) => b.remainder - a.remainder);
+    for (let i = 0; i < slotsLeft; i++) {
+      initialTargets[i].target += 1;
+    }
+  }
+
+  // Create a fast lookup for target questions per chapter
+  const targets: Record<string, number> = {};
+  initialTargets.forEach(t => {
+    targets[t.chapter] = t.target;
+  });
+
+  // 3. For each chapter, select questions avoiding duplicate specific topics
+  const selectedQuestions: any[] = [];
+
+  chapters.forEach(chap => {
+    const chapterQuestions = byChapter[chap];
+    const targetCount = targets[chap];
+    
+    // Group chapter questions by their specific sub-topic
+    const bySubtopic: Record<string, any[]> = {};
+    chapterQuestions.forEach(q => {
+      const topicStr = typeof q.syllabus_topic === "object" ? (q.syllabus_topic.en || q.syllabus_topic.pt || "") : (q.syllabus_topic || "");
+      if (!bySubtopic[topicStr]) {
+        bySubtopic[topicStr] = [];
+      }
+      bySubtopic[topicStr].push(q);
+    });
+
+    const subtopics = Object.keys(bySubtopic);
+    
+    // Shuffle the subtopics array to randomize which topics we select first
+    shuffleArray(subtopics);
+
+    // Shuffle the questions inside each subtopic pool too
+    subtopics.forEach(topic => {
+      shuffleArray(bySubtopic[topic]);
+    });
+
+    const selectedInChapter: any[] = [];
+    let poolIndex = 0;
+    
+    // Round-robin selection across unique subtopics to avoid duplicates
+    while (selectedInChapter.length < targetCount && subtopics.length > 0) {
+      const activeTopic = subtopics[poolIndex % subtopics.length];
+      const topicPool = bySubtopic[activeTopic];
+      
+      if (topicPool && topicPool.length > 0) {
+        selectedInChapter.push(topicPool.pop());
+      } else {
+        const idx = subtopics.indexOf(activeTopic);
+        if (idx > -1) {
+          subtopics.splice(idx, 1);
+        }
+        continue;
+      }
+      poolIndex++;
+    }
+
+    selectedQuestions.push(...selectedInChapter);
+  });
+
+  return shuffleArray(selectedQuestions);
+}
+
 // Fetch questions for specific certification (Anti-cheat: Correct Answers omitted)
 app.get("/api/questions/:certificationId", authenticateToken, async (req, res) => {
   const { certificationId } = req.params;
@@ -398,6 +519,10 @@ app.get("/api/questions/:certificationId", authenticateToken, async (req, res) =
       user.seenQuestions = updatedSeen;
       await user.save();
     }
+  } else {
+    // mode === "exam" (Official Mock Exam)
+    // We sample exactly 40 questions according to the syllabus chapter distribution, avoiding duplicate specific topics
+    questionsToUse = selectExamQuestions(cert.questions);
   }
 
   const cleanQuestions = questionsToUse.map((q: any) => {
@@ -480,16 +605,14 @@ app.post("/api/test/submit", authenticateToken, async (req, res) => {
   }
 
   let questions = cert.questions;
-  if (mode === "training") {
-    const idsToFilter = Array.isArray(questionIds) && questionIds.length > 0
-      ? questionIds
-      : Object.keys(answers);
-    
-    if (idsToFilter.length > 0) {
-      questions = cert.questions.filter((q: any) => idsToFilter.includes(q.id));
-    } else {
-      questions = cert.questions.slice(0, 10);
-    }
+  const idsToFilter = Array.isArray(questionIds) && questionIds.length > 0
+    ? questionIds
+    : Object.keys(answers);
+  
+  if (idsToFilter.length > 0) {
+    questions = cert.questions.filter((q: any) => idsToFilter.includes(q.id));
+  } else if (mode === "training") {
+    questions = cert.questions.slice(0, 10);
   }
   let correctCount = 0;
   const totalQuestions = questions.length;

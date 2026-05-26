@@ -352,7 +352,7 @@ export default function Dashboard({
               </div>
 
               {/* User Profile Block */}
-              <div className="flex items-center gap-3 bg-slate-850 p-2.5 rounded-lg border border-slate-800/50">
+              <div className="flex items-center gap-3 bg-slate-800 p-2.5 rounded-lg border border-slate-800/50">
                 <div className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white text-sm border border-blue-500/20 shrink-0">
                   {username.substring(0, 2).toUpperCase()}
                 </div>
@@ -769,7 +769,7 @@ export default function Dashboard({
                               <span className="text-xs font-bold text-slate-900 dark:text-slate-100">
                                 {attempt.certificationName}
                               </span>
-                              <span className="inline-flex py-0.5 px-2 rounded bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-350 font-mono text-[9px] uppercase tracking-wide border border-slate-200 dark:border-slate-700">
+                              <span className="inline-flex py-0.5 px-2 rounded bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-mono text-[9px] uppercase tracking-wide border border-slate-200 dark:border-slate-700">
                                 {attempt.mode === "training" ? t.trainingMode : t.examMode}
                               </span>
                             </div>
@@ -796,7 +796,7 @@ export default function Dashboard({
 
                             <button
                               onClick={() => onViewAttempt(attempt.id)}
-                              className="py-1.5 px-3.5 bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-750 text-white dark:text-slate-100 rounded-lg text-xs font-bold flex items-center gap-1 cursor-pointer transition-colors shadow-3xs border border-transparent dark:border-slate-800"
+                              className="py-1.5 px-3.5 bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white dark:text-slate-100 rounded-lg text-xs font-bold flex items-center gap-1 cursor-pointer transition-colors shadow-3xs border border-transparent dark:border-slate-800"
                             >
                               {t.viewReportBtn}
                               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -856,7 +856,7 @@ export default function Dashboard({
               </div>
 
               <div className="space-y-3">
-                <p className="text-xs text-slate-700 dark:text-slate-350 leading-relaxed">
+                 <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                   {language === "en" 
                     ? "Choose which ISTQB certification you want to practice. The engine will sample 10 balanced questions with instant explanations."
                     : "Selecione a certificação ISTQB para treinar. O sistema irá compilar 10 questões equilibradas com justificativas imediatas."

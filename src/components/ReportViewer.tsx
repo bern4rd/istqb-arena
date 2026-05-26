@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Award, Calendar, Clock, FileText, Check, X, ArrowLeft, Printer, AlertCircle, BookOpen, UserCheck, Sparkles, Download } from "lucide-react";
 import { AttemptDetail } from "../types";
 import { translations } from "../utils/translations";
+import MarkdownRenderer, { parseInlineStyles, preprocessInlineLists } from "./MarkdownRenderer";
 
 interface ReportViewerProps {
   attemptId: string;
@@ -10,163 +11,9 @@ interface ReportViewerProps {
   onBackToDashboard: () => void;
 }
 
-// A simple, incredibly robust React Markdown converter to render LLM bolding, headers, tables, and list elements safely
+// Wrap SimpleMarkdown to use the new unified MarkdownRenderer
 function SimpleMarkdown({ text }: { text: string }) {
-  if (!text) return null;
-
-  const lines = text.split("\n");
-  const processedElements: React.ReactNode[] = [];
-  
-  let inTable = false;
-  let tableHeaders: string[] = [];
-  let tableRows: string[][] = [];
-
-  const flushTable = (key: number) => {
-    if (tableHeaders.length > 0 || tableRows.length > 0) {
-      processedElements.push(
-        <div key={`table-${key}`} className="my-4 overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 shadow-3xs no-print w-full bg-white dark:bg-slate-900/60">
-          <table className="w-full text-left border-collapse text-[11px] sm:text-xs">
-            <thead>
-              <tr className="bg-slate-100 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-                {tableHeaders.map((h, i) => (
-                  <th key={`th-${i}`} className="p-3 font-semibold" dangerouslySetInnerHTML={{ __html: parseInlineStyles(h.trim()) }} />
-                ))}
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-              {tableRows.map((row, rowIndex) => (
-                <tr key={`tr-${rowIndex}`} className="hover:bg-slate-50/50 dark:hover:bg-slate-900/30 transition-colors">
-                  {row.map((cell, cellIndex) => (
-                    <td key={`td-${cellIndex}`} className="p-3 text-slate-800 dark:text-slate-200" dangerouslySetInnerHTML={{ __html: parseInlineStyles(cell.trim()) }} />
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      );
-      tableHeaders = [];
-      tableRows = [];
-      inTable = false;
-    }
-  };
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    const trimmed = line.trim();
-
-    // Check if the line is part of a markdown table
-    if (trimmed.startsWith("|") && trimmed.endsWith("|")) {
-      inTable = true;
-      const cells = trimmed.split("|").slice(1, -1);
-      
-      // Check if it's the separator line e.g. |---|---|
-      const isSeparator = cells.every(c => c.trim().match(/^-+$/));
-      
-      if (isSeparator) {
-        continue;
-      }
-
-      if (tableHeaders.length === 0) {
-        tableHeaders = cells;
-      } else {
-        tableRows.push(cells);
-      }
-    } else {
-      if (inTable) {
-        flushTable(i);
-      }
-
-      // Headers e.g. ### Title or ## Title
-      if (trimmed.startsWith("### ")) {
-        processedElements.push(
-          <h4 key={`h4-${i}`} className="font-display font-semibold text-sm sm:text-base text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1 pt-3">
-            {trimmed.substring(4)}
-          </h4>
-        );
-        continue;
-      }
-      if (trimmed.startsWith("## ")) {
-        processedElements.push(
-          <h3 key={`h3-${i}`} className="font-display font-bold text-base sm:text-lg text-slate-900 dark:text-slate-100 pt-4">
-            {trimmed.substring(3)}
-          </h3>
-        );
-        continue;
-      }
-      if (trimmed.startsWith("# ")) {
-        processedElements.push(
-          <h2 key={`h2-${i}`} className="font-display font-extrabold text-lg sm:text-xl text-blue-900 dark:text-blue-400 pt-5">
-            {trimmed.substring(2)}
-          </h2>
-        );
-        continue;
-      }
-
-      // Bullets e.g. - list block or * list block
-      if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
-        const content = trimmed.substring(2);
-        processedElements.push(
-          <div key={`li-${i}`} className="flex gap-2 pl-2">
-            <span className="text-blue-500 font-bold">•</span>
-            <span dangerouslySetInnerHTML={{ __html: parseInlineStyles(content) }} />
-          </div>
-        );
-        continue;
-      }
-
-      // Numeric bullets e.g. 1. text
-      const numMatch = trimmed.match(/^(\d+)\.\s(.*)/);
-      if (numMatch) {
-        const content = numMatch[2];
-        processedElements.push(
-          <div key={`num-${i}`} className="flex gap-2 pl-2">
-            <span className="text-blue-500 font-bold font-mono">{numMatch[1]}.</span>
-            <span dangerouslySetInnerHTML={{ __html: parseInlineStyles(content) }} />
-          </div>
-        );
-        continue;
-      }
-
-      if (trimmed === "---") {
-        processedElements.push(<hr key={`hr-${i}`} className="my-4 border-slate-200 dark:border-slate-800" />);
-        continue;
-      }
-
-      if (trimmed === "") {
-        processedElements.push(<div key={`space-${i}`} className="h-2" />);
-        continue;
-      }
-
-      // Default paragraph
-      processedElements.push(
-        <p
-          key={`p-${i}`}
-          className="leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: parseInlineStyles(line) }}
-        />
-      );
-    }
-  }
-
-  // Handle remaining active table
-  if (inTable) {
-    flushTable(lines.length);
-  }
-
-  return (
-    <div className="space-y-3 text-slate-800 dark:text-slate-200 text-xs sm:text-sm leading-relaxed font-sans w-full">
-      {processedElements}
-    </div>
-  );
-}
-
-// Parsers standard bold formatting **text** into <strong> tags
-function parseInlineStyles(markup: string): string {
-  let parsed = markup.replace(/\*\*(.*?)\*\*/g, "<strong class='font-bold text-slate-900 dark:text-slate-100'>$1</strong>");
-  parsed = parsed.replace(/\*(.*?)\*/g, "<em class='italic text-slate-600 dark:text-slate-300'>$1</em>");
-  parsed = parsed.replace(/`(.*?)`/g, "<code class='font-mono text-xs px-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-rose-600 dark:text-rose-400 rounded'>$1</code>");
-  return parsed;
+  return <MarkdownRenderer text={text} />;
 }
 
 export default function ReportViewer({ attemptId, token, language, onBackToDashboard }: ReportViewerProps) {
@@ -223,32 +70,178 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
     if (!attempt) return;
     
     const isPassing = attempt.scorePercentage >= 65;
-    
-    // Map AI recommendations markdown safely to basic HTML
-    let renderedAIReport = attempt.aiAdvice;
-    renderedAIReport = renderedAIReport.replace(/### (.*)/g, '<h4 style="font-size: 14px; font-weight: bold; color: #0f172a; border-bottom: 1px solid #f1f5f9; padding-bottom: 4px; margin-top: 16px; margin-bottom: 8px;">$1</h4>');
-    renderedAIReport = renderedAIReport.replace(/## (.*)/g, '<h3 style="font-size: 16px; font-weight: bold; color: #0f172a; margin-top: 20px; margin-bottom: 8px;">$1</h3>');
-    renderedAIReport = renderedAIReport.replace(/# (.*)/g, '<h2 style="font-size: 18px; font-weight: 800; color: #1e3a8a; margin-top: 24px; margin-bottom: 12px;">$1</h2>');
-    
-    let bulletList = renderedAIReport.split('\n').map(line => {
-      let trimmed = line.trim();
-      if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
-        return `<div style="display: flex; gap: 8px; margin-left: 8px; margin-bottom: 6px;"><span style="color: #2563eb; font-weight: bold;">•</span><span>${trimmed.substring(2)}</span></div>`;
+
+    // Helper functions to convert Markdown to beautifully styled inline CSS HTML for standalone reports
+    function parseInlineToHTML(text: string): string {
+      if (!text) return "";
+      const escaped = text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+      
+      let parsed = escaped.replace(/\*\*(.*?)\*\*/g, "<strong style='font-weight: 700; color: #0f172a;'>$1</strong>");
+      parsed = parsed.replace(/\*(.*?)\*/g, "<em style='font-style: italic; color: #475569;'>$1</em>");
+      parsed = parsed.replace(/`(.*?)`/g, "<code style='font-family: monospace; font-size: 11px; padding: 2px 4px; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #e11d48; border-radius: 4px;'>$1</code>");
+      return parsed;
+    }
+
+    function convertMarkdownToHTML(markdown: string): string {
+      if (!markdown) return "";
+      
+      const preprocessed = preprocessInlineLists(markdown);
+      const lines = preprocessed.split("\n");
+      let html = "";
+      let inTable = false;
+      let tableHeaders: string[] = [];
+      let tableRows: string[][] = [];
+      let inList = false;
+      let currentListItems: { prefix: string; content: string }[] = [];
+
+      const flushTable = () => {
+        if (inTable && (tableHeaders.length > 0 || tableRows.length > 0)) {
+          html += `
+<div style="margin: 16px 0; overflow-x: auto; border: 1px solid #cbd5e1; border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); background-color: #ffffff;">
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13px;">
+    <thead>
+      <tr style="background-color: #f8fafc; border-bottom: 1px solid #cbd5e1;">
+        ${tableHeaders.map(h => `<th style="padding: 12px; font-weight: 600; color: #475569; text-transform: uppercase; font-size: 11px;">${parseInlineToHTML(h)}</th>`).join("")}
+      </tr>
+    </thead>
+    <tbody style="background-color: #ffffff;">
+      ${tableRows.map(row => `
+        <tr style="border-bottom: 1px solid #f1f5f9;">
+          ${row.map(cell => `<td style="padding: 12px; color: #334155;">${parseInlineToHTML(cell)}</td>`).join("")}
+        </tr>
+      `).join("")}
+    </tbody>
+  </table>
+</div>`;
+          tableHeaders = [];
+          tableRows = [];
+          inTable = false;
+        }
+      };
+
+      const flushList = () => {
+        if (inList && currentListItems.length > 0) {
+          html += `
+<div style="margin: 8px 0; display: flex; flex-direction: column; gap: 4px;">
+  ${currentListItems.map(item => `
+    <div style="display: flex; align-items: flex-start; gap: 8px; font-size: 13px; line-height: 1.6;">
+      <span style="color: #2563eb; font-family: monospace; font-weight: bold; min-width: 20px; text-align: right; user-select: none;">${item.prefix}</span>
+      <span style="flex: 1; color: #334155;">${parseInlineToHTML(item.content)}</span>
+    </div>
+  `).join("")}
+</div>`;
+          currentListItems = [];
+          inList = false;
+        }
+      };
+
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        const trimmed = line.trim();
+
+        // Table check
+        if (trimmed.includes("|")) {
+          flushList();
+          let cells = line.split("|");
+          if (line.trim().startsWith("|")) cells = cells.slice(1);
+          if (line.trim().endsWith("|")) cells = cells.slice(0, -1);
+          cells = cells.map(c => c.trim());
+
+          const isSeparator = cells.every(c => c.match(/^-+$/));
+          if (isSeparator) {
+            continue;
+          }
+
+          if (!inTable) {
+            inTable = true;
+            tableHeaders = cells;
+          } else {
+            tableRows.push(cells);
+          }
+          continue;
+        }
+
+        flushTable();
+
+        // Divider
+        if (trimmed === "---") {
+          flushList();
+          html += "<hr style='margin: 16px 0; border: 0; border-top: 1px solid #e2e8f0;' />";
+          continue;
+        }
+
+        // Blank line
+        if (trimmed === "") {
+          flushList();
+          html += "<div style='height: 8px;'></div>";
+          continue;
+        }
+
+        // Headers
+        const headerMatch = trimmed.match(/^(#{1,6})\s+(.*)/);
+        if (headerMatch) {
+          flushList();
+          const level = headerMatch[1].length;
+          const content = headerMatch[2];
+          if (level === 1) {
+            html += `<h2 style="font-size: 18px; font-weight: 800; color: #1e3a8a; margin-top: 24px; margin-bottom: 12px; font-family: sans-serif;">${parseInlineToHTML(content)}</h2>`;
+          } else if (level === 2) {
+            html += `<h3 style="font-size: 16px; font-weight: bold; color: #0f172a; margin-top: 20px; margin-bottom: 8px; font-family: sans-serif;">${parseInlineToHTML(content)}</h3>`;
+          } else {
+            html += `<h4 style="font-size: 14px; font-weight: bold; color: #0f172a; border-bottom: 1px solid #f1f5f9; padding-bottom: 4px; margin-top: 16px; margin-bottom: 8px; font-family: sans-serif;">${parseInlineToHTML(content)}</h4>`;
+          }
+          continue;
+        }
+
+        // Lists
+        const romanMatch = trimmed.match(/^\s*(i{1,3}|iv|v|vi{1,3}|ix|x)[.)]\s+(.*)/i);
+        const numMatch = trimmed.match(/^\s*(\d+)[.)]\s+(.*)/);
+        const letterMatch = trimmed.match(/^\s*([a-zA-Z])[.)]\s+(.*)/);
+        const bulletMatch = trimmed.match(/^\s*([-*•])\s+(.*)/);
+
+        if (romanMatch) {
+          inList = true;
+          currentListItems.push({ prefix: romanMatch[1] + ".", content: romanMatch[2] });
+          continue;
+        } else if (numMatch) {
+          inList = true;
+          currentListItems.push({ prefix: numMatch[1] + ".", content: numMatch[2] });
+          continue;
+        } else if (letterMatch) {
+          inList = true;
+          currentListItems.push({ prefix: letterMatch[1] + ".", content: letterMatch[2] });
+          continue;
+        } else if (bulletMatch) {
+          inList = true;
+          currentListItems.push({ prefix: "•", content: bulletMatch[2] });
+          continue;
+        }
+
+        // Paragraph
+        flushList();
+        html += `<p style="line-height: 1.6; font-size: 13px; color: #334155; margin-top: 0; margin-bottom: 8px; font-family: sans-serif;">${parseInlineToHTML(line)}</p>`;
       }
-      const numMatch = trimmed.match(/^(\d+)\.\s(.*)/);
-      if (numMatch) {
-        return `<div style="display: flex; gap: 8px; margin-left: 8px; margin-bottom: 6px;"><span style="color: #2563eb; font-family: monospace; font-weight: bold;">${numMatch[1]}.</span><span>${numMatch[2]}</span></div>`;
+
+      flushTable();
+      flushList();
+
+      return html;
+    }
+
+    function renderOptionTextHTML(text: string): string {
+      if (!text) return "";
+      if (text.includes("\n") || text.includes("|")) {
+        return convertMarkdownToHTML(text);
       }
-      if (trimmed === "---") {
-        return '<hr style="margin: 16px 0; border: 0; border-top: 1px solid #e2e8f0;" />';
-      }
-      if (trimmed === "") {
-        return '<div style="height: 6px;"></div>';
-      }
-      let formatted = trimmed.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-      formatted = formatted.replace(/`(.*?)`/g, "<code style='font-family: monospace; font-size: 12px; padding: 2px 4px; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #e11d48; border-radius: 4px;'>$1</code>");
-      return `<p style="line-height: 1.6; margin-top: 0; margin-bottom: 8px;">${formatted}</p>`;
-    }).join('\n');
+      return parseInlineToHTML(text);
+    }
+
+    const bulletList = convertMarkdownToHTML(attempt.aiAdvice);
 
     // Questions corrections blocks
     const questionsBlockHTML = attempt.results.map((result, idx) => {
@@ -276,7 +269,7 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
         return `
           <div style="${rowStyle}">
             <div style="${badgeStyle}">${opt.id}</div>
-            <span style="flex-grow: 1; line-height: 1.5;">${opt.text}</span>
+            <span style="flex-grow: 1; line-height: 1.5;">${renderOptionTextHTML(opt.text)}</span>
             ${labelHTML}
           </div>
         `;
@@ -285,7 +278,7 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
       const contextHTML = originQ?.context ? `
         <div style="background-color: #f8fafc; padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #475569; font-style: italic; margin-bottom: 12px; border-left: 4px solid #2563eb;">
           <span style="font-weight: bold; font-size: 10px; color: #94a3b8; display: block; text-transform: uppercase; margin-bottom: 4px;">${t.scenarioComplement}</span>
-          ${originQ.context}
+          ${convertMarkdownToHTML(originQ.context)}
         </div>
       ` : '';
 
@@ -306,9 +299,9 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
           
           ${contextHTML}
           
-          <h4 style="font-size: 15px; font-weight: 600; color: #0f172a; margin-top: 0; margin-bottom: 16px; line-height: 1.4;">
-            ${originQ ? originQ.question_text : "ISTQB Certification Question"}
-          </h4>
+          <div style="font-size: 15px; font-weight: 600; color: #0f172a; margin-top: 0; margin-bottom: 16px; line-height: 1.4; font-family: sans-serif;">
+            ${originQ ? convertMarkdownToHTML(originQ.question_text) : "ISTQB Certification Question"}
+          </div>
           
           <div style="margin-bottom: 16px;">
             ${optionsRows}
@@ -316,7 +309,7 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
           
           <div style="background-color: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
             <span style="font-size: 10px; font-weight: bold; color: #94a3b8; text-transform: uppercase; display: block; margin-bottom: 4px;">${t.syllabusExplanation}</span>
-            <p style="font-size: 13px; color: #475569; font-style: italic; margin: 0; line-height: 1.5;">${result.justification}</p>
+            <div style="font-size: 13px; color: #475569; font-style: italic; margin: 0; line-height: 1.5;">${convertMarkdownToHTML(result.justification)}</div>
           </div>
         </div>
       `;
@@ -693,7 +686,7 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
             } print-badge`}>
               <span className="text-[10px] uppercase font-bold text-slate-700 dark:text-slate-400 font-mono">{t.scoreLabel}</span>
               <span className="text-3xl font-extrabold font-display leading-none my-1 text-slate-800 dark:text-slate-100">{attempt.scorePercentage}%</span>
-              <span className="text-[10px] font-mono text-slate-750 dark:text-slate-300">{attempt.correctCount} / {attempt.totalQuestions} {t.hits}</span>
+              <span className="text-[10px] font-mono text-slate-700 dark:text-slate-300">{attempt.correctCount} / {attempt.totalQuestions} {t.hits}</span>
             </div>
 
             <div className="space-y-0.5">
@@ -870,16 +863,16 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
 
                   {/* Context banner if presents inside response review */}
                   {originQ?.context && (
-                    <div className="bg-slate-50 dark:bg-slate-900/40 p-3 rounded border border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400 italic leading-relaxed">
+                    <div className="bg-slate-50 dark:bg-slate-900/40 p-3 rounded border border-slate-200 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-200 italic leading-relaxed">
                       <span className="font-bold text-[9px] text-slate-400 dark:text-slate-500 block uppercase font-mono tracking-wider mb-1">{t.scenarioComplement}</span>
-                      {originQ.context}
+                      <MarkdownRenderer text={originQ.context} />
                     </div>
                   )}
 
                   {/* Question Title */}
-                  <h4 className="font-display font-semibold text-slate-900 dark:text-slate-100 text-sm leading-snug">
-                    {originQ ? originQ.question_text : "Questão de Simulação ISTQB"}
-                  </h4>
+                  <div className="font-display font-semibold text-slate-900 dark:text-slate-100 text-sm leading-snug">
+                    {originQ ? <MarkdownRenderer text={originQ.question_text} className="text-sm font-semibold text-slate-900 dark:text-slate-100" /> : "Questão de Simulação ISTQB"}
+                  </div>
 
                   {/* Options with marked correctness */}
                   <div className="space-y-2 pt-1">
@@ -907,7 +900,9 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
                             }`}>
                               {opt.id}
                             </div>
-                            <span className="flex-1 leading-relaxed">{opt.text}</span>
+                            <span className="flex-1 leading-relaxed">
+                              <MarkdownRenderer text={opt.text} />
+                            </span>
                             {isCorrectOpt && (
                               <span className="text-[9px] font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 py-0.5 px-1.5 rounded uppercase font-bold shrink-0 border border-emerald-200 dark:border-emerald-800/40">
                                 {t.gabaritoText}
@@ -933,9 +928,9 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
                     <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-slate-400 dark:text-slate-500 block">
                       {t.syllabusExplanation}
                     </span>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 italic leading-relaxed">
-                      {result.justification}
-                    </p>
+                    <div className="text-xs text-slate-600 dark:text-slate-400 italic leading-relaxed">
+                      <MarkdownRenderer text={result.justification} />
+                    </div>
                   </div>
 
                 </div>

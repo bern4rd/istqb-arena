@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Clock, CheckCircle2, XCircle, AlertTriangle, ChevronLeft, ChevronRight, HelpCircle, CornerDownRight, SquareCheck, Info } from "lucide-react";
 import { Question, CertificationDetail } from "../types";
 import { translations } from "../utils/translations";
+import MarkdownRenderer from "./MarkdownRenderer";
 
 interface TestArenaProps {
   certificationId: string;
@@ -327,14 +328,16 @@ export default function TestArena({ certificationId, mode, language, token, onFi
                   <Info className="w-3.5 h-3.5" /> {t.scenarioComplement}
                 </div>
                 <div className="font-bold text-blue-900 dark:text-blue-400 border-b border-blue-100 dark:border-blue-900/30 pb-1 mb-2 font-mono text-[10px] uppercase">{language === 'en' ? 'CASE SCENARIO STUDY:' : 'CONTEXTO DE PRÁTICA:'}</div>
-                <p className="whitespace-pre-line italic text-slate-600 dark:text-slate-400">{currentQuestion.context}</p>
+                <div className="italic text-slate-700 dark:text-slate-200">
+                  <MarkdownRenderer text={currentQuestion.context} />
+                </div>
               </div>
             )}
 
             {/* Question Text */}
-            <h2 className="font-display font-semibold text-base md:text-lg text-slate-900 dark:text-slate-100 leading-snug">
-              {currentQuestion.question_text}
-            </h2>
+            <div className="font-display font-semibold text-base md:text-lg text-slate-900 dark:text-slate-100 leading-snug">
+              <MarkdownRenderer text={currentQuestion.question_text} className="text-base md:text-lg text-slate-900 dark:text-slate-100 font-semibold" />
+            </div>
 
             {/* Question Type Hint */}
             <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider font-mono">
@@ -381,8 +384,8 @@ export default function TestArena({ certificationId, mode, language, token, onFi
                     }`}>
                       {option.id}
                     </div>
-                    <div className="font-medium flex-1 pt-0.5">
-                      {option.text}
+                    <div className="font-medium flex-1 pt-0.5 text-slate-700 dark:text-slate-300">
+                      <MarkdownRenderer text={option.text} />
                     </div>
                     {iconBlock}
                   </div>
@@ -407,11 +410,13 @@ export default function TestArena({ certificationId, mode, language, token, onFi
                     {t.syllabusExplanation}
                   </span>
                 </div>
-                <div className="text-xs text-slate-600 dark:text-slate-350 leading-relaxed font-sans">
+                 <div className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
                   <div className="font-bold text-slate-900 dark:text-slate-200 flex items-center gap-1 text-[10px] uppercase font-mono mb-1">
                     <CornerDownRight className="w-3 h-3 text-blue-500" /> {language === 'en' ? 'THEORETICAL ANALYSIS' : 'EXPLICAÇÃO TEÓRICA'}:
                   </div>
-                  <p className="italic bg-white dark:bg-slate-900 p-3 rounded border border-slate-200 dark:border-slate-800 shadow-3xs text-slate-600 dark:text-slate-300">{trainingValidated[currentQuestion.id].justification}</p>
+                  <div className="italic bg-white dark:bg-slate-900 p-3 rounded border border-slate-200 dark:border-slate-800 shadow-3xs text-slate-600 dark:text-slate-300">
+                    <MarkdownRenderer text={trainingValidated[currentQuestion.id].justification} />
+                  </div>
                 </div>
               </div>
             )}
@@ -532,7 +537,7 @@ export default function TestArena({ certificationId, mode, language, token, onFi
           </div>
 
           {/* Quick guidelines reminder box */}
-          <div className="bg-slate-900 dark:bg-slate-950 text-slate-300 dark:text-slate-350 p-5 rounded-xl text-[11px] space-y-3 border border-slate-800 dark:border-slate-900 transition-colors duration-200">
+          <div className="bg-slate-900 dark:bg-slate-950 text-slate-300 dark:text-slate-200 p-5 rounded-xl text-[11px] space-y-3 border border-slate-800 dark:border-slate-900 transition-colors duration-200">
             <h4 className="font-display font-medium text-blue-500 dark:text-blue-400 flex items-center gap-1.5 uppercase font-mono tracking-wider">
               <HelpCircle className="w-3.5 h-3.5 text-blue-500 dark:text-blue-400" /> {t.quickInstructions}
             </h4>
