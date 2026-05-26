@@ -4,6 +4,14 @@ Todas as mudanças notáveis deste projeto serão documentadas neste arquivo.
 
 O formato baseia-se em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e este projeto adota o [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.4.1] - 2026-05-26
+
+### Adicionado
+- **Favicon Premium de Alta Resolução em PNG**: Adicionado o ícone premium `istqb-arena.png` na pasta `public/` (com design moderno de escudo em gradiente de néon roxo e ciano, fundo 100% transparente e escala de preenchimento de 100% do canvas), eliminando fundos escuros/molduras circulares para garantir nitidez máxima e perfeita visibilidade na guia do navegador.
+
+### Modificado
+- **Referência do Favicon**: Atualizada a tag link em `index.html` para usar `<link rel="icon" type="image/png" href="/istqb-arena.png" />`.
+
 ## [1.4.0] - 2026-05-26
 
 ### Adicionado
