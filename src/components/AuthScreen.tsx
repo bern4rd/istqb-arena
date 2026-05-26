@@ -100,12 +100,31 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
     setIsGoogleSsoMode(false);
   };
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    e.currentTarget.style.setProperty("--mouse-x", `${x}px`);
+    e.currentTarget.style.setProperty("--mouse-y", `${y}px`);
+  };
+
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-950 px-4 sm:px-6 lg:px-8 py-2 md:py-1 relative overflow-hidden font-sans transition-colors duration-250">
+    <div 
+      onMouseMove={handleMouseMove}
+      className="h-screen flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-950 px-4 sm:px-6 lg:px-8 py-2 md:py-1 relative overflow-hidden font-sans transition-colors duration-250"
+    >
       {/* Background visual accents */}
       <div className="absolute top-0 left-0 w-full h-[5px] bg-blue-600" />
       <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-blue-600/5 dark:bg-blue-600/10 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-slate-900/5 dark:bg-slate-900/10 blur-3xl pointer-events-none" />
+
+      {/* Interactive mouse spotlight effect */}
+      <div 
+        className="absolute inset-0 pointer-events-none z-0 transition-opacity duration-300 opacity-60 dark:opacity-40"
+        style={{
+          background: `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(59, 130, 246, 0.12) 0%, rgba(99, 102, 241, 0.04) 50%, transparent 100%)`
+        }}
+      />
 
       {/* Dynamic scrolling background tracks */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none flex flex-col justify-around py-16 sm:py-24 select-none z-0">

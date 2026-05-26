@@ -4,6 +4,11 @@ Todas as mudanças notáveis deste projeto serão documentadas neste arquivo.
 
 O formato baseia-se em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e este projeto adota o [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.5.1] - 2026-05-26
+
+### Adicionado
+- **Efeito Spotlight de Cursor Interativo**: Implementada escuta de movimento do mouse (`onMouseMove`) de altíssima performance no container da tela de login (`AuthScreen.tsx`), calculando as coordenadas do cursor e aplicando um efeito de iluminação dinâmica (radial glow) em tempo real que acompanha o cursor. Isso ilumina suavemente o plano de fundo e os textos animados conforme o mouse desliza na tela, criando um visual tridimensional extremamente sofisticado e imersivo.
+
 ## [1.5.0] - 2026-05-26
 
 ### Adicionado
