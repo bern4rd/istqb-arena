@@ -107,6 +107,27 @@ export default function AuthScreen({ language, onLanguageChange, onLoginSuccess 
       <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-blue-600/5 dark:bg-blue-600/10 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-slate-900/5 dark:bg-slate-900/10 blur-3xl pointer-events-none" />
 
+      {/* Dynamic scrolling background tracks */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none flex flex-col justify-around py-16 sm:py-24 select-none z-0">
+        {/* Track 1: CTFL • CT-AI • CT-GenAI • CTAL-TAE • CTAL-AT */}
+        <div className="animate-marquee-track-1 flex gap-12 text-6xl md:text-8xl font-black font-display uppercase tracking-widest text-slate-200/40 dark:text-slate-900/15">
+          <span>CTFL <span className="text-outline-accent">•</span> CT-AI <span className="text-outline-accent">•</span> CT-GENAI <span className="text-outline-accent">•</span> CTAL-TAE <span className="text-outline-accent">•</span> CTAL-AT <span className="text-outline-accent">•</span>&nbsp;</span>
+          <span>CTFL <span className="text-outline-accent">•</span> CT-AI <span className="text-outline-accent">•</span> CT-GENAI <span className="text-outline-accent">•</span> CTAL-TAE <span className="text-outline-accent">•</span> CTAL-AT <span className="text-outline-accent">•</span>&nbsp;</span>
+        </div>
+
+        {/* Track 2: SOFTWARE TESTING • MOCK EXAMS • AI MENTOR • SIMULADOS • QA */}
+        <div className="animate-marquee-track-2 flex gap-12 text-6xl md:text-8xl font-black font-display uppercase tracking-widest text-slate-200/30 dark:text-slate-900/10">
+          <span><span className="text-outline-accent">SOFTWARE TESTING</span> • MOCK EXAMS • <span className="text-outline-accent">AI MENTOR</span> • SIMULADOS • <span className="text-outline-accent">QA</span> •&nbsp;</span>
+          <span><span className="text-outline-accent">SOFTWARE TESTING</span> • MOCK EXAMS • <span className="text-outline-accent">AI MENTOR</span> • SIMULADOS • <span className="text-outline-accent">QA</span> •&nbsp;</span>
+        </div>
+
+        {/* Track 3: ISTQB ARENA • DAILY PRACTICE • MENTOR IA • ARENA */}
+        <div className="animate-marquee-track-3 flex gap-12 text-6xl md:text-8xl font-black font-display uppercase tracking-widest text-slate-200/40 dark:text-slate-900/15">
+          <span>ISTQB ARENA <span className="text-outline-accent">•</span> DAILY PRACTICE <span className="text-outline-accent">•</span> MENTOR IA <span className="text-outline-accent">•</span> ARENA <span className="text-outline-accent">•</span>&nbsp;</span>
+          <span>ISTQB ARENA <span className="text-outline-accent">•</span> DAILY PRACTICE <span className="text-outline-accent">•</span> MENTOR IA <span className="text-outline-accent">•</span> ARENA <span className="text-outline-accent">•</span>&nbsp;</span>
+        </div>
+      </div>
+
       <div className="max-w-md md:max-w-lg lg:max-w-xl w-full space-y-2 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 transition-all duration-300 relative z-10 max-h-screen overflow-y-auto md:overflow-visible">
         
         {/* Languages Switch Header Row */}

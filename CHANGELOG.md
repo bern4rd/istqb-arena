@@ -4,6 +4,11 @@ Todas as mudanças notáveis deste projeto serão documentadas neste arquivo.
 
 O formato baseia-se em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e este projeto adota o [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.5.0] - 2026-05-26
+
+### Adicionado
+- **Fundo Dinâmico Animado (Marquee) na Tela de Login**: Implementação de 3 faixas horizontais de texto infinito de alta performance que deslizam lentamente em direções opostas no plano de fundo da tela de autenticação (`AuthScreen.tsx`). As faixas exibem de forma elegante os nomes das certificações (CTFL, CT-AI, CT-GenAI, etc.) com Space Grotesk estilizado, sutileza de opacidade para não desviar a atenção, aceleração de hardware via GPU (`translate3d`) e delicado efeito de contorno (glowing text-stroke).
+
 ## [1.4.1] - 2026-05-26
 
 ### Adicionado

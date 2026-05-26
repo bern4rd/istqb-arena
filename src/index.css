@@ -57,3 +57,43 @@
     background: transparent !important;
   }
 }
+
+/* Infinite horizontal scrolling marquee animations */
+@keyframes marquee-horizontal {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marquee-horizontal-reverse {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.animate-marquee-track-1 {
+  display: flex;
+  width: max-content;
+  animation: marquee-horizontal 50s linear infinite;
+}
+
+.animate-marquee-track-2 {
+  display: flex;
+  width: max-content;
+  animation: marquee-horizontal-reverse 45s linear infinite;
+}
+
+.animate-marquee-track-3 {
+  display: flex;
+  width: max-content;
+  animation: marquee-horizontal 60s linear infinite;
+}
+
+.text-outline-accent {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(99, 102, 241, 0.08);
+}
+
+.dark .text-outline-accent {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(99, 102, 241, 0.04);
+}
+
