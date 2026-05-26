@@ -61,7 +61,8 @@ const UserSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   passwordHash: { type: String, required: true },
-  isGoogleUser: { type: Boolean, default: false }
+  isGoogleUser: { type: Boolean, default: false },
+  seenQuestions: { type: Array, default: [] }
 });
 const User = mongoose.model("User", UserSchema);
 
@@ -255,35 +256,97 @@ app.get("/api/certifications", (req, res) => {
   res.json(list);
 });
 
+// Fisher-Yates (Knuth) Shuffle
+function shuffleArray<T>(array: T[]): T[] {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
 // Helper function to sample balanced practice questions
-function selectPracticeQuestions(allQuestions: any[], lang: "en" | "pt"): any[] {
+function selectPracticeQuestions(allQuestions: any[], lang: "en" | "pt", recentSeen: any[] = []): any[] {
+  const seenPenalty = new Map<string, number>();
+  allQuestions.forEach(q => seenPenalty.set(q.id, 0));
+
+  // Count total occurrences in recent history
+  recentSeen.forEach(entry => {
+    if (entry && entry.questionId && seenPenalty.has(entry.questionId)) {
+      seenPenalty.set(entry.questionId, seenPenalty.get(entry.questionId)! + 1);
+    }
+  });
+
+  // Consecutive session penalty:
+  // The first 10 items in recentSeen (newest) represent the most recent session.
+  // The next 10 items (indices 10 to 19) represent the second most recent session.
+  const lastSessionIds = new Set(recentSeen.slice(0, 10).map(e => e.questionId));
+  const secondLastSessionIds = new Set(recentSeen.slice(10, 20).map(e => e.questionId));
+
+  lastSessionIds.forEach(id => {
+    if (id && seenPenalty.has(id)) {
+      seenPenalty.set(id, seenPenalty.get(id)! + 5);
+    }
+  });
+
+  secondLastSessionIds.forEach(id => {
+    if (id && seenPenalty.has(id)) {
+      seenPenalty.set(id, seenPenalty.get(id)! + 2);
+    }
+  });
+
   const hardQuestions = allQuestions.filter(q => q.points === 2);
   const easyQuestions = allQuestions.filter(q => q.points !== 2); // default is 1
+
+  const targetHard = Math.min(2, hardQuestions.length);
+  const targetEasy = Math.min(10 - targetHard, easyQuestions.length);
+
+  const getStratifiedPool = (pool: any[]) => {
+    const groups: { [key: number]: any[] } = {};
+    pool.forEach(q => {
+      const penalty = seenPenalty.get(q.id) || 0;
+      if (!groups[penalty]) {
+        groups[penalty] = [];
+      }
+      groups[penalty].push(q);
+    });
+
+    const sortedPenalties = Object.keys(groups)
+      .map(Number)
+      .sort((a, b) => a - b);
+
+    let stratified: any[] = [];
+    sortedPenalties.forEach(penalty => {
+      stratified = stratified.concat(shuffleArray(groups[penalty]));
+    });
+
+    return stratified;
+  };
 
   let selected: any[] = [];
   let attempts = 0;
   const maxAttempts = 100;
 
-  const targetHard = Math.min(2, hardQuestions.length);
-  const targetEasy = Math.min(10 - targetHard, easyQuestions.length);
+  const allUniqueTopics = new Set(allQuestions.map(q => {
+    const topicObj = q.syllabus_topic;
+    return typeof topicObj === "object" ? topicObj[lang] : topicObj;
+  }));
+  const requiredTopics = Math.min(3, allUniqueTopics.size);
 
   while (attempts < maxAttempts) {
     attempts++;
-    const sampledHard = [...hardQuestions].sort(() => 0.5 - Math.random()).slice(0, targetHard);
-    const sampledEasy = [...easyQuestions].sort(() => 0.5 - Math.random()).slice(0, targetEasy);
+    const stratifiedHard = getStratifiedPool(hardQuestions);
+    const stratifiedEasy = getStratifiedPool(easyQuestions);
+
+    const sampledHard = stratifiedHard.slice(0, targetHard);
+    const sampledEasy = stratifiedEasy.slice(0, targetEasy);
     const sample = [...sampledHard, ...sampledEasy];
 
     const uniqueTopics = new Set(sample.map(q => {
       const topicObj = q.syllabus_topic;
       return typeof topicObj === "object" ? topicObj[lang] : topicObj;
     }));
-
-    const allUniqueTopics = new Set(allQuestions.map(q => {
-      const topicObj = q.syllabus_topic;
-      return typeof topicObj === "object" ? topicObj[lang] : topicObj;
-    }));
-
-    const requiredTopics = Math.min(3, allUniqueTopics.size);
 
     if (uniqueTopics.size >= requiredTopics || sample.length < 3) {
       selected = sample;
@@ -293,11 +356,11 @@ function selectPracticeQuestions(allQuestions: any[], lang: "en" | "pt"): any[] 
   }
 
   // Shuffle selected questions so hard and easy are mixed
-  return selected.sort(() => 0.5 - Math.random());
+  return shuffleArray(selected);
 }
 
 // Fetch questions for specific certification (Anti-cheat: Correct Answers omitted)
-app.get("/api/questions/:certificationId", (req, res) => {
+app.get("/api/questions/:certificationId", authenticateToken, async (req, res) => {
   const { certificationId } = req.params;
   const mode = req.query.mode as string;
   const lang = (req.headers["x-app-language"] as string === "en") ? "en" : "pt";
@@ -313,8 +376,28 @@ app.get("/api/questions/:certificationId", (req, res) => {
   let timeLimitMins = cert.time_limit_mins;
 
   if (mode === "training") {
-    questionsToUse = selectPracticeQuestions(cert.questions, lang);
+    const userId = (req as any).user.id;
+    const user = await User.findOne({ id: userId });
+
+    const recentSeen = (user?.seenQuestions || [])
+      .filter((sq: any) => sq.certificationId === certificationId)
+      .sort((a: any, b: any) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+
+    questionsToUse = selectPracticeQuestions(cert.questions, lang, recentSeen);
     timeLimitMins = 11; // 10 questions practice mode: 11 mins budget
+
+    const now = new Date();
+    const newSeenEntries = questionsToUse.map((q: any) => ({
+      questionId: q.id,
+      certificationId,
+      timestamp: now
+    }));
+
+    if (user) {
+      const updatedSeen = [...newSeenEntries, ...(user.seenQuestions || [])].slice(0, 200);
+      user.seenQuestions = updatedSeen;
+      await user.save();
+    }
   }
 
   const cleanQuestions = questionsToUse.map((q: any) => {
@@ -408,15 +491,12 @@ app.post("/api/test/submit", authenticateToken, async (req, res) => {
       questions = cert.questions.slice(0, 10);
     }
   }
-  let totalPoints = 0;
-  let scorePoints = 0;
+  let correctCount = 0;
+  const totalQuestions = questions.length;
   const resultsDetail: any[] = [];
   const errorsList: any[] = [];
 
   questions.forEach((q: any) => {
-    const qPoints = q.points || 1;
-    totalPoints += qPoints;
-
     const userSelected = answers[q.id] || [];
     const correctAnswers = q.correct_answers || [];
     const isCorrect = Array.isArray(userSelected) &&
@@ -428,7 +508,7 @@ app.post("/api/test/submit", authenticateToken, async (req, res) => {
     const justificationStr = typeof q.justification === "object" ? q.justification[lang] : q.justification;
 
     if (isCorrect) {
-      scorePoints += qPoints;
+      correctCount += 1;
     } else {
       errorsList.push({
         id: q.id,
@@ -454,7 +534,9 @@ app.post("/api/test/submit", authenticateToken, async (req, res) => {
     });
   });
 
-  const percentScore = totalPoints > 0 ? Math.round((scorePoints / totalPoints) * 100) : 0;
+  const percentScore = totalQuestions > 0 ? Math.round((correctCount / totalQuestions) * 100) : 0;
+  const scorePoints = correctCount;
+  const totalPoints = totalQuestions;
   const passLimit = cert.pass_score_percentage || 65;
   const passVerdictStr = percentScore >= passLimit 
     ? (lang === "en" ? "Pass" : "Passaria") 

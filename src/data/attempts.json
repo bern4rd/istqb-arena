@@ -6,11 +6,11 @@
     "certificationId": "CT-AI",
     "certificationName": "ISTQB Certified Tester Teste de Inteligência Artificial (CT-AI)",
     "mode": "training",
-    "scorePercentage": 16,
+    "scorePercentage": 10,
     "correctCount": 7,
     "totalQuestions": 44,
     "timeSpentSeconds": 133,
-    "verdict": "Não Passaria",
+    "verdict": "Passaria",
     "date": "2026-05-25T02:12:49.989Z",
     "results": [
       {

@@ -4,6 +4,16 @@ Todas as mudanças notáveis deste projeto serão documentadas neste arquivo.
 
 O formato baseia-se em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e este projeto adota o [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.4.0] - 2026-05-26
+
+### Adicionado
+- **Rastreamento de Questões em Tempo Real**: Adicionado array `seenQuestions` ao modelo de Usuário (`User`) para persistir de forma instantânea em banco de dados os IDs de todas as questões geradas no modo treino. Com isso, mesmo que a sessão seja interrompida antes da submissão, o sistema sabe que as questões foram exibidas.
+- **Seleção Inteligente Baseada em Histórico**: Novo mecanismo de pontuação e filtragem em `selectPracticeQuestions` que aplica penalidade dinâmica de repetição (`+5` para questões do último treino e `+2` para a sessão anterior), reduzindo a probabilidade de reexibição imediata das mesmas questões.
+- **Embaralhamento Fisher-Yates (Knuth)**: Adicionado algoritmo robusto de randomização uniforme em `server.ts` para embaralhar os blocos e perguntas de forma matematicamente precisa e imparcial, sanando a ordenação enviesada de `Math.random()`.
+
+### Modificado
+- **Autenticação de Rota de Questões**: Rota `/api/questions/:certificationId` atualizada para utilizar o middleware `authenticateToken`, recuperando e registrando de forma assíncrona o histórico de visualizações do usuário.
+
 ## [1.3.1] - 2026-05-25
 
 ### Corrigido
