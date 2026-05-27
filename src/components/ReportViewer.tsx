@@ -101,18 +101,27 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
 
       const flushTable = () => {
         if (inTable && (tableHeaders.length > 0 || tableRows.length > 0)) {
+          const colWidth = 100 / (tableHeaders.length || 1);
           html += `
-<div style="margin: 16px 0; overflow-x: auto; border: 1px solid #cbd5e1; border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); background-color: #ffffff;">
-  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13px;">
+<div style="margin: 16px 0; overflow-x: auto; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); background-color: #ffffff;">
+  <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; table-layout: fixed;">
     <thead>
       <tr style="background-color: #f8fafc; border-bottom: 1px solid #cbd5e1;">
-        ${tableHeaders.map(h => `<th style="padding: 12px; font-weight: 600; color: #475569; text-transform: uppercase; font-size: 11px;">${parseInlineToHTML(h)}</th>`).join("")}
+        ${tableHeaders.map((h, hIdx) => `
+          <th style="padding: 12px; font-weight: 600; color: #475569; text-transform: uppercase; font-size: 11px; width: ${colWidth}%; border-right: ${hIdx === tableHeaders.length - 1 ? 'none' : '1px solid #e2e8f0'}; text-align: ${hIdx === 0 ? 'left' : 'center'};">
+            ${parseInlineToHTML(h)}
+          </th>
+        `).join("")}
       </tr>
     </thead>
     <tbody style="background-color: #ffffff;">
       ${tableRows.map(row => `
         <tr style="border-bottom: 1px solid #f1f5f9;">
-          ${row.map(cell => `<td style="padding: 12px; color: #334155;">${parseInlineToHTML(cell)}</td>`).join("")}
+          ${row.map((cell, cellIdx) => `
+            <td style="padding: 12px; width: ${colWidth}%; border-right: ${cellIdx === row.length - 1 ? 'none' : '1px solid #f1f5f9'}; text-align: ${cellIdx === 0 ? 'left' : 'center'}; ${cellIdx === 0 ? 'font-weight: 600; background-color: #fafafa; color: #0f172a;' : 'color: #334155;'}">
+              ${parseInlineToHTML(cell)}
+            </td>
+          `).join("")}
         </tr>
       `).join("")}
     </tbody>
@@ -276,7 +285,7 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
       }).join("\n") : `<div>Options missing.</div>`;
 
       const contextHTML = originQ?.context ? `
-        <div style="background-color: #f8fafc; padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #475569; font-style: italic; margin-bottom: 12px; border-left: 4px solid #2563eb;">
+        <div style="background-color: #f8fafc; padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #475569; margin-bottom: 12px; border-left: 4px solid #2563eb;">
           <span style="font-weight: bold; font-size: 10px; color: #94a3b8; display: block; text-transform: uppercase; margin-bottom: 4px;">${t.scenarioComplement}</span>
           ${convertMarkdownToHTML(originQ.context)}
         </div>
@@ -309,7 +318,7 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
           
           <div style="background-color: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
             <span style="font-size: 10px; font-weight: bold; color: #94a3b8; text-transform: uppercase; display: block; margin-bottom: 4px;">${t.syllabusExplanation}</span>
-            <div style="font-size: 13px; color: #475569; font-style: italic; margin: 0; line-height: 1.5;">${convertMarkdownToHTML(result.justification)}</div>
+            <div style="font-size: 13px; color: #475569; margin: 0; line-height: 1.5;">${convertMarkdownToHTML(result.justification)}</div>
           </div>
         </div>
       `;
@@ -863,7 +872,7 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
 
                   {/* Context banner if presents inside response review */}
                   {originQ?.context && (
-                    <div className="bg-slate-50 dark:bg-slate-900/40 p-3 rounded border border-slate-200 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-200 italic leading-relaxed">
+                    <div className="bg-slate-50 dark:bg-slate-900/40 p-3 rounded border border-slate-200 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-200 leading-relaxed">
                       <span className="font-bold text-[9px] text-slate-400 dark:text-slate-500 block uppercase font-mono tracking-wider mb-1">{t.scenarioComplement}</span>
                       <MarkdownRenderer text={originQ.context} />
                     </div>
@@ -928,7 +937,7 @@ export default function ReportViewer({ attemptId, token, language, onBackToDashb
                     <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-slate-400 dark:text-slate-500 block">
                       {t.syllabusExplanation}
                     </span>
-                    <div className="text-xs text-slate-600 dark:text-slate-400 italic leading-relaxed">
+                    <div className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                       <MarkdownRenderer text={result.justification} />
                     </div>
                   </div>

@@ -324,11 +324,12 @@ export default function TestArena({ certificationId, mode, language, token, onFi
             {/* Case/Context Study panel if applicable */}
             {currentQuestion.context && (
               <div className="bg-blue-50/15 dark:bg-blue-950/10 border border-blue-200/50 dark:border-blue-900/40 p-4 rounded-xl text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-sans mb-4 relative">
+                {console.log("DEBUG Context string:", JSON.stringify(currentQuestion.context))}
                 <div className="absolute top-3 right-3 text-[9px] uppercase font-bold text-blue-500 dark:text-blue-400 font-mono tracking-wider flex items-center gap-1 pointer-events-none">
                   <Info className="w-3.5 h-3.5" /> {t.scenarioComplement}
                 </div>
                 <div className="font-bold text-blue-900 dark:text-blue-400 border-b border-blue-100 dark:border-blue-900/30 pb-1 mb-2 font-mono text-[10px] uppercase">{language === 'en' ? 'CASE SCENARIO STUDY:' : 'CONTEXTO DE PRÁTICA:'}</div>
-                <div className="italic text-slate-700 dark:text-slate-200">
+                <div className="text-slate-700 dark:text-slate-200">
                   <MarkdownRenderer text={currentQuestion.context} />
                 </div>
               </div>
@@ -414,7 +415,7 @@ export default function TestArena({ certificationId, mode, language, token, onFi
                   <div className="font-bold text-slate-900 dark:text-slate-200 flex items-center gap-1 text-[10px] uppercase font-mono mb-1">
                     <CornerDownRight className="w-3 h-3 text-blue-500" /> {language === 'en' ? 'THEORETICAL ANALYSIS' : 'EXPLICAÇÃO TEÓRICA'}:
                   </div>
-                  <div className="italic bg-white dark:bg-slate-900 p-3 rounded border border-slate-200 dark:border-slate-800 shadow-3xs text-slate-600 dark:text-slate-300">
+                  <div className="bg-white dark:bg-slate-900 p-3 rounded border border-slate-200 dark:border-slate-800 shadow-3xs text-slate-600 dark:text-slate-300">
                     <MarkdownRenderer text={trainingValidated[currentQuestion.id].justification} />
                   </div>
                 </div>

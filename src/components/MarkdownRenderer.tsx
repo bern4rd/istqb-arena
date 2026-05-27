@@ -29,7 +29,8 @@ export function parseInlineStyles(markup: string): string {
 
 export function preprocessInlineLists(text: string): string {
   if (!text) return "";
-  let processed = text;
+  // Normalize double-escaped newlines to actual newlines to support all parsing environments
+  let processed = text.replace(/\\n/g, "\n");
   
   // Detect parenthesized transition paths/flow diagrams, ex: "(INIT -> DEBUG -> OFF; INIT -> OPERATION -> ...)"
   // and convert them into beautifully structured bullet points
@@ -245,16 +246,20 @@ export default function MarkdownRenderer({ text, className = "text-xs sm:text-sm
                 ))}
               </div>
             );
-          case "table":
+          case "table": {
+            const colWidth = 100 / (block.headers?.length || 1);
             return (
-              <div key={idx} className="my-3 overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800/80 shadow-3xs w-full bg-white dark:bg-slate-900/60 transition-colors">
+              <div key={idx} className="my-4 overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800/80 shadow-xs w-full bg-white dark:bg-slate-900/60 transition-colors">
                 <table className="w-full text-left border-collapse text-xs">
                   <thead>
                     <tr className="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">
                       {block.headers?.map((h, hIdx) => (
                         <th
                           key={hIdx}
-                          className="p-3 font-semibold"
+                          style={{ width: `${colWidth}%` }}
+                          className={`p-3 font-semibold border-r border-slate-200/60 dark:border-slate-800/80 last:border-r-0 ${
+                            hIdx === 0 ? "text-left" : "text-center"
+                          }`}
                           dangerouslySetInnerHTML={{ __html: parseInlineStyles(h) }}
                         />
                       ))}
@@ -262,11 +267,16 @@ export default function MarkdownRenderer({ text, className = "text-xs sm:text-sm
                   </thead>
                   <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
                     {block.rows?.map((row, rowIdx) => (
-                      <tr key={rowIdx} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/20 transition-colors">
+                      <tr key={rowIdx} className="hover:bg-slate-50/30 dark:hover:bg-slate-800/10 transition-colors">
                         {row.map((cell, cellIdx) => (
                           <td
                             key={cellIdx}
-                            className="p-3 text-slate-800 dark:text-slate-300"
+                            style={{ width: `${colWidth}%` }}
+                            className={`p-3 border-r border-slate-100 dark:border-slate-800/60 last:border-r-0 ${
+                              cellIdx === 0
+                                ? "text-left font-semibold text-slate-900 dark:text-slate-100 bg-slate-50/40 dark:bg-slate-800/20"
+                                : "text-center text-slate-800 dark:text-slate-300 font-medium"
+                            }`}
                             dangerouslySetInnerHTML={{ __html: parseInlineStyles(cell) }}
                           />
                         ))}
@@ -276,6 +286,7 @@ export default function MarkdownRenderer({ text, className = "text-xs sm:text-sm
                 </table>
               </div>
             );
+          }
           default:
             return null;
         }
